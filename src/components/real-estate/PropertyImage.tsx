@@ -1,5 +1,4 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
-import styles from "./property-image.module.css";
 
 export interface PropertyImageProps {
 	src: string;
@@ -53,13 +52,13 @@ export const PropertyImage = component$<PropertyImageProps>(
 		};
 
 		return (
-			<div class={styles.imageWrapper}>
+			<div class="relative w-full h-full overflow-hidden">
 				{!hasError.value ? (
 					<img
 						ref={imageRef}
 						alt={alt}
-						class={`${styles.propertyImage} ${
-							isLoaded.value ? styles.loaded : styles.loading
+						class={`w-full h-full object-cover transition-opacity duration-300 ${
+							isLoaded.value ? "opacity-100" : "opacity-0"
 						}`}
 						onLoad$={handleLoad}
 						onError$={handleError}
@@ -67,9 +66,9 @@ export const PropertyImage = component$<PropertyImageProps>(
 						decoding="async"
 					/>
 				) : (
-					<div class={styles.imagePlaceholder}>
+					<div class="w-full h-full flex flex-col items-center justify-center bg-gray-100 text-gray-400">
 						<svg
-							class={styles.placeholderIcon}
+							class="w-12 h-12 mb-2"
 							fill="currentColor"
 							viewBox="0 0 20 20"
 							aria-hidden="true"
@@ -80,13 +79,13 @@ export const PropertyImage = component$<PropertyImageProps>(
 								clipRule="evenodd"
 							/>
 						</svg>
-						<span class={styles.placeholderText}>Image unavailable</span>
+						<span class="text-sm font-medium">Image unavailable</span>
 					</div>
 				)}
 
 				{!isLoaded.value && !hasError.value && (
-					<div class={styles.loadingSkeleton}>
-						<div class={styles.skeletonShimmer}></div>
+					<div class="absolute inset-0 bg-gray-200 animate-pulse">
+						<div class="w-full h-full bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 animate-shimmer bg-[length:200%_100%]"></div>
 					</div>
 				)}
 			</div>

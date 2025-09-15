@@ -4,7 +4,6 @@ import { PropertyImage } from "./PropertyImage";
 import { PropertyDetails } from "./PropertyDetails";
 import { ContactAgent } from "./ContactAgent";
 import { FavoriteButton } from "./FavoriteButton";
-import styles from "./property-card.module.css";
 
 export interface PropertyCardProps {
 	listing: ListingProps;
@@ -30,8 +29,8 @@ export const PropertyCard = component$<PropertyCardProps>(
 		});
 
 		return (
-			<article class={styles.propertyCard} data-mls={listing.mls}>
-				<div class={styles.imageContainer}>
+			<article class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-200" data-mls={listing.mls}>
+				<div class="relative overflow-hidden h-60">
 					<PropertyImage
 						src={listing.photos[0]}
 						alt={`${listing.address.street} - ${listing.beds} bed, ${listing.baths} bath`}
@@ -47,16 +46,16 @@ export const PropertyCard = component$<PropertyCardProps>(
 						}}
 					/>
 					{listing.status === "pending" && (
-						<div class={styles.statusBadge}>Pending</div>
+						<div class="absolute top-3 right-3 px-2 py-1 text-xs font-semibold rounded bg-yellow-100 text-yellow-800">Pending</div>
 					)}
 					{listing.status === "sold" && (
-						<div class={styles.statusBadge}>Sold</div>
+						<div class="absolute top-3 right-3 px-2 py-1 text-xs font-semibold rounded bg-gray-100 text-gray-800">Sold</div>
 					)}
 				</div>
 
 				<PropertyDetails listing={listing} />
 
-				<div class={styles.actionButtons}>
+				<div class="p-4 flex gap-3">
 					<ContactAgent
 						agent={listing.agent}
 						property={listing}
@@ -67,7 +66,7 @@ export const PropertyCard = component$<PropertyCardProps>(
 					/>
 					<button
 						type="button"
-						class={styles.viewDetailsBtn}
+						class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md font-medium transition-colors duration-200 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
 						onClick$={() => {
 							// Navigate to property details page
 							window.location.href = `/property/${listing.mls}`;
