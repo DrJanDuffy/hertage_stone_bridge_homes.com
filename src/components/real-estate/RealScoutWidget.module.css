@@ -1,0 +1,130 @@
+.widgetContainer {
+	@apply relative w-full bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden;
+	min-height: 480px;
+	z-index: 1000; /* Ensure widget appears above other content */
+}
+
+.widgetContent {
+	@apply w-full h-full;
+}
+
+.widgetContent.hidden {
+	@apply opacity-0;
+}
+
+.widgetContent.loaded {
+	@apply opacity-100 transition-opacity duration-300;
+}
+
+.loadingState {
+	@apply absolute inset-0 flex flex-col items-center justify-center bg-gray-50 space-y-4;
+}
+
+.loadingSpinner {
+	@apply w-8 h-8 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin;
+}
+
+.loadingText {
+	@apply text-gray-600 text-sm font-medium;
+}
+
+.errorState {
+	@apply flex flex-col items-center justify-center p-8 bg-red-50 border border-red-200 rounded-lg text-center space-y-4;
+	min-height: 480px;
+}
+
+.errorIcon {
+	@apply w-12 h-12 text-red-500;
+}
+
+.errorTitle {
+	@apply text-lg font-semibold text-red-800;
+}
+
+.errorMessage {
+	@apply text-red-700 text-sm max-w-md;
+}
+
+/* Ensure RealScout widgets are properly contained */
+.widgetContainer :global(realscout-search-widget),
+.widgetContainer :global(realscout-listing-widget),
+.widgetContainer :global(realscout-contact-widget) {
+	@apply w-full h-full;
+	min-height: 480px;
+}
+
+/* Shadow DOM styling overrides */
+.widgetContainer :global(.realscout-widget) {
+	@apply rounded-lg overflow-hidden;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+	.widgetContainer {
+		@apply mx-2;
+		min-height: 400px;
+	}
+
+	.errorState {
+		@apply p-6;
+		min-height: 400px;
+	}
+
+	.errorIcon {
+		@apply w-10 h-10;
+	}
+
+	.errorTitle {
+		@apply text-base;
+	}
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+	.widgetContainer {
+		@apply border-2 border-gray-600;
+	}
+
+	.errorState {
+		@apply border-red-400;
+	}
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+	.widgetContainer {
+		@apply bg-gray-800 border-gray-700;
+	}
+
+	.loadingState {
+		@apply bg-gray-700;
+	}
+
+	.loadingText {
+		@apply text-gray-300;
+	}
+
+	.errorState {
+		@apply bg-red-900 border-red-700;
+	}
+
+	.errorTitle {
+		@apply text-red-200;
+	}
+
+	.errorMessage {
+		@apply text-red-300;
+	}
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+	.widgetContent.loaded {
+		transition: none;
+	}
+
+	.loadingSpinner {
+		animation: none;
+		border-color: #e5e7eb;
+	}
+}
