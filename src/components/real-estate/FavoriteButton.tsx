@@ -1,7 +1,7 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 
 export interface FavoriteButtonProps {
-	isFavorited: any; // Signal<boolean>
+	isFavorited: { value: boolean };
 	mls: string;
 	onToggle$: () => void;
 }

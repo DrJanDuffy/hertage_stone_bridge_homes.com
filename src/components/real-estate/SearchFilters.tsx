@@ -53,7 +53,7 @@ export const SearchFilters = component$<SearchFiltersProps>(
 							onClick$={() => {
 								isExpanded.value = !isExpanded.value;
 							}}
-							aria-expanded={isExpanded.value}
+								aria-expanded={isExpanded.value.toString()}
 							aria-label="Toggle filters"
 						>
 							<svg
@@ -63,7 +63,9 @@ export const SearchFilters = component$<SearchFiltersProps>(
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24"
+								aria-label="Toggle filters"
 							>
+								<title>Toggle Filters</title>
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
 							</svg>
 						</button>

@@ -22,6 +22,13 @@ export default component$(() => {
 				<meta charSet="utf-8" />
 				<link rel="manifest" href="/manifest.json" />
 				<RouterHead />
+				{/* RealScout Widget Integration */}
+				<script 
+					src="https://em.realscout.com/widgets/realscout-web-components.umd.js" 
+					type="module"
+					integrity="sha384-REALSCOUT_INTEGRITY_HASH"
+					crossOrigin="anonymous"
+				></script>
 			</head>
 			<body lang="en">
 				<RouterOutlet />

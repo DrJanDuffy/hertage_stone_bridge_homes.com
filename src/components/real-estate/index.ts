@@ -17,6 +17,12 @@ export { ContactAgent } from "./ContactAgent";
 // Third-party widget integration
 export { RealScoutWidget } from "./RealScoutWidget";
 
+// RealScout Widget Arsenal - Complete Lead Generation Suite
+export { RealScoutOfficeListings } from "./RealScoutOfficeListings";
+export { RealScoutSimpleSearch } from "./RealScoutSimpleSearch";
+export { RealScoutAdvancedSearch } from "./RealScoutAdvancedSearch";
+export { RealScoutHomeValue } from "./RealScoutHomeValue";
+
 // Type exports
 export type {
 	ListingProps,

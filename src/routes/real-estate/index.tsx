@@ -1,163 +1,183 @@
-import { component$, useSignal } from "@builder.io/qwik";
-import { SearchInterface } from "../../components/real-estate";
-import type { SearchFilters } from "../../types/real-estate";
-import styles from "./real-estate.module.css";
+import { component$ } from "@builder.io/qwik";
+import type { DocumentHead } from "@builder.io/qwik-city";
+import {
+	RealScoutOfficeListings,
+	RealScoutSimpleSearch,
+	RealScoutAdvancedSearch,
+	RealScoutHomeValue,
+	SearchInterface
+} from "~/components/real-estate";
 
 export default component$(() => {
-	const searchFilters = useSignal<Partial<SearchFilters>>({
-		priceMin: 300000,
-		priceMax: 800000,
-		beds: 2,
-		neighborhood: "Downtown",
-	});
-
-	const handleSearch = (filters: SearchFilters) => {
-		console.log("Search performed with filters:", filters);
-		// Track search for analytics
-		if (typeof window !== "undefined" && window.gtag) {
-			window.gtag("event", "property_search", {
-				search_term: `${filters.neighborhood} ${filters.beds} bed`,
-				price_range: `${filters.priceMin}-${filters.priceMax}`,
-				property_type: filters.propertyType,
-			});
-		}
-	};
+	const AGENT_ENCODED_ID = "QWdlbnQtMjI1MDUw";
 
 	return (
-		<div class={styles.realEstatePage}>
-			<div class={styles.heroSection}>
-				<div class={styles.heroContent}>
-					<h1 class={styles.heroTitle}>
-						Find Your Dream Home in Heritage Stone Bridge
+		<>
+			{/* Hero Section */}
+			<section class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16">
+				<div class="max-w-7xl mx-auto px-4 text-center">
+					<h1 class="text-4xl md:text-5xl font-bold mb-6">
+						Real Estate Tools & Widgets
 					</h1>
-					<p class={styles.heroDescription}>
-						Discover beautiful properties with our advanced search tools and expert
-						real estate guidance.
+					<p class="text-xl text-blue-100 max-w-3xl mx-auto">
+						Explore our comprehensive suite of RealScout widgets and property search tools 
+						designed for Heritage at Stonebridge and surrounding Las Vegas areas.
 					</p>
-					<div class={styles.heroStats}>
-						<div class={styles.stat}>
-							<span class={styles.statNumber}>150+</span>
-							<span class={styles.statLabel}>Active Listings</span>
+				</div>
+			</section>
+
+			{/* Main Content */}
+			<main class="max-w-7xl mx-auto px-4 py-12">
+				{/* Widget Showcase Grid */}
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+					{/* Simple Search Widget */}
+					<div class="bg-white rounded-lg shadow-lg p-6">
+						<div class="mb-6">
+							<h2 class="text-2xl font-bold text-gray-900 mb-2">Simple Search</h2>
+							<p class="text-gray-600">
+								Quick property search with address and basic filters
+							</p>
 						</div>
-						<div class={styles.stat}>
-							<span class={styles.statNumber}>$650K</span>
-							<span class={styles.statLabel}>Avg. Price</span>
+						<RealScoutSimpleSearch 
+							agentEncodedId={AGENT_ENCODED_ID}
+							class="min-h-[400px]"
+						/>
+					</div>
+
+					{/* Advanced Search Widget */}
+					<div class="bg-white rounded-lg shadow-lg p-6">
+						<div class="mb-6">
+							<h2 class="text-2xl font-bold text-gray-900 mb-2">Advanced Search</h2>
+							<p class="text-gray-600">
+								Comprehensive search with detailed filters and criteria
+							</p>
 						</div>
-						<div class={styles.stat}>
-							<span class={styles.statNumber}>28</span>
-							<span class={styles.statLabel}>Days on Market</span>
+						<RealScoutAdvancedSearch 
+							agentEncodedId={AGENT_ENCODED_ID}
+							class="min-h-[600px]"
+						/>
+					</div>
+				</div>
+
+				{/* Home Value Widget - Full Width */}
+				<div class="bg-white rounded-lg shadow-lg p-6 mb-16">
+					<div class="mb-6">
+						<h2 class="text-2xl font-bold text-gray-900 mb-2">Home Value Estimator</h2>
+						<p class="text-gray-600">
+							Get instant home valuations and market analysis - perfect for lead generation
+						</p>
+					</div>
+					<RealScoutHomeValue 
+						agentEncodedId={AGENT_ENCODED_ID}
+						class="min-h-[500px]"
+					/>
+				</div>
+
+				{/* Office Listings Widget - Full Width */}
+				<div class="bg-white rounded-lg shadow-lg p-6 mb-16">
+					<div class="mb-6">
+						<h2 class="text-2xl font-bold text-gray-900 mb-2">Office Listings</h2>
+						<p class="text-gray-600">
+							Curated property listings from our office with advanced sorting and filtering
+						</p>
+					</div>
+					<RealScoutOfficeListings 
+						agentEncodedId={AGENT_ENCODED_ID}
+						sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
+						listingStatus="For Sale"
+						propertyTypes="SFR,MF"
+						priceMin={500000}
+						priceMax={600000}
+						class="min-h-[480px]"
+					/>
+				</div>
+
+				{/* Custom Search Interface */}
+				<div class="bg-white rounded-lg shadow-lg p-6">
+					<div class="mb-6">
+						<h2 class="text-2xl font-bold text-gray-900 mb-2">Custom Search Interface</h2>
+						<p class="text-gray-600">
+							Our custom-built search interface with Qwik optimization and real-time filtering
+						</p>
+					</div>
+					<SearchInterface />
+				</div>
+
+				{/* Widget Information */}
+				<div class="mt-16 bg-blue-50 rounded-lg p-8">
+					<h3 class="text-2xl font-bold text-gray-900 mb-4">About Our Real Estate Tools</h3>
+					<div class="grid md:grid-cols-2 gap-8">
+						<div>
+							<h4 class="text-lg font-semibold text-gray-900 mb-3">RealScout Integration</h4>
+							<p class="text-gray-700 mb-4">
+								Our widgets are powered by RealScout's advanced MLS integration, providing 
+								real-time property data, accurate valuations, and seamless lead capture.
+							</p>
+							<ul class="space-y-2 text-gray-700">
+								<li class="flex items-center">
+									<span class="text-green-500 mr-2">✓</span>
+									Real-time MLS data synchronization
+								</li>
+								<li class="flex items-center">
+									<span class="text-green-500 mr-2">✓</span>
+									Advanced search and filtering capabilities
+								</li>
+								<li class="flex items-center">
+									<span class="text-green-500 mr-2">✓</span>
+									Automated lead capture and CRM integration
+								</li>
+							</ul>
+						</div>
+						<div>
+							<h4 class="text-lg font-semibold text-gray-900 mb-3">Performance Optimized</h4>
+							<p class="text-gray-700 mb-4">
+								Built with Qwik's resumable architecture for lightning-fast loading and 
+								optimal user experience across all devices.
+							</p>
+							<ul class="space-y-2 text-gray-700">
+								<li class="flex items-center">
+									<span class="text-green-500 mr-2">✓</span>
+									Lazy-loaded widgets for faster page loads
+								</li>
+								<li class="flex items-center">
+									<span class="text-green-500 mr-2">✓</span>
+									Mobile-responsive design
+								</li>
+								<li class="flex items-center">
+									<span class="text-green-500 mr-2">✓</span>
+									SEO-optimized for better search rankings
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class={styles.searchSection}>
-				<SearchInterface
-					initialFilters={searchFilters.value}
-					onSearch={handleSearch}
-				/>
-			</div>
-
-			<div class={styles.featuresSection}>
-				<div class={styles.featuresContent}>
-					<h2 class={styles.featuresTitle}>Why Choose Heritage Stone Bridge?</h2>
-					<div class={styles.featuresGrid}>
-						<div class={styles.feature}>
-							<div class={styles.featureIcon}>
-								<svg
-									fill="none"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-									aria-hidden="true"
-								>
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										strokeWidth={2}
-										d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-									/>
-								</svg>
-							</div>
-							<h3 class={styles.featureTitle}>Verified Listings</h3>
-							<p class={styles.featureDescription}>
-								All properties are verified and up-to-date with accurate information.
-							</p>
-						</div>
-
-						<div class={styles.feature}>
-							<div class={styles.featureIcon}>
-								<svg
-									fill="none"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-									aria-hidden="true"
-								>
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										strokeWidth={2}
-										d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-									/>
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										strokeWidth={2}
-										d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-									/>
-								</svg>
-							</div>
-							<h3 class={styles.featureTitle}>Prime Locations</h3>
-							<p class={styles.featureDescription}>
-								Properties in the most desirable neighborhoods with excellent amenities.
-							</p>
-						</div>
-
-						<div class={styles.feature}>
-							<div class={styles.featureIcon}>
-								<svg
-									fill="none"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-									aria-hidden="true"
-								>
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										strokeWidth={2}
-										d="M13 10V3L4 14h7v7l9-11h-7z"
-									/>
-								</svg>
-							</div>
-							<h3 class={styles.featureTitle}>Fast Updates</h3>
-							<p class={styles.featureDescription}>
-								Real-time updates on price changes, new listings, and market trends.
-							</p>
-						</div>
-
-						<div class={styles.feature}>
-							<div class={styles.featureIcon}>
-								<svg
-									fill="none"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-									aria-hidden="true"
-								>
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										strokeWidth={2}
-										d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5z"
-									/>
-								</svg>
-							</div>
-							<h3 class={styles.featureTitle}>Expert Support</h3>
-							<p class={styles.featureDescription}>
-								Dedicated real estate professionals to guide you through the process.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+			</main>
+		</>
 	);
 });
+
+export const head: DocumentHead = {
+	title: "Real Estate Tools & Widgets | Heritage at Stonebridge",
+	meta: [
+		{
+			name: "description",
+			content: "Explore our comprehensive suite of RealScout widgets, property search tools, and home valuation services for Heritage at Stonebridge and Las Vegas areas.",
+		},
+		{
+			name: "keywords",
+			content: "RealScout widgets, property search, home valuation, MLS integration, Las Vegas real estate, Heritage at Stonebridge, property tools",
+		},
+		{
+			property: "og:title",
+			content: "Real Estate Tools & Widgets | Heritage at Stonebridge",
+		},
+		{
+			property: "og:description",
+			content: "Explore our comprehensive suite of RealScout widgets, property search tools, and home valuation services for Heritage at Stonebridge and Las Vegas areas.",
+		},
+		{
+			name: "robots",
+			content: "index, follow",
+		},
+	],
+};
