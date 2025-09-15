@@ -7,7 +7,7 @@ export default component$(({ value = 50 }: { value?: number }) => {
 	return (
 		<div class={styles.wrapper}>
 			<svg viewBox="0 0 120 120" class={styles.gauge} aria-label={`Progress gauge showing ${safeValue}%`}>
-				<title>Progress Gauge: {safeValue}%</title>
+				<title>Progress Gauge: {safeValue.toString()}%</title>
 				<defs>
 					<linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
 						<stop offset="0%" stop-color="#18B6F6" />
