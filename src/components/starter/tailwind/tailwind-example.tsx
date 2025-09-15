@@ -44,7 +44,10 @@ export const TailwindExample = component$(() => {
 							>
 								Get started
 							</a>
-							<a href="/demo" class="text-sm font-semibold leading-6 text-white">
+							<a
+								href="/demo"
+								class="text-sm font-semibold leading-6 text-white"
+							>
 								Learn more <span aria-hidden="true">→</span>
 							</a>
 						</div>

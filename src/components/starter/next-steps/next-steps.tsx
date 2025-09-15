@@ -64,7 +64,11 @@ export default component$(() => {
 				/>
 			</div>
 			{gettingStartedStep.value + 1 < GETTING_STARTED_STEPS.length ? (
-				<button type="button" class="button-dark" onClick$={() => gettingStartedStep.value++}>
+				<button
+					type="button"
+					class="button-dark"
+					onClick$={() => gettingStartedStep.value++}
+				>
 					Continue with Step {gettingStartedStep.value + 2} of{" "}
 					{GETTING_STARTED_STEPS.length}
 				</button>
