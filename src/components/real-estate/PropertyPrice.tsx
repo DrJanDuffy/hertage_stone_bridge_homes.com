@@ -1,66 +1,70 @@
 import { component$ } from "@builder.io/qwik";
 import type { ListingProps } from "../../types/real-estate";
-import styles from "./property-price.module.css";
 
 export interface PropertyPriceProps {
 	price: number;
 	status: ListingProps["status"];
 	pricePerSqft?: number;
-	showPricePerSqft?: boolean;
 }
 
-export const PropertyPrice = component$<PropertyPriceProps>(
-	({ price, status, pricePerSqft, showPricePerSqft = true }) => {
-		const formatPrice = (price: number) => {
-			if (price >= 1000000) {
-				return `$${(price / 1000000).toFixed(1)}M`;
-			}
-			if (price >= 1000) {
-				return `$${(price / 1000).toFixed(0)}K`;
-			}
-			return `$${price.toLocaleString()}`;
-		};
+export const PropertyPrice = component$<PropertyPriceProps>(({ price, status, pricePerSqft }) => {
+	const formatPrice = (amount: number): string => {
+		return new Intl.NumberFormat('en-US', {
+			style: 'currency',
+			currency: 'USD',
+			minimumFractionDigits: 0,
+			maximumFractionDigits: 0,
+		}).format(amount);
+	};
 
-		const getStatusColor = (status: ListingProps["status"]) => {
-			switch (status) {
-				case "for-sale":
-					return styles.forSale;
-				case "pending":
-					return styles.pending;
-				case "sold":
-					return styles.sold;
-				default:
-					return styles.forSale;
-			}
-		};
+	const formatPricePerSqft = (amount: number): string => {
+		return new Intl.NumberFormat('en-US', {
+			style: 'currency',
+			currency: 'USD',
+			minimumFractionDigits: 0,
+			maximumFractionDigits: 0,
+		}).format(amount);
+	};
 
-		const getStatusText = (status: ListingProps["status"]) => {
-			switch (status) {
-				case "for-sale":
-					return "For Sale";
-				case "pending":
-					return "Pending";
-				case "sold":
-					return "Sold";
-				default:
-					return "For Sale";
-			}
-		};
+	const getStatusColor = (status: ListingProps["status"]): string => {
+		switch (status) {
+			case "for-sale":
+				return "bg-green-100 text-green-800 border-green-200";
+			case "pending":
+				return "bg-yellow-100 text-yellow-800 border-yellow-200";
+			case "sold":
+				return "bg-gray-100 text-gray-800 border-gray-200";
+			default:
+				return "bg-green-100 text-green-800 border-green-200";
+		}
+	};
 
-		return (
-			<div class={styles.priceContainer}>
-				<div class={styles.priceRow}>
-					<span class={styles.price}>{formatPrice(price)}</span>
-					<span class={`${styles.status} ${getStatusColor(status)}`}>
-						{getStatusText(status)}
-					</span>
-				</div>
-				{showPricePerSqft && pricePerSqft && (
-					<div class={styles.pricePerSqft}>
-						${pricePerSqft.toLocaleString()}/sq ft
-					</div>
-				)}
+	const getStatusText = (status: ListingProps["status"]): string => {
+		switch (status) {
+			case "for-sale":
+				return "For Sale";
+			case "pending":
+				return "Pending";
+			case "sold":
+				return "Sold";
+			default:
+				return "For Sale";
+		}
+	};
+
+	return (
+		<div class="flex flex-col space-y-2">
+			<div class="flex items-baseline justify-between">
+				<span class="text-2xl font-bold text-gray-900">{formatPrice(price)}</span>
+				<span class={`px-2 py-1 text-xs font-medium rounded-full border ${getStatusColor(status)}`}>
+					{getStatusText(status)}
+				</span>
 			</div>
-		);
-	}
-);
+			{pricePerSqft && (
+				<div class="text-sm text-gray-600">
+					{formatPricePerSqft(pricePerSqft)}/sq ft
+				</div>
+			)}
+		</div>
+	);
+});

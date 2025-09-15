@@ -3,7 +3,6 @@ import type { SearchFilters, PropertySearchResult } from "../../types/real-estat
 import { SearchFilters as SearchFiltersComponent } from "./SearchFilters";
 import { PropertyGrid } from "./PropertyGrid";
 import { SortOptions } from "./SortOptions";
-import styles from "./search-interface.module.css";
 
 export interface SearchInterfaceProps {
 	initialFilters?: Partial<SearchFilters>;
@@ -13,94 +12,143 @@ export interface SearchInterfaceProps {
 export const SearchInterface = component$<SearchInterfaceProps>(
 	({ initialFilters, onSearch }) => {
 		const filters = useSignal<SearchFilters>({
-			priceMin: 0,
-			priceMax: 2000000,
-			beds: 0,
-			baths: 0,
-			neighborhood: "",
-			propertyType: "all",
-			status: "for-sale",
-			...initialFilters,
+			priceMin: initialFilters?.priceMin || 0,
+			priceMax: initialFilters?.priceMax || 2000000,
+			beds: initialFilters?.beds || 0,
+			baths: initialFilters?.baths || 0,
+			neighborhood: initialFilters?.neighborhood || "",
+			propertyType: initialFilters?.propertyType || "all",
+			status: initialFilters?.status || "for-sale",
 		});
 
+		const sortBy = useSignal<"price" | "beds" | "sqft" | "newest">("newest");
+		const sortOrder = useSignal<"asc" | "desc">("desc");
 		const searchResults = useSignal<PropertySearchResult>({
 			listings: [],
 			total: 0,
 			page: 1,
 			hasMore: false,
 		});
-
 		const isLoading = useSignal(false);
-		const sortBy = useSignal<"price" | "beds" | "sqft" | "newest">("price");
-		const sortOrder = useSignal<"asc" | "desc">("asc");
+		const searchQuery = useSignal("");
 
-		// Debounced search
+		// Debounced search effect
 		useTask$(({ track }) => {
-			const currentFilters = track(() => filters.value);
-			const currentSort = track(() => sortBy.value);
-			const currentOrder = track(() => sortOrder.value);
+			track(() => filters.value);
+			track(() => searchQuery.value);
 
-			// Debounce search requests
-			const timeoutId = setTimeout(async () => {
-				isLoading.value = true;
-				try {
-					const results = await performSearch(currentFilters, 1, currentSort, currentOrder);
-					searchResults.value = results;
-					onSearch?.(currentFilters);
-				} catch (error) {
-					console.error("Search failed:", error);
-				} finally {
-					isLoading.value = false;
-				}
-			}, 300);
+			const timeoutId = setTimeout(() => {
+				performSearch();
+			}, 500);
 
 			return () => clearTimeout(timeoutId);
 		});
 
-		const handleLoadMore = async () => {
-			if (isLoading.value || !searchResults.value.hasMore) return;
-
+		const performSearch = async () => {
 			isLoading.value = true;
+			
 			try {
-				const nextPage = searchResults.value.page + 1;
-				const newResults = await performSearch(
-					filters.value,
-					nextPage,
-					sortBy.value,
-					sortOrder.value
-				);
-
-				searchResults.value = {
-					...newResults,
-					listings: [...searchResults.value.listings, ...newResults.listings],
+				// Simulate API call - replace with actual implementation
+				const mockResults: PropertySearchResult = {
+					listings: [
+						{
+							mls: "12345",
+							price: 750000,
+							beds: 3,
+							baths: 2,
+							sqft: 2500,
+							photos: ["/api/placeholder/400/300"],
+							address: {
+								street: "123 Heritage Way",
+								city: "Las Vegas",
+								state: "NV",
+								zip: "89134",
+								neighborhood: "Summerlin"
+							},
+							agent: {
+								name: "Sarah Johnson",
+								phone: "(702) 555-0123",
+								email: "sarah@heritage.com"
+							},
+							status: "for-sale",
+							features: ["Gated Community", "Pool", "Golf Course Access"]
+						}
+					],
+					total: 1,
+					page: 1,
+					hasMore: false
 				};
+
+				searchResults.value = mockResults;
+				onSearch?.(filters.value);
 			} catch (error) {
-				console.error("Load more failed:", error);
+				console.error("Search error:", error);
+				searchResults.value = {
+					listings: [],
+					total: 0,
+					page: 1,
+					hasMore: false,
+				};
 			} finally {
 				isLoading.value = false;
 			}
 		};
 
-		const handleSortChange = (newSortBy: typeof sortBy.value, newOrder: typeof sortOrder.value) => {
+		const handleLoadMore = async () => {
+			if (!searchResults.value.hasMore || isLoading.value) return;
+			
+			isLoading.value = true;
+			
+			try {
+				// Simulate loading more results
+				const nextPage = searchResults.value.page + 1;
+				// In real implementation, fetch next page from API
+				
+				searchResults.value = {
+					...searchResults.value,
+					page: nextPage,
+					hasMore: false // Simulate no more results
+				};
+			} finally {
+				isLoading.value = false;
+			}
+		};
+
+		const handleSortChange = (newSortBy: "price" | "beds" | "sqft" | "newest", newSortOrder: "asc" | "desc") => {
 			sortBy.value = newSortBy;
-			sortOrder.value = newOrder;
+			sortOrder.value = newSortOrder;
+			performSearch();
 		};
 
 		return (
-			<div class={styles.searchInterface}>
-				<div class={styles.searchHeader}>
-					<h2 class={styles.searchTitle}>Find Your Dream Home</h2>
-					<div class={styles.searchActions}>
-						<SortOptions
-							sortBy={sortBy.value}
-							sortOrder={sortOrder.value}
-							onSortChange$={handleSortChange}
-						/>
+			<div class="max-w-7xl mx-auto px-4 py-8">
+				<div class="mb-8">
+					<h2 class="text-3xl font-bold text-gray-900 mb-4">Find Your Dream Home</h2>
+					<div class="flex flex-col sm:flex-row gap-4">
+						<div class="flex-1">
+							<input
+								type="text"
+								placeholder="Search by address, neighborhood, or ZIP code..."
+								value={searchQuery.value}
+								onInput$={(e) => {
+									searchQuery.value = (e.target as HTMLInputElement).value;
+								}}
+								class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+							/>
+						</div>
+						<button
+							type="button"
+							class="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
+							onClick$={performSearch}
+						>
+							Search
+						</button>
 					</div>
 				</div>
 
-				<div class={styles.searchContent}>
-					<div class={styles.filtersSidebar}>
+				<div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+					{/* Filters Sidebar */}
+					<div class="lg:col-span-1">
 						<SearchFiltersComponent
 							filters={filters}
 							onFiltersChange$={(newFilters: SearchFilters) => {
@@ -109,7 +157,19 @@ export const SearchInterface = component$<SearchInterfaceProps>(
 						/>
 					</div>
 
-					<div class={styles.resultsSection}>
+					{/* Results Section */}
+					<div class="lg:col-span-3">
+						<div class="flex justify-between items-center mb-6">
+							<div class="text-sm text-gray-600">
+								{searchResults.value.total > 0 && `${searchResults.value.total} properties found`}
+							</div>
+							<SortOptions
+								sortBy={sortBy.value}
+								sortOrder={sortOrder.value}
+								onSortChange$={handleSortChange}
+							/>
+						</div>
+
 						<PropertyGrid
 							searchResult={searchResults.value}
 							onLoadMore={handleLoadMore}
@@ -121,47 +181,3 @@ export const SearchInterface = component$<SearchInterfaceProps>(
 		);
 	}
 );
-
-// Mock search function - replace with actual API call
-async function performSearch(
-	filters: SearchFilters,
-	page: number,
-	sortBy: string,
-	sortOrder: string
-): Promise<PropertySearchResult> {
-	// Simulate API delay
-	await new Promise((resolve) => setTimeout(resolve, 500));
-
-	// Mock data - replace with actual API call
-	const mockListings = Array.from({ length: 12 }, (_, index) => ({
-		mls: `MLS${(page - 1) * 12 + index + 1}`,
-		price: 300000 + Math.random() * 700000,
-		beds: Math.floor(Math.random() * 5) + 1,
-		baths: Math.floor(Math.random() * 3) + 1,
-		sqft: 1000 + Math.random() * 2000,
-		photos: [`/api/placeholder/400/300?text=Property+${index + 1}`],
-		address: {
-			street: `${Math.floor(Math.random() * 9999) + 1} Main St`,
-			city: "Anytown",
-			state: "CA",
-			zip: "90210",
-			neighborhood: ["Downtown", "Uptown", "Midtown"][Math.floor(Math.random() * 3)],
-		},
-		agent: {
-			id: `agent-${index + 1}`,
-			name: "John Doe",
-			email: "john@example.com",
-			phone: "(555) 123-4567",
-		},
-		status: ["for-sale", "pending", "sold"][Math.floor(Math.random() * 3)] as any,
-		description: "Beautiful home in great location",
-		features: ["Garage", "Pool", "Fireplace", "Garden"].slice(0, Math.floor(Math.random() * 4)),
-	}));
-
-	return {
-		listings: mockListings,
-		total: 150, // Mock total
-		page,
-		hasMore: page < 13, // Mock pagination
-	};
-}

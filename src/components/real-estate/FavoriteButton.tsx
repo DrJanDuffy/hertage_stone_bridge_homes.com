@@ -1,5 +1,4 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
-import styles from "./favorite-button.module.css";
 
 export interface FavoriteButtonProps {
 	isFavorited: any; // Signal<boolean>
@@ -9,73 +8,73 @@ export interface FavoriteButtonProps {
 
 export const FavoriteButton = component$<FavoriteButtonProps>(
 	({ isFavorited, mls, onToggle$ }) => {
-		const isClient = useSignal(false);
+		const isAnimating = useSignal(false);
 
-		useVisibleTask$(() => {
-			isClient.value = true;
+		// Load favorites from localStorage on mount
+		useVisibleTask$(({ track }) => {
+			track(() => mls);
+			
+			if (typeof window !== 'undefined') {
+				const favorites = JSON.parse(localStorage.getItem('favoriteProperties') || '[]');
+				isFavorited.value = favorites.includes(mls);
+			}
 		});
 
-		const handleToggle = () => {
+		// Save to localStorage when favorited state changes
+		useVisibleTask$(({ track }) => {
+			track(() => isFavorited.value);
+			
+			if (typeof window !== 'undefined') {
+				const favorites = JSON.parse(localStorage.getItem('favoriteProperties') || '[]');
+				
+				if (isFavorited.value) {
+					if (!favorites.includes(mls)) {
+						favorites.push(mls);
+					}
+				} else {
+					const index = favorites.indexOf(mls);
+					if (index > -1) {
+						favorites.splice(index, 1);
+					}
+				}
+				
+				localStorage.setItem('favoriteProperties', JSON.stringify(favorites));
+			}
+		});
+
+		const handleClick = () => {
+			isAnimating.value = true;
+			isFavorited.value = !isFavorited.value;
 			onToggle$();
 			
-			// Track favorite action for analytics
-			if (typeof window !== "undefined" && window.gtag) {
-				window.gtag("event", "favorite_property", {
-					property_id: mls,
-					favorite_action: isFavorited.value ? "remove" : "add",
-				});
-			}
+			// Reset animation after a short delay
+			setTimeout(() => {
+				isAnimating.value = false;
+			}, 300);
 		};
-
-		if (!isClient.value) {
-			return (
-				<button
-					type="button"
-					class={styles.favoriteButton}
-					aria-label="Add to favorites"
-				>
-					<svg
-						class={styles.heartIcon}
-						fill="none"
-						stroke="currentColor"
-						viewBox="0 0 24 24"
-						aria-hidden="true"
-					>
-						<path
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							strokeWidth={2}
-							d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-						/>
-					</svg>
-				</button>
-			);
-		}
 
 		return (
 			<button
 				type="button"
-				class={`${styles.favoriteButton} ${
-					isFavorited.value ? styles.favorited : ""
-				}`}
-				onClick$={handleToggle}
-				aria-label={
-					isFavorited.value ? "Remove from favorites" : "Add to favorites"
-				}
+				class={`relative w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${
+					isFavorited.value 
+						? 'bg-red-500 text-white shadow-lg' 
+						: 'bg-white text-gray-600 shadow-md hover:shadow-lg'
+				} ${isAnimating.value ? 'scale-125' : ''}`}
+				onClick$={handleClick}
+				aria-label={isFavorited.value ? 'Remove from favorites' : 'Add to favorites'}
+				title={isFavorited.value ? 'Remove from favorites' : 'Add to favorites'}
 			>
 				<svg
-					class={styles.heartIcon}
-					fill={isFavorited.value ? "currentColor" : "none"}
-					stroke="currentColor"
+					class={`w-5 h-5 transition-all duration-300 ${
+						isFavorited.value ? 'fill-current' : 'stroke-current fill-none'
+					}`}
 					viewBox="0 0 24 24"
-					aria-hidden="true"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
 				>
-					<path
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						strokeWidth={2}
-						d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-					/>
+					<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
 				</svg>
 			</button>
 		);

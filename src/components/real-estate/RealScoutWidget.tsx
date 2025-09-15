@@ -1,5 +1,4 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
-import styles from "./realscout-widget.module.css";
 
 export interface RealScoutWidgetProps {
 	agentEncodedId: string;
@@ -9,135 +8,121 @@ export interface RealScoutWidgetProps {
 
 export const RealScoutWidget = component$<RealScoutWidgetProps>(
 	({ agentEncodedId, widgetType = "search", className = "" }) => {
-		const widgetRef = useSignal<Element>();
 		const isLoaded = useSignal(false);
 		const hasError = useSignal(false);
+		const errorMessage = useSignal("");
 
-		useVisibleTask$(async () => {
-			try {
-				// Check if RealScout script is already loaded
-				if (!document.querySelector('script[src*="realscout"]')) {
-					await loadRealScoutScript();
-				}
+		useVisibleTask$(({ track }) => {
+			track(() => agentEncodedId);
+			track(() => widgetType);
 
-				// Wait for the widget to be ready
-				await waitForWidget();
+			if (typeof window === 'undefined') return;
 
-				isLoaded.value = true;
+			const loadRealScoutWidget = async () => {
+				try {
+					// Check if RealScout script is already loaded
+					if (!window.RealScout) {
+						// Load RealScout script
+						const script = document.createElement('script');
+						script.src = `https://widgets.realscout.com/v3/agent/${agentEncodedId}/widget.js`;
+						script.async = true;
+						script.crossOrigin = 'anonymous';
+						script.integrity = 'sha384-REALSCOUT_INTEGRITY_HASH'; // Replace with actual hash
+						
+						script.onload = () => {
+							initializeWidget();
+						};
+						
+						script.onerror = () => {
+							hasError.value = true;
+							errorMessage.value = 'Failed to load RealScout widget';
+						};
 
-				// Track widget load for analytics
-				if (typeof window !== "undefined" && window.gtag) {
-					window.gtag("event", "realscout_widget_loaded", {
-						widget_type: widgetType,
-						agent_id: agentEncodedId,
-					});
-				}
-			} catch (error) {
-				console.error("Failed to load RealScout widget:", error);
-				hasError.value = true;
-			}
-		});
-
-		const loadRealScoutScript = (): Promise<void> => {
-			return new Promise((resolve, reject) => {
-				const script = document.createElement("script");
-				script.src = "https://em.realscout.com/widgets/realscout-web-components.umd.js";
-				script.type = "module";
-				script.crossOrigin = "anonymous";
-				script.integrity = "sha384-..."; // Add actual integrity hash
-
-				script.onload = () => resolve();
-				script.onerror = () => reject(new Error("Failed to load RealScout script"));
-
-				document.head.appendChild(script);
-			});
-		};
-
-		const waitForWidget = (): Promise<void> => {
-			return new Promise((resolve) => {
-				const checkWidget = () => {
-					if (customElements.get("realscout-search-widget")) {
-						resolve();
+						document.head.appendChild(script);
 					} else {
-						setTimeout(checkWidget, 100);
+						initializeWidget();
 					}
-				};
-				checkWidget();
-			});
-		};
+				} catch (error) {
+					hasError.value = true;
+					errorMessage.value = 'Error initializing RealScout widget';
+					console.error('RealScout widget error:', error);
+				}
+			};
 
-		const getWidgetTag = () => {
-			switch (widgetType) {
-				case "search":
-					return "realscout-search-widget";
-				case "listing":
-					return "realscout-listing-widget";
-				case "contact":
-					return "realscout-contact-widget";
-				default:
-					return "realscout-search-widget";
-			}
-		};
+			const initializeWidget = () => {
+				try {
+					if (window.RealScout) {
+						const widgetConfig = {
+							agentEncodedId,
+							widgetType,
+							container: document.getElementById(`realscout-widget-${agentEncodedId}`),
+							theme: 'modern',
+							responsive: true,
+							showPoweredBy: true
+						};
+
+						window.RealScout.init(widgetConfig);
+						isLoaded.value = true;
+					}
+				} catch (error) {
+					hasError.value = true;
+					errorMessage.value = 'Error initializing widget';
+					console.error('RealScout initialization error:', error);
+				}
+			};
+
+			loadRealScoutWidget();
+		});
 
 		if (hasError.value) {
 			return (
-				<div class={`${styles.errorState} ${className}`}>
-					<div class={styles.errorIcon}>
-						<svg
-							fill="none"
-							stroke="currentColor"
-							viewBox="0 0 24 24"
-							aria-hidden="true"
-						>
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth={2}
-								d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"
-							/>
+				<div class={`bg-red-50 border border-red-200 rounded-lg p-6 text-center ${className}`}>
+					<div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+						<svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 						</svg>
 					</div>
-					<h3 class={styles.errorTitle}>Widget Unavailable</h3>
-					<p class={styles.errorMessage}>
-						The RealScout widget is temporarily unavailable. Please try again later or contact us directly.
+					<h3 class="text-lg font-semibold text-red-900 mb-2">Widget Unavailable</h3>
+					<p class="text-red-700 mb-4">
+						{errorMessage.value || 'Unable to load the RealScout search widget at this time.'}
 					</p>
+					<a 
+						href="tel:+17025551234" 
+						class="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+					>
+						<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+						</svg>
+						Call for Assistance
+					</a>
 				</div>
 			);
 		}
 
 		return (
-			<div class={`${styles.widgetContainer} ${className}`}>
-				{!isLoaded.value && (
-					<div class={styles.loadingState}>
-						<div class={styles.loadingSpinner}></div>
-						<p class={styles.loadingText}>Loading search widget...</p>
+			<div class={`bg-white rounded-lg shadow-lg border border-gray-200 min-h-[480px] ${className}`}>
+				{!isLoaded.value ? (
+					<div class="flex flex-col items-center justify-center h-64">
+						<div class="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mb-4"></div>
+						<p class="text-gray-600">Loading search widget...</p>
 					</div>
-				)}
-
-				<div
-					ref={widgetRef}
-					class={`${styles.widgetContent} ${
-						isLoaded.value ? styles.loaded : styles.hidden
-					}`}
-				>
-					{/* RealScout widget will be rendered here */}
+				) : (
 					<div
-						dangerouslySetInnerHTML={`
-							<${getWidgetTag()} 
-								agent-encoded-id="${agentEncodedId}"
-								style="width: 100%; min-height: 480px;"
-							></${getWidgetTag()}>
-						`}
-					/>
-				</div>
+						id={`realscout-widget-${agentEncodedId}`}
+						class={`w-full h-full ${isLoaded.value ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
+						style={{ minHeight: '480px' }}
+					></div>
+				)}
 			</div>
 		);
 	}
 );
 
-// Extend Window interface for TypeScript
+// Extend Window interface for RealScout
 declare global {
 	interface Window {
-		gtag?: (...args: any[]) => void;
+		RealScout?: {
+			init: (config: any) => void;
+		};
 	}
 }
