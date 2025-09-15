@@ -162,10 +162,9 @@ export const ContactAgent = component$<ContactAgentProps>(
 						) : (
 							<form
 								class={styles.form}
-								onSubmit$={(e) => {
-									e.preventDefault();
-									handleSubmit();
-								}}
+							onSubmit$={() => {
+								handleSubmit();
+							}}
 							>
 								<div class={styles.formGroup}>
 									<label for={`name-${property.mls}`} class={styles.formLabel}>
@@ -176,7 +175,7 @@ export const ContactAgent = component$<ContactAgentProps>(
 										id={`name-${property.mls}`}
 										value={formData.value.name}
 										onInput$={(e) => {
-											handleInputChange("name", e.target.value);
+											handleInputChange("name", (e.target as HTMLInputElement).value);
 										}}
 										class={styles.formInput}
 										required
@@ -192,7 +191,7 @@ export const ContactAgent = component$<ContactAgentProps>(
 										id={`email-${property.mls}`}
 										value={formData.value.email}
 										onInput$={(e) => {
-											handleInputChange("email", e.target.value);
+											handleInputChange("email", (e.target as HTMLInputElement).value);
 										}}
 										class={styles.formInput}
 										required
@@ -208,7 +207,7 @@ export const ContactAgent = component$<ContactAgentProps>(
 										id={`phone-${property.mls}`}
 										value={formData.value.phone}
 										onInput$={(e) => {
-											handleInputChange("phone", e.target.value);
+											handleInputChange("phone", (e.target as HTMLInputElement).value);
 										}}
 										class={styles.formInput}
 									/>
@@ -222,7 +221,7 @@ export const ContactAgent = component$<ContactAgentProps>(
 										id={`message-${property.mls}`}
 										value={formData.value.message}
 										onInput$={(e) => {
-											handleInputChange("message", e.target.value);
+											handleInputChange("message", (e.target as HTMLTextAreaElement).value);
 										}}
 										class={styles.formTextarea}
 										rows={3}

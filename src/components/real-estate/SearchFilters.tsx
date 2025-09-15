@@ -38,7 +38,7 @@ export const SearchFilters = component$<SearchFiltersProps>(
 						onClick$={() => {
 							isExpanded.value = !isExpanded.value;
 						}}
-						aria-expanded={isExpanded.value.toString()}
+						aria-expanded={isExpanded.value}
 						aria-label="Toggle filters"
 					>
 						<svg
@@ -77,7 +77,7 @@ export const SearchFilters = component$<SearchFiltersProps>(
 								step="25000"
 								value={filters.value.priceMin}
 								onInput$={(e) => {
-									updateFilter("priceMin", parseInt(e.target.value));
+									updateFilter("priceMin", parseInt((e.target as HTMLInputElement).value));
 								}}
 								class={styles.rangeInput}
 								aria-label="Minimum price"
@@ -90,7 +90,7 @@ export const SearchFilters = component$<SearchFiltersProps>(
 								step="25000"
 								value={filters.value.priceMax}
 								onInput$={(e) => {
-									updateFilter("priceMax", parseInt(e.target.value));
+									updateFilter("priceMax", parseInt((e.target as HTMLInputElement).value));
 								}}
 								class={styles.rangeInput}
 								aria-label="Maximum price"

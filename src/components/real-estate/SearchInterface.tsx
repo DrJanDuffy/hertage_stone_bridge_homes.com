@@ -1,6 +1,6 @@
 import { component$, useSignal, useTask$ } from "@builder.io/qwik";
 import type { SearchFilters, PropertySearchResult } from "../../types/real-estate";
-import { SearchFilters as SearchFiltersComponent } from "./SearchFilters";
+import { SearchFiltersComponent } from "./SearchFilters";
 import { PropertyGrid } from "./PropertyGrid";
 import { SortOptions } from "./SortOptions";
 import styles from "./search-interface.module.css";
