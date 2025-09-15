@@ -1,6 +1,6 @@
 import { component$, useSignal, useTask$ } from "@builder.io/qwik";
 import type { SearchFilters, PropertySearchResult } from "../../types/real-estate";
-import { SearchFiltersComponent } from "./SearchFilters";
+import { SearchFilters as SearchFiltersComponent } from "./SearchFilters";
 import { PropertyGrid } from "./PropertyGrid";
 import { SortOptions } from "./SortOptions";
 import styles from "./search-interface.module.css";
@@ -103,7 +103,7 @@ export const SearchInterface = component$<SearchInterfaceProps>(
 					<div class={styles.filtersSidebar}>
 						<SearchFiltersComponent
 							filters={filters}
-							onFiltersChange$={(newFilters) => {
+							onFiltersChange$={(newFilters: SearchFilters) => {
 								filters.value = newFilters;
 							}}
 						/>
