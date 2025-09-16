@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
+import { RealScoutWidget } from "~/components/real-estate/RealScoutWidget";
 
 export default component$(() => {
 
@@ -45,13 +45,13 @@ export default component$(() => {
 							Discover our latest listings in this exclusive gated community
 						</p>
 					</div>
-					<RealScoutOfficeListingsWidget
+					<RealScoutWidget
 						agentEncodedId="QWdlbnQtMjI1MDUw"
 						sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
 						listingStatus="For Sale"
 						propertyTypes="SFR,MF"
-						priceMin={500000}
-						priceMax={600000}
+						priceMin="500000"
+						priceMax="600000"
 					/>
 				</div>
 			</section>

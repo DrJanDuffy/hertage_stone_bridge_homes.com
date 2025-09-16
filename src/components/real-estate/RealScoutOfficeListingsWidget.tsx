@@ -31,8 +31,8 @@ export const RealScoutOfficeListingsWidget = component$<RealScoutOfficeListingsW
 				console.error("Error waiting for RealScout custom element:", error);
 			});
 
-			// Debug: Log available custom elements
-			console.log('Available custom elements:', Array.from(customElements.keys()));
+			// Debug: Check if realscout-office-listings is defined
+			console.log('Checking if realscout-office-listings is defined:', customElements.get('realscout-office-listings'));
 		});
 
 		return (

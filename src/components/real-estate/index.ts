@@ -34,9 +34,9 @@ export { RealScoutHomeValue } from "./RealScoutHomeValue";
 export { RealScoutOfficeListings } from "./RealScoutOfficeListings";
 export { RealScoutOfficeListingsWidget } from "./RealScoutOfficeListingsWidget";
 export { RealScoutSimpleSearch } from "./RealScoutSimpleSearch";
+export { RealScoutWidget } from "./RealScoutWidget";
 
 // Third-party widget integration
-export { RealScoutWidget } from "./RealScoutWidget";
 export { SearchFilters as SearchFiltersComponent } from "./SearchFilters";
 
 // Search and filtering components

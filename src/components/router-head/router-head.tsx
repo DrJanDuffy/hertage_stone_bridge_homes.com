@@ -47,10 +47,6 @@ export const RouterHead = component$(() => {
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: Required for dynamic styles
 				<style key={s.key} {...s.props} dangerouslySetInnerHTML={s.style} />
 			))}
-
-			{head.scripts.map((s) => (
-				<script key={s.key} {...s.props} dangerouslySetInnerHTML={s.script} />
-			))}
 		</>
 	);
 });
