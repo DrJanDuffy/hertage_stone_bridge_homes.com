@@ -53,7 +53,7 @@ export const SearchFilters = component$<SearchFiltersProps>(
 							onClick$={() => {
 								isExpanded.value = !isExpanded.value;
 							}}
-								aria-expanded={isExpanded.value.toString()}
+								aria-expanded={isExpanded.value}
 							aria-label="Toggle filters"
 						>
 							<svg

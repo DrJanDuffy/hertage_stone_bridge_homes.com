@@ -40,7 +40,7 @@ export default component$(() => {
 						</div>
 						<RealScoutSimpleSearch 
 							agentEncodedId={AGENT_ENCODED_ID}
-							class="min-h-[400px]"
+							className="min-h-[400px]"
 						/>
 					</div>
 
@@ -54,7 +54,7 @@ export default component$(() => {
 						</div>
 						<RealScoutAdvancedSearch 
 							agentEncodedId={AGENT_ENCODED_ID}
-							class="min-h-[600px]"
+							className="min-h-[600px]"
 						/>
 					</div>
 				</div>
@@ -69,7 +69,7 @@ export default component$(() => {
 					</div>
 					<RealScoutHomeValue 
 						agentEncodedId={AGENT_ENCODED_ID}
-						class="min-h-[500px]"
+						className="min-h-[500px]"
 					/>
 				</div>
 
@@ -88,7 +88,7 @@ export default component$(() => {
 						propertyTypes="SFR,MF"
 						priceMin={500000}
 						priceMax={600000}
-						class="min-h-[480px]"
+						className="min-h-[480px]"
 					/>
 				</div>
 

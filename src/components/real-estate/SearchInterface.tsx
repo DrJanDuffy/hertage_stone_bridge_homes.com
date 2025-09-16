@@ -66,6 +66,7 @@ export const SearchInterface = component$<SearchInterfaceProps>(
 								neighborhood: "Summerlin"
 							},
 							agent: {
+								id: "agent-123",
 								name: "Sarah Johnson",
 								phone: "(702) 555-0123",
 								email: "sarah@heritage.com"

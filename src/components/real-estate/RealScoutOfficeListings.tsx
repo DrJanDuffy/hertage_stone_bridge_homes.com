@@ -49,7 +49,7 @@ export const RealScoutOfficeListings = component$<RealScoutOfficeListingsProps>(
 		});
 
 		return (
-			<div class={`realscout-widget-container ${className}`}>
+			<div class={`realscout-widget-container ${className || ''}`}>
 				<div class="mb-6">
 					<h3 class="text-2xl font-bold text-gray-900 mb-2">Available Properties</h3>
 					<p class="text-gray-600">
@@ -71,11 +71,4 @@ export const RealScoutOfficeListings = component$<RealScoutOfficeListingsProps>(
 	}
 );
 
-// Extend Window interface for RealScout
-declare global {
-	interface Window {
-		customElements?: {
-			get: (name: string) => any;
-		};
-	}
-}
+// RealScout widgets use standard customElements API
