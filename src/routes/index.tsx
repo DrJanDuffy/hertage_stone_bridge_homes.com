@@ -75,7 +75,7 @@ export default component$(() => {
 				<section class="mb-16">
 					<h3 class="text-3xl font-bold text-gray-900 mb-8 text-center">
 						Lennar New Construction Homes Starting from $X
-					</h3>
+				</h3>
 					<div class="grid md:grid-cols-3 gap-8">
 						<div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
 							<h4 class="text-xl font-semibold mb-4">The Heritage</h4>
@@ -115,7 +115,7 @@ export default component$(() => {
 							<button class="w-full mt-4 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors">
 								Learn More
 							</button>
-						</div>
+			</div>
 					</div>
 				</section>
 
@@ -186,7 +186,7 @@ export default component$(() => {
 						Why Choose Heritage at Stonebridge in 2025
 					</h3>
 					<div class="grid md:grid-cols-2 gap-12">
-						<div>
+				<div>
 							<h4 class="text-2xl font-semibold mb-4">
 								Prime Summerlin Location
 							</h4>
@@ -250,7 +250,7 @@ export default component$(() => {
 						>
 							Call (702) 555-1234
 						</a>
-					</div>
+				</div>
 				</section>
 			</main>
 		</>

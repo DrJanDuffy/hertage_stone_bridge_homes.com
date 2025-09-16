@@ -41,10 +41,10 @@ export default component$(() => {
 								Quick property search with address and basic filters
 							</p>
 						</div>
-						<RealScoutSimpleSearch
-							agentEncodedId={AGENT_ENCODED_ID}
-							class="min-h-[400px]"
-						/>
+				<RealScoutSimpleSearch
+					agentEncodedId={AGENT_ENCODED_ID}
+					className="min-h-[400px]"
+				/>
 					</div>
 
 					{/* Advanced Search Widget */}
@@ -57,10 +57,10 @@ export default component$(() => {
 								Comprehensive search with detailed filters and criteria
 							</p>
 						</div>
-						<RealScoutAdvancedSearch
-							agentEncodedId={AGENT_ENCODED_ID}
-							class="min-h-[600px]"
-						/>
+				<RealScoutAdvancedSearch
+					agentEncodedId={AGENT_ENCODED_ID}
+					className="min-h-[600px]"
+				/>
 					</div>
 				</div>
 
@@ -75,10 +75,10 @@ export default component$(() => {
 							generation
 						</p>
 					</div>
-					<RealScoutHomeValue
-						agentEncodedId={AGENT_ENCODED_ID}
-						class="min-h-[500px]"
-					/>
+			<RealScoutHomeValue
+				agentEncodedId={AGENT_ENCODED_ID}
+				className="min-h-[500px]"
+			/>
 				</div>
 
 				{/* Office Listings Widget - Full Width */}
@@ -92,15 +92,15 @@ export default component$(() => {
 							and filtering
 						</p>
 					</div>
-					<RealScoutOfficeListings
-						agentEncodedId={AGENT_ENCODED_ID}
-						sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
-						listingStatus="For Sale"
-						propertyTypes="SFR,MF"
-						priceMin={500000}
-						priceMax={600000}
-						class="min-h-[480px]"
-					/>
+			<RealScoutOfficeListings
+				agentEncodedId={AGENT_ENCODED_ID}
+				sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
+				listingStatus="For Sale"
+				propertyTypes="SFR,MF"
+				priceMin={500000}
+				priceMax={600000}
+				className="min-h-[480px]"
+			/>
 				</div>
 
 				{/* Custom Search Interface */}

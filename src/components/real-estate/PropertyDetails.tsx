@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import type { ListingProps } from "../../types/real-estate";
+import type { ListingProps, Address } from "../../types/real-estate";
 import { PropertyPrice } from "./PropertyPrice";
 
 export interface PropertyDetailsProps {
