@@ -3,6 +3,7 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import {
 	AnimatedAmenities,
 	FloatingContactWidget,
+	HeroImageCarousel,
 	LuxuryHomeCards,
 	PriceCalculator,
 	SocialProof,
@@ -18,7 +19,7 @@ export default component$(() => {
 			{/* Floating Contact Widget */}
 			<FloatingContactWidget />
 
-			{/* Simple Hero Section */}
+			{/* Hero Image Carousel */}
 			<section class="relative">
 				<div class="max-w-7xl mx-auto px-4 py-8">
 					<div class="text-center mb-8">
@@ -44,9 +45,7 @@ export default component$(() => {
 							</button>
 						</div>
 					</div>
-					<div class="bg-gray-200 h-96 rounded-xl flex items-center justify-center">
-						<p class="text-gray-600 text-xl">Hero Image Placeholder</p>
-					</div>
+					<HeroImageCarousel />
 				</div>
 			</section>
 
