@@ -1,23 +1,10 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import {
-	AnimatedAmenities,
-	FloatingContactWidget,
-	HeroImageCarousel,
-	LuxuryHomeCards,
-	PriceCalculator,
-	SocialProof,
-	StickyHeader,
-} from "~/components/luxury";
-import { RealScoutWidget } from "~/components/real-estate/RealScoutWidget";
 
 export default component$(() => {
 	return (
 		<>
-			{/* Sticky Header */}
-			<StickyHeader />
-
-			{/* Hero Image Carousel */}
+			{/* Simple Hero Section */}
 			<section class="relative">
 				<div class="max-w-7xl mx-auto px-4 py-8">
 					<div class="text-center mb-8">
@@ -43,138 +30,66 @@ export default component$(() => {
 							</button>
 						</div>
 					</div>
-					<HeroImageCarousel />
-				</div>
-			</section>
-
-			{/* RealScout Office Listings */}
-			<section class="bg-white py-16">
-				<div class="max-w-7xl mx-auto px-4">
-					<div class="text-center mb-8">
-						<h2 class="text-3xl font-bold text-gray-900 mb-4">
-							Available Homes in Heritage at Stonebridge
-						</h2>
-						<p class="text-lg text-gray-600">
-							Discover our latest listings in this exclusive gated community
-						</p>
+					<div class="bg-gray-200 h-96 rounded-xl flex items-center justify-center">
+						<p class="text-gray-600 text-xl">Hero Image Placeholder</p>
 					</div>
-					<RealScoutWidget
-						agentEncodedId="QWdlbnQtMjI1MDUw"
-						sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
-						listingStatus="For Sale"
-						propertyTypes="SFR,MF"
-						priceMin="500000"
-						priceMax="600000"
-					/>
 				</div>
 			</section>
 
-			{/* Price Calculator */}
+			{/* Simple Content Sections */}
 			<section class="bg-gray-50 py-16">
 				<div class="max-w-7xl mx-auto px-4">
-					<PriceCalculator />
-				</div>
-			</section>
-
-			{/* Luxury Home Cards */}
-			<section class="bg-white py-16">
-				<div class="max-w-7xl mx-auto px-4">
 					<div class="text-center mb-12">
-						<h2 class="text-4xl font-bold text-gray-900 mb-4">
-							Luxury Home Collections
+						<h2 class="text-3xl font-bold text-gray-900 mb-4">
+							Luxury Living Awaits
 						</h2>
-						<p class="text-xl text-gray-600 max-w-3xl mx-auto">
-							Choose from three distinct collections, each designed with luxury
-							finishes and modern amenities
+						<p class="text-lg text-gray-600">
+							Experience the finest in 55+ active adult living
 						</p>
 					</div>
-					<LuxuryHomeCards />
-				</div>
-			</section>
-
-			{/* Animated Amenities */}
-			<section
-				id="amenities"
-				class="bg-gradient-to-br from-blue-50 to-indigo-100 py-16"
-			>
-				<div class="max-w-7xl mx-auto px-4">
-					<div class="text-center mb-12">
-						<h2 class="text-4xl font-bold text-gray-900 mb-4">
-							Exclusive Gated Community Features & Amenities
-						</h2>
-						<p class="text-xl text-gray-600 max-w-3xl mx-auto">
-							Experience resort-style living with world-class amenities designed
-							for active adults
-						</p>
-					</div>
-					<AnimatedAmenities />
-				</div>
-			</section>
-
-			{/* Social Proof */}
-			<section class="bg-white py-16">
-				<div class="max-w-7xl mx-auto px-4">
-					<SocialProof />
-				</div>
-			</section>
-
-			{/* Why Choose Heritage */}
-			<section class="bg-gradient-to-br from-gray-50 to-blue-50 py-16">
-				<div class="max-w-7xl mx-auto px-4">
-					<div class="text-center mb-12">
-						<h2 class="text-4xl font-bold text-gray-900 mb-4">
-							Why Choose Heritage at Stonebridge in 2025
-						</h2>
-						<p class="text-xl text-gray-600 max-w-3xl mx-auto">
-							Discover the perfect blend of luxury, location, and lifestyle
-						</p>
-					</div>
-					<div class="grid md:grid-cols-2 gap-12">
-						<div class="bg-white rounded-2xl p-8 shadow-lg">
-							<h3 class="text-2xl font-semibold mb-4 text-gray-900">
-								Prime Summerlin Location
-							</h3>
-							<p class="text-gray-700 mb-6 leading-relaxed">
-								Nestled in the heart of Summerlin, Heritage at Stonebridge
-								offers easy access to world-class shopping, dining,
-								entertainment, and healthcare facilities. The community is
-								minutes from Red Rock Canyon and the Las Vegas Strip.
-							</p>
-							<h3 class="text-2xl font-semibold mb-4 text-gray-900">
-								Active Adult Lifestyle
-							</h3>
-							<p class="text-gray-700 leading-relaxed">
-								Designed specifically for active adults 55+, our community
-								fosters social connections through organized activities, clubs,
-								and events. Enjoy a maintenance-free lifestyle with time to
-								pursue your passions.
-							</p>
+					<div class="grid md:grid-cols-3 gap-8">
+						<div class="bg-white p-6 rounded-lg shadow-lg text-center">
+							<h3 class="text-xl font-bold mb-2">Resort-Style Pool</h3>
+							<p class="text-gray-600">Luxurious pool area with cabanas</p>
 						</div>
-						<div class="bg-white rounded-2xl p-8 shadow-lg">
-							<h3 class="text-2xl font-semibold mb-4 text-gray-900">
-								Lennar Quality & Innovation
-							</h3>
-							<p class="text-gray-700 mb-6 leading-relaxed">
-								Built by Lennar, one of America's most trusted homebuilders, our
-								homes feature cutting-edge technology, energy-efficient design,
-								and premium finishes throughout.
-							</p>
-							<h3 class="text-2xl font-semibold mb-4 text-gray-900">
-								Investment Opportunity
-							</h3>
-							<p class="text-gray-700 leading-relaxed">
-								Summerlin's continued growth and development make Heritage at
-								Stonebridge a smart investment choice. Property values have
-								shown consistent appreciation in this desirable Las Vegas
-								location.
-							</p>
+						<div class="bg-white p-6 rounded-lg shadow-lg text-center">
+							<h3 class="text-xl font-bold mb-2">Golf Course Access</h3>
+							<p class="text-gray-600">Premium golf courses nearby</p>
+						</div>
+						<div class="bg-white p-6 rounded-lg shadow-lg text-center">
+							<h3 class="text-xl font-bold mb-2">24/7 Security</h3>
+							<p class="text-gray-600">Gated community with security</p>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			{/* Floating Contact Widget */}
-			<FloatingContactWidget />
+			{/* Call to Action */}
+			<section class="bg-gradient-to-br from-blue-600 to-blue-800 py-16">
+				<div class="max-w-7xl mx-auto px-4 text-center">
+					<h2 class="text-3xl font-bold text-white mb-4">
+						Ready to Experience Luxury Living?
+					</h2>
+					<p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
+						Schedule a private tour of Heritage at Stonebridge and discover why
+						this is the perfect place for your next chapter.
+					</p>
+					<div class="flex flex-col sm:flex-row gap-4 justify-center">
+						<button
+							type="button"
+							class="bg-white text-blue-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-100 transition-colors shadow-lg"
+						>
+							Schedule Private Tour
+						</button>
+						<button
+							type="button"
+							class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-800 transition-colors shadow-lg"
+						>
+							Call (702) 555-1234
+						</button>
+					</div>
+				</div>
+			</section>
 		</>
 	);
 });
