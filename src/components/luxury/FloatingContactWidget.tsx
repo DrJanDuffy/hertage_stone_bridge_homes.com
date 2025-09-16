@@ -10,6 +10,8 @@ export const FloatingContactWidget = component$(() => {
 	const preferredTimeSignal = useSignal("");
 
 	useVisibleTask$(() => {
+		if (typeof window === "undefined") return;
+
 		// Show widget after 10 seconds
 		const timer = setTimeout(() => {
 			isVisible.value = true;

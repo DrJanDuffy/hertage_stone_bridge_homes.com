@@ -52,6 +52,8 @@ export const AnimatedAmenities = component$(() => {
 	);
 
 	useVisibleTask$(() => {
+		if (typeof window === "undefined") return;
+
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {

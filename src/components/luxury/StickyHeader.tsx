@@ -4,6 +4,8 @@ export const StickyHeader = component$(() => {
 	const isVisible = useSignal(false);
 
 	useVisibleTask$(() => {
+		if (typeof window === "undefined") return;
+
 		const handleScroll = () => {
 			isVisible.value = window.scrollY > 100;
 		};

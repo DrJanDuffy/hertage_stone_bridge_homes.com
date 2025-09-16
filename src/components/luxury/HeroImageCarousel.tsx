@@ -45,6 +45,8 @@ export const HeroImageCarousel = component$(() => {
 	const isTransitioning = useSignal(false);
 
 	useVisibleTask$(() => {
+		if (typeof window === "undefined") return;
+
 		// Auto-advance carousel every 5 seconds
 		const interval = setInterval(() => {
 			if (!isTransitioning.value) {
