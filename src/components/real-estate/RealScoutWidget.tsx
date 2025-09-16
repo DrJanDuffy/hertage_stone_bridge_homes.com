@@ -23,7 +23,7 @@ export const RealScoutWidget = component$<RealScoutWidgetProps>(
 
 		useVisibleTask$(() => {
 			if (typeof window === "undefined") return;
-			
+
 			isClient.value = true;
 
 			if (typeof customElements === "undefined") return;
