@@ -28,15 +28,42 @@ export default component$(() => {
 						};
 
 						function loadConfetti() {
-							return new Promise<(opts: any) => void>((resolve, reject) => {
-								if ((globalThis as any).confetti) {
-									return resolve((globalThis as any).confetti as any);
+							interface ConfettiOptions {
+								spread?: number;
+								ticks?: number;
+								gravity?: number;
+								decay?: number;
+								startVelocity?: number;
+								colors?: string[];
+								origin?: { x: number; y: number };
+								particleCount?: number;
+								scalar?: number;
+							}
+
+							type ConfettiFunction = (options?: ConfettiOptions) => void;
+
+							interface GlobalThisWithConfetti extends globalThis {
+								confetti?: ConfettiFunction;
+							}
+
+							return new Promise<ConfettiFunction>((resolve, reject) => {
+								const globalConfetti = (globalThis as GlobalThisWithConfetti)
+									.confetti;
+								if (globalConfetti) {
+									return resolve(globalConfetti);
 								}
 								const script = document.createElement("script");
 								script.src =
 									"https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js";
-								script.onload = () =>
-									resolve((globalThis as any).confetti as any);
+								script.onload = () => {
+									const loadedConfetti = (globalThis as GlobalThisWithConfetti)
+										.confetti;
+									if (loadedConfetti) {
+										resolve(loadedConfetti);
+									} else {
+										reject(new Error("Confetti failed to load"));
+									}
+								};
 								script.onerror = reject;
 								document.head.appendChild(script);
 								script.remove();

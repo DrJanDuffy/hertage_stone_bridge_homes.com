@@ -17,7 +17,9 @@ export default component$(() => {
 	});
 
 	useVisibleTask$(({ cleanup }) => {
-		const timeout = setTimeout(() => (state.count = 1), 500);
+		const timeout = setTimeout(() => {
+			state.count = 1;
+		}, 500);
 		cleanup(() => clearTimeout(timeout));
 
 		const internal = setInterval(() => state.count++, 7000);
@@ -51,7 +53,7 @@ export default component$(() => {
 			>
 				{Array.from({ length: state.number }, (_, i) => (
 					<div
-						key={i}
+						key={`flower-square-${i}-${state.number}`}
 						class={{
 							square: true,
 							odd: i % 2 === 0,

@@ -49,7 +49,9 @@ export default component$(() => {
 				{(list.value.length && (
 					<ul class={styles.list}>
 						{list.value.map((item, index) => (
-							<li key={`items-${index}`}>{item.text}</li>
+							<li key={`todo-item-${index}-${item.text.slice(0, 10)}`}>
+								{item.text}
+							</li>
 						))}
 					</ul>
 				)) || <span class={styles.empty}>No items found</span>}

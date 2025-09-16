@@ -50,18 +50,97 @@ export default component$(() => {
 				<span class="highlight">qwik intro</span>?
 			</h2>
 			<div class={styles.gettingstarted}>
-				<div
-					class={styles.intro}
-					dangerouslySetInnerHTML={
-						GETTING_STARTED_STEPS[gettingStartedStep.value].message
-					}
-				/>
-				<span
-					class={styles.hint}
-					dangerouslySetInnerHTML={
-						GETTING_STARTED_STEPS[gettingStartedStep.value].hint
-					}
-				/>
+				<div class={styles.intro}>
+					{(() => {
+						const step = GETTING_STARTED_STEPS[gettingStartedStep.value];
+						const message = step.message;
+						// Parse HTML-like content safely
+						const parts = message.split(/(<[^>]+>)/);
+						return parts.map((part, index) => {
+							if (part.startsWith("<b>") && part.endsWith("</b>")) {
+								return (
+									<strong
+										key={`message-bold-${index}-${part.slice(3, -4).slice(0, 10)}`}
+									>
+										{part.slice(3, -4)}
+									</strong>
+								);
+							} else if (
+								part.startsWith("<code>") &&
+								part.endsWith("</code>")
+							) {
+								return (
+									<code
+										key={`message-code-${index}-${part.slice(6, -7).slice(0, 10)}`}
+									>
+										{part.slice(6, -7)}
+									</code>
+								);
+							} else if (part.trim()) {
+								return (
+									<span key={`message-text-${index}-${part.slice(0, 10)}`}>
+										{part}
+									</span>
+								);
+							}
+							return null;
+						});
+					})()}
+				</div>
+				<span class={styles.hint}>
+					{(() => {
+						const step = GETTING_STARTED_STEPS[gettingStartedStep.value];
+						const hint = step.hint;
+						if (!hint) return null;
+						// Parse HTML-like content safely
+						const parts = hint.split(/(<[^>]+>)/);
+						return parts.map((part, index) => {
+							if (
+								part.startsWith('<a href="') &&
+								part.includes('">') &&
+								part.endsWith("</a>")
+							) {
+								const hrefMatch = part.match(/href="([^"]+)"/);
+								const textMatch = part.match(/>([^<]+)</);
+								const targetMatch = part.match(/target="([^"]+)"/);
+								if (hrefMatch && textMatch) {
+									return (
+										<a
+											key={`hint-link-${index}-${hrefMatch[1].slice(0, 10)}`}
+											href={hrefMatch[1]}
+											target={targetMatch ? targetMatch[1] : undefined}
+											rel={
+												targetMatch?.[1] === "_blank" ? "noopener" : undefined
+											}
+										>
+											{textMatch[1]}
+										</a>
+									);
+								}
+							} else if (
+								part.startsWith("<code>") &&
+								part.endsWith("</code>")
+							) {
+								return (
+									<code
+										key={`hint-code-${index}-${part.slice(6, -7).slice(0, 10)}`}
+									>
+										{part.slice(6, -7)}
+									</code>
+								);
+						} else if (part.startsWith("<br />")) {
+							return <br key={`hint-br-${index}-${part}`} />;
+							} else if (part.trim()) {
+								return (
+									<span key={`hint-text-${index}-${part.slice(0, 10)}`}>
+										{part}
+									</span>
+								);
+							}
+							return null;
+						});
+					})()}
+				</span>
 			</div>
 			{gettingStartedStep.value + 1 < GETTING_STARTED_STEPS.length ? (
 				<button

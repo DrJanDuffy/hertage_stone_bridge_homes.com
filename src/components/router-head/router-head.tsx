@@ -25,6 +25,7 @@ export const RouterHead = component$(() => {
 			))}
 
 			{head.styles.map((s) => (
+				// eslint-disable-next-line react/no-danger
 				<style key={s.key} {...s.props} dangerouslySetInnerHTML={s.style} />
 			))}
 		</>

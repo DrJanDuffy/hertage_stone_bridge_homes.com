@@ -194,10 +194,10 @@ export const SearchFilters = component$<SearchFiltersProps>(
 					</div>
 
 					{/* Property Type */}
-					<div class="space-y-2">
-						<label class="block text-sm font-medium text-gray-700">
+					<fieldset class="space-y-2">
+						<legend class="block text-sm font-medium text-gray-700">
 							Property Type
-						</label>
+						</legend>
 						<div class="space-y-2">
 							{propertyTypes.map((type) => (
 								<label key={type.value} class="flex items-center">
@@ -215,13 +215,13 @@ export const SearchFilters = component$<SearchFiltersProps>(
 								</label>
 							))}
 						</div>
-					</div>
+					</fieldset>
 
 					{/* Status */}
-					<div class="space-y-2">
-						<label class="block text-sm font-medium text-gray-700">
+					<fieldset class="space-y-2">
+						<legend class="block text-sm font-medium text-gray-700">
 							Status
-						</label>
+						</legend>
 						<div class="space-y-2">
 							{statusOptions.map((status) => (
 								<label key={status.value} class="flex items-center">
@@ -239,7 +239,7 @@ export const SearchFilters = component$<SearchFiltersProps>(
 								</label>
 							))}
 						</div>
-					</div>
+					</fieldset>
 
 					{/* Neighborhood */}
 					<div class="space-y-2">
