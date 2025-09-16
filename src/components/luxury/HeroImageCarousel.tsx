@@ -1,4 +1,4 @@
-import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import { component$, useSignal, useVisibleTask$, noSSR } from "@builder.io/qwik";
 
 interface HeroImage {
 	src: string;
@@ -40,7 +40,7 @@ const luxuryImages: HeroImage[] = [
 	},
 ];
 
-export const HeroImageCarousel = component$(() => {
+export const HeroImageCarousel = noSSR(() => component$(() => {
 	const currentIndex = useSignal(0);
 	const isTransitioning = useSignal(false);
 
@@ -203,4 +203,4 @@ export const HeroImageCarousel = component$(() => {
 			</div>
 		</div>
 	);
-});
+}));
