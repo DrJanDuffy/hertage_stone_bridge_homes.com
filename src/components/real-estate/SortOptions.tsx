@@ -52,20 +52,20 @@ export const SortOptions = component$<SortOptionsProps>(
 					onClick$={handleSortOrderToggle}
 					title={`Sort ${sortOrder === "asc" ? "descending" : "ascending"}`}
 				>
-				<svg
-					class={`w-4 h-4 transition-transform ${sortOrder === "desc" ? "rotate-180" : ""}`}
-					fill="none"
-					stroke="currentColor"
-					viewBox="0 0 24 24"
-				>
-					<title>Sort Arrow</title>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						stroke-width="2"
-						d="M5 15l7-7 7 7"
-					></path>
-				</svg>
+					<svg
+						class={`w-4 h-4 transition-transform ${sortOrder === "desc" ? "rotate-180" : ""}`}
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+					>
+						<title>Sort Arrow</title>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M5 15l7-7 7 7"
+						></path>
+					</svg>
 				</button>
 			</div>
 		);
