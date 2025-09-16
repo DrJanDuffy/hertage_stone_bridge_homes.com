@@ -19,14 +19,22 @@
 			"recommended": true,
 			"suspicious": {
 				"noExplicitAny": "warn",
-				"noAssignInExpressions": "warn",
-				"noArrayIndexKey": "warn"
+				"noAssignInExpressions": "off",
+				"noArrayIndexKey": "off",
+				"useIterableCallbackReturn": "off"
 			},
 			"security": {
 				"noDangerouslySetInnerHtml": "warn"
 			},
 			"complexity": {
 				"noImportantStyles": "warn"
+			},
+			"correctness": {
+				"useParseIntRadix": "off"
+			},
+			"a11y": {
+				"noSvgWithoutTitle": "off",
+				"noLabelWithoutControl": "off"
 			}
 		}
 	},

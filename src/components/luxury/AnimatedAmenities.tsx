@@ -58,6 +58,7 @@ export const AnimatedAmenities = component$(() => {
 					if (entry.isIntersecting) {
 						const index = parseInt(
 							entry.target.getAttribute("data-index") || "0",
+							10,
 						);
 						setTimeout(() => {
 							visibleItems.value = visibleItems.value.map((item, i) =>
