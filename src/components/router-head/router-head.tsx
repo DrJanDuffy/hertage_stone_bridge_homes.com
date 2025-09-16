@@ -16,6 +16,24 @@ export const RouterHead = component$(() => {
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+			{/* RealScout Script - Load globally for all pages */}
+			<script 
+				src="https://em.realscout.com/widgets/realscout-web-components.umd.js" 
+				type="module"
+			/>
+
+			{/* RealScout Styles */}
+			<style>
+				{`
+					realscout-office-listings {
+						--rs-listing-divider-color: rgb(101, 141, 172);
+						width: 100%;
+						min-height: 400px;
+						display: block;
+					}
+				`}
+			</style>
+
 			{head.meta.map((m) => (
 				<meta key={m.key} {...m} />
 			))}
@@ -28,6 +46,10 @@ export const RouterHead = component$(() => {
 				// eslint-disable-next-line react/no-danger
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: Required for dynamic styles
 				<style key={s.key} {...s.props} dangerouslySetInnerHTML={s.style} />
+			))}
+
+			{head.scripts.map((s) => (
+				<script key={s.key} {...s.props} dangerouslySetInnerHTML={s.script} />
 			))}
 		</>
 	);
