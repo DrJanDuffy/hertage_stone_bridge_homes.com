@@ -17,8 +17,8 @@ export const RouterHead = component$(() => {
 			<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
 			{/* RealScout Script - Load globally for all pages */}
-			<script 
-				src="https://em.realscout.com/widgets/realscout-web-components.umd.js" 
+			<script
+				src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
 				type="module"
 			/>
 

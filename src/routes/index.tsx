@@ -3,7 +3,6 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutWidget } from "~/components/real-estate/RealScoutWidget";
 
 export default component$(() => {
-
 	return (
 		<>
 			{/* Hero Section */}
