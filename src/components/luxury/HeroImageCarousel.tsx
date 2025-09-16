@@ -76,7 +76,10 @@ export const HeroImageCarousel = component$(() => {
 	const prevSlide = () => {
 		if (isTransitioning.value) return;
 		isTransitioning.value = true;
-		currentIndex.value = currentIndex.value === 0 ? luxuryImages.length - 1 : currentIndex.value - 1;
+		currentIndex.value =
+			currentIndex.value === 0
+				? luxuryImages.length - 1
+				: currentIndex.value - 1;
 		setTimeout(() => {
 			isTransitioning.value = false;
 		}, 300);
@@ -91,10 +94,10 @@ export const HeroImageCarousel = component$(() => {
 					alt={luxuryImages[currentIndex.value].alt}
 					class="w-full h-full object-cover transition-all duration-500 ease-in-out"
 				/>
-				
+
 				{/* Gradient Overlay */}
 				<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-				
+
 				{/* Content Overlay */}
 				<div class="absolute bottom-8 left-8 text-white">
 					<h3 class="text-2xl md:text-3xl font-bold mb-2">
@@ -107,42 +110,62 @@ export const HeroImageCarousel = component$(() => {
 			</div>
 
 			{/* Navigation Arrows */}
-				<button
-					type="button"
-					onClick$={prevSlide}
-					class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-all duration-200 group"
-					aria-label="Previous image"
+			<button
+				type="button"
+				onClick$={prevSlide}
+				class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-all duration-200 group"
+				aria-label="Previous image"
+			>
+				<svg
+					class="w-6 h-6 group-hover:scale-110 transition-transform"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
 				>
-				<svg class="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M15 19l-7-7 7-7"
+					/>
 				</svg>
 			</button>
-			
-				<button
-					type="button"
-					onClick$={nextSlide}
-					class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-all duration-200 group"
-					aria-label="Next image"
+
+			<button
+				type="button"
+				onClick$={nextSlide}
+				class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-all duration-200 group"
+				aria-label="Next image"
+			>
+				<svg
+					class="w-6 h-6 group-hover:scale-110 transition-transform"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
 				>
-				<svg class="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M9 5l7 7-7 7"
+					/>
 				</svg>
 			</button>
 
 			{/* Dots Indicator */}
 			<div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
 				{luxuryImages.map((_, index) => (
-							<button
-								key={`dot-${index}`}
-								type="button"
-								onClick$={() => goToSlide(index)}
-								class={`w-3 h-3 rounded-full transition-all duration-200 ${
-									index === currentIndex.value
-										? "bg-white scale-125"
-										: "bg-white/50 hover:bg-white/75"
-								}`}
-								aria-label={`Go to slide ${index + 1}`}
-							/>
+					<button
+						key={`dot-${index}`}
+						type="button"
+						onClick$={() => goToSlide(index)}
+						class={`w-3 h-3 rounded-full transition-all duration-200 ${
+							index === currentIndex.value
+								? "bg-white scale-125"
+								: "bg-white/50 hover:bg-white/75"
+						}`}
+						aria-label={`Go to slide ${index + 1}`}
+					/>
 				))}
 			</div>
 
@@ -150,17 +173,17 @@ export const HeroImageCarousel = component$(() => {
 			<div class="absolute bottom-0 left-0 right-0 bg-black/30 backdrop-blur-sm p-4">
 				<div class="flex space-x-2 overflow-x-auto scrollbar-hide">
 					{luxuryImages.map((image, index) => (
-							<button
-								key={`thumb-${index}`}
-								type="button"
-								onClick$={() => goToSlide(index)}
-								class={`flex-shrink-0 w-16 h-12 rounded-lg overflow-hidden transition-all duration-200 ${
-									index === currentIndex.value
-										? "ring-2 ring-white scale-105"
-										: "opacity-70 hover:opacity-100 hover:scale-105"
-								}`}
-								aria-label={`View ${image.title}`}
-							>
+						<button
+							key={`thumb-${index}`}
+							type="button"
+							onClick$={() => goToSlide(index)}
+							class={`flex-shrink-0 w-16 h-12 rounded-lg overflow-hidden transition-all duration-200 ${
+								index === currentIndex.value
+									? "ring-2 ring-white scale-105"
+									: "opacity-70 hover:opacity-100 hover:scale-105"
+							}`}
+							aria-label={`View ${image.title}`}
+						>
 							<img
 								src={image.src}
 								alt={image.alt}

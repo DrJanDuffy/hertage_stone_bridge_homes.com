@@ -47,17 +47,21 @@ const amenities: Amenity[] = [
 ];
 
 export const AnimatedAmenities = component$(() => {
-	const visibleItems = useSignal<boolean[]>(new Array(amenities.length).fill(false));
+	const visibleItems = useSignal<boolean[]>(
+		new Array(amenities.length).fill(false),
+	);
 
 	useVisibleTask$(() => {
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
-						const index = parseInt(entry.target.getAttribute("data-index") || "0");
+						const index = parseInt(
+							entry.target.getAttribute("data-index") || "0",
+						);
 						setTimeout(() => {
 							visibleItems.value = visibleItems.value.map((item, i) =>
-								i === index ? true : item
+								i === index ? true : item,
 							);
 						}, index * 150); // Staggered animation
 					}
@@ -66,7 +70,7 @@ export const AnimatedAmenities = component$(() => {
 			{
 				threshold: 0.2,
 				rootMargin: "0px 0px -50px 0px",
-			}
+			},
 		);
 
 		const elements = document.querySelectorAll("[data-amenity-item]");
@@ -99,7 +103,7 @@ export const AnimatedAmenities = component$(() => {
 						{amenity.title}
 					</h4>
 					<p class="text-gray-600 leading-relaxed">{amenity.description}</p>
-					
+
 					{/* Subtle hover effect */}
 					<div class="mt-4 h-1 w-0 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto transition-all duration-500 group-hover:w-16 rounded-full" />
 				</div>
