@@ -97,6 +97,7 @@ export const ContactAgent = component$<ContactAgentProps>(
 										stroke="currentColor"
 										viewBox="0 0 24 24"
 									>
+										<title>Success Checkmark</title>
 										<path
 											stroke-linecap="round"
 											stroke-linejoin="round"
@@ -252,6 +253,7 @@ export const ContactAgent = component$<ContactAgentProps>(
 													stroke="currentColor"
 													viewBox="0 0 24 24"
 												>
+													<title>Error Icon</title>
 													<path
 														stroke-linecap="round"
 														stroke-linejoin="round"

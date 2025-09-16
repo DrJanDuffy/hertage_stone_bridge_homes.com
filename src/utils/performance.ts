@@ -41,8 +41,8 @@ export const throttle = <T extends (...args: unknown[]) => unknown>(
 			func(...args);
 			inThrottle = true;
 			setTimeout(() => {
-			inThrottle = false;
-		}, limit);
+				inThrottle = false;
+			}, limit);
 		}
 	};
 };
@@ -135,7 +135,10 @@ export const createVirtualList = (
 };
 
 // Analytics tracking with performance metrics
-export const trackPerformance = (eventName: string, data?: Record<string, unknown>) => {
+export const trackPerformance = (
+	eventName: string,
+	data?: Record<string, unknown>,
+) => {
 	if (typeof window === "undefined") return;
 
 	const startTime = performance.now();

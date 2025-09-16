@@ -10,7 +10,10 @@ export const SearchFilters = component$<SearchFiltersProps>(
 	({ filters, onFiltersChange$ }) => {
 		const isExpanded = useSignal(false);
 
-		const updateFilter = (key: keyof SearchFiltersType, value: any) => {
+		const updateFilter = (
+			key: keyof SearchFiltersType,
+			value: string | number,
+		) => {
 			const newFilters = { ...filters.value, [key]: value };
 			onFiltersChange$(newFilters);
 		};

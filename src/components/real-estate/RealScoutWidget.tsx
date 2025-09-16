@@ -88,6 +88,7 @@ export const RealScoutWidget = component$<RealScoutWidgetProps>(
 							stroke="currentColor"
 							viewBox="0 0 24 24"
 						>
+							<title>Error Icon</title>
 							<path
 								stroke-linecap="round"
 								stroke-linejoin="round"
@@ -113,6 +114,7 @@ export const RealScoutWidget = component$<RealScoutWidgetProps>(
 							stroke="currentColor"
 							viewBox="0 0 24 24"
 						>
+							<title>Phone Icon</title>
 							<path
 								stroke-linecap="round"
 								stroke-linejoin="round"

@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import type { ListingProps, Address } from "../../types/real-estate";
+import type { Address, ListingProps } from "../../types/real-estate";
 import { PropertyPrice } from "./PropertyPrice";
 
 export interface PropertyDetailsProps {
@@ -76,14 +76,14 @@ export const PropertyDetails = component$<PropertyDetailsProps>(
 				{listing.features && listing.features.length > 0 && (
 					<div class="pt-2">
 						<div class="flex flex-wrap gap-1">
-					{listing.features.slice(0, 3).map((feature) => (
-						<span
-							key={feature}
-							class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
-						>
-							{feature}
-						</span>
-					))}
+							{listing.features.slice(0, 3).map((feature) => (
+								<span
+									key={feature}
+									class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
+								>
+									{feature}
+								</span>
+							))}
 							{listing.features.length > 3 && (
 								<span class="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-medium">
 									+{listing.features.length - 3} more
