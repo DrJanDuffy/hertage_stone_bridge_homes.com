@@ -19,22 +19,20 @@ export type {
 
 // Agent and contact components
 export { ContactAgent } from "./ContactAgent";
+// Dynamic RealScout Components
+export { DynamicRealScoutBlock } from "./DynamicRealScoutBlock";
+export { DynamicRealScoutGrid } from "./DynamicRealScoutGrid";
 export { FavoriteButton } from "./FavoriteButton";
 export { PropertyCard } from "./PropertyCard";
 export { PropertyDetails } from "./PropertyDetails";
 export { PropertyGrid } from "./PropertyGrid";
 export { PropertyImage } from "./PropertyImage";
 export { PropertyPrice } from "./PropertyPrice";
-
 // RealScout Widget Arsenal - Complete Lead Generation Suite
 export { RealScoutAdvancedSearch } from "./RealScoutAdvancedSearch";
 export { RealScoutHomeValue } from "./RealScoutHomeValue";
 export { RealScoutOfficeListings } from "./RealScoutOfficeListings";
 export { RealScoutSimpleSearch } from "./RealScoutSimpleSearch";
-
-// Dynamic RealScout Components
-export { DynamicRealScoutBlock } from "./DynamicRealScoutBlock";
-export { DynamicRealScoutGrid } from "./DynamicRealScoutGrid";
 
 // Third-party widget integration
 export { RealScoutWidget } from "./RealScoutWidget";

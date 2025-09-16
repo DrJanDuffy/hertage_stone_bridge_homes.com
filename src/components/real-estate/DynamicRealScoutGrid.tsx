@@ -11,7 +11,9 @@ export const DynamicRealScoutGrid = component$<DynamicRealScoutGridProps>(
 		const containerClasses = [
 			"max-w-7xl mx-auto px-4 py-12",
 			config.layout?.background ? `bg-${config.layout.background}` : "",
-		].filter(Boolean).join(" ");
+		]
+			.filter(Boolean)
+			.join(" ");
 
 		const getGridClasses = (columns: number) => {
 			switch (columns) {
@@ -25,19 +27,25 @@ export const DynamicRealScoutGrid = component$<DynamicRealScoutGridProps>(
 		};
 
 		// Group blocks by layout columns
-		const groupedBlocks = config.blocks.reduce((groups, block) => {
-			const columns = block.layout?.columns || 1;
-			if (!groups[columns]) {
-				groups[columns] = [];
-			}
-			groups[columns].push(block);
-			return groups;
-		}, {} as Record<number, typeof config.blocks>);
+		const groupedBlocks = config.blocks.reduce(
+			(groups, block) => {
+				const columns = block.layout?.columns || 1;
+				if (!groups[columns]) {
+					groups[columns] = [];
+				}
+				groups[columns].push(block);
+				return groups;
+			},
+			{} as Record<number, typeof config.blocks>,
+		);
 
 		return (
 			<div class={containerClasses}>
 				{Object.entries(groupedBlocks).map(([columns, blocks]) => (
-					<div key={`grid-${columns}`} class={`${getGridClasses(Number(columns))} mb-16`}>
+					<div
+						key={`grid-${columns}`}
+						class={`${getGridClasses(Number(columns))} mb-16`}
+					>
 						{blocks.map((block) => (
 							<DynamicRealScoutBlock key={block.id} block={block} />
 						))}

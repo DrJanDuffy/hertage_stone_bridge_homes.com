@@ -42,7 +42,7 @@ export default component$(() => {
 
 							type ConfettiFunction = (options?: ConfettiOptions) => void;
 
-							interface GlobalThisWithConfetti extends globalThis {
+							interface GlobalThisWithConfetti {
 								confetti?: ConfettiFunction;
 							}
 

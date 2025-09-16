@@ -1,9 +1,9 @@
 import { component$, useVisibleTask$ } from "@builder.io/qwik";
 import type { RealScoutContentBlock } from "../../types/real-estate-content";
-import { RealScoutSimpleSearch } from "./RealScoutSimpleSearch";
 import { RealScoutAdvancedSearch } from "./RealScoutAdvancedSearch";
 import { RealScoutHomeValue } from "./RealScoutHomeValue";
 import { RealScoutOfficeListings } from "./RealScoutOfficeListings";
+import { RealScoutSimpleSearch } from "./RealScoutSimpleSearch";
 
 export interface DynamicRealScoutBlockProps {
 	block: RealScoutContentBlock;
@@ -19,15 +19,13 @@ export const DynamicRealScoutBlock = component$<DynamicRealScoutBlockProps>(
 			// Ensure RealScout script is loaded for all widget types
 			const widgetTypes = [
 				"realscout-simple-search",
-				"realscout-advanced-search", 
+				"realscout-advanced-search",
 				"realscout-home-value",
-				"realscout-office-listings"
+				"realscout-office-listings",
 			];
 
 			const checkRealScoutLoaded = () => {
-				return widgetTypes.some(type => 
-					window.customElements?.get(type)
-				);
+				return widgetTypes.some((type) => window.customElements?.get(type));
 			};
 
 			const waitForRealScout = () => {
@@ -44,10 +42,16 @@ export const DynamicRealScoutBlock = component$<DynamicRealScoutBlockProps>(
 			"realscout-widget-container",
 			block.className || "",
 			block.layout?.shadow ? "shadow-lg" : "shadow-md",
-			block.layout?.backgroundColor ? `bg-${block.layout.backgroundColor}` : "bg-white",
-			block.layout?.borderRadius ? `rounded-${block.layout.borderRadius}` : "rounded-lg",
+			block.layout?.backgroundColor
+				? `bg-${block.layout.backgroundColor}`
+				: "bg-white",
+			block.layout?.borderRadius
+				? `rounded-${block.layout.borderRadius}`
+				: "rounded-lg",
 			block.layout?.height ? `min-h-[${block.layout.height}]` : "",
-		].filter(Boolean).join(" ");
+		]
+			.filter(Boolean)
+			.join(" ");
 
 		const renderWidget = () => {
 			const commonProps = {
@@ -56,16 +60,16 @@ export const DynamicRealScoutBlock = component$<DynamicRealScoutBlockProps>(
 			};
 
 			switch (block.type) {
-				case 'simple-search':
+				case "simple-search":
 					return <RealScoutSimpleSearch {...commonProps} />;
-				
-				case 'advanced-search':
+
+				case "advanced-search":
 					return <RealScoutAdvancedSearch {...commonProps} />;
-				
-				case 'home-value':
+
+				case "home-value":
 					return <RealScoutHomeValue {...commonProps} />;
-				
-				case 'office-listings':
+
+				case "office-listings":
 					return (
 						<RealScoutOfficeListings
 							{...commonProps}
@@ -76,7 +80,7 @@ export const DynamicRealScoutBlock = component$<DynamicRealScoutBlockProps>(
 							priceMax={block.widgetProps?.priceMax}
 						/>
 					);
-				
+
 				default:
 					return <div>Unknown widget type: {block.type}</div>;
 			}
@@ -86,18 +90,17 @@ export const DynamicRealScoutBlock = component$<DynamicRealScoutBlockProps>(
 			<div class={containerClasses}>
 				{/* Custom Header */}
 				<div class="mb-6">
-					<h3 class="text-2xl font-bold text-gray-900 mb-2">
-						{block.title}
-					</h3>
-					<p class="text-gray-600 mb-4">
-						{block.description}
-					</p>
-					
+					<h3 class="text-2xl font-bold text-gray-900 mb-2">{block.title}</h3>
+					<p class="text-gray-600 mb-4">{block.description}</p>
+
 					{/* Features List */}
 					{block.content?.features && (
 						<ul class="flex flex-wrap gap-2 mb-4">
 							{block.content.features.map((feature, index) => (
-								<li key={`feature-${index}`} class="text-sm text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+								<li
+									key={`feature-${index}-${feature.slice(0, 10)}`}
+									class="text-sm text-blue-600 bg-blue-50 px-3 py-1 rounded-full"
+								>
 									{feature}
 								</li>
 							))}
@@ -108,7 +111,10 @@ export const DynamicRealScoutBlock = component$<DynamicRealScoutBlockProps>(
 					{block.content?.badges && (
 						<div class="flex flex-wrap gap-2 mb-4">
 							{block.content.badges.map((badge, index) => (
-								<span key={`badge-${index}`} class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+								<span
+									key={`badge-${index}-${badge.slice(0, 10)}`}
+									class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800"
+								>
 									{badge}
 								</span>
 							))}

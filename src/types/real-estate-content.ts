@@ -1,14 +1,18 @@
 export interface RealScoutContentBlock {
 	id: string;
-	type: 'simple-search' | 'advanced-search' | 'home-value' | 'office-listings';
+	type: "simple-search" | "advanced-search" | "home-value" | "office-listings";
 	title: string;
 	description: string;
 	agentEncodedId: string;
 	className?: string;
 	// Widget-specific properties
 	widgetProps?: {
-		sortOrder?: 'STATUS_AND_SIGNIFICANT_CHANGE' | 'PRICE_ASC' | 'PRICE_DESC' | 'DATE_DESC';
-		listingStatus?: 'For Sale' | 'Pending' | 'Sold' | 'All';
+		sortOrder?:
+			| "STATUS_AND_SIGNIFICANT_CHANGE"
+			| "PRICE_ASC"
+			| "PRICE_DESC"
+			| "DATE_DESC";
+		listingStatus?: "For Sale" | "Pending" | "Sold" | "All";
 		propertyTypes?: string;
 		priceMin?: number;
 		priceMax?: number;

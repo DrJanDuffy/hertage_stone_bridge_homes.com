@@ -17,7 +17,8 @@ export const realEstateContentConfig: RealScoutContentConfig = {
 			id: "hero-search",
 			type: "simple-search",
 			title: "Find Your Dream Home in Heritage at Stonebridge",
-			description: "Discover luxury homes in one of Las Vegas's most prestigious communities. Search by location, price, and features to find your perfect match.",
+			description:
+				"Discover luxury homes in one of Las Vegas's most prestigious communities. Search by location, price, and features to find your perfect match.",
 			agentEncodedId: "QWdlbnQtMjI1MDUw",
 			className: "min-h-[400px]",
 			layout: {
@@ -38,7 +39,8 @@ export const realEstateContentConfig: RealScoutContentConfig = {
 			id: "advanced-search",
 			type: "advanced-search",
 			title: "Advanced Property Search",
-			description: "Use our comprehensive search tools with detailed filters to find properties that match your exact criteria.",
+			description:
+				"Use our comprehensive search tools with detailed filters to find properties that match your exact criteria.",
 			agentEncodedId: "QWdlbnQtMjI1MDUw",
 			className: "min-h-[600px]",
 			layout: {
@@ -57,7 +59,8 @@ export const realEstateContentConfig: RealScoutContentConfig = {
 			id: "home-value-estimator",
 			type: "home-value",
 			title: "What's Your Home Worth?",
-			description: "Get an instant, accurate home valuation powered by advanced market analysis and comparable sales data.",
+			description:
+				"Get an instant, accurate home valuation powered by advanced market analysis and comparable sales data.",
 			agentEncodedId: "QWdlbnQtMjI1MDUw",
 			className: "min-h-[500px]",
 			layout: {
@@ -78,7 +81,8 @@ export const realEstateContentConfig: RealScoutContentConfig = {
 			id: "featured-listings",
 			type: "office-listings",
 			title: "Featured Properties in Heritage at Stonebridge",
-			description: "Explore our curated selection of premium properties currently available in the Heritage at Stonebridge community.",
+			description:
+				"Explore our curated selection of premium properties currently available in the Heritage at Stonebridge community.",
 			agentEncodedId: "QWdlbnQtMjI1MDUw",
 			className: "min-h-[480px]",
 			widgetProps: {
@@ -106,7 +110,8 @@ export const realEstateContentConfig: RealScoutContentConfig = {
 			id: "luxury-homes",
 			type: "office-listings",
 			title: "Luxury Homes Over $1M",
-			description: "Discover our exclusive collection of luxury homes priced over $1 million in Heritage at Stonebridge.",
+			description:
+				"Discover our exclusive collection of luxury homes priced over $1 million in Heritage at Stonebridge.",
 			agentEncodedId: "QWdlbnQtMjI1MDUw",
 			className: "min-h-[450px]",
 			widgetProps: {
@@ -132,7 +137,8 @@ export const realEstateContentConfig: RealScoutContentConfig = {
 			id: "condo-townhomes",
 			type: "office-listings",
 			title: "Condos & Townhomes",
-			description: "Explore modern condos and townhomes perfect for those seeking low-maintenance luxury living.",
+			description:
+				"Explore modern condos and townhomes perfect for those seeking low-maintenance luxury living.",
 			agentEncodedId: "QWdlbnQtMjI1MDUw",
 			className: "min-h-[450px]",
 			widgetProps: {

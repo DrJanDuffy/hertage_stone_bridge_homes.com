@@ -1,4 +1,7 @@
-import type { RealScoutContentBlock, RealScoutContentConfig } from "../types/real-estate-content";
+import type {
+	RealScoutContentBlock,
+	RealScoutContentConfig,
+} from "../types/real-estate-content";
 
 export class ContentManager {
 	private config: RealScoutContentConfig;
@@ -13,18 +16,22 @@ export class ContentManager {
 	}
 
 	// Get blocks by type
-	getBlocksByType(type: RealScoutContentBlock['type']): RealScoutContentBlock[] {
-		return this.config.blocks.filter(block => block.type === type);
+	getBlocksByType(
+		type: RealScoutContentBlock["type"],
+	): RealScoutContentBlock[] {
+		return this.config.blocks.filter((block) => block.type === type);
 	}
 
 	// Get blocks by layout columns
 	getBlocksByColumns(columns: number): RealScoutContentBlock[] {
-		return this.config.blocks.filter(block => block.layout?.columns === columns);
+		return this.config.blocks.filter(
+			(block) => block.layout?.columns === columns,
+		);
 	}
 
 	// Get a specific block by ID
 	getBlockById(id: string): RealScoutContentBlock | undefined {
-		return this.config.blocks.find(block => block.id === id);
+		return this.config.blocks.find((block) => block.id === id);
 	}
 
 	// Add a new block
@@ -34,7 +41,7 @@ export class ContentManager {
 
 	// Update a block
 	updateBlock(id: string, updates: Partial<RealScoutContentBlock>): boolean {
-		const index = this.config.blocks.findIndex(block => block.id === id);
+		const index = this.config.blocks.findIndex((block) => block.id === id);
 		if (index !== -1) {
 			this.config.blocks[index] = { ...this.config.blocks[index], ...updates };
 			return true;
@@ -44,7 +51,7 @@ export class ContentManager {
 
 	// Remove a block
 	removeBlock(id: string): boolean {
-		const index = this.config.blocks.findIndex(block => block.id === id);
+		const index = this.config.blocks.findIndex((block) => block.id === id);
 		if (index !== -1) {
 			this.config.blocks.splice(index, 1);
 			return true;
@@ -55,9 +62,9 @@ export class ContentManager {
 	// Reorder blocks
 	reorderBlocks(blockIds: string[]): void {
 		const orderedBlocks = blockIds
-			.map(id => this.config.blocks.find(block => block.id === id))
+			.map((id) => this.config.blocks.find((block) => block.id === id))
 			.filter(Boolean) as RealScoutContentBlock[];
-		
+
 		this.config.blocks = orderedBlocks;
 	}
 
@@ -74,11 +81,11 @@ export class ContentManager {
 	// Create a new block with defaults
 	createBlock(
 		id: string,
-		type: RealScoutContentBlock['type'],
+		type: RealScoutContentBlock["type"],
 		title: string,
 		description: string,
 		agentEncodedId: string,
-		overrides: Partial<RealScoutContentBlock> = {}
+		overrides: Partial<RealScoutContentBlock> = {},
 	): RealScoutContentBlock {
 		const defaultBlock: RealScoutContentBlock = {
 			id,
@@ -108,10 +115,10 @@ export class ContentManager {
 		const errors: string[] = [];
 
 		// Check for duplicate IDs
-		const ids = this.config.blocks.map(block => block.id);
+		const ids = this.config.blocks.map((block) => block.id);
 		const duplicateIds = ids.filter((id, index) => ids.indexOf(id) !== index);
 		if (duplicateIds.length > 0) {
-			errors.push(`Duplicate block IDs found: ${duplicateIds.join(', ')}`);
+			errors.push(`Duplicate block IDs found: ${duplicateIds.join(", ")}`);
 		}
 
 		// Check required fields
@@ -126,10 +133,14 @@ export class ContentManager {
 				errors.push(`Block at index ${index} is missing required field: title`);
 			}
 			if (!block.description) {
-				errors.push(`Block at index ${index} is missing required field: description`);
+				errors.push(
+					`Block at index ${index} is missing required field: description`,
+				);
 			}
 			if (!block.agentEncodedId) {
-				errors.push(`Block at index ${index} is missing required field: agentEncodedId`);
+				errors.push(
+					`Block at index ${index} is missing required field: agentEncodedId`,
+				);
 			}
 		});
 
@@ -146,23 +157,26 @@ export const createSearchBlock = (
 	title: string,
 	description: string,
 	agentEncodedId: string,
-	type: 'simple-search' | 'advanced-search' = 'simple-search'
+	type: "simple-search" | "advanced-search" = "simple-search",
 ): RealScoutContentBlock => ({
 	id,
 	type,
 	title,
 	description,
 	agentEncodedId,
-	className: type === 'advanced-search' ? "min-h-[600px]" : "min-h-[400px]",
+	className: type === "advanced-search" ? "min-h-[600px]" : "min-h-[400px]",
 	layout: {
 		columns: 1,
-		height: type === 'advanced-search' ? "600px" : "400px",
+		height: type === "advanced-search" ? "600px" : "400px",
 		backgroundColor: "white",
 		borderRadius: "lg",
 		shadow: true,
 	},
 	content: {
-		features: type === 'advanced-search' ? ["Detailed Filters", "Map Search"] : ["Quick Search", "Basic Filters"],
+		features:
+			type === "advanced-search"
+				? ["Detailed Filters", "Map Search"]
+				: ["Quick Search", "Basic Filters"],
 		badges: ["MLS Connected"],
 	},
 });
@@ -172,10 +186,10 @@ export const createListingsBlock = (
 	title: string,
 	description: string,
 	agentEncodedId: string,
-	widgetProps: RealScoutContentBlock['widgetProps'] = {}
+	widgetProps: RealScoutContentBlock["widgetProps"] = {},
 ): RealScoutContentBlock => ({
 	id,
-	type: 'office-listings',
+	type: "office-listings",
 	title,
 	description,
 	agentEncodedId,
@@ -205,10 +219,10 @@ export const createHomeValueBlock = (
 	id: string,
 	title: string,
 	description: string,
-	agentEncodedId: string
+	agentEncodedId: string,
 ): RealScoutContentBlock => ({
 	id,
-	type: 'home-value',
+	type: "home-value",
 	title,
 	description,
 	agentEncodedId,

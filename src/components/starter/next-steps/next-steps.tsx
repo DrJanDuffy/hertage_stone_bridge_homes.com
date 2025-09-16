@@ -128,8 +128,8 @@ export default component$(() => {
 										{part.slice(6, -7)}
 									</code>
 								);
-						} else if (part.startsWith("<br />")) {
-							return <br key={`hint-br-${index}-${part}`} />;
+							} else if (part.startsWith("<br />")) {
+								return <br key={`hint-br-${index}-${part}`} />;
 							} else if (part.trim()) {
 								return (
 									<span key={`hint-text-${index}-${part.slice(0, 10)}`}>
