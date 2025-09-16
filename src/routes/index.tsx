@@ -32,6 +32,28 @@ export default component$(() => {
 				</div>
 			</section>
 
+			{/* RealScout Office Listings */}
+			<section class="bg-white py-16">
+				<div class="max-w-7xl mx-auto px-4">
+					<div class="text-center mb-8">
+						<h2 class="text-3xl font-bold text-gray-900 mb-4">
+							Available Homes in Heritage at Stonebridge
+						</h2>
+						<p class="text-lg text-gray-600">
+							Discover our latest listings in this exclusive gated community
+						</p>
+					</div>
+					<realscout-office-listings 
+						agent-encoded-id="QWdlbnQtMjI1MDUw" 
+						sort-order="STATUS_AND_SIGNIFICANT_CHANGE" 
+						listing-status="For Sale" 
+						property-types="SFR,MF" 
+						price-min="500000" 
+						price-max="600000"
+					></realscout-office-listings>
+				</div>
+			</section>
+
 			{/* Main Content */}
 			<main class="max-w-7xl mx-auto px-4 py-16">
 				<section class="mb-16">
@@ -325,6 +347,22 @@ export const head: DocumentHead = {
 		{
 			rel: "canonical",
 			href: "https://heritagestonebridge.com/",
+		},
+	],
+	scripts: [
+		{
+			src: "https://em.realscout.com/widgets/realscout-web-components.umd.js",
+			type: "module",
+		},
+	],
+	styles: [
+		{
+			style: `
+				realscout-office-listings {
+					--rs-listing-divider-color: rgb(101, 141, 172);
+					width: 100%;
+				}
+			`,
 		},
 	],
 };
