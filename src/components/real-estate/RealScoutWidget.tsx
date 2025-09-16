@@ -20,41 +20,41 @@ export const RealScoutWidget = component$<RealScoutWidgetProps>(
 	}) => {
 		const isReady = useSignal(false);
 
-	useVisibleTask$(() => {
-		if (typeof window === "undefined" || typeof customElements === "undefined") return;
+		useVisibleTask$(() => {
+			if (
+				typeof window === "undefined" ||
+				typeof customElements === "undefined"
+			)
+				return;
 
-		// Simple check if element is already defined
-		if (customElements.get("realscout-office-listings")) {
-			isReady.value = true;
-			return;
-		}
-
-		// Wait for the element to be defined
-		customElements
-			.whenDefined("realscout-office-listings")
-			.then(() => {
+			// Simple check if element is already defined
+			if (customElements.get("realscout-office-listings")) {
 				isReady.value = true;
-			})
-			.catch(() => {
-				console.warn("RealScout widget failed to load");
-			});
-	});
+				return;
+			}
+
+			// Wait for the element to be defined
+			customElements
+				.whenDefined("realscout-office-listings")
+				.then(() => {
+					isReady.value = true;
+				})
+				.catch(() => {
+					console.warn("RealScout widget failed to load");
+				});
+		});
 
 		return (
 			<div class="min-h-[400px] bg-gray-50 rounded-lg p-8">
 				{isReady.value ? (
-					<div
-						dangerouslySetInnerHTML={`
-							<realscout-office-listings
-								agent-encoded-id="${agentEncodedId}"
-								sort-order="${sortOrder}"
-								listing-status="${listingStatus}"
-								property-types="${propertyTypes}"
-								price-min="${priceMin}"
-								price-max="${priceMax}"
-								class="w-full"
-							></realscout-office-listings>
-						`}
+					<realscout-office-listings
+						agent-encoded-id={agentEncodedId}
+						sort-order={sortOrder}
+						listing-status={listingStatus}
+						property-types={propertyTypes}
+						price-min={priceMin}
+						price-max={priceMax}
+						class="w-full"
 					/>
 				) : (
 					<div class="text-center text-gray-500">
