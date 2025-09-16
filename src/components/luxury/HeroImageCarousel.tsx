@@ -61,18 +61,22 @@ export const HeroImageCarousel = component$(() => {
 		if (isTransitioning.value) return;
 		isTransitioning.value = true;
 		currentIndex.value = index;
-		setTimeout(() => {
-			isTransitioning.value = false;
-		}, 300);
+		if (typeof window !== "undefined") {
+			setTimeout(() => {
+				isTransitioning.value = false;
+			}, 300);
+		}
 	};
 
 	const nextSlide = () => {
 		if (isTransitioning.value) return;
 		isTransitioning.value = true;
 		currentIndex.value = (currentIndex.value + 1) % luxuryImages.length;
-		setTimeout(() => {
-			isTransitioning.value = false;
-		}, 300);
+		if (typeof window !== "undefined") {
+			setTimeout(() => {
+				isTransitioning.value = false;
+			}, 300);
+		}
 	};
 
 	const prevSlide = () => {
@@ -82,9 +86,11 @@ export const HeroImageCarousel = component$(() => {
 			currentIndex.value === 0
 				? luxuryImages.length - 1
 				: currentIndex.value - 1;
-		setTimeout(() => {
-			isTransitioning.value = false;
-		}, 300);
+		if (typeof window !== "undefined") {
+			setTimeout(() => {
+				isTransitioning.value = false;
+			}, 300);
+		}
 	};
 
 	return (
