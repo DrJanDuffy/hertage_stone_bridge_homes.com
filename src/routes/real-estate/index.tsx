@@ -1,11 +1,11 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import {
-	RealScoutOfficeListings,
-	RealScoutSimpleSearch,
 	RealScoutAdvancedSearch,
 	RealScoutHomeValue,
-	SearchInterface
+	RealScoutOfficeListings,
+	RealScoutSimpleSearch,
+	SearchInterface,
 } from "~/components/real-estate";
 
 export default component$(() => {
@@ -20,8 +20,9 @@ export default component$(() => {
 						Real Estate Tools & Widgets
 					</h1>
 					<p class="text-xl text-blue-100 max-w-3xl mx-auto">
-						Explore our comprehensive suite of RealScout widgets and property search tools 
-						designed for Heritage at Stonebridge and surrounding Las Vegas areas.
+						Explore our comprehensive suite of RealScout widgets and property
+						search tools designed for Heritage at Stonebridge and surrounding
+						Las Vegas areas.
 					</p>
 				</div>
 			</section>
@@ -33,28 +34,32 @@ export default component$(() => {
 					{/* Simple Search Widget */}
 					<div class="bg-white rounded-lg shadow-lg p-6">
 						<div class="mb-6">
-							<h2 class="text-2xl font-bold text-gray-900 mb-2">Simple Search</h2>
+							<h2 class="text-2xl font-bold text-gray-900 mb-2">
+								Simple Search
+							</h2>
 							<p class="text-gray-600">
 								Quick property search with address and basic filters
 							</p>
 						</div>
-						<RealScoutSimpleSearch 
+						<RealScoutSimpleSearch
 							agentEncodedId={AGENT_ENCODED_ID}
-							className="min-h-[400px]"
+							class="min-h-[400px]"
 						/>
 					</div>
 
 					{/* Advanced Search Widget */}
 					<div class="bg-white rounded-lg shadow-lg p-6">
 						<div class="mb-6">
-							<h2 class="text-2xl font-bold text-gray-900 mb-2">Advanced Search</h2>
+							<h2 class="text-2xl font-bold text-gray-900 mb-2">
+								Advanced Search
+							</h2>
 							<p class="text-gray-600">
 								Comprehensive search with detailed filters and criteria
 							</p>
 						</div>
-						<RealScoutAdvancedSearch 
+						<RealScoutAdvancedSearch
 							agentEncodedId={AGENT_ENCODED_ID}
-							className="min-h-[600px]"
+							class="min-h-[600px]"
 						/>
 					</div>
 				</div>
@@ -62,42 +67,51 @@ export default component$(() => {
 				{/* Home Value Widget - Full Width */}
 				<div class="bg-white rounded-lg shadow-lg p-6 mb-16">
 					<div class="mb-6">
-						<h2 class="text-2xl font-bold text-gray-900 mb-2">Home Value Estimator</h2>
+						<h2 class="text-2xl font-bold text-gray-900 mb-2">
+							Home Value Estimator
+						</h2>
 						<p class="text-gray-600">
-							Get instant home valuations and market analysis - perfect for lead generation
+							Get instant home valuations and market analysis - perfect for lead
+							generation
 						</p>
 					</div>
-					<RealScoutHomeValue 
+					<RealScoutHomeValue
 						agentEncodedId={AGENT_ENCODED_ID}
-						className="min-h-[500px]"
+						class="min-h-[500px]"
 					/>
 				</div>
 
 				{/* Office Listings Widget - Full Width */}
 				<div class="bg-white rounded-lg shadow-lg p-6 mb-16">
 					<div class="mb-6">
-						<h2 class="text-2xl font-bold text-gray-900 mb-2">Office Listings</h2>
+						<h2 class="text-2xl font-bold text-gray-900 mb-2">
+							Office Listings
+						</h2>
 						<p class="text-gray-600">
-							Curated property listings from our office with advanced sorting and filtering
+							Curated property listings from our office with advanced sorting
+							and filtering
 						</p>
 					</div>
-					<RealScoutOfficeListings 
+					<RealScoutOfficeListings
 						agentEncodedId={AGENT_ENCODED_ID}
 						sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
 						listingStatus="For Sale"
 						propertyTypes="SFR,MF"
 						priceMin={500000}
 						priceMax={600000}
-						className="min-h-[480px]"
+						class="min-h-[480px]"
 					/>
 				</div>
 
 				{/* Custom Search Interface */}
 				<div class="bg-white rounded-lg shadow-lg p-6">
 					<div class="mb-6">
-						<h2 class="text-2xl font-bold text-gray-900 mb-2">Custom Search Interface</h2>
+						<h2 class="text-2xl font-bold text-gray-900 mb-2">
+							Custom Search Interface
+						</h2>
 						<p class="text-gray-600">
-							Our custom-built search interface with Qwik optimization and real-time filtering
+							Our custom-built search interface with Qwik optimization and
+							real-time filtering
 						</p>
 					</div>
 					<SearchInterface />
@@ -105,13 +119,18 @@ export default component$(() => {
 
 				{/* Widget Information */}
 				<div class="mt-16 bg-blue-50 rounded-lg p-8">
-					<h3 class="text-2xl font-bold text-gray-900 mb-4">About Our Real Estate Tools</h3>
+					<h3 class="text-2xl font-bold text-gray-900 mb-4">
+						About Our Real Estate Tools
+					</h3>
 					<div class="grid md:grid-cols-2 gap-8">
 						<div>
-							<h4 class="text-lg font-semibold text-gray-900 mb-3">RealScout Integration</h4>
+							<h4 class="text-lg font-semibold text-gray-900 mb-3">
+								RealScout Integration
+							</h4>
 							<p class="text-gray-700 mb-4">
-								Our widgets are powered by RealScout's advanced MLS integration, providing 
-								real-time property data, accurate valuations, and seamless lead capture.
+								Our widgets are powered by RealScout's advanced MLS integration,
+								providing real-time property data, accurate valuations, and
+								seamless lead capture.
 							</p>
 							<ul class="space-y-2 text-gray-700">
 								<li class="flex items-center">
@@ -129,10 +148,12 @@ export default component$(() => {
 							</ul>
 						</div>
 						<div>
-							<h4 class="text-lg font-semibold text-gray-900 mb-3">Performance Optimized</h4>
+							<h4 class="text-lg font-semibold text-gray-900 mb-3">
+								Performance Optimized
+							</h4>
 							<p class="text-gray-700 mb-4">
-								Built with Qwik's resumable architecture for lightning-fast loading and 
-								optimal user experience across all devices.
+								Built with Qwik's resumable architecture for lightning-fast
+								loading and optimal user experience across all devices.
 							</p>
 							<ul class="space-y-2 text-gray-700">
 								<li class="flex items-center">
@@ -161,11 +182,13 @@ export const head: DocumentHead = {
 	meta: [
 		{
 			name: "description",
-			content: "Explore our comprehensive suite of RealScout widgets, property search tools, and home valuation services for Heritage at Stonebridge and Las Vegas areas.",
+			content:
+				"Explore our comprehensive suite of RealScout widgets, property search tools, and home valuation services for Heritage at Stonebridge and Las Vegas areas.",
 		},
 		{
 			name: "keywords",
-			content: "RealScout widgets, property search, home valuation, MLS integration, Las Vegas real estate, Heritage at Stonebridge, property tools",
+			content:
+				"RealScout widgets, property search, home valuation, MLS integration, Las Vegas real estate, Heritage at Stonebridge, property tools",
 		},
 		{
 			property: "og:title",
@@ -173,7 +196,8 @@ export const head: DocumentHead = {
 		},
 		{
 			property: "og:description",
-			content: "Explore our comprehensive suite of RealScout widgets, property search tools, and home valuation services for Heritage at Stonebridge and Las Vegas areas.",
+			content:
+				"Explore our comprehensive suite of RealScout widgets, property search tools, and home valuation services for Heritage at Stonebridge and Las Vegas areas.",
 		},
 		{
 			name: "robots",

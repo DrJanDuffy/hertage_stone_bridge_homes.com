@@ -1,15 +1,19 @@
-import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
-import type { Agent, ListingProps, ContactFormData } from "../../types/real-estate";
+import { component$, useSignal } from "@builder.io/qwik";
+import type {
+	Agent,
+	ContactFormData,
+	ListingProps,
+} from "../../types/real-estate";
 
 export interface ContactAgentProps {
 	agent: Agent;
 	property: ListingProps;
-	isVisible: any; // Signal<boolean>
+	isVisible: { value: boolean };
 	onToggle$: () => void;
 }
 
 export const ContactAgent = component$<ContactAgentProps>(
-	({ agent, property, isVisible, onToggle$ }) => {
+	({ agent, property, onToggle$ }) => {
 		const formData = useSignal<ContactFormData>({
 			name: "",
 			email: "",
@@ -58,7 +62,8 @@ export const ContactAgent = component$<ContactAgentProps>(
 					agentId: agent.id,
 				};
 			} catch (error) {
-				submitError.value = error instanceof Error ? error.message : "An error occurred";
+				submitError.value =
+					error instanceof Error ? error.message : "An error occurred";
 			} finally {
 				isSubmitting.value = false;
 			}
@@ -86,13 +91,26 @@ export const ContactAgent = component$<ContactAgentProps>(
 						{submitSuccess.value ? (
 							<div class="text-center py-8">
 								<div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-									<svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+									<svg
+										class="w-8 h-8 text-green-600"
+										fill="none"
+										stroke="currentColor"
+										viewBox="0 0 24 24"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M5 13l4 4L19 7"
+										></path>
 									</svg>
 								</div>
-								<h3 class="text-xl font-semibold text-gray-900 mb-2">Message Sent!</h3>
+								<h3 class="text-xl font-semibold text-gray-900 mb-2">
+									Message Sent!
+								</h3>
 								<p class="text-gray-600 mb-4">
-									Thank you for your interest. {agent.name} will get back to you soon.
+									Thank you for your interest. {agent.name} will get back to you
+									soon.
 								</p>
 								<button
 									type="button"
@@ -115,12 +133,17 @@ export const ContactAgent = component$<ContactAgentProps>(
 												/>
 											) : (
 												<div class="text-gray-600 text-xl font-semibold">
-													{agent.name.split(' ').map(n => n[0]).join('')}
+													{agent.name
+														.split(" ")
+														.map((n) => n[0])
+														.join("")}
 												</div>
 											)}
 										</div>
 										<div class="flex-1">
-											<h4 class="text-lg font-semibold text-gray-900">{agent.name}</h4>
+											<h4 class="text-lg font-semibold text-gray-900">
+												{agent.name}
+											</h4>
 											{agent.brokerage && (
 												<p class="text-sm text-gray-600">{agent.brokerage}</p>
 											)}
@@ -131,7 +154,10 @@ export const ContactAgent = component$<ContactAgentProps>(
 
 								<form onSubmit$={handleSubmit} class="space-y-4">
 									<div>
-										<label for={`name-${property.mls}`} class="block text-sm font-medium text-gray-700 mb-1">
+										<label
+											for={`name-${property.mls}`}
+											class="block text-sm font-medium text-gray-700 mb-1"
+										>
 											Full Name *
 										</label>
 										<input
@@ -139,7 +165,10 @@ export const ContactAgent = component$<ContactAgentProps>(
 											id={`name-${property.mls}`}
 											value={formData.value.name}
 											onInput$={(e) => {
-												handleInputChange("name", (e.target as HTMLInputElement).value);
+												handleInputChange(
+													"name",
+													(e.target as HTMLInputElement).value,
+												);
 											}}
 											required
 											class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
@@ -148,7 +177,10 @@ export const ContactAgent = component$<ContactAgentProps>(
 									</div>
 
 									<div>
-										<label for={`email-${property.mls}`} class="block text-sm font-medium text-gray-700 mb-1">
+										<label
+											for={`email-${property.mls}`}
+											class="block text-sm font-medium text-gray-700 mb-1"
+										>
 											Email Address *
 										</label>
 										<input
@@ -156,7 +188,10 @@ export const ContactAgent = component$<ContactAgentProps>(
 											id={`email-${property.mls}`}
 											value={formData.value.email}
 											onInput$={(e) => {
-												handleInputChange("email", (e.target as HTMLInputElement).value);
+												handleInputChange(
+													"email",
+													(e.target as HTMLInputElement).value,
+												);
 											}}
 											required
 											class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
@@ -165,7 +200,10 @@ export const ContactAgent = component$<ContactAgentProps>(
 									</div>
 
 									<div>
-										<label for={`phone-${property.mls}`} class="block text-sm font-medium text-gray-700 mb-1">
+										<label
+											for={`phone-${property.mls}`}
+											class="block text-sm font-medium text-gray-700 mb-1"
+										>
 											Phone Number
 										</label>
 										<input
@@ -173,7 +211,10 @@ export const ContactAgent = component$<ContactAgentProps>(
 											id={`phone-${property.mls}`}
 											value={formData.value.phone}
 											onInput$={(e) => {
-												handleInputChange("phone", (e.target as HTMLInputElement).value);
+												handleInputChange(
+													"phone",
+													(e.target as HTMLInputElement).value,
+												);
 											}}
 											class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 											placeholder="Enter your phone number"
@@ -181,14 +222,20 @@ export const ContactAgent = component$<ContactAgentProps>(
 									</div>
 
 									<div>
-										<label for={`message-${property.mls}`} class="block text-sm font-medium text-gray-700 mb-1">
+										<label
+											for={`message-${property.mls}`}
+											class="block text-sm font-medium text-gray-700 mb-1"
+										>
 											Message
 										</label>
 										<textarea
 											id={`message-${property.mls}`}
 											value={formData.value.message}
 											onInput$={(e) => {
-												handleInputChange("message", (e.target as HTMLTextAreaElement).value);
+												handleInputChange(
+													"message",
+													(e.target as HTMLTextAreaElement).value,
+												);
 											}}
 											rows={4}
 											class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
@@ -199,10 +246,22 @@ export const ContactAgent = component$<ContactAgentProps>(
 									{submitError.value && (
 										<div class="bg-red-50 border border-red-200 rounded-lg p-3">
 											<div class="flex items-center">
-												<svg class="w-5 h-5 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-													<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+												<svg
+													class="w-5 h-5 text-red-500 mr-2"
+													fill="none"
+													stroke="currentColor"
+													viewBox="0 0 24 24"
+												>
+													<path
+														stroke-linecap="round"
+														stroke-linejoin="round"
+														stroke-width="2"
+														d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+													></path>
 												</svg>
-												<span class="text-red-700 text-sm">{submitError.value}</span>
+												<span class="text-red-700 text-sm">
+													{submitError.value}
+												</span>
 											</div>
 										</div>
 									)}
@@ -237,5 +296,5 @@ export const ContactAgent = component$<ContactAgentProps>(
 				</div>
 			</div>
 		);
-	}
+	},
 );

@@ -13,14 +13,10 @@ export default component$(() => {
 				</div>
 				<ul>
 					<li>
-						<a href="/real-estate">
-							Real Estate
-						</a>
+						<a href="/real-estate">Real Estate</a>
 					</li>
 					<li>
-						<a href="/demo">
-							Demo
-						</a>
+						<a href="/demo">Demo</a>
 					</li>
 					<li>
 						<a

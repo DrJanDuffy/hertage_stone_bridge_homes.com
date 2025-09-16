@@ -25,7 +25,7 @@ export interface ListingProps {
 	photos: string[];
 	address: Address;
 	agent: Agent;
-	status: 'for-sale' | 'pending' | 'sold';
+	status: "for-sale" | "pending" | "sold";
 	description?: string;
 	features?: string[];
 	listDate?: string;
@@ -42,8 +42,8 @@ export interface SearchFilters {
 	beds: number;
 	baths: number;
 	neighborhood: string;
-	propertyType: 'all' | 'house' | 'condo' | 'townhouse';
-	status: 'all' | 'for-sale' | 'pending' | 'sold';
+	propertyType: "all" | "house" | "condo" | "townhouse";
+	status: "all" | "for-sale" | "pending" | "sold";
 }
 
 export interface MarketData {
@@ -52,7 +52,7 @@ export interface MarketData {
 	avgDaysOnMarket: number;
 	pricePerSqft: number;
 	totalListings: number;
-	marketTrend: 'up' | 'down' | 'stable';
+	marketTrend: "up" | "down" | "stable";
 }
 
 export interface PropertySearchResult {

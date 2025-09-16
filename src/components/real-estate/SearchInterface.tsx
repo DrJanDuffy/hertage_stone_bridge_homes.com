@@ -1,7 +1,10 @@
 import { component$, useSignal, useTask$ } from "@builder.io/qwik";
-import type { SearchFilters, PropertySearchResult } from "../../types/real-estate";
-import { SearchFilters as SearchFiltersComponent } from "./SearchFilters";
+import type {
+	PropertySearchResult,
+	SearchFilters,
+} from "../../types/real-estate";
 import { PropertyGrid } from "./PropertyGrid";
+import { SearchFilters as SearchFiltersComponent } from "./SearchFilters";
 import { SortOptions } from "./SortOptions";
 
 export interface SearchInterfaceProps {
@@ -46,7 +49,7 @@ export const SearchInterface = component$<SearchInterfaceProps>(
 
 		const performSearch = async () => {
 			isLoading.value = true;
-			
+
 			try {
 				// Simulate API call - replace with actual implementation
 				const mockResults: PropertySearchResult = {
@@ -63,21 +66,21 @@ export const SearchInterface = component$<SearchInterfaceProps>(
 								city: "Las Vegas",
 								state: "NV",
 								zip: "89134",
-								neighborhood: "Summerlin"
+								neighborhood: "Summerlin",
 							},
 							agent: {
 								id: "agent-123",
 								name: "Sarah Johnson",
 								phone: "(702) 555-0123",
-								email: "sarah@heritage.com"
+								email: "sarah@heritage.com",
 							},
 							status: "for-sale",
-							features: ["Gated Community", "Pool", "Golf Course Access"]
-						}
+							features: ["Gated Community", "Pool", "Golf Course Access"],
+						},
 					],
 					total: 1,
 					page: 1,
-					hasMore: false
+					hasMore: false,
 				};
 
 				searchResults.value = mockResults;
@@ -97,25 +100,28 @@ export const SearchInterface = component$<SearchInterfaceProps>(
 
 		const handleLoadMore = async () => {
 			if (!searchResults.value.hasMore || isLoading.value) return;
-			
+
 			isLoading.value = true;
-			
+
 			try {
 				// Simulate loading more results
 				const nextPage = searchResults.value.page + 1;
 				// In real implementation, fetch next page from API
-				
+
 				searchResults.value = {
 					...searchResults.value,
 					page: nextPage,
-					hasMore: false // Simulate no more results
+					hasMore: false, // Simulate no more results
 				};
 			} finally {
 				isLoading.value = false;
 			}
 		};
 
-		const handleSortChange = (newSortBy: "price" | "beds" | "sqft" | "newest", newSortOrder: "asc" | "desc") => {
+		const handleSortChange = (
+			newSortBy: "price" | "beds" | "sqft" | "newest",
+			newSortOrder: "asc" | "desc",
+		) => {
 			sortBy.value = newSortBy;
 			sortOrder.value = newSortOrder;
 			performSearch();
@@ -124,7 +130,9 @@ export const SearchInterface = component$<SearchInterfaceProps>(
 		return (
 			<div class="max-w-7xl mx-auto px-4 py-8">
 				<div class="mb-8">
-					<h2 class="text-3xl font-bold text-gray-900 mb-4">Find Your Dream Home</h2>
+					<h2 class="text-3xl font-bold text-gray-900 mb-4">
+						Find Your Dream Home
+					</h2>
 					<div class="flex flex-col sm:flex-row gap-4">
 						<div class="flex-1">
 							<input
@@ -162,7 +170,8 @@ export const SearchInterface = component$<SearchInterfaceProps>(
 					<div class="lg:col-span-3">
 						<div class="flex justify-between items-center mb-6">
 							<div class="text-sm text-gray-600">
-								{searchResults.value.total > 0 && `${searchResults.value.total} properties found`}
+								{searchResults.value.total > 0 &&
+									`${searchResults.value.total} properties found`}
 							</div>
 							<SortOptions
 								sortBy={sortBy.value}
@@ -180,5 +189,5 @@ export const SearchInterface = component$<SearchInterfaceProps>(
 				</div>
 			</div>
 		);
-	}
+	},
 );

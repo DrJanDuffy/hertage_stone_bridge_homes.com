@@ -5,7 +5,7 @@
 // Intersection Observer for lazy loading
 export const createIntersectionObserver = (
 	callback: (entries: IntersectionObserverEntry[]) => void,
-	options?: IntersectionObserverInit
+	options?: IntersectionObserverInit,
 ) => {
 	if (typeof window === "undefined") return null;
 
@@ -19,9 +19,9 @@ export const createIntersectionObserver = (
 };
 
 // Debounce function for search inputs
-export const debounce = <T extends (...args: any[]) => any>(
+export const debounce = <T extends (...args: unknown[]) => unknown>(
 	func: T,
-	wait: number
+	wait: number,
 ): ((...args: Parameters<T>) => void) => {
 	let timeout: NodeJS.Timeout;
 	return (...args: Parameters<T>) => {
@@ -31,16 +31,18 @@ export const debounce = <T extends (...args: any[]) => any>(
 };
 
 // Throttle function for scroll events
-export const throttle = <T extends (...args: any[]) => any>(
+export const throttle = <T extends (...args: unknown[]) => unknown>(
 	func: T,
-	limit: number
+	limit: number,
 ): ((...args: Parameters<T>) => void) => {
 	let inThrottle: boolean;
 	return (...args: Parameters<T>) => {
 		if (!inThrottle) {
 			func(...args);
 			inThrottle = true;
-			setTimeout(() => (inThrottle = false), limit);
+			setTimeout(() => {
+			inThrottle = false;
+		}, limit);
 		}
 	};
 };
@@ -48,11 +50,11 @@ export const throttle = <T extends (...args: any[]) => any>(
 // Image lazy loading with placeholder
 export const createLazyImageLoader = (
 	src: string,
-	placeholder?: string
+	placeholder?: string,
 ): Promise<string> => {
 	return new Promise((resolve, reject) => {
 		const img = new Image();
-		
+
 		img.onload = () => resolve(src);
 		img.onerror = () => {
 			// Fallback to placeholder if provided
@@ -62,7 +64,7 @@ export const createLazyImageLoader = (
 				reject(new Error(`Failed to load image: ${src}`));
 			}
 		};
-		
+
 		img.src = src;
 	});
 };
@@ -73,43 +75,56 @@ export const calculateVisibleRange = (
 	containerHeight: number,
 	itemHeight: number,
 	itemCount: number,
-	bufferSize: number = 5
+	bufferSize: number = 5,
 ) => {
-	const startIndex = Math.max(0, Math.floor(scrollTop / itemHeight) - bufferSize);
+	const startIndex = Math.max(
+		0,
+		Math.floor(scrollTop / itemHeight) - bufferSize,
+	);
 	const endIndex = Math.min(
 		itemCount - 1,
-		Math.ceil((scrollTop + containerHeight) / itemHeight) + bufferSize
+		Math.ceil((scrollTop + containerHeight) / itemHeight) + bufferSize,
 	);
-	
+
 	return { startIndex, endIndex };
 };
 
 // Memory management for large lists
 export const createVirtualList = (
-	items: any[],
+	items: unknown[],
 	itemHeight: number,
-	containerHeight: number
+	containerHeight: number,
 ) => {
 	let scrollTop = 0;
-	let visibleRange = calculateVisibleRange(scrollTop, containerHeight, itemHeight, items.length);
-	
+	let visibleRange = calculateVisibleRange(
+		scrollTop,
+		containerHeight,
+		itemHeight,
+		items.length,
+	);
+
 	const updateScroll = (newScrollTop: number) => {
 		scrollTop = newScrollTop;
-		visibleRange = calculateVisibleRange(scrollTop, containerHeight, itemHeight, items.length);
+		visibleRange = calculateVisibleRange(
+			scrollTop,
+			containerHeight,
+			itemHeight,
+			items.length,
+		);
 	};
-	
+
 	const getVisibleItems = () => {
 		return items.slice(visibleRange.startIndex, visibleRange.endIndex + 1);
 	};
-	
+
 	const getTotalHeight = () => {
 		return items.length * itemHeight;
 	};
-	
+
 	const getOffsetY = () => {
 		return visibleRange.startIndex * itemHeight;
 	};
-	
+
 	return {
 		updateScroll,
 		getVisibleItems,
@@ -120,16 +135,16 @@ export const createVirtualList = (
 };
 
 // Analytics tracking with performance metrics
-export const trackPerformance = (eventName: string, data?: any) => {
+export const trackPerformance = (eventName: string, data?: Record<string, unknown>) => {
 	if (typeof window === "undefined") return;
-	
+
 	const startTime = performance.now();
-	
+
 	return {
-		end: (additionalData?: any) => {
+		end: (additionalData?: Record<string, unknown>) => {
 			const endTime = performance.now();
 			const duration = endTime - startTime;
-			
+
 			if (window.gtag) {
 				window.gtag("event", eventName, {
 					...data,
@@ -138,19 +153,19 @@ export const trackPerformance = (eventName: string, data?: any) => {
 					timestamp: new Date().toISOString(),
 				});
 			}
-		}
+		},
 	};
 };
 
 // Preload critical resources
 export const preloadResources = (urls: string[]) => {
 	if (typeof window === "undefined") return;
-	
-	urls.forEach(url => {
+
+	urls.forEach((url) => {
 		const link = document.createElement("link");
 		link.rel = "preload";
 		link.href = url;
-		
+
 		// Determine resource type based on extension
 		if (url.endsWith(".css")) {
 			link.as = "style";
@@ -159,7 +174,7 @@ export const preloadResources = (urls: string[]) => {
 		} else if (url.endsWith(".js")) {
 			link.as = "script";
 		}
-		
+
 		document.head.appendChild(link);
 	});
 };
@@ -167,7 +182,7 @@ export const preloadResources = (urls: string[]) => {
 // Cache management
 export const createCache = <T>(maxSize: number = 100) => {
 	const cache = new Map<string, T>();
-	
+
 	return {
 		get: (key: string): T | undefined => {
 			const value = cache.get(key);
@@ -178,7 +193,7 @@ export const createCache = <T>(maxSize: number = 100) => {
 			}
 			return value;
 		},
-		
+
 		set: (key: string, value: T): void => {
 			if (cache.has(key)) {
 				cache.delete(key);
@@ -189,14 +204,14 @@ export const createCache = <T>(maxSize: number = 100) => {
 			}
 			cache.set(key, value);
 		},
-		
+
 		clear: (): void => {
 			cache.clear();
 		},
-		
+
 		size: (): number => {
 			return cache.size;
-		}
+		},
 	};
 };
 
@@ -214,7 +229,7 @@ export const loadComponent = async (componentName: string) => {
 // Performance monitoring
 export const monitorPerformance = () => {
 	if (typeof window === "undefined") return;
-	
+
 	// Monitor Core Web Vitals
 	const observer = new PerformanceObserver((list) => {
 		for (const entry of list.getEntries()) {
@@ -227,18 +242,24 @@ export const monitorPerformance = () => {
 			}
 		}
 	});
-	
+
 	observer.observe({ entryTypes: ["measure", "navigation", "paint"] });
-	
+
 	// Monitor resource loading
 	window.addEventListener("load", () => {
-		const navigation = performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming;
-		
+		const navigation = performance.getEntriesByType(
+			"navigation",
+		)[0] as PerformanceNavigationTiming;
+
 		if (window.gtag) {
 			window.gtag("event", "page_load", {
 				load_time: Math.round(navigation.loadEventEnd - navigation.fetchStart),
-				dom_content_loaded: Math.round(navigation.domContentLoadedEventEnd - navigation.fetchStart),
-				first_paint: Math.round(performance.getEntriesByName("first-paint")[0]?.startTime || 0),
+				dom_content_loaded: Math.round(
+					navigation.domContentLoadedEventEnd - navigation.fetchStart,
+				),
+				first_paint: Math.round(
+					performance.getEntriesByName("first-paint")[0]?.startTime || 0,
+				),
 			});
 		}
 	});
@@ -247,6 +268,6 @@ export const monitorPerformance = () => {
 // Extend Window interface for TypeScript
 declare global {
 	interface Window {
-		gtag?: (...args: any[]) => void;
+		gtag?: (...args: unknown[]) => void;
 	}
 }

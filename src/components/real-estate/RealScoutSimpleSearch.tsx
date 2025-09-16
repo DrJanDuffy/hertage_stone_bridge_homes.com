@@ -7,15 +7,14 @@ export interface RealScoutSimpleSearchProps {
 
 export const RealScoutSimpleSearch = component$<RealScoutSimpleSearchProps>(
 	({ agentEncodedId, className = "" }) => {
-		
 		useVisibleTask$(({ track }) => {
 			track(() => agentEncodedId);
-			
-			if (typeof window === 'undefined') return;
+
+			if (typeof window === "undefined") return;
 
 			// Ensure RealScout script is loaded
 			const checkRealScoutLoaded = () => {
-				if (window.customElements && window.customElements.get('realscout-simple-search')) {
+				if (window.customElements?.get("realscout-simple-search")) {
 					// Widget is ready
 					return true;
 				}
@@ -27,7 +26,7 @@ export const RealScoutSimpleSearch = component$<RealScoutSimpleSearchProps>(
 				if (checkRealScoutLoaded()) {
 					return;
 				}
-				
+
 				// Check again in 100ms
 				setTimeout(waitForRealScout, 100);
 			};
@@ -36,19 +35,22 @@ export const RealScoutSimpleSearch = component$<RealScoutSimpleSearchProps>(
 		});
 
 		return (
-			<div class={`realscout-widget-container ${className || ''}`}>
+			<div class={`realscout-widget-container ${className || ""}`}>
 				<div class="mb-6">
-					<h3 class="text-2xl font-bold text-gray-900 mb-2">Find Your Dream Home</h3>
+					<h3 class="text-2xl font-bold text-gray-900 mb-2">
+						Find Your Dream Home
+					</h3>
 					<p class="text-gray-600">
-						Search for properties in Heritage at Stonebridge and surrounding areas
+						Search for properties in Heritage at Stonebridge and surrounding
+						areas
 					</p>
 				</div>
-				
+
 				<realscout-simple-search
 					agent-encoded-id={agentEncodedId}
 					class="w-full"
 				></realscout-simple-search>
 			</div>
 		);
-	}
+	},
 );

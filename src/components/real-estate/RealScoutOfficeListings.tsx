@@ -2,7 +2,11 @@ import { component$, useVisibleTask$ } from "@builder.io/qwik";
 
 export interface RealScoutOfficeListingsProps {
 	agentEncodedId: string;
-	sortOrder?: "STATUS_AND_SIGNIFICANT_CHANGE" | "PRICE_ASC" | "PRICE_DESC" | "DATE_DESC";
+	sortOrder?:
+		| "STATUS_AND_SIGNIFICANT_CHANGE"
+		| "PRICE_ASC"
+		| "PRICE_DESC"
+		| "DATE_DESC";
 	listingStatus?: "For Sale" | "Pending" | "Sold" | "All";
 	propertyTypes?: string; // e.g., "SFR,MF" for Single Family and Multi-Family
 	priceMin?: number;
@@ -11,24 +15,23 @@ export interface RealScoutOfficeListingsProps {
 }
 
 export const RealScoutOfficeListings = component$<RealScoutOfficeListingsProps>(
-	({ 
-		agentEncodedId, 
+	({
+		agentEncodedId,
 		sortOrder = "STATUS_AND_SIGNIFICANT_CHANGE",
 		listingStatus = "For Sale",
 		propertyTypes = "SFR,MF",
 		priceMin = 500000,
 		priceMax = 600000,
-		className = ""
+		className = "",
 	}) => {
-		
 		useVisibleTask$(({ track }) => {
 			track(() => agentEncodedId);
-			
-			if (typeof window === 'undefined') return;
+
+			if (typeof window === "undefined") return;
 
 			// Ensure RealScout script is loaded
 			const checkRealScoutLoaded = () => {
-				if (window.customElements && window.customElements.get('realscout-office-listings')) {
+				if (window.customElements?.get("realscout-office-listings")) {
 					// Widget is ready
 					return true;
 				}
@@ -40,7 +43,7 @@ export const RealScoutOfficeListings = component$<RealScoutOfficeListingsProps>(
 				if (checkRealScoutLoaded()) {
 					return;
 				}
-				
+
 				// Check again in 100ms
 				setTimeout(waitForRealScout, 100);
 			};
@@ -49,14 +52,16 @@ export const RealScoutOfficeListings = component$<RealScoutOfficeListingsProps>(
 		});
 
 		return (
-			<div class={`realscout-widget-container ${className || ''}`}>
+			<div class={`realscout-widget-container ${className || ""}`}>
 				<div class="mb-6">
-					<h3 class="text-2xl font-bold text-gray-900 mb-2">Available Properties</h3>
+					<h3 class="text-2xl font-bold text-gray-900 mb-2">
+						Available Properties
+					</h3>
 					<p class="text-gray-600">
 						Discover our latest listings in Heritage at Stonebridge
 					</p>
 				</div>
-				
+
 				<realscout-office-listings
 					agent-encoded-id={agentEncodedId}
 					sort-order={sortOrder}
@@ -68,7 +73,7 @@ export const RealScoutOfficeListings = component$<RealScoutOfficeListingsProps>(
 				></realscout-office-listings>
 			</div>
 		);
-	}
+	},
 );
 
 // RealScout widgets use standard customElements API

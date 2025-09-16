@@ -1,9 +1,9 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import type { ListingProps } from "../../types/real-estate";
-import { PropertyImage } from "./PropertyImage";
-import { PropertyDetails } from "./PropertyDetails";
 import { ContactAgent } from "./ContactAgent";
 import { FavoriteButton } from "./FavoriteButton";
+import { PropertyDetails } from "./PropertyDetails";
+import { PropertyImage } from "./PropertyImage";
 
 export interface PropertyCardProps {
 	listing: ListingProps;
@@ -19,7 +19,7 @@ export const PropertyCard = component$<PropertyCardProps>(
 		// Track property views for analytics
 		useVisibleTask$(() => {
 			// Analytics tracking
-			if (typeof window !== "undefined" && window.gtag) {
+			if (window?.gtag) {
 				window.gtag("event", "property_view", {
 					property_id: listing.mls,
 					property_price: listing.price,
@@ -29,7 +29,10 @@ export const PropertyCard = component$<PropertyCardProps>(
 		});
 
 		return (
-			<article class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-200" data-mls={listing.mls}>
+			<article
+				class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-200"
+				data-mls={listing.mls}
+			>
 				<div class="relative overflow-hidden h-60">
 					<PropertyImage
 						src={listing.photos[0]}
@@ -46,10 +49,14 @@ export const PropertyCard = component$<PropertyCardProps>(
 						}}
 					/>
 					{listing.status === "pending" && (
-						<div class="absolute top-3 right-3 px-2 py-1 text-xs font-semibold rounded bg-yellow-100 text-yellow-800">Pending</div>
+						<div class="absolute top-3 right-3 px-2 py-1 text-xs font-semibold rounded bg-yellow-100 text-yellow-800">
+							Pending
+						</div>
 					)}
 					{listing.status === "sold" && (
-						<div class="absolute top-3 right-3 px-2 py-1 text-xs font-semibold rounded bg-gray-100 text-gray-800">Sold</div>
+						<div class="absolute top-3 right-3 px-2 py-1 text-xs font-semibold rounded bg-gray-100 text-gray-800">
+							Sold
+						</div>
 					)}
 				</div>
 
@@ -77,5 +84,5 @@ export const PropertyCard = component$<PropertyCardProps>(
 				</div>
 			</article>
 		);
-	}
+	},
 );

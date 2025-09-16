@@ -13,7 +13,7 @@ export const PropertyImage = component$<PropertyImageProps>(
 		const hasError = useSignal(false);
 		const imageRef = useSignal<HTMLImageElement>();
 
-		useVisibleTask$(({ track }) => {
+		useVisibleTask$(() => {
 			const img = imageRef.value;
 			if (!img) return;
 
@@ -30,7 +30,7 @@ export const PropertyImage = component$<PropertyImageProps>(
 					},
 					{
 						rootMargin: "50px",
-					}
+					},
 				);
 
 				observer.observe(img);
@@ -90,5 +90,5 @@ export const PropertyImage = component$<PropertyImageProps>(
 				)}
 			</div>
 		);
-	}
+	},
 );

@@ -53,7 +53,7 @@ export const SearchFilters = component$<SearchFiltersProps>(
 							onClick$={() => {
 								isExpanded.value = !isExpanded.value;
 							}}
-								aria-expanded={isExpanded.value}
+							aria-expanded={isExpanded.value}
 							aria-label="Toggle filters"
 						>
 							<svg
@@ -66,7 +66,12 @@ export const SearchFilters = component$<SearchFiltersProps>(
 								aria-label="Toggle filters"
 							>
 								<title>Toggle Filters</title>
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M19 9l-7 7-7-7"
+								></path>
 							</svg>
 						</button>
 					</div>
@@ -75,10 +80,17 @@ export const SearchFilters = component$<SearchFiltersProps>(
 				<div class={`p-4 space-y-6 ${isExpanded.value ? "block" : "hidden"}`}>
 					{/* Price Range */}
 					<div class="space-y-2">
-						<label for="price-range" class="block text-sm font-medium text-gray-700">Price Range</label>
+						<label
+							for="price-range"
+							class="block text-sm font-medium text-gray-700"
+						>
+							Price Range
+						</label>
 						<div class="flex items-center space-x-4">
 							<div class="flex-1">
-								<label for="price-min" class="sr-only">Minimum Price</label>
+								<label for="price-min" class="sr-only">
+									Minimum Price
+								</label>
 								<input
 									id="price-min"
 									type="range"
@@ -87,13 +99,18 @@ export const SearchFilters = component$<SearchFiltersProps>(
 									step="25000"
 									value={filters.value.priceMin}
 									onInput$={(e) => {
-										updateFilter("priceMin", parseInt((e.target as HTMLInputElement).value));
+										updateFilter(
+											"priceMin",
+											parseInt((e.target as HTMLInputElement).value, 10),
+										);
 									}}
 									class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
 								/>
 							</div>
 							<div class="flex-1">
-								<label for="price-max" class="sr-only">Maximum Price</label>
+								<label for="price-max" class="sr-only">
+									Maximum Price
+								</label>
 								<input
 									id="price-max"
 									type="range"
@@ -102,7 +119,10 @@ export const SearchFilters = component$<SearchFiltersProps>(
 									step="25000"
 									value={filters.value.priceMax}
 									onInput$={(e) => {
-										updateFilter("priceMax", parseInt((e.target as HTMLInputElement).value));
+										updateFilter(
+											"priceMax",
+											parseInt((e.target as HTMLInputElement).value, 10),
+										);
 									}}
 									class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
 								/>
@@ -116,12 +136,20 @@ export const SearchFilters = component$<SearchFiltersProps>(
 
 					{/* Bedrooms */}
 					<div class="space-y-2">
-						<label for="bedrooms" class="block text-sm font-medium text-gray-700">Bedrooms</label>
+						<label
+							for="bedrooms"
+							class="block text-sm font-medium text-gray-700"
+						>
+							Bedrooms
+						</label>
 						<select
 							id="bedrooms"
 							value={filters.value.beds}
 							onChange$={(e) => {
-								updateFilter("beds", parseInt((e.target as HTMLSelectElement).value));
+								updateFilter(
+									"beds",
+									parseInt((e.target as HTMLSelectElement).value, 10),
+								);
 							}}
 							class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 						>
@@ -136,12 +164,20 @@ export const SearchFilters = component$<SearchFiltersProps>(
 
 					{/* Bathrooms */}
 					<div class="space-y-2">
-						<label for="bathrooms" class="block text-sm font-medium text-gray-700">Bathrooms</label>
+						<label
+							for="bathrooms"
+							class="block text-sm font-medium text-gray-700"
+						>
+							Bathrooms
+						</label>
 						<select
 							id="bathrooms"
 							value={filters.value.baths}
 							onChange$={(e) => {
-								updateFilter("baths", parseInt((e.target as HTMLSelectElement).value));
+								updateFilter(
+									"baths",
+									parseInt((e.target as HTMLSelectElement).value, 10),
+								);
 							}}
 							class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 						>
@@ -156,7 +192,9 @@ export const SearchFilters = component$<SearchFiltersProps>(
 
 					{/* Property Type */}
 					<div class="space-y-2">
-						<label class="block text-sm font-medium text-gray-700">Property Type</label>
+						<label class="block text-sm font-medium text-gray-700">
+							Property Type
+						</label>
 						<div class="space-y-2">
 							{propertyTypes.map((type) => (
 								<label key={type.value} class="flex items-center">
@@ -170,9 +208,7 @@ export const SearchFilters = component$<SearchFiltersProps>(
 										}}
 										class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500"
 									/>
-									<span class="ml-2 text-sm text-gray-700">
-										{type.label}
-									</span>
+									<span class="ml-2 text-sm text-gray-700">{type.label}</span>
 								</label>
 							))}
 						</div>
@@ -180,7 +216,9 @@ export const SearchFilters = component$<SearchFiltersProps>(
 
 					{/* Status */}
 					<div class="space-y-2">
-						<label class="block text-sm font-medium text-gray-700">Status</label>
+						<label class="block text-sm font-medium text-gray-700">
+							Status
+						</label>
 						<div class="space-y-2">
 							{statusOptions.map((status) => (
 								<label key={status.value} class="flex items-center">
@@ -194,9 +232,7 @@ export const SearchFilters = component$<SearchFiltersProps>(
 										}}
 										class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500"
 									/>
-									<span class="ml-2 text-sm text-gray-700">
-										{status.label}
-									</span>
+									<span class="ml-2 text-sm text-gray-700">{status.label}</span>
 								</label>
 							))}
 						</div>
@@ -204,12 +240,20 @@ export const SearchFilters = component$<SearchFiltersProps>(
 
 					{/* Neighborhood */}
 					<div class="space-y-2">
-						<label for="neighborhood" class="block text-sm font-medium text-gray-700">Neighborhood</label>
+						<label
+							for="neighborhood"
+							class="block text-sm font-medium text-gray-700"
+						>
+							Neighborhood
+						</label>
 						<select
 							id="neighborhood"
 							value={filters.value.neighborhood}
 							onChange$={(e) => {
-								updateFilter("neighborhood", (e.target as HTMLSelectElement).value);
+								updateFilter(
+									"neighborhood",
+									(e.target as HTMLSelectElement).value,
+								);
 							}}
 							class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 						>
@@ -244,5 +288,5 @@ export const SearchFilters = component$<SearchFiltersProps>(
 				</div>
 			</div>
 		);
-	}
+	},
 );
