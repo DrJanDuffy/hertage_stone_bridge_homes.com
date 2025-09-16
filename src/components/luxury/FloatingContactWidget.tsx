@@ -24,19 +24,24 @@ export const FloatingContactWidget = component$(() => {
 
 	const handleSubmit = () => {
 		// In a real app, this would submit to your CRM/email service
-		console.log("Contact form submitted:", formData.value);
+		const formData = {
+			name: nameSignal.value,
+			email: emailSignal.value,
+			phone: phoneSignal.value,
+			message: messageSignal.value,
+			preferredTime: preferredTimeSignal.value,
+		};
+		console.log("Contact form submitted:", formData);
 		alert(
 			"Thank you! We'll contact you within 24 hours to schedule your private tour.",
 		);
 		isExpanded.value = false;
 		// Reset form
-		formData.value = {
-			name: "",
-			email: "",
-			phone: "",
-			message: "",
-			preferredTime: "",
-		};
+		nameSignal.value = "";
+		emailSignal.value = "";
+		phoneSignal.value = "";
+		messageSignal.value = "";
+		preferredTimeSignal.value = "";
 	};
 
 	if (!isVisible.value) return null;
@@ -117,7 +122,7 @@ export const FloatingContactWidget = component$(() => {
 								type="text"
 								id="name"
 								required
-								bind:value={formData.value.name}
+								bind:value={nameSignal}
 								class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
 								placeholder="Enter your full name"
 							/>
@@ -134,7 +139,7 @@ export const FloatingContactWidget = component$(() => {
 								type="email"
 								id="email"
 								required
-								bind:value={formData.value.email}
+								bind:value={emailSignal}
 								class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
 								placeholder="your@email.com"
 							/>
@@ -151,7 +156,7 @@ export const FloatingContactWidget = component$(() => {
 								type="tel"
 								id="phone"
 								required
-								bind:value={formData.value.phone}
+								bind:value={phoneSignal}
 								class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
 								placeholder="(702) 555-0123"
 							/>
@@ -166,7 +171,7 @@ export const FloatingContactWidget = component$(() => {
 							</label>
 							<select
 								id="preferredTime"
-								bind:value={formData.value.preferredTime}
+								bind:value={preferredTimeSignal}
 								class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
 							>
 								<option value="">Select a time</option>
@@ -186,7 +191,7 @@ export const FloatingContactWidget = component$(() => {
 							</label>
 							<textarea
 								id="message"
-								bind:value={formData.value.message}
+								bind:value={messageSignal}
 								rows={3}
 								class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
 								placeholder="Any specific areas you'd like to see or questions you have..."

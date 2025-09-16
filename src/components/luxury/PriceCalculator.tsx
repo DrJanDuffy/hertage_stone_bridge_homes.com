@@ -38,16 +38,19 @@ const priceTiers: PriceTier[] = [
 
 export const PriceCalculator = component$(() => {
 	const selectedTier = useSignal(0);
-	const downPayment = useSignal(20);
-	const interestRate = useSignal(6.5);
-	const loanTerm = useSignal(30);
+	const downPaymentStr = useSignal("20");
+	const interestRateStr = useSignal("6.5");
+	const loanTermStr = useSignal("30");
 
 	const calculateMonthlyPayment = () => {
 		const homePrice = priceTiers[selectedTier.value].price;
-		const downPaymentAmount = (homePrice * downPayment.value) / 100;
+		const downPayment = parseFloat(downPaymentStr.value);
+		const interestRate = parseFloat(interestRateStr.value);
+		const loanTerm = parseFloat(loanTermStr.value);
+		const downPaymentAmount = (homePrice * downPayment) / 100;
 		const loanAmount = homePrice - downPaymentAmount;
-		const monthlyRate = interestRate.value / 100 / 12;
-		const numberOfPayments = loanTerm.value * 12;
+		const monthlyRate = interestRate / 100 / 12;
+		const numberOfPayments = loanTerm * 12;
 
 		if (monthlyRate === 0) {
 			return loanAmount / numberOfPayments;
@@ -62,7 +65,8 @@ export const PriceCalculator = component$(() => {
 
 	const monthlyPayment = calculateMonthlyPayment();
 	const homePrice = priceTiers[selectedTier.value].price;
-	const downPaymentAmount = (homePrice * downPayment.value) / 100;
+	const downPayment = parseFloat(downPaymentStr.value);
+	const downPaymentAmount = (homePrice * downPayment) / 100;
 	const loanAmount = homePrice - downPaymentAmount;
 
 	return (
@@ -117,15 +121,15 @@ export const PriceCalculator = component$(() => {
 					{/* Down Payment */}
 					<div>
 						<label class="block text-sm font-medium text-gray-700 mb-2">
-							Down Payment: {downPayment.value}%
+							Down Payment: {downPaymentStr.value}%
 						</label>
 						<input
 							type="range"
 							min="5"
 							max="50"
-							bind:value={downPayment}
+							bind:value={downPaymentStr}
 							class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
-							style="background: linear-gradient(to right, #3B82F6 0%, #3B82F6 ${(downPayment.value - 5) / 45 * 100}%, #E5E7EB ${(downPayment.value - 5) / 45 * 100}%, #E5E7EB 100%)"
+							style="background: linear-gradient(to right, #3B82F6 0%, #3B82F6 ${(parseFloat(downPaymentStr.value) - 5) / 45 * 100}%, #E5E7EB ${(parseFloat(downPaymentStr.value) - 5) / 45 * 100}%, #E5E7EB 100%)"
 						/>
 						<div class="flex justify-between text-xs text-gray-500 mt-1">
 							<span>5%</span>
@@ -136,16 +140,16 @@ export const PriceCalculator = component$(() => {
 					{/* Interest Rate */}
 					<div>
 						<label class="block text-sm font-medium text-gray-700 mb-2">
-							Interest Rate: {interestRate.value}%
+							Interest Rate: {interestRateStr.value}%
 						</label>
 						<input
 							type="range"
 							min="3"
 							max="10"
 							step="0.1"
-							bind:value={interestRate}
+							bind:value={interestRateStr}
 							class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
-							style="background: linear-gradient(to right, #3B82F6 0%, #3B82F6 ${(interestRate.value - 3) / 7 * 100}%, #E5E7EB ${(interestRate.value - 3) / 7 * 100}%, #E5E7EB 100%)"
+							style="background: linear-gradient(to right, #3B82F6 0%, #3B82F6 ${(parseFloat(interestRateStr.value) - 3) / 7 * 100}%, #E5E7EB ${(parseFloat(interestRateStr.value) - 3) / 7 * 100}%, #E5E7EB 100%)"
 						/>
 						<div class="flex justify-between text-xs text-gray-500 mt-1">
 							<span>3%</span>
@@ -156,16 +160,16 @@ export const PriceCalculator = component$(() => {
 					{/* Loan Term */}
 					<div>
 						<label class="block text-sm font-medium text-gray-700 mb-2">
-							Loan Term: {loanTerm.value} years
+							Loan Term: {loanTermStr.value} years
 						</label>
 						<input
 							type="range"
 							min="15"
 							max="30"
 							step="5"
-							bind:value={loanTerm}
+							bind:value={loanTermStr}
 							class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
-							style="background: linear-gradient(to right, #3B82F6 0%, #3B82F6 ${(loanTerm.value - 15) / 15 * 100}%, #E5E7EB ${(loanTerm.value - 15) / 15 * 100}%, #E5E7EB 100%)"
+							style="background: linear-gradient(to right, #3B82F6 0%, #3B82F6 ${(parseFloat(loanTermStr.value) - 15) / 15 * 100}%, #E5E7EB ${(parseFloat(loanTermStr.value) - 15) / 15 * 100}%, #E5E7EB 100%)"
 						/>
 						<div class="flex justify-between text-xs text-gray-500 mt-1">
 							<span>15 years</span>
@@ -190,7 +194,7 @@ export const PriceCalculator = component$(() => {
 						</div>
 						<div class="flex justify-between py-2 border-b border-gray-100">
 							<span class="text-gray-600">
-								Down Payment ({downPayment.value}%)
+								Down Payment ({downPaymentStr.value}%)
 							</span>
 							<span class="font-semibold">
 								${Math.round(downPaymentAmount).toLocaleString()}
@@ -204,11 +208,11 @@ export const PriceCalculator = component$(() => {
 						</div>
 						<div class="flex justify-between py-2 border-b border-gray-100">
 							<span class="text-gray-600">Interest Rate</span>
-							<span class="font-semibold">{interestRate.value}%</span>
+							<span class="font-semibold">{interestRateStr.value}%</span>
 						</div>
 						<div class="flex justify-between py-2">
 							<span class="text-gray-600">Loan Term</span>
-							<span class="font-semibold">{loanTerm.value} years</span>
+							<span class="font-semibold">{loanTermStr.value} years</span>
 						</div>
 					</div>
 
