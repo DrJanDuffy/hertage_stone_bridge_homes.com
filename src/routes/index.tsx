@@ -2,6 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import {
 	AnimatedAmenities,
+	FloatingContactWidget,
 	LuxuryHomeCards,
 	PriceCalculator,
 	SocialProof,
@@ -13,6 +14,9 @@ export default component$(() => {
 		<>
 			{/* Sticky Header */}
 			<StickyHeader />
+
+			{/* Floating Contact Widget */}
+			<FloatingContactWidget />
 
 			{/* Simple Hero Section */}
 			<section class="relative">
