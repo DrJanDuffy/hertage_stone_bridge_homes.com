@@ -1,16 +1,10 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import {
-	RealScoutAdvancedSearch,
-	RealScoutHomeValue,
-	RealScoutOfficeListings,
-	RealScoutSimpleSearch,
-	SearchInterface,
-} from "~/components/real-estate";
+import { DynamicRealScoutGrid } from "~/components/real-estate/DynamicRealScoutGrid";
+import { SearchInterface } from "~/components/real-estate";
+import { realEstateContentConfig } from "~/config/real-estate-content";
 
 export default component$(() => {
-	const AGENT_ENCODED_ID = "QWdlbnQtMjI1MDUw";
-
 	return (
 		<>
 			{/* Hero Section */}
@@ -27,94 +21,24 @@ export default component$(() => {
 				</div>
 			</section>
 
-			{/* Main Content */}
-			<main class="max-w-7xl mx-auto px-4 py-12">
-				{/* Widget Showcase Grid */}
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-					{/* Simple Search Widget */}
-					<div class="bg-white rounded-lg shadow-lg p-6">
-						<div class="mb-6">
-							<h2 class="text-2xl font-bold text-gray-900 mb-2">
-								Simple Search
-							</h2>
-							<p class="text-gray-600">
-								Quick property search with address and basic filters
-							</p>
-						</div>
-						<RealScoutSimpleSearch
-							agentEncodedId={AGENT_ENCODED_ID}
-							class="min-h-[400px]"
-						/>
-					</div>
-
-					{/* Advanced Search Widget */}
-					<div class="bg-white rounded-lg shadow-lg p-6">
-						<div class="mb-6">
-							<h2 class="text-2xl font-bold text-gray-900 mb-2">
-								Advanced Search
-							</h2>
-							<p class="text-gray-600">
-								Comprehensive search with detailed filters and criteria
-							</p>
-						</div>
-						<RealScoutAdvancedSearch
-							agentEncodedId={AGENT_ENCODED_ID}
-							class="min-h-[600px]"
-						/>
-					</div>
-				</div>
-
-				{/* Home Value Widget - Full Width */}
-				<div class="bg-white rounded-lg shadow-lg p-6 mb-16">
-					<div class="mb-6">
-						<h2 class="text-2xl font-bold text-gray-900 mb-2">
-							Home Value Estimator
-						</h2>
-						<p class="text-gray-600">
-							Get instant home valuations and market analysis - perfect for lead
-							generation
-						</p>
-					</div>
-					<RealScoutHomeValue
-						agentEncodedId={AGENT_ENCODED_ID}
-						class="min-h-[500px]"
-					/>
-				</div>
-
-				{/* Office Listings Widget - Full Width */}
-				<div class="bg-white rounded-lg shadow-lg p-6 mb-16">
-					<div class="mb-6">
-						<h2 class="text-2xl font-bold text-gray-900 mb-2">
-							Office Listings
-						</h2>
-						<p class="text-gray-600">
-							Curated property listings from our office with advanced sorting
-							and filtering
-						</p>
-					</div>
-					<RealScoutOfficeListings
-						agentEncodedId={AGENT_ENCODED_ID}
-						sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
-						listingStatus="For Sale"
-						propertyTypes="SFR,MF"
-						priceMin={500000}
-						priceMax={600000}
-						class="min-h-[480px]"
-					/>
-				</div>
-
+			{/* Dynamic RealScout Content Blocks */}
+			<main>
+				<DynamicRealScoutGrid config={realEstateContentConfig} />
+				
 				{/* Custom Search Interface */}
-				<div class="bg-white rounded-lg shadow-lg p-6">
-					<div class="mb-6">
-						<h2 class="text-2xl font-bold text-gray-900 mb-2">
-							Custom Search Interface
-						</h2>
-						<p class="text-gray-600">
-							Our custom-built search interface with Qwik optimization and
-							real-time filtering
-						</p>
+				<div class="max-w-7xl mx-auto px-4 py-12">
+					<div class="bg-white rounded-lg shadow-lg p-6">
+						<div class="mb-6">
+							<h2 class="text-2xl font-bold text-gray-900 mb-2">
+								Custom Search Interface
+							</h2>
+							<p class="text-gray-600">
+								Our custom-built search interface with Qwik optimization and
+								real-time filtering
+							</p>
+						</div>
+						<SearchInterface />
 					</div>
-					<SearchInterface />
 				</div>
 
 				{/* Widget Information */}
