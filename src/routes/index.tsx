@@ -1,7 +1,29 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { useVisibleTask$ } from "@builder.io/qwik";
 
 export default component$(() => {
+	// Load RealScout script and styles
+	useVisibleTask$(() => {
+		if (typeof window === "undefined") return;
+
+		// Load RealScout script
+		const script = document.createElement("script");
+		script.src = "https://em.realscout.com/widgets/realscout-web-components.umd.js";
+		script.type = "module";
+		document.head.appendChild(script);
+
+		// Add RealScout styles
+		const style = document.createElement("style");
+		style.textContent = `
+			realscout-office-listings {
+				--rs-listing-divider-color: rgb(101, 141, 172);
+				width: 100%;
+			}
+		`;
+		document.head.appendChild(style);
+	});
+
 	return (
 		<>
 			{/* Hero Section */}
@@ -347,22 +369,6 @@ export const head: DocumentHead = {
 		{
 			rel: "canonical",
 			href: "https://heritagestonebridge.com/",
-		},
-	],
-	scripts: [
-		{
-			src: "https://em.realscout.com/widgets/realscout-web-components.umd.js",
-			type: "module",
-		},
-	],
-	styles: [
-		{
-			style: `
-				realscout-office-listings {
-					--rs-listing-divider-color: rgb(101, 141, 172);
-					width: 100%;
-				}
-			`,
 		},
 	],
 };
