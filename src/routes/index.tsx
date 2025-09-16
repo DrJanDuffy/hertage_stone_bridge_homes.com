@@ -1,6 +1,10 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { LuxuryHomeCards, PriceCalculator, SocialProof } from "~/components/luxury";
+import {
+	LuxuryHomeCards,
+	PriceCalculator,
+	SocialProof,
+} from "~/components/luxury";
 
 export default component$(() => {
 	return (
