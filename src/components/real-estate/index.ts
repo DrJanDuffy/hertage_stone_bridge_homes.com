@@ -32,6 +32,7 @@ export { PropertyPrice } from "./PropertyPrice";
 export { RealScoutAdvancedSearch } from "./RealScoutAdvancedSearch";
 export { RealScoutHomeValue } from "./RealScoutHomeValue";
 export { RealScoutOfficeListings } from "./RealScoutOfficeListings";
+export { RealScoutOfficeListingsWidget } from "./RealScoutOfficeListingsWidget";
 export { RealScoutSimpleSearch } from "./RealScoutSimpleSearch";
 
 // Third-party widget integration

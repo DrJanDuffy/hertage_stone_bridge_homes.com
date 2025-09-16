@@ -1,28 +1,8 @@
-import { component$, useVisibleTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
 
 export default component$(() => {
-	// Load RealScout script and styles
-	useVisibleTask$(() => {
-		if (typeof window === "undefined") return;
-
-		// Load RealScout script
-		const script = document.createElement("script");
-		script.src =
-			"https://em.realscout.com/widgets/realscout-web-components.umd.js";
-		script.type = "module";
-		document.head.appendChild(script);
-
-		// Add RealScout styles
-		const style = document.createElement("style");
-		style.textContent = `
-			realscout-office-listings {
-				--rs-listing-divider-color: rgb(101, 141, 172);
-				width: 100%;
-			}
-		`;
-		document.head.appendChild(style);
-	});
 
 	return (
 		<>
@@ -65,14 +45,14 @@ export default component$(() => {
 							Discover our latest listings in this exclusive gated community
 						</p>
 					</div>
-					<realscout-office-listings
-						agent-encoded-id="QWdlbnQtMjI1MDUw"
-						sort-order="STATUS_AND_SIGNIFICANT_CHANGE"
-						listing-status="For Sale"
-						property-types="SFR,MF"
-						price-min="500000"
-						price-max="600000"
-					></realscout-office-listings>
+					<RealScoutOfficeListingsWidget
+						agentEncodedId="QWdlbnQtMjI1MDUw"
+						sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
+						listingStatus="For Sale"
+						propertyTypes="SFR,MF"
+						priceMin={500000}
+						priceMax={600000}
+					/>
 				</div>
 			</section>
 
