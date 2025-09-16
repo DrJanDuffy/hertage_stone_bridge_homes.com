@@ -1,6 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import {
+	AnimatedAmenities,
 	LuxuryHomeCards,
 	PriceCalculator,
 	SocialProof,
@@ -96,6 +97,21 @@ export default component$(() => {
 						</p>
 					</div>
 					<PriceCalculator />
+				</div>
+			</section>
+
+			{/* Animated Amenities */}
+			<section class="py-16">
+				<div class="max-w-7xl mx-auto px-4">
+					<div class="text-center mb-12">
+						<h2 class="text-3xl font-bold text-gray-900 mb-4">
+							Resort-Style Amenities
+						</h2>
+						<p class="text-lg text-gray-600">
+							Experience luxury living with world-class amenities
+						</p>
+					</div>
+					<AnimatedAmenities />
 				</div>
 			</section>
 
