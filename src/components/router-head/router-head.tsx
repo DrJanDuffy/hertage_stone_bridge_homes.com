@@ -26,6 +26,7 @@ export const RouterHead = component$(() => {
 
 			{head.styles.map((s) => (
 				// eslint-disable-next-line react/no-danger
+				// biome-ignore lint/security/noDangerouslySetInnerHtml: Required for dynamic styles
 				<style key={s.key} {...s.props} dangerouslySetInnerHTML={s.style} />
 			))}
 		</>
