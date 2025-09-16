@@ -5,11 +5,15 @@ import {
 	LuxuryHomeCards,
 	PriceCalculator,
 	SocialProof,
+	StickyHeader,
 } from "~/components/luxury";
 
 export default component$(() => {
 	return (
 		<>
+			{/* Sticky Header */}
+			<StickyHeader />
+
 			{/* Simple Hero Section */}
 			<section class="relative">
 				<div class="max-w-7xl mx-auto px-4 py-8">
