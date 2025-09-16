@@ -18,14 +18,15 @@ export const RealScoutWidget = component$<RealScoutWidgetProps>(
 		priceMin = "500000",
 		priceMax = "600000",
 	}) => {
+		const isClient = useSignal(false);
 		const isReady = useSignal(false);
 
 		useVisibleTask$(() => {
-			if (
-				typeof window === "undefined" ||
-				typeof customElements === "undefined"
-			)
-				return;
+			if (typeof window === "undefined") return;
+			
+			isClient.value = true;
+
+			if (typeof customElements === "undefined") return;
 
 			// Simple check if element is already defined
 			if (customElements.get("realscout-office-listings")) {
@@ -43,6 +44,17 @@ export const RealScoutWidget = component$<RealScoutWidgetProps>(
 					console.warn("RealScout widget failed to load");
 				});
 		});
+
+		// Only render on client side to avoid SSR issues with custom elements
+		if (!isClient.value) {
+			return (
+				<div class="min-h-[400px] bg-gray-50 rounded-lg p-8">
+					<div class="text-center text-gray-500">
+						Loading property listings...
+					</div>
+				</div>
+			);
+		}
 
 		return (
 			<div class="min-h-[400px] bg-gray-50 rounded-lg p-8">
