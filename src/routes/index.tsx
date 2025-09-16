@@ -1,5 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { SocialProof } from "~/components/luxury";
 
 export default component$(() => {
 	return (
@@ -61,6 +62,18 @@ export default component$(() => {
 							<p class="text-gray-600">Gated community with security</p>
 						</div>
 					</div>
+				</div>
+			</section>
+
+			{/* Social Proof */}
+			<section class="py-16">
+				<div class="max-w-7xl mx-auto px-4">
+					<div class="text-center mb-12">
+						<h2 class="text-3xl font-bold text-gray-900 mb-4">
+							What Our Residents Say
+						</h2>
+					</div>
+					<SocialProof />
 				</div>
 			</section>
 
