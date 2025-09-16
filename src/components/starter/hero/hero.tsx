@@ -86,11 +86,13 @@ export default component$(() => {
 							});
 						}
 
-						setTimeout(shoot, 0);
-						setTimeout(shoot, 100);
-						setTimeout(shoot, 200);
-						setTimeout(shoot, 300);
-						setTimeout(shoot, 400);
+						if (typeof window !== "undefined") {
+							setTimeout(shoot, 0);
+							setTimeout(shoot, 100);
+							setTimeout(shoot, 200);
+							setTimeout(shoot, 300);
+							setTimeout(shoot, 400);
+						}
 					}}
 				>
 					Time to celebrate

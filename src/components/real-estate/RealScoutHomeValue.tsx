@@ -28,7 +28,9 @@ export const RealScoutHomeValue = component$<RealScoutHomeValueProps>(
 				}
 
 				// Check again in 100ms
-				setTimeout(waitForRealScout, 100);
+				if (typeof window !== "undefined") {
+					setTimeout(waitForRealScout, 100);
+				}
 			};
 
 			waitForRealScout();
