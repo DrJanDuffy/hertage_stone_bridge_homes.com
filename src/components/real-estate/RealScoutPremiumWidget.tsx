@@ -39,7 +39,7 @@ export const RealScoutPremiumWidget = component$<RealScoutPremiumWidgetProps>(
 						}
 					});
 				},
-				{ threshold: 0.1 }
+				{ threshold: 0.1 },
 			);
 
 			const element = document.querySelector("[data-premium-widget]");
@@ -55,14 +55,14 @@ export const RealScoutPremiumWidget = component$<RealScoutPremiumWidgetProps>(
 				<section class="py-16 bg-gray-900">
 					<div class="max-w-7xl mx-auto px-4">
 						<div class="text-center mb-8">
-							<h2 class="text-3xl font-bold text-white mb-4">
-								{title}
-							</h2>
+							<h2 class="text-3xl font-bold text-white mb-4">{title}</h2>
 							<p class="text-lg text-gray-300">{subtitle}</p>
 						</div>
 						<div class="bg-gray-800 rounded-2xl shadow-xl border border-gray-700 p-8 min-h-[400px] flex items-center justify-center">
 							<div class="text-center text-gray-400">
-								<div class="text-lg font-semibold mb-2">Loading Premium Estates...</div>
+								<div class="text-lg font-semibold mb-2">
+									Loading Premium Estates...
+								</div>
 								<div class="text-sm">Heritage at Stonebridge</div>
 							</div>
 						</div>
@@ -72,34 +72,36 @@ export const RealScoutPremiumWidget = component$<RealScoutPremiumWidgetProps>(
 		}
 
 		return (
-			<section 
-				class="py-16 bg-gray-900"
-				data-premium-widget
-			>
+			<section class="py-16 bg-gray-900" data-premium-widget>
 				<div class="max-w-7xl mx-auto px-4">
 					<div class="text-center mb-8">
-						<div class={`transition-all duration-1000 transform ${
-							isVisible.value 
-								? "opacity-100 translate-y-0" 
-								: "opacity-0 translate-y-8"
-						}`}>
-							<h2 class="text-3xl font-bold text-white mb-4">
-								{title}
-							</h2>
+						<div
+							class={`transition-all duration-1000 transform ${
+								isVisible.value
+									? "opacity-100 translate-y-0"
+									: "opacity-0 translate-y-8"
+							}`}
+						>
+							<h2 class="text-3xl font-bold text-white mb-4">{title}</h2>
 							<p class="text-lg text-gray-300">{subtitle}</p>
 							<div class="mt-4 h-1 w-24 bg-gradient-to-r from-yellow-400 to-yellow-500 mx-auto rounded-full"></div>
 						</div>
 					</div>
-					
-					<div class={`transition-all duration-1000 delay-300 transform ${
-						isVisible.value 
-							? "opacity-100 translate-y-0" 
-							: "opacity-0 translate-y-8"
-					}`}>
+
+					<div
+						class={`transition-all duration-1000 delay-300 transform ${
+							isVisible.value
+								? "opacity-100 translate-y-0"
+								: "opacity-0 translate-y-8"
+						}`}
+					>
 						<div class="bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-700 overflow-hidden">
 							<div class="bg-gradient-to-r from-gray-700 to-gray-800 p-6 text-white">
 								<h3 class="text-xl font-bold mb-2">Estate Collection</h3>
-								<p class="text-gray-300">Ultra-luxury homes ${parseInt(priceMin).toLocaleString()} - ${parseInt(priceMax).toLocaleString()}</p>
+								<p class="text-gray-300">
+									Ultra-luxury homes ${parseInt(priceMin).toLocaleString()} - $
+									{parseInt(priceMax).toLocaleString()}
+								</p>
 							</div>
 							<div class="p-6">
 								<realscout-office-listings
@@ -117,5 +119,5 @@ export const RealScoutPremiumWidget = component$<RealScoutPremiumWidgetProps>(
 				</div>
 			</section>
 		);
-	}
+	},
 );

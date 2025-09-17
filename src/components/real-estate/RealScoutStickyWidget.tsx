@@ -46,7 +46,9 @@ export const RealScoutStickyWidget = component$<RealScoutStickyWidgetProps>(
 		return (
 			<div
 				class={`fixed right-4 top-1/2 -translate-y-1/2 z-50 transition-all duration-500 ${
-					isVisible.value ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
+					isVisible.value
+						? "opacity-100 translate-x-0"
+						: "opacity-0 translate-x-full"
 				}`}
 			>
 				<div class="bg-white rounded-2xl shadow-2xl border-2 border-yellow-400 overflow-hidden w-80 max-h-[600px]">
@@ -59,9 +61,11 @@ export const RealScoutStickyWidget = component$<RealScoutStickyWidgetProps>(
 							</div>
 							<button
 								type="button"
-								onClick$={() => isExpanded.value = !isExpanded.value}
+								onClick$={() => (isExpanded.value = !isExpanded.value)}
 								class="text-gray-800 hover:text-gray-600 transition-colors"
-								aria-label={isExpanded.value ? "Collapse listings" : "Expand listings"}
+								aria-label={
+									isExpanded.value ? "Collapse listings" : "Expand listings"
+								}
 							>
 								<svg
 									class={`w-5 h-5 transition-transform ${
@@ -83,17 +87,20 @@ export const RealScoutStickyWidget = component$<RealScoutStickyWidgetProps>(
 					</div>
 
 					{/* Content */}
-					<div class={`transition-all duration-300 ${
-						isExpanded.value ? "max-h-[500px]" : "max-h-0 overflow-hidden"
-					}`}>
+					<div
+						class={`transition-all duration-300 ${
+							isExpanded.value ? "max-h-[500px]" : "max-h-0 overflow-hidden"
+						}`}
+					>
 						<div class="p-4">
 							<div class="text-center mb-4">
 								<div class="text-sm font-semibold text-gray-700 mb-2">
-									${parseInt(priceMin).toLocaleString()} - ${parseInt(priceMax).toLocaleString()}
+									${parseInt(priceMin).toLocaleString()} - $
+									{parseInt(priceMax).toLocaleString()}
 								</div>
 								<div class="h-1 w-16 bg-gradient-to-r from-yellow-400 to-yellow-500 mx-auto rounded-full"></div>
 							</div>
-							
+
 							<div class="min-h-[300px] mb-4">
 								<realscout-office-listings
 									agent-encoded-id={agentEncodedId}
@@ -118,16 +125,26 @@ export const RealScoutStickyWidget = component$<RealScoutStickyWidgetProps>(
 					{/* Close button */}
 					<button
 						type="button"
-						onClick$={() => isVisible.value = false}
+						onClick$={() => (isVisible.value = false)}
 						class="absolute -top-2 -left-2 w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-colors shadow-lg"
 						aria-label="Close sticky panel"
 					>
-						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+						<svg
+							class="w-4 h-4"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M6 18L18 6M6 6l12 12"
+							/>
 						</svg>
 					</button>
 				</div>
 			</div>
 		);
-	}
+	},
 );

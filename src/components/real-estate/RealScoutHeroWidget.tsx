@@ -39,7 +39,7 @@ export const RealScoutHeroWidget = component$<RealScoutHeroWidgetProps>(
 						}
 					});
 				},
-				{ threshold: 0.1 }
+				{ threshold: 0.1 },
 			);
 
 			const element = document.querySelector("[data-hero-widget]");
@@ -55,14 +55,14 @@ export const RealScoutHeroWidget = component$<RealScoutHeroWidgetProps>(
 				<section class="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
 					<div class="max-w-7xl mx-auto px-4">
 						<div class="text-center mb-8">
-							<h2 class="text-3xl font-bold text-gray-900 mb-4">
-								{title}
-							</h2>
+							<h2 class="text-3xl font-bold text-gray-900 mb-4">{title}</h2>
 							<p class="text-lg text-gray-600">{subtitle}</p>
 						</div>
 						<div class="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 min-h-[400px] flex items-center justify-center">
 							<div class="text-center text-gray-500">
-								<div class="text-lg font-semibold mb-2">Loading Featured Homes...</div>
+								<div class="text-lg font-semibold mb-2">
+									Loading Featured Homes...
+								</div>
 								<div class="text-sm">Heritage at Stonebridge</div>
 							</div>
 						</div>
@@ -72,34 +72,41 @@ export const RealScoutHeroWidget = component$<RealScoutHeroWidgetProps>(
 		}
 
 		return (
-			<section 
+			<section
 				class="py-16 bg-gradient-to-br from-gray-50 to-blue-50"
 				data-hero-widget
 			>
 				<div class="max-w-7xl mx-auto px-4">
 					<div class="text-center mb-8">
-						<div class={`transition-all duration-1000 transform ${
-							isVisible.value 
-								? "opacity-100 translate-y-0" 
-								: "opacity-0 translate-y-8"
-						}`}>
-							<h2 class="text-3xl font-bold text-gray-900 mb-4">
-								{title}
-							</h2>
+						<div
+							class={`transition-all duration-1000 transform ${
+								isVisible.value
+									? "opacity-100 translate-y-0"
+									: "opacity-0 translate-y-8"
+							}`}
+						>
+							<h2 class="text-3xl font-bold text-gray-900 mb-4">{title}</h2>
 							<p class="text-lg text-gray-600">{subtitle}</p>
 							<div class="mt-4 h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
 						</div>
 					</div>
-					
-					<div class={`transition-all duration-1000 delay-300 transform ${
-						isVisible.value 
-							? "opacity-100 translate-y-0" 
-							: "opacity-0 translate-y-8"
-					}`}>
+
+					<div
+						class={`transition-all duration-1000 delay-300 transform ${
+							isVisible.value
+								? "opacity-100 translate-y-0"
+								: "opacity-0 translate-y-8"
+						}`}
+					>
 						<div class="bg-white rounded-2xl shadow-xl border-2 border-blue-200 overflow-hidden">
 							<div class="bg-gradient-to-r from-blue-600 to-blue-700 p-6 text-white">
-								<h3 class="text-xl font-bold mb-2">New Construction Collection</h3>
-								<p class="text-blue-100">Starting from ${parseInt(priceMin).toLocaleString()} - ${parseInt(priceMax).toLocaleString()}</p>
+								<h3 class="text-xl font-bold mb-2">
+									New Construction Collection
+								</h3>
+								<p class="text-blue-100">
+									Starting from ${parseInt(priceMin).toLocaleString()} - $
+									{parseInt(priceMax).toLocaleString()}
+								</p>
 							</div>
 							<div class="p-6">
 								<realscout-office-listings
@@ -117,5 +124,5 @@ export const RealScoutHeroWidget = component$<RealScoutHeroWidgetProps>(
 				</div>
 			</section>
 		);
-	}
+	},
 );
