@@ -1,12 +1,6 @@
 {
   "version": 2,
   "name": "heritage-stonebridge-website",
-  "builds": [
-    {
-      "src": "dist/server/entry.vercel-edge.js",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
     {
       "src": "/sw.js",
@@ -141,7 +135,5 @@
   },
   "env": {
     "NODE_ENV": "production"
-  },
-  "regions": ["iad1", "sfo1", "lhr1"],
-  "framework": "qwik"
+  }
 }
