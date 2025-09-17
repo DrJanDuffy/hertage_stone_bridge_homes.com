@@ -1,6 +1,6 @@
 import { type RequestHandler } from "@builder.io/qwik-city";
 
-export const onGet: RequestHandler = async ({ response }) => {
+export const onGet: RequestHandler = async (requestEvent) => {
   const robots = `# Robots.txt for Heritage at Stonebridge
 # Updated: ${new Date().toISOString().split('T')[0]}
 
@@ -67,7 +67,7 @@ Sitemap: https://heritagestonebridge.com/sitemap-images.xml
 # Host directive
 Host: https://heritagestonebridge.com`;
 
-  response.headers.set("Content-Type", "text/plain");
-  response.headers.set("Cache-Control", "public, max-age=86400");
-  return robots;
+  requestEvent.headers.set("Content-Type", "text/plain");
+  requestEvent.headers.set("Cache-Control", "public, max-age=86400");
+  requestEvent.send(200, robots);
 };
