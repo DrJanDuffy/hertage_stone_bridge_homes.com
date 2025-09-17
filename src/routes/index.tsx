@@ -1,201 +1,10 @@
-import { component$, useTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-// import {
-//   AnimatedAmenities,
-//   FloatingContactWidget,
-//   HeroImageCarousel,
-//   LuxuryHomeCards,
-//   PriceCalculator,
-//   SocialProof,
-//   // StickyHeader,
-// } from "~/components/luxury";
-// import {
-//   RealScoutAmenitiesWidget,
-//   RealScoutHeroWidget,
-//   RealScoutPremiumWidget,
-//   // RealScoutStickyWidget,
-// } from "~/components/real-estate";
 
 export default component$(() => {
-  // Inject Enhanced Local Business Schema for AI Understanding
-  useTask$(() => {
-    if (typeof document !== "undefined") {
-      const localBusinessSchema = {
-        "@context": "https://schema.org",
-        "@type": "RealEstateAgent",
-        name: "Dr. Jan Duffy - Las Vegas Real Estate Expert",
-        description:
-          "Las Vegas Real Estate Expert specializing in 55+ communities, luxury homes, and active adult living near Red Rock Canyon.",
-        url: "https://heritagestonebridge.com",
-        telephone: "702-222-1964",
-        email: "DrDuffySells@HeritageStonebridge.com",
-        image: "https://heritagestonebridge.com/images/dr-jan-duffy.jpg",
-        priceRange: "$$$$",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "Crossbridge Dr",
-          addressLocality: "Las Vegas",
-          addressRegion: "NV",
-          postalCode: "89138",
-          addressCountry: "US",
-        },
-        geo: {
-          "@type": "GeoCoordinates",
-          latitude: "36.1699",
-          longitude: "-115.1398",
-        },
-        areaServed: [
-          {
-            "@type": "City",
-            name: "Las Vegas, Nevada",
-          },
-          {
-            "@type": "City",
-            name: "Summerlin, Nevada",
-          },
-          {
-            "@type": "Place",
-            name: "Red Rock Canyon Area",
-          },
-        ],
-        serviceType: [
-          "55+ Community Sales",
-          "Active Adult Communities",
-          "Luxury Home Sales",
-          "Real Estate Consultation",
-        ],
-        openingHours: "Mo-Su 08:00-20:00",
-        sameAs: [
-          "https://www.facebook.com/DrJanDuffyRealEstate",
-          "https://www.linkedin.com/in/drjanduffy",
-          "https://www.instagram.com/drjanduffylasvegas",
-        ],
-        // Enhanced AI-friendly properties
-        knowsAbout: [
-          "55+ Active Adult Communities",
-          "Heritage at Stonebridge",
-          "Summerlin Real Estate",
-          "Red Rock Canyon Homes",
-          "Luxury Home Sales",
-          "Gated Communities",
-          "Active Adult Living",
-          "Las Vegas Retirement Communities",
-        ],
-        makesOffer: {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Accommodation",
-            name: "55+ Active Adult Homes",
-            description: "Single-story homes in gated community with resort-style amenities",
-          },
-        },
-        hasCredential: {
-          "@type": "EducationalOccupationalCredential",
-          name: "Nevada Real Estate License",
-          credentialCategory: "Real Estate License",
-          recognizedBy: {
-            "@type": "Organization",
-            name: "Nevada Real Estate Division",
-          },
-        },
-      };
-
-      // Add Heritage at Stonebridge Community Schema
-      const communitySchema = {
-        "@context": "https://schema.org",
-        "@type": "ResidentialComplex",
-        name: "Heritage at Stonebridge",
-        description:
-          "Premier 55+ active adult community in Summerlin, Las Vegas with resort-style amenities",
-        url: "https://heritagestonebridge.com",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "Crossbridge Dr",
-          addressLocality: "Las Vegas",
-          addressRegion: "NV",
-          postalCode: "89138",
-          addressCountry: "US",
-        },
-        geo: {
-          "@type": "GeoCoordinates",
-          latitude: "36.1699",
-          longitude: "-115.1398",
-        },
-        amenityFeature: [
-          {
-            "@type": "AmenityFeature",
-            name: "Clubhouse",
-            description: "8,000 square foot clubhouse with fitness center and social areas",
-          },
-          {
-            "@type": "AmenityFeature",
-            name: "Swimming Pool",
-            description: "Resort-style swimming pool with spa area",
-          },
-          {
-            "@type": "AmenityFeature",
-            name: "Pickleball Courts",
-            description: "Multiple pickleball courts for active recreation",
-          },
-          {
-            "@type": "AmenityFeature",
-            name: "Fitness Center",
-            description: "State-of-the-art fitness center with cardio and strength training",
-          },
-          {
-            "@type": "AmenityFeature",
-            name: "Walking Trails",
-            description: "Scenic walking and biking trails throughout the community",
-          },
-        ],
-        numberOfUnits: 421,
-        priceRange: "$489,000 - $800,000+",
-        developer: {
-          "@type": "Organization",
-          name: "Lennar Homes",
-        },
-        propertyType: "55+ Active Adult Community",
-        ageRestriction: "55+",
-        hasMap: "https://maps.google.com/?q=36.1699,-115.1398",
-      };
-
-      // Inject RealEstateAgent schema
-      const script1 = document.createElement("script");
-      script1.type = "application/ld+json";
-      script1.textContent = JSON.stringify(localBusinessSchema);
-      document.head.appendChild(script1);
-
-      // Inject ResidentialComplex schema
-      const script2 = document.createElement("script");
-      script2.type = "application/ld+json";
-      script2.textContent = JSON.stringify(communitySchema);
-      document.head.appendChild(script2);
-    }
-  });
-
   return (
     <>
-      {/* AI Crawler Detection */}
-
-      {/* Sticky Header */}
-      {/* <StickyHeader /> */}
-
-      {/* Floating Contact Widget */}
-      {/* <FloatingContactWidget /> */}
-
-      {/* Sticky Side Panel Widget - Appears after 15 seconds */}
-      {/* <RealScoutStickyWidget
-        agentEncodedId="QWdlbnQtMjI1MDUw"
-        sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
-        listingStatus="For Sale"
-        propertyTypes="SFR,MF"
-        priceMin="600000"
-        priceMax="900000"
-        title="Exclusive Listings"
-        subtitle="Schedule Private Tour"
-      /> */}
-
-      {/* Hero Image Carousel */}
+      {/* Hero Section */}
       <section class="relative">
         <div class="max-w-7xl mx-auto px-4 py-8">
           <div class="text-center mb-8">
@@ -222,21 +31,8 @@ export default component$(() => {
               </button>
             </div>
           </div>
-          {/* <HeroImageCarousel /> */}
         </div>
       </section>
-
-      {/* RealScout Widget #1: Featured New Construction Homes - Below Hero */}
-      {/* <RealScoutHeroWidget
-        agentEncodedId="QWdlbnQtMjI1MDUw"
-        sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
-        listingStatus="For Sale"
-        propertyTypes="SFR,MF"
-        priceMin="500000"
-        priceMax="800000"
-        title="Featured New Construction Homes"
-        subtitle="See What's Available Now"
-      /> */}
 
       {/* Simple Content Sections */}
       <section class="bg-gray-50 py-16">
@@ -262,75 +58,6 @@ export default component$(() => {
         </div>
       </section>
 
-      {/* Luxury Home Cards */}
-      <section class="py-16">
-        <div class="max-w-7xl mx-auto px-4">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Available Homes</h2>
-            <p class="text-lg text-gray-600">
-              Discover our latest luxury homes in Heritage at Stonebridge
-            </p>
-          </div>
-          {/* <LuxuryHomeCards /> */}
-        </div>
-      </section>
-
-      {/* Price Calculator */}
-      <section class="bg-gray-50 py-16">
-        <div class="max-w-7xl mx-auto px-4">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Calculate Your Monthly Payment</h2>
-            <p class="text-lg text-gray-600">Get an instant estimate for your dream home</p>
-          </div>
-          {/* <PriceCalculator /> */}
-        </div>
-      </section>
-
-      {/* Animated Amenities */}
-      <section class="py-16">
-        <div class="max-w-7xl mx-auto px-4">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Resort-Style Amenities</h2>
-            <p class="text-lg text-gray-600">Experience luxury living with world-class amenities</p>
-          </div>
-          {/* <AnimatedAmenities /> */}
-        </div>
-      </section>
-
-      {/* RealScout Widget #2: Luxury Resale Opportunities - After Amenities */}
-      {/* <RealScoutAmenitiesWidget
-        agentEncodedId="QWdlbnQtMjI1MDUw"
-        sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
-        listingStatus="For Sale"
-        propertyTypes="SFR,MF"
-        priceMin="650000"
-        priceMax="1000000"
-        title="Luxury Resale Opportunities"
-        subtitle="Browse Exclusive Listings"
-      /> */}
-
-      {/* Social Proof */}
-      <section class="py-16">
-        <div class="max-w-7xl mx-auto px-4">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">What Our Residents Say</h2>
-          </div>
-          {/* <SocialProof /> */}
-        </div>
-      </section>
-
-      {/* RealScout Widget #3: Premium Estate Homes - Before Final CTA */}
-      {/* <RealScoutPremiumWidget
-        agentEncodedId="QWdlbnQtMjI1MDUw"
-        sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
-        listingStatus="For Sale"
-        propertyTypes="SFR,MF"
-        priceMin="700000"
-        priceMax="1200000"
-        title="Premium Estate Homes"
-        subtitle="Exclusive Luxury Properties"
-      /> */}
-
       {/* Call to Action */}
       <section class="bg-gradient-to-br from-blue-600 to-blue-800 py-16">
         <div class="max-w-7xl mx-auto px-4 text-center">
@@ -352,7 +79,7 @@ export default component$(() => {
               type="button"
               class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-800 transition-colors shadow-lg"
             >
-              Call (702) 555-1234
+              Call (702) 222-1964
             </button>
           </div>
         </div>
