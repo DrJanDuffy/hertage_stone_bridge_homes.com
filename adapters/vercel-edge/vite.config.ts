@@ -9,15 +9,17 @@ export default extendConfig(baseConfig, () => {
       rollupOptions: {
         input: ['src/entry.vercel-edge.tsx', '@qwik-city-plan'],
         external: [
-          'node:fs', 'node:path', 'node:url', 'node:crypto', 'node:stream',
-          'fs', 'path', 'url', 'crypto', 'stream', 'util', 'events'
+          'node:fs', 'node:path', 'node:url', 'node:crypto', 'node:stream', 'node:buffer',
+          'fs', 'path', 'url', 'crypto', 'stream', 'util', 'events', 'buffer', 'os', 'child_process'
         ],
         output: {
           format: 'es',
           manualChunks: undefined,
+          inlineDynamicImports: false,
         },
       },
       outDir: '.vercel/output/functions/_qwik-city.func',
+      target: 'esnext',
     },
     plugins: [vercelEdgeAdapter()],
   };
