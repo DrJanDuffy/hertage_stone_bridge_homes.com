@@ -1,0 +1,15 @@
+# Ignore build artifacts that might cause conflicts
+dist/
+.qwik/
+node_modules/.cache/
+tmp/
+*.log
+
+# Ignore source maps
+*.map
+
+# Ignore development files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

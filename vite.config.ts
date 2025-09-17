@@ -7,8 +7,22 @@ export default defineConfig(() => {
   return {
     plugins: [
       qwikCity(),
-      qwikVite(),
+      qwikVite({
+        client: {
+          outDir: "dist/client",
+        },
+        ssr: {
+          outDir: "dist/server",
+        },
+      }),
       tsconfigPaths(),
     ],
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: undefined,
+        },
+      },
+    },
   };
 });
