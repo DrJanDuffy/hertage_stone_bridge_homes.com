@@ -177,8 +177,8 @@ export const Footer = component$(() => {
 				<div class="border-t border-gray-700 mt-8 pt-8">
 					<div class="flex flex-col md:flex-row justify-between items-center">
 						<div class="text-gray-400 text-sm mb-4 md:mb-0">
-							<p>&copy; 2025 Dr. Jan Duffy Real Estate. All rights reserved.</p>
-							<p>Licensed Real Estate Professional in Nevada</p>
+							<p>&copy; 2025 Dr. Jan Duffy, Nevada Real Estate License #S.0197614</p>
+							<p>Licensed Real Estate Professional serving Las Vegas & Summerlin</p>
 						</div>
 						<div class="flex space-x-6 text-sm">
 							<a
