@@ -223,64 +223,75 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-	title:
-		"Heritage at Stonebridge Homes for Sale | Luxury 55+ Summerlin Community",
+	title: "Las Vegas 55+ Communities Red Rock Canyon | Heritage at Stonebridge - Dr. Jan Duffy",
 	meta: [
 		{
 			name: "description",
-			content:
-				"Discover luxury 55+ living at Heritage at Stonebridge in Summerlin, Las Vegas. Single-story Lennar homes starting from $650K with resort-style amenities, gated security, and prime location.",
+			content: "Discover luxury 55+ active adult communities near Red Rock Canyon in Summerlin, Las Vegas. Heritage at Stonebridge offers gated living, resort amenities & stunning mountain views. Dr. Jan Duffy, your 55+ specialist - Call 702-222-1964"
 		},
 		{
-			name: "keywords",
-			content:
-				"Heritage at Stonebridge, Summerlin homes for sale, 55+ community Las Vegas, active adult community, Lennar homes Summerlin, gated community Las Vegas, luxury homes Summerlin",
+			name: "keywords", 
+			content: "Las Vegas 55+ communities, Red Rock Canyon homes, Summerlin active adult, Heritage Stonebridge, Dr Jan Duffy, 55+ realtor Las Vegas, active adult communities Nevada"
 		},
+		// Open Graph for social sharing
 		{
 			property: "og:title",
-			content:
-				"Heritage at Stonebridge Homes for Sale | Luxury 55+ Summerlin Community",
+			content: "Las Vegas 55+ Communities Red Rock Canyon | Heritage at Stonebridge"
 		},
 		{
-			property: "og:description",
-			content:
-				"Discover luxury 55+ living at Heritage at Stonebridge in Summerlin, Las Vegas. Single-story Lennar homes with resort-style amenities and prime location.",
+			property: "og:description", 
+			content: "Discover luxury 55+ active adult communities near Red Rock Canyon. Heritage at Stonebridge offers gated living, resort amenities & mountain views in Summerlin."
 		},
 		{
 			property: "og:type",
-			content: "website",
+			content: "website"
+		},
+		{
+			property: "og:url",
+			content: "https://heritagestonebridge.com"
+		},
+		// Local SEO
+		{
+			name: "geo.region",
+			content: "US-NV"
+		},
+		{
+			name: "geo.placename", 
+			content: "Las Vegas, Nevada"
+		},
+		{
+			name: "geo.position",
+			content: "36.1699;-115.1398"
 		},
 		{
 			name: "twitter:card",
-			content: "summary_large_image",
+			content: "summary_large_image"
 		},
 		{
 			name: "twitter:title",
-			content:
-				"Heritage at Stonebridge Homes for Sale | Luxury 55+ Summerlin Community",
+			content: "Las Vegas 55+ Communities Red Rock Canyon | Heritage at Stonebridge"
 		},
 		{
 			name: "twitter:description",
-			content:
-				"Discover luxury 55+ living at Heritage at Stonebridge in Summerlin, Las Vegas. Single-story Lennar homes with resort-style amenities.",
+			content: "Discover luxury 55+ active adult communities near Red Rock Canyon. Heritage at Stonebridge offers gated living, resort amenities & mountain views in Summerlin."
 		},
 		{
 			name: "robots",
-			content: "index, follow",
+			content: "index, follow"
 		},
 		{
 			name: "author",
-			content: "Heritage at Stonebridge",
+			content: "Dr. Jan Duffy"
 		},
 		{
 			name: "viewport",
-			content: "width=device-width, initial-scale=1.0",
-		},
+			content: "width=device-width, initial-scale=1.0"
+		}
 	],
 	links: [
 		{
 			rel: "canonical",
-			href: "https://heritagestonebridge.com/",
-		},
-	],
+			href: "https://heritagestonebridge.com"
+		}
+	]
 };
