@@ -15,11 +15,11 @@ export default extendConfig(baseConfig, () => {
         output: {
           format: 'es',
           manualChunks: undefined,
-          inlineDynamicImports: false,
         },
       },
       outDir: '.vercel/output/functions/_qwik-city.func',
       target: 'esnext',
+      minify: false,
     },
     plugins: [vercelEdgeAdapter()],
   };
