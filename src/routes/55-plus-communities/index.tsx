@@ -9,64 +9,65 @@ export default component$(() => {
 			const communitiesSchema = {
 				"@context": "https://schema.org",
 				"@type": "CollectionPage",
-				"name": "55+ Communities Las Vegas | Active Adult Living",
-				"description": "Discover premier 55+ communities in Las Vegas, Summerlin, and Red Rock Canyon. Luxury active adult living with resort amenities, gated security, and mountain views.",
-				"url": "https://heritagestonebridge.com/55-plus-communities",
-				"mainEntity": {
+				name: "55+ Communities Las Vegas | Active Adult Living",
+				description:
+					"Discover premier 55+ communities in Las Vegas, Summerlin, and Red Rock Canyon. Luxury active adult living with resort amenities, gated security, and mountain views.",
+				url: "https://heritagestonebridge.com/55-plus-communities",
+				mainEntity: {
 					"@type": "ItemList",
-					"name": "Las Vegas 55+ Communities",
-					"itemListElement": [
+					name: "Las Vegas 55+ Communities",
+					itemListElement: [
 						{
 							"@type": "ListItem",
-							"position": 1,
-							"item": {
+							position: 1,
+							item: {
 								"@type": "ResidentialComplex",
-								"name": "Heritage at Stonebridge",
-								"description": "Luxury 55+ community in Summerlin West",
-								"url": "https://heritagestonebridge.com"
-							}
+								name: "Heritage at Stonebridge",
+								description: "Luxury 55+ community in Summerlin West",
+								url: "https://heritagestonebridge.com",
+							},
 						},
 						{
 							"@type": "ListItem",
-							"position": 2,
-							"item": {
+							position: 2,
+							item: {
 								"@type": "ResidentialComplex",
-								"name": "Del Webb Communities",
-								"description": "Active adult communities throughout Las Vegas"
-							}
+								name: "Del Webb Communities",
+								description: "Active adult communities throughout Las Vegas",
+							},
 						},
 						{
 							"@type": "ListItem",
-							"position": 3,
-							"item": {
+							position: 3,
+							item: {
 								"@type": "ResidentialComplex",
-								"name": "Sun City Communities",
-								"description": "Premier 55+ living in Henderson and Summerlin"
-							}
-						}
-					]
+								name: "Sun City Communities",
+								description: "Premier 55+ living in Henderson and Summerlin",
+							},
+						},
+					],
 				},
-				"breadcrumb": {
+				breadcrumb: {
 					"@type": "BreadcrumbList",
-					"itemListElement": [
+					itemListElement: [
 						{
 							"@type": "ListItem",
-							"position": 1,
-							"name": "Home",
-							"item": "https://heritagestonebridge.com"
+							position: 1,
+							name: "Home",
+							item: "https://heritagestonebridge.com",
 						},
 						{
 							"@type": "ListItem",
-							"position": 2,
-							"name": "55+ Communities",
-							"item": "https://heritagestonebridge.com/55-plus-communities"
-						}
-					]
-				}
+							position: 2,
+							name: "55+ Communities",
+							item: "https://heritagestonebridge.com/55-plus-communities",
+						},
+					],
+				},
 			};
 
-			const script = document.createElement('script');
-			script.type = 'application/ld+json';
+			const script = document.createElement("script");
+			script.type = "application/ld+json";
 			script.textContent = JSON.stringify(communitiesSchema);
 			document.head.appendChild(script);
 		}
@@ -83,8 +84,9 @@ export default component$(() => {
 							55+ Communities Las Vegas
 						</h1>
 						<p class="text-xl md:text-2xl text-blue-100 mb-8 max-w-4xl mx-auto">
-							Discover luxury active adult living in Las Vegas' premier 55+ communities. 
-							Resort-style amenities, gated security, and stunning mountain views await.
+							Discover luxury active adult living in Las Vegas' premier 55+
+							communities. Resort-style amenities, gated security, and stunning
+							mountain views await.
 						</p>
 						<div class="flex flex-col sm:flex-row gap-4 justify-center">
 							<a
@@ -114,8 +116,9 @@ export default component$(() => {
 							Premier 55+ Communities in Las Vegas
 						</h2>
 						<p class="text-xl text-gray-600 max-w-3xl mx-auto">
-							Explore Las Vegas' most prestigious active adult communities, each offering 
-							unique amenities and lifestyle benefits for discerning 55+ homebuyers.
+							Explore Las Vegas' most prestigious active adult communities, each
+							offering unique amenities and lifestyle benefits for discerning
+							55+ homebuyers.
 						</p>
 					</div>
 
@@ -124,7 +127,9 @@ export default component$(() => {
 						<div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
 							<div class="h-48 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
 								<div class="text-center text-white">
-									<h3 class="text-2xl font-bold mb-2">Heritage at Stonebridge</h3>
+									<h3 class="text-2xl font-bold mb-2">
+										Heritage at Stonebridge
+									</h3>
 									<p class="text-blue-100">Summerlin West</p>
 								</div>
 							</div>
@@ -160,7 +165,9 @@ export default component$(() => {
 								</div>
 							</div>
 							<div class="p-6">
-								<h4 class="text-xl font-semibold mb-3">Active Adult Lifestyle</h4>
+								<h4 class="text-xl font-semibold mb-3">
+									Active Adult Lifestyle
+								</h4>
 								<ul class="space-y-2 text-gray-600 mb-4">
 									<li>• Golf course communities</li>
 									<li>• Fitness centers</li>
@@ -189,7 +196,9 @@ export default component$(() => {
 								</div>
 							</div>
 							<div class="p-6">
-								<h4 class="text-xl font-semibold mb-3">Established Communities</h4>
+								<h4 class="text-xl font-semibold mb-3">
+									Established Communities
+								</h4>
 								<ul class="space-y-2 text-gray-600 mb-4">
 									<li>• Mature landscaping</li>
 									<li>• Established amenities</li>
@@ -220,8 +229,8 @@ export default component$(() => {
 							Why Choose 55+ Community Living?
 						</h2>
 						<p class="text-xl text-gray-600 max-w-3xl mx-auto">
-							Active adult communities offer unparalleled lifestyle benefits designed 
-							specifically for the 55+ demographic.
+							Active adult communities offer unparalleled lifestyle benefits
+							designed specifically for the 55+ demographic.
 						</p>
 					</div>
 
@@ -232,7 +241,7 @@ export default component$(() => {
 							</div>
 							<h3 class="text-xl font-semibold mb-3">Maintenance-Free</h3>
 							<p class="text-gray-600">
-								Enjoy your retirement without the hassle of home maintenance. 
+								Enjoy your retirement without the hassle of home maintenance.
 								Exterior care, landscaping, and repairs are handled for you.
 							</p>
 						</div>
@@ -243,8 +252,8 @@ export default component$(() => {
 							</div>
 							<h3 class="text-xl font-semibold mb-3">Like-Minded Neighbors</h3>
 							<p class="text-gray-600">
-								Connect with neighbors who share similar interests and life experiences. 
-								Build lasting friendships in your community.
+								Connect with neighbors who share similar interests and life
+								experiences. Build lasting friendships in your community.
 							</p>
 						</div>
 
@@ -254,8 +263,8 @@ export default component$(() => {
 							</div>
 							<h3 class="text-xl font-semibold mb-3">Resort Amenities</h3>
 							<p class="text-gray-600">
-								Access to pools, fitness centers, golf courses, and social clubs. 
-								Live like you're on vacation every day.
+								Access to pools, fitness centers, golf courses, and social
+								clubs. Live like you're on vacation every day.
 							</p>
 						</div>
 
@@ -265,7 +274,7 @@ export default component$(() => {
 							</div>
 							<h3 class="text-xl font-semibold mb-3">Security & Privacy</h3>
 							<p class="text-gray-600">
-								Gated communities provide peace of mind with controlled access 
+								Gated communities provide peace of mind with controlled access
 								and professional security services.
 							</p>
 						</div>
@@ -282,42 +291,61 @@ export default component$(() => {
 								Prime Las Vegas Locations
 							</h2>
 							<p class="text-lg text-gray-600 mb-6">
-								Las Vegas offers some of the nation's most desirable locations for 55+ living, 
-								with year-round sunshine, stunning mountain views, and world-class amenities.
+								Las Vegas offers some of the nation's most desirable locations
+								for 55+ living, with year-round sunshine, stunning mountain
+								views, and world-class amenities.
 							</p>
 							<div class="space-y-4">
 								<div class="flex items-start">
 									<span class="text-blue-600 font-bold mr-3">📍</span>
 									<div>
 										<h4 class="font-semibold text-gray-900">Summerlin</h4>
-										<p class="text-gray-600">Master-planned community with golf courses, shopping, and Red Rock Canyon access</p>
+										<p class="text-gray-600">
+											Master-planned community with golf courses, shopping, and
+											Red Rock Canyon access
+										</p>
 									</div>
 								</div>
 								<div class="flex items-start">
 									<span class="text-green-600 font-bold mr-3">🏔️</span>
 									<div>
 										<h4 class="font-semibold text-gray-900">Red Rock Canyon</h4>
-										<p class="text-gray-600">Breathtaking mountain views and outdoor recreation opportunities</p>
+										<p class="text-gray-600">
+											Breathtaking mountain views and outdoor recreation
+											opportunities
+										</p>
 									</div>
 								</div>
 								<div class="flex items-start">
 									<span class="text-purple-600 font-bold mr-3">🏥</span>
 									<div>
-										<h4 class="font-semibold text-gray-900">Medical Facilities</h4>
-										<p class="text-gray-600">Access to world-class healthcare including Cleveland Clinic and UMC</p>
+										<h4 class="font-semibold text-gray-900">
+											Medical Facilities
+										</h4>
+										<p class="text-gray-600">
+											Access to world-class healthcare including Cleveland
+											Clinic and UMC
+										</p>
 									</div>
 								</div>
 								<div class="flex items-start">
 									<span class="text-yellow-600 font-bold mr-3">✈️</span>
 									<div>
-										<h4 class="font-semibold text-gray-900">Travel Convenience</h4>
-										<p class="text-gray-600">Easy access to McCarran International Airport for visiting family</p>
+										<h4 class="font-semibold text-gray-900">
+											Travel Convenience
+										</h4>
+										<p class="text-gray-600">
+											Easy access to McCarran International Airport for visiting
+											family
+										</p>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="bg-gray-100 rounded-xl p-8 text-center">
-							<h3 class="text-2xl font-bold text-gray-900 mb-4">Las Vegas Advantages</h3>
+							<h3 class="text-2xl font-bold text-gray-900 mb-4">
+								Las Vegas Advantages
+							</h3>
 							<div class="grid grid-cols-2 gap-4">
 								<div class="bg-white rounded-lg p-4">
 									<div class="text-3xl font-bold text-blue-600">300+</div>
@@ -359,9 +387,10 @@ export default component$(() => {
 								What is the minimum age requirement for 55+ communities?
 							</h3>
 							<p class="text-gray-600">
-								Most 55+ communities require at least one resident to be 55 or older. 
-								Spouses or partners can typically be 45 or older. Some communities may 
-								allow younger residents under specific circumstances.
+								Most 55+ communities require at least one resident to be 55 or
+								older. Spouses or partners can typically be 45 or older. Some
+								communities may allow younger residents under specific
+								circumstances.
 							</p>
 						</div>
 
@@ -370,20 +399,23 @@ export default component$(() => {
 								What amenities are typically included in 55+ communities?
 							</h3>
 							<p class="text-gray-600">
-								Common amenities include clubhouses, fitness centers, swimming pools, 
-								pickleball courts, golf courses, walking trails, and social activity rooms. 
-								Many communities also offer classes, clubs, and organized events.
+								Common amenities include clubhouses, fitness centers, swimming
+								pools, pickleball courts, golf courses, walking trails, and
+								social activity rooms. Many communities also offer classes,
+								clubs, and organized events.
 							</p>
 						</div>
 
 						<div class="bg-white rounded-lg p-6 shadow-sm">
 							<h3 class="text-xl font-semibold text-gray-900 mb-3">
-								How much do HOA fees typically cost in Las Vegas 55+ communities?
+								How much do HOA fees typically cost in Las Vegas 55+
+								communities?
 							</h3>
 							<p class="text-gray-600">
-								HOA fees in Las Vegas 55+ communities typically range from $200-$600 per month, 
-								depending on the community and amenities offered. These fees usually cover 
-								exterior maintenance, landscaping, and access to community amenities.
+								HOA fees in Las Vegas 55+ communities typically range from
+								$200-$600 per month, depending on the community and amenities
+								offered. These fees usually cover exterior maintenance,
+								landscaping, and access to community amenities.
 							</p>
 						</div>
 
@@ -392,9 +424,10 @@ export default component$(() => {
 								Are pets allowed in 55+ communities?
 							</h3>
 							<p class="text-gray-600">
-								Most 55+ communities are pet-friendly, though they may have restrictions 
-								on the number, size, or breed of pets. Service animals are typically 
-								always allowed regardless of community policies.
+								Most 55+ communities are pet-friendly, though they may have
+								restrictions on the number, size, or breed of pets. Service
+								animals are typically always allowed regardless of community
+								policies.
 							</p>
 						</div>
 
@@ -403,9 +436,10 @@ export default component$(() => {
 								What is the resale value like for homes in 55+ communities?
 							</h3>
 							<p class="text-gray-600">
-								55+ community homes in Las Vegas have shown strong resale values due to 
-								high demand and limited supply. The maintenance-free lifestyle and resort 
-								amenities make these properties attractive to active adults.
+								55+ community homes in Las Vegas have shown strong resale values
+								due to high demand and limited supply. The maintenance-free
+								lifestyle and resort amenities make these properties attractive
+								to active adults.
 							</p>
 						</div>
 					</div>
@@ -419,10 +453,10 @@ export default component$(() => {
 						Ready to Find Your Perfect 55+ Community?
 					</h2>
 					<p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-						Let Dr. Jan Duffy help you discover the ideal active adult community 
+						Let Dr. Jan Duffy help you discover the ideal active adult community
 						for your lifestyle and budget. Schedule a personalized tour today.
 					</p>
-					
+
 					<div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
 						<a
 							href="http://drjanduffy.realscout.com/onboarding"
@@ -439,9 +473,11 @@ export default component$(() => {
 							Call (702) 222-1964
 						</a>
 					</div>
-					
+
 					<div class="text-blue-200 text-sm">
-						<p><strong>Dr. Jan Duffy</strong> - Las Vegas Real Estate Expert</p>
+						<p>
+							<strong>Dr. Jan Duffy</strong> - Las Vegas Real Estate Expert
+						</p>
 						<p>Specializing in 55+ Communities & Active Adult Living</p>
 					</div>
 				</div>
@@ -458,57 +494,61 @@ export const head: DocumentHead = {
 	meta: [
 		{
 			name: "description",
-			content: "Discover premier 55+ communities in Las Vegas, Summerlin, and Red Rock Canyon. Luxury active adult living with resort amenities, gated security, and mountain views. Dr. Jan Duffy, your 55+ specialist."
+			content:
+				"Discover premier 55+ communities in Las Vegas, Summerlin, and Red Rock Canyon. Luxury active adult living with resort amenities, gated security, and mountain views. Dr. Jan Duffy, your 55+ specialist.",
 		},
 		{
 			name: "keywords",
-			content: "55+ communities Las Vegas, active adult communities, Del Webb, Sun City, Heritage Stonebridge, retirement communities Nevada, gated communities Las Vegas"
+			content:
+				"55+ communities Las Vegas, active adult communities, Del Webb, Sun City, Heritage Stonebridge, retirement communities Nevada, gated communities Las Vegas",
 		},
 		{
 			property: "og:title",
-			content: "55+ Communities Las Vegas | Active Adult Living"
+			content: "55+ Communities Las Vegas | Active Adult Living",
 		},
 		{
 			property: "og:description",
-			content: "Discover premier 55+ communities in Las Vegas, Summerlin, and Red Rock Canyon. Luxury active adult living with resort amenities and mountain views."
+			content:
+				"Discover premier 55+ communities in Las Vegas, Summerlin, and Red Rock Canyon. Luxury active adult living with resort amenities and mountain views.",
 		},
 		{
 			property: "og:type",
-			content: "website"
+			content: "website",
 		},
 		{
 			property: "og:url",
-			content: "https://heritagestonebridge.com/55-plus-communities"
+			content: "https://heritagestonebridge.com/55-plus-communities",
 		},
 		{
 			name: "twitter:card",
-			content: "summary_large_image"
+			content: "summary_large_image",
 		},
 		{
 			name: "twitter:title",
-			content: "55+ Communities Las Vegas | Active Adult Living"
+			content: "55+ Communities Las Vegas | Active Adult Living",
 		},
 		{
 			name: "twitter:description",
-			content: "Discover premier 55+ communities in Las Vegas, Summerlin, and Red Rock Canyon. Luxury active adult living with resort amenities."
+			content:
+				"Discover premier 55+ communities in Las Vegas, Summerlin, and Red Rock Canyon. Luxury active adult living with resort amenities.",
 		},
 		{
 			name: "robots",
-			content: "index, follow"
+			content: "index, follow",
 		},
 		{
 			name: "author",
-			content: "Dr. Jan Duffy"
+			content: "Dr. Jan Duffy",
 		},
 		{
 			name: "viewport",
-			content: "width=device-width, initial-scale=1.0"
-		}
+			content: "width=device-width, initial-scale=1.0",
+		},
 	],
 	links: [
 		{
 			rel: "canonical",
-			href: "https://heritagestonebridge.com/55-plus-communities"
-		}
-	]
+			href: "https://heritagestonebridge.com/55-plus-communities",
+		},
+	],
 };
