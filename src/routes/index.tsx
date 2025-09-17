@@ -16,9 +16,10 @@ import {
 	RealScoutPremiumWidget,
 	RealScoutStickyWidget,
 } from "~/components/real-estate";
+import { AICrawlerDetection } from "~/components/seo";
 
 export default component$(() => {
-	// Inject Local Business Schema for SEO
+	// Inject Enhanced Local Business Schema for AI Understanding
 	useTask$(() => {
 		if (typeof document !== "undefined") {
 			const localBusinessSchema = {
@@ -34,6 +35,7 @@ export default component$(() => {
 				priceRange: "$$$$",
 				address: {
 					"@type": "PostalAddress",
+					streetAddress: "Crossbridge Dr",
 					addressLocality: "Las Vegas",
 					addressRegion: "NV",
 					postalCode: "89138",
@@ -70,17 +72,113 @@ export default component$(() => {
 					"https://www.linkedin.com/in/drjanduffy",
 					"https://www.instagram.com/drjanduffylasvegas",
 				],
+				// Enhanced AI-friendly properties
+				knowsAbout: [
+					"55+ Active Adult Communities",
+					"Heritage at Stonebridge",
+					"Summerlin Real Estate",
+					"Red Rock Canyon Homes",
+					"Luxury Home Sales",
+					"Gated Communities",
+					"Active Adult Living",
+					"Las Vegas Retirement Communities"
+				],
+				makesOffer: {
+					"@type": "Offer",
+					itemOffered: {
+						"@type": "Accommodation",
+						name: "55+ Active Adult Homes",
+						description: "Single-story homes in gated community with resort-style amenities"
+					}
+				},
+				hasCredential: {
+					"@type": "EducationalOccupationalCredential",
+					name: "Nevada Real Estate License",
+					credentialCategory: "Real Estate License",
+					recognizedBy: {
+						"@type": "Organization",
+						name: "Nevada Real Estate Division"
+					}
+				}
 			};
 
-			const script = document.createElement("script");
-			script.type = "application/ld+json";
-			script.textContent = JSON.stringify(localBusinessSchema);
-			document.head.appendChild(script);
+			// Add Heritage at Stonebridge Community Schema
+			const communitySchema = {
+				"@context": "https://schema.org",
+				"@type": "ResidentialComplex",
+				name: "Heritage at Stonebridge",
+				description: "Premier 55+ active adult community in Summerlin, Las Vegas with resort-style amenities",
+				url: "https://heritagestonebridge.com",
+				address: {
+					"@type": "PostalAddress",
+					streetAddress: "Crossbridge Dr",
+					addressLocality: "Las Vegas",
+					addressRegion: "NV",
+					postalCode: "89138",
+					addressCountry: "US",
+				},
+				geo: {
+					"@type": "GeoCoordinates",
+					latitude: "36.1699",
+					longitude: "-115.1398",
+				},
+				amenityFeature: [
+					{
+						"@type": "AmenityFeature",
+						name: "Clubhouse",
+						description: "8,000 square foot clubhouse with fitness center and social areas"
+					},
+					{
+						"@type": "AmenityFeature",
+						name: "Swimming Pool",
+						description: "Resort-style swimming pool with spa area"
+					},
+					{
+						"@type": "AmenityFeature",
+						name: "Pickleball Courts",
+						description: "Multiple pickleball courts for active recreation"
+					},
+					{
+						"@type": "AmenityFeature",
+						name: "Fitness Center",
+						description: "State-of-the-art fitness center with cardio and strength training"
+					},
+					{
+						"@type": "AmenityFeature",
+						name: "Walking Trails",
+						description: "Scenic walking and biking trails throughout the community"
+					}
+				],
+				numberOfUnits: 421,
+				priceRange: "$489,000 - $800,000+",
+				developer: {
+					"@type": "Organization",
+					name: "Lennar Homes"
+				},
+				propertyType: "55+ Active Adult Community",
+				ageRestriction: "55+",
+				hasMap: "https://maps.google.com/?q=36.1699,-115.1398"
+			};
+
+			// Inject RealEstateAgent schema
+			const script1 = document.createElement("script");
+			script1.type = "application/ld+json";
+			script1.textContent = JSON.stringify(localBusinessSchema);
+			document.head.appendChild(script1);
+
+			// Inject ResidentialComplex schema
+			const script2 = document.createElement("script");
+			script2.type = "application/ld+json";
+			script2.textContent = JSON.stringify(communitySchema);
+			document.head.appendChild(script2);
 		}
 	});
 
 	return (
 		<>
+			{/* AI Crawler Detection */}
+			<AICrawlerDetection />
+			
 			{/* Sticky Header */}
 			<StickyHeader />
 
@@ -301,6 +399,41 @@ export const head: DocumentHead = {
 			content:
 				"Las Vegas 55+ communities, Red Rock Canyon homes, Summerlin active adult, Heritage Stonebridge, Dr Jan Duffy, 55+ realtor Las Vegas, active adult communities Nevada",
 		},
+		// Enhanced Meta Tags for AI & Search Engine Understanding
+		{
+			name: "robots",
+			content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+		},
+		{
+			name: "googlebot",
+			content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+		},
+		{
+			name: "bingbot",
+			content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+		},
+		// Canonical URL
+		{
+			name: "canonical",
+			content: "https://heritagestonebridge.com/",
+		},
+		// AI-Friendly Content Tags
+		{
+			name: "content-type",
+			content: "real-estate-community",
+		},
+		{
+			name: "audience",
+			content: "adults-55-plus",
+		},
+		{
+			name: "location",
+			content: "Las Vegas, Nevada, USA",
+		},
+		{
+			name: "community-type",
+			content: "active-adult-gated-community",
+		},
 		// Open Graph for social sharing
 		{
 			property: "og:title",
@@ -320,6 +453,14 @@ export const head: DocumentHead = {
 			property: "og:url",
 			content: "https://heritagestonebridge.com",
 		},
+		{
+			property: "og:site_name",
+			content: "Heritage at Stonebridge",
+		},
+		{
+			property: "og:locale",
+			content: "en_US",
+		},
 		// Local SEO
 		{
 			name: "geo.region",
@@ -336,6 +477,10 @@ export const head: DocumentHead = {
 		{
 			name: "twitter:card",
 			content: "summary_large_image",
+		},
+		{
+			name: "twitter:site",
+			content: "@heritage_stonebridge",
 		},
 		{
 			name: "twitter:title",

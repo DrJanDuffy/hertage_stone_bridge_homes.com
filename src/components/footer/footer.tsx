@@ -40,12 +40,24 @@ export const Footer = component$(() => {
 						<h3 class="text-xl font-bold mb-4">Service Areas</h3>
 						<ul class="space-y-2 text-gray-300">
 							<li>
-								<a href="/las-vegas-real-estate" class="hover:text-blue-400">
+								<a 
+									href="/las-vegas-real-estate" 
+									class="hover:text-blue-400"
+									data-content-type="service-area"
+									data-topic="las-vegas-real-estate"
+									rel="related"
+								>
 									Las Vegas Real Estate
 								</a>
 							</li>
 							<li>
-								<a href="/summerlin-homes" class="hover:text-blue-400">
+								<a 
+									href="/summerlin-homes" 
+									class="hover:text-blue-400"
+									data-content-type="service-area"
+									data-topic="summerlin-homes"
+									rel="related"
+								>
 									Summerlin Homes
 								</a>
 							</li>
@@ -53,22 +65,43 @@ export const Footer = component$(() => {
 								<a
 									href="/red-rock-canyon-communities"
 									class="hover:text-blue-400"
+									data-content-type="service-area"
+									data-topic="red-rock-canyon"
+									rel="related"
 								>
 									Red Rock Canyon Communities
 								</a>
 							</li>
 							<li>
-								<a href="/henderson-real-estate" class="hover:text-blue-400">
+								<a 
+									href="/henderson-real-estate" 
+									class="hover:text-blue-400"
+									data-content-type="service-area"
+									data-topic="henderson-real-estate"
+									rel="related"
+								>
 									Henderson Real Estate
 								</a>
 							</li>
 							<li>
-								<a href="/northwest-las-vegas" class="hover:text-blue-400">
+								<a 
+									href="/northwest-las-vegas" 
+									class="hover:text-blue-400"
+									data-content-type="service-area"
+									data-topic="northwest-las-vegas"
+									rel="related"
+								>
 									Northwest Las Vegas
 								</a>
 							</li>
 							<li>
-								<a href="/boulder-city-homes" class="hover:text-blue-400">
+								<a 
+									href="/boulder-city-homes" 
+									class="hover:text-blue-400"
+									data-content-type="service-area"
+									data-topic="boulder-city-homes"
+									rel="related"
+								>
 									Boulder City Homes
 								</a>
 							</li>
@@ -80,32 +113,68 @@ export const Footer = component$(() => {
 						<h3 class="text-xl font-bold mb-4">Property Types</h3>
 						<ul class="space-y-2 text-gray-300">
 							<li>
-								<a href="/55-plus-communities" class="hover:text-blue-400">
+								<a 
+									href="/55-plus-communities" 
+									class="hover:text-blue-400"
+									data-content-type="property-type"
+									data-topic="55-plus-communities"
+									rel="related"
+								>
 									55+ Communities
 								</a>
 							</li>
 							<li>
-								<a href="/active-adult-communities" class="hover:text-blue-400">
+								<a 
+									href="/active-adult-communities" 
+									class="hover:text-blue-400"
+									data-content-type="property-type"
+									data-topic="active-adult-communities"
+									rel="related"
+								>
 									Active Adult Communities
 								</a>
 							</li>
 							<li>
-								<a href="/luxury-homes" class="hover:text-blue-400">
+								<a 
+									href="/luxury-homes" 
+									class="hover:text-blue-400"
+									data-content-type="property-type"
+									data-topic="luxury-homes"
+									rel="related"
+								>
 									Luxury Homes
 								</a>
 							</li>
 							<li>
-								<a href="/gated-communities" class="hover:text-blue-400">
+								<a 
+									href="/gated-communities" 
+									class="hover:text-blue-400"
+									data-content-type="property-type"
+									data-topic="gated-communities"
+									rel="related"
+								>
 									Gated Communities
 								</a>
 							</li>
 							<li>
-								<a href="/golf-course-homes" class="hover:text-blue-400">
+								<a 
+									href="/golf-course-homes" 
+									class="hover:text-blue-400"
+									data-content-type="property-type"
+									data-topic="golf-course-homes"
+									rel="related"
+								>
 									Golf Course Homes
 								</a>
 							</li>
 							<li>
-								<a href="/mountain-view-homes" class="hover:text-blue-400">
+								<a 
+									href="/mountain-view-homes" 
+									class="hover:text-blue-400"
+									data-content-type="property-type"
+									data-topic="mountain-view-homes"
+									rel="related"
+								>
 									Mountain View Homes
 								</a>
 							</li>
