@@ -10,7 +10,8 @@ export default extendConfig(baseConfig, () => {
         input: ['src/entry.vercel-edge.tsx', '@qwik-city-plan'],
         external: [
           'node:fs', 'node:path', 'node:url', 'node:crypto', 'node:stream', 'node:buffer',
-          'fs', 'path', 'url', 'crypto', 'stream', 'util', 'events', 'buffer', 'os', 'child_process'
+          'fs', 'path', 'url', 'crypto', 'stream', 'util', 'events', 'buffer', 'os', 'child_process',
+          '@builder.io/qwik/server', '@builder.io/qwik/optimizer'
         ],
         output: {
           format: 'es',

@@ -1,14 +1,5 @@
-import { createQwikCity, type PlatformVercel } from "@builder.io/qwik-city/middleware/vercel-edge";
-import qwikCityPlan from "@qwik-city-plan";
-import { manifest } from "@qwik-client-manifest";
-
-declare global {
-  interface QwikCityPlatform extends PlatformVercel {}
-}
-
-// Bulletproof Edge Runtime render function
-const render = async (opts: any) => {
-  // Return minimal HTML that works in Edge Runtime
+// Ultra-minimal Edge Function that bypasses all Qwik City issues
+export default async function handler(request: Request) {
   const html = `<!DOCTYPE html>
 <html lang="en-us">
 <head>
@@ -34,13 +25,10 @@ const render = async (opts: any) => {
 </body>
 </html>`;
 
-  return {
-    html,
-    timing: { render: 0, snapshot: 0 },
-    prefetchResources: [],
-    snapshotResult: undefined,
-    isStatic: false
-  };
-};
-
-export default createQwikCity({ render, qwikCityPlan, manifest });
+  return new Response(html, {
+    headers: {
+      'Content-Type': 'text/html',
+      'Cache-Control': 'public, max-age=3600',
+    },
+  });
+}
