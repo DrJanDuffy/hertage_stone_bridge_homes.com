@@ -34,12 +34,13 @@ const render = async (opts: any) => {
 </body>
 </html>`;
 
-  return new Response(html, {
-    headers: {
-      'Content-Type': 'text/html; charset=utf-8',
-      'Cache-Control': 'public, max-age=60, stale-while-revalidate=300'
-    }
-  });
+  return {
+    html,
+    timing: { render: 0, snapshot: 0 },
+    prefetchResources: [],
+    snapshotResult: undefined,
+    isStatic: false
+  };
 };
 
 export default createQwikCity({ render, qwikCityPlan, manifest });
