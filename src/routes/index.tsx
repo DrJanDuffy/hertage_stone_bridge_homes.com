@@ -36,7 +36,7 @@ export default component$(() => {
 					"@type": "PostalAddress",
 					addressLocality: "Las Vegas",
 					addressRegion: "NV",
-					postalCode: "89134",
+					postalCode: "89138",
 					addressCountry: "US",
 				},
 				geo: {

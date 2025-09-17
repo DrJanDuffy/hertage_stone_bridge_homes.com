@@ -65,7 +65,7 @@ export const SearchInterface = component$<SearchInterfaceProps>(
 								street: "123 Heritage Way",
 								city: "Las Vegas",
 								state: "NV",
-								zip: "89134",
+								zip: "89138",
 								neighborhood: "Summerlin",
 							},
 							agent: {

@@ -16,10 +16,10 @@ export default component$(() => {
 					"https://heritagestonebridge.com/images/heritage-stonebridge-hero.webp",
 				address: {
 					"@type": "PostalAddress",
-					streetAddress: "12345 Stonebridge Drive",
+					streetAddress: "Crossbridge Dr",
 					addressLocality: "Las Vegas",
 					addressRegion: "NV",
-					postalCode: "89134",
+					postalCode: "89138",
 					addressCountry: "US",
 				},
 				geo: {
@@ -364,8 +364,8 @@ export default component$(() => {
 							</div>
 							<div class="mt-4 text-center text-gray-600">
 								<p>
-									<strong>Address:</strong> 12345 Stonebridge Drive, Las Vegas,
-									NV 89134
+									<strong>Address:</strong> Crossbridge Dr, Las Vegas,
+									NV 89138
 								</p>
 								<p>
 									<strong>Neighborhood:</strong> Summerlin West, Stonebridge
@@ -1214,8 +1214,8 @@ export default component$(() => {
 
 					<div class="mt-12 text-center">
 						<p class="text-blue-200 text-sm">
-							<strong>Address:</strong> 12345 Stonebridge Drive, Las Vegas, NV
-							89134
+							<strong>Address:</strong> Crossbridge Dr, Las Vegas, NV
+							89138
 							<br />
 							<strong>Neighborhood:</strong> Summerlin West, Stonebridge Village
 							<br />
