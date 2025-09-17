@@ -844,8 +844,8 @@ export default component$(() => {
 					
 					<div class="mt-12 text-center">
 						<p class="text-blue-200 text-sm">
-							<strong>Address:</strong> 12345 Stonebridge Drive, Las Vegas, NV 89134<br>
-							<strong>Neighborhood:</strong> Summerlin West, Stonebridge Village<br>
+							<strong>Address:</strong> 12345 Stonebridge Drive, Las Vegas, NV 89134<br />
+							<strong>Neighborhood:</strong> Summerlin West, Stonebridge Village<br />
 							<strong>Developer:</strong> Lennar Corporation
 						</p>
 					</div>
