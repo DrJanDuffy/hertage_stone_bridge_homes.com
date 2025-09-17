@@ -33,7 +33,7 @@ export const RealScoutStickyWidget = component$<RealScoutStickyWidgetProps>(
 
 			// Wait for RealScout script to load
 			const checkRealScout = () => {
-				if (customElements?.get("realscout-office-listings")) {
+				if (typeof customElements !== "undefined" && customElements.get("realscout-office-listings")) {
 					// Show sticky panel after 15 seconds
 					const timer = setTimeout(() => {
 						isVisible.value = true;
@@ -45,7 +45,7 @@ export const RealScoutStickyWidget = component$<RealScoutStickyWidgetProps>(
 			};
 
 			// Start checking after a short delay
-			setTimeout(checkRealScout, 500);
+			setTimeout(checkRealScout, 1000);
 		});
 
 		if (!isClient.value) {
