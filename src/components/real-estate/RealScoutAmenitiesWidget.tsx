@@ -26,30 +26,42 @@ export const RealScoutAmenitiesWidget =
 			const isClient = useSignal(false);
 			const isVisible = useSignal(false);
 
-			useVisibleTask$(() => {
-				if (typeof window === "undefined") return;
+		useVisibleTask$(() => {
+			if (typeof window === "undefined") return;
 
-				isClient.value = true;
+			isClient.value = true;
 
-				// Intersection Observer for scroll animation
-				const observer = new IntersectionObserver(
-					(entries) => {
-						entries.forEach((entry) => {
-							if (entry.isIntersecting) {
-								isVisible.value = true;
-							}
-						});
-					},
-					{ threshold: 0.1 },
-				);
-
-				const element = document.querySelector("[data-amenities-widget]");
-				if (element) {
-					observer.observe(element);
+			// Wait for RealScout script to load
+			const checkRealScout = () => {
+				if (typeof customElements !== "undefined" && customElements?.get("realscout-office-listings")) {
+					isVisible.value = true;
+				} else {
+					setTimeout(checkRealScout, 100);
 				}
+			};
 
-				return () => observer.disconnect();
-			});
+			// Start checking after a short delay
+			setTimeout(checkRealScout, 500);
+
+			// Intersection Observer for scroll animation
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							isVisible.value = true;
+						}
+					});
+				},
+				{ threshold: 0.1 },
+			);
+
+			const element = document.querySelector("[data-amenities-widget]");
+			if (element) {
+				observer.observe(element);
+			}
+
+			return () => observer.disconnect();
+		});
 
 			if (!isClient.value) {
 				return (

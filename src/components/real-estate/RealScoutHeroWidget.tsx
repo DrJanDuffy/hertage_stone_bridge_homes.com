@@ -30,6 +30,18 @@ export const RealScoutHeroWidget = component$<RealScoutHeroWidgetProps>(
 
 			isClient.value = true;
 
+			// Wait for RealScout script to load
+			const checkRealScout = () => {
+				if (typeof customElements !== "undefined" && customElements?.get("realscout-office-listings")) {
+					isVisible.value = true;
+				} else {
+					setTimeout(checkRealScout, 100);
+				}
+			};
+
+			// Start checking after a short delay
+			setTimeout(checkRealScout, 500);
+
 			// Intersection Observer for scroll animation
 			const observer = new IntersectionObserver(
 				(entries) => {
