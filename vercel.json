@@ -1,89 +1,4 @@
 {
-  "version": 2,
-  "name": "heritage-stonebridge-website",
-  "routes": [
-    {
-      "src": "/sw.js",
-      "dest": "/sw.js",
-      "headers": {
-        "Cache-Control": "public, max-age=0, must-revalidate",
-        "Service-Worker-Allowed": "/"
-      }
-    },
-    {
-      "src": "/manifest.json",
-      "dest": "/manifest.json",
-      "headers": {
-        "Cache-Control": "public, max-age=31536000, immutable",
-        "Content-Type": "application/manifest+json"
-      }
-    },
-    {
-      "src": "/robots.txt",
-      "dest": "/robots.txt",
-      "headers": {
-        "Cache-Control": "public, max-age=86400",
-        "Content-Type": "text/plain"
-      }
-    },
-    {
-      "src": "/sitemap.xml",
-      "dest": "/sitemap.xml",
-      "headers": {
-        "Cache-Control": "public, max-age=86400",
-        "Content-Type": "application/xml"
-      }
-    },
-    {
-      "src": "/sitemap-pages.xml",
-      "dest": "/sitemap-pages.xml",
-      "headers": {
-        "Cache-Control": "public, max-age=86400",
-        "Content-Type": "application/xml"
-      }
-    },
-    {
-      "src": "/sitemap-images.xml",
-      "dest": "/sitemap-images.xml",
-      "headers": {
-        "Cache-Control": "public, max-age=86400",
-        "Content-Type": "application/xml"
-      }
-    },
-    {
-      "src": "/sitemap-properties.xml",
-      "dest": "/sitemap-properties.xml",
-      "headers": {
-        "Cache-Control": "public, max-age=86400",
-        "Content-Type": "application/xml"
-      }
-    },
-    {
-      "src": "/images/(.*)",
-      "dest": "/images/$1",
-      "headers": {
-        "Cache-Control": "public, max-age=31536000, immutable"
-      }
-    },
-    {
-      "src": "/fonts/(.*)",
-      "dest": "/fonts/$1",
-      "headers": {
-        "Cache-Control": "public, max-age=31536000, immutable"
-      }
-    },
-    {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1",
-      "headers": {
-        "Cache-Control": "public, max-age=31536000, immutable"
-      }
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/dist/server/entry.vercel-edge.js"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -105,10 +20,6 @@
           "value": "strict-origin-when-cross-origin"
         },
         {
-          "key": "Permissions-Policy",
-          "value": "camera=(), microphone=(), geolocation=()"
-        },
-        {
           "key": "Strict-Transport-Security",
           "value": "max-age=31536000; includeSubDomains"
         }
@@ -127,13 +38,5 @@
         }
       ]
     }
-  ],
-  "functions": {
-    "dist/server/entry.vercel-edge.js": {
-      "maxDuration": 30
-    }
-  },
-  "env": {
-    "NODE_ENV": "production"
-  }
+  ]
 }
