@@ -112,12 +112,14 @@ export const SocialProof = component$(() => {
 						Schedule your private tour today and see why Heritage at Stonebridge
 						is the perfect place to call home.
 					</p>
-					<button
-						type="button"
-						class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transform hover:scale-105 transition-all duration-200 shadow-lg"
+					<a
+						href="http://drjanduffy.realscout.com/onboarding"
+						target="_blank"
+						rel="noopener"
+						class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transform hover:scale-105 transition-all duration-200 shadow-lg inline-block text-center"
 					>
 						Schedule Private Tour
-					</button>
+					</a>
 				</div>
 			</div>
 		</div>

@@ -49,12 +49,14 @@ export default component$(() => {
 							Vegas
 						</p>
 						<div class="flex flex-col sm:flex-row gap-4 justify-center">
-							<button
-								type="button"
-								class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+							<a
+								href="http://drjanduffy.realscout.com/onboarding"
+								target="_blank"
+								rel="noopener"
+								class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl inline-block text-center"
 							>
 								Schedule Private Tour
-							</button>
+							</a>
 							<button
 								type="button"
 								class="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-all transform hover:scale-105"
@@ -199,12 +201,14 @@ export default component$(() => {
 						this is the perfect place for your next chapter.
 					</p>
 					<div class="flex flex-col sm:flex-row gap-4 justify-center">
-						<button
-							type="button"
-							class="bg-white text-blue-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-100 transition-colors shadow-lg"
+						<a
+							href="http://drjanduffy.realscout.com/onboarding"
+							target="_blank"
+							rel="noopener"
+							class="bg-white text-blue-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-100 transition-colors shadow-lg inline-block text-center"
 						>
 							Schedule Private Tour
-						</button>
+						</a>
 						<button
 							type="button"
 							class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-800 transition-colors shadow-lg"

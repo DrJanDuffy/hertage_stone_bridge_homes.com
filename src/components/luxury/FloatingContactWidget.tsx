@@ -52,9 +52,10 @@ export const FloatingContactWidget = component$(() => {
 		<div class="fixed bottom-6 right-6 z-50">
 			{/* Main CTA Button */}
 			{!isExpanded.value && (
-				<button
-					type="button"
-					onClick$={toggleExpanded}
+				<a
+					href="http://drjanduffy.realscout.com/onboarding"
+					target="_blank"
+					rel="noopener"
 					class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-4 rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-3 group"
 				>
 					<div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center group-hover:rotate-12 transition-transform">
@@ -76,7 +77,7 @@ export const FloatingContactWidget = component$(() => {
 						<div class="font-semibold text-sm">Schedule Private Tour</div>
 						<div class="text-xs opacity-90">Available Today</div>
 					</div>
-				</button>
+				</a>
 			)}
 
 			{/* Expanded Form */}
