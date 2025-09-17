@@ -47,7 +47,7 @@ export const HeroImageCarousel = component$(() => {
 
 	useVisibleTask$(() => {
 		if (typeof window === "undefined") return;
-		
+
 		isClient.value = true;
 
 		// Auto-advance carousel every 5 seconds
