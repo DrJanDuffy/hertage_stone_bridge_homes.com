@@ -4,69 +4,6 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 export default component$(() => {
 	return (
 		<>
-			{/* Schema Markup */}
-			<script type="application/ld+json">
-				{`{
-					"@context": "https://schema.org",
-					"@type": "ResidentialComplex",
-					"name": "Heritage at Stonebridge",
-					"description": "Premier 55+ active adult community in Summerlin West, Las Vegas, featuring luxury homes and resort-style amenities near Red Rock Canyon.",
-					"url": "https://heritagestonebridge.com/55-plus-communities-red-rock-canyon",
-					"image": "https://heritagestonebridge.com/images/heritage-stonebridge-hero.webp",
-					"address": {
-						"@type": "PostalAddress",
-						"streetAddress": "12345 Stonebridge Drive",
-						"addressLocality": "Las Vegas",
-						"addressRegion": "NV",
-						"postalCode": "89134",
-						"addressCountry": "US"
-					},
-					"geo": {
-						"@type": "GeoCoordinates",
-						"latitude": "36.1699",
-						"longitude": "-115.3338"
-					},
-					"amenityFeature": [
-						{
-							"@type": "LocationFeatureSpecification",
-							"name": "Gated Community",
-							"value": true
-						},
-						{
-							"@type": "LocationFeatureSpecification",
-							"name": "Clubhouse",
-							"value": "8,000 sq ft"
-						},
-						{
-							"@type": "LocationFeatureSpecification",
-							"name": "Pickleball Courts",
-							"value": true
-						},
-						{
-							"@type": "LocationFeatureSpecification",
-							"name": "Swimming Pool",
-							"value": true
-						},
-						{
-							"@type": "LocationFeatureSpecification",
-							"name": "Fitness Center",
-							"value": true
-						}
-					],
-					"numberOfUnits": 421,
-					"occupancyType": "55+ Active Adult",
-					"developer": {
-						"@type": "Organization",
-						"name": "Lennar Corporation"
-					},
-					"openingDate": "2025",
-					"areaServed": {
-						"@type": "City",
-						"name": "Las Vegas, Nevada"
-					}
-				}`}
-			</script>
-
 			{/* Hero Section */}
 			<section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
 				<div class="absolute inset-0 bg-black/20"></div>
@@ -977,5 +914,70 @@ export const head: DocumentHead = {
 			name: "canonical",
 			content: "https://heritagestonebridge.com/55-plus-communities-red-rock-canyon"
 		}
-	]
+	],
+	links: [
+		{
+			rel: "canonical",
+			href: "https://heritagestonebridge.com/55-plus-communities-red-rock-canyon"
+		}
+	],
+	jsonld: {
+		"@context": "https://schema.org",
+		"@type": "ResidentialComplex",
+		"name": "Heritage at Stonebridge",
+		"description": "Premier 55+ active adult community in Summerlin West, Las Vegas, featuring luxury homes and resort-style amenities near Red Rock Canyon.",
+		"url": "https://heritagestonebridge.com/55-plus-communities-red-rock-canyon",
+		"image": "https://heritagestonebridge.com/images/heritage-stonebridge-hero.webp",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "12345 Stonebridge Drive",
+			"addressLocality": "Las Vegas",
+			"addressRegion": "NV",
+			"postalCode": "89134",
+			"addressCountry": "US"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": "36.1699",
+			"longitude": "-115.3338"
+		},
+		"amenityFeature": [
+			{
+				"@type": "LocationFeatureSpecification",
+				"name": "Gated Community",
+				"value": true
+			},
+			{
+				"@type": "LocationFeatureSpecification",
+				"name": "Clubhouse",
+				"value": "8,000 sq ft"
+			},
+			{
+				"@type": "LocationFeatureSpecification",
+				"name": "Pickleball Courts",
+				"value": true
+			},
+			{
+				"@type": "LocationFeatureSpecification",
+				"name": "Swimming Pool",
+				"value": true
+			},
+			{
+				"@type": "LocationFeatureSpecification",
+				"name": "Fitness Center",
+				"value": true
+			}
+		],
+		"numberOfUnits": 421,
+		"occupancyType": "55+ Active Adult",
+		"developer": {
+			"@type": "Organization",
+			"name": "Lennar Corporation"
+		},
+		"openingDate": "2025",
+		"areaServed": {
+			"@type": "City",
+			"name": "Las Vegas, Nevada"
+		}
+	}
 };
