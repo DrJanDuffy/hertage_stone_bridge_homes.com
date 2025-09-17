@@ -9,12 +9,12 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 //   SocialProof,
 //   // StickyHeader,
 // } from "~/components/luxury";
-import {
-  RealScoutAmenitiesWidget,
-  RealScoutHeroWidget,
-  RealScoutPremiumWidget,
-  // RealScoutStickyWidget,
-} from "~/components/real-estate";
+// import {
+//   RealScoutAmenitiesWidget,
+//   RealScoutHeroWidget,
+//   RealScoutPremiumWidget,
+//   // RealScoutStickyWidget,
+// } from "~/components/real-estate";
 
 export default component$(() => {
   // Inject Enhanced Local Business Schema for AI Understanding
