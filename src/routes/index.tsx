@@ -7,7 +7,7 @@ import {
   LuxuryHomeCards,
   PriceCalculator,
   SocialProof,
-  StickyHeader,
+  // StickyHeader,
 } from "~/components/luxury";
 import {
   RealScoutAmenitiesWidget,
@@ -178,7 +178,7 @@ export default component$(() => {
       {/* AI Crawler Detection */}
 
       {/* Sticky Header */}
-      <StickyHeader />
+      {/* <StickyHeader /> */}
 
       {/* Floating Contact Widget */}
       <FloatingContactWidget />
