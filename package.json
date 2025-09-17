@@ -8,7 +8,7 @@
   },
   "private": true,
   "scripts": {
-    "build": "qwik build --mode production",
+    "build": "qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.server": "vite build -c adapters/vercel-edge/vite.config.ts",
@@ -28,8 +28,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.4",
-    "@builder.io/qwik": "1.0.0",
-    "@builder.io/qwik-city": "~1.0.0",
+    "@builder.io/qwik": "0.20.0",
+    "@builder.io/qwik-city": "~0.20.0",
     "@types/node": "^20.0.0",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.23",
@@ -42,8 +42,8 @@
     "terser": "^5.24.0"
   },
   "dependencies": {
-    "@builder.io/qwik": "1.0.0",
-    "@builder.io/qwik-city": "~1.0.0"
+    "@builder.io/qwik": "0.20.0",
+    "@builder.io/qwik-city": "~0.20.0"
   },
   "keywords": [
     "real-estate",
