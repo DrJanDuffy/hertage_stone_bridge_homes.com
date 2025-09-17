@@ -72,56 +72,59 @@ export const head: DocumentHead = {
 			href: "https://heritagestonebridge.com/homes-for-sale-stonebridge-summerlin",
 		},
 	],
-	jsonld: [
-		{
-			"@context": "https://schema.org",
-			"@type": "CollectionPage",
-			name: "Homes for Sale in Stonebridge, Summerlin, Las Vegas NV",
-			description:
-				"Discover luxury homes for sale in Stonebridge, Summerlin, Las Vegas NV. Gated community with resort amenities, mountain views, and active adult living.",
-			url: "https://heritagestonebridge.com/homes-for-sale-stonebridge-summerlin",
-			image:
-				"https://heritagestonebridge.com/images/stonebridge-homes-hero.webp",
-			mainEntity: {
-				"@type": "ItemList",
+};
+
+export default component$(() => {
+	// Inject schema markup
+	useTask$(() => {
+		if (typeof document !== "undefined") {
+			// CollectionPage schema
+			const collectionPageSchema = {
+				"@context": "https://schema.org",
+				"@type": "CollectionPage",
+				name: "Homes for Sale in Stonebridge, Summerlin, Las Vegas NV",
+				description:
+					"Discover luxury homes for sale in Stonebridge, Summerlin, Las Vegas NV. Gated community with resort amenities, mountain views, and active adult living.",
+				url: "https://heritagestonebridge.com/homes-for-sale-stonebridge-summerlin",
+				image:
+					"https://heritagestonebridge.com/images/stonebridge-homes-hero.webp",
+				mainEntity: {
+					"@type": "ItemList",
+					itemListElement: [
+						{
+							"@type": "ListItem",
+							position: 1,
+							item: {
+								"@type": "ResidentialComplex",
+								name: "Stonebridge Community",
+								url: "https://heritagestonebridge.com/homes-for-sale-stonebridge-summerlin",
+							},
+						},
+					],
+				},
+			};
+
+			// BreadcrumbList schema
+			const breadcrumbSchema = {
+				"@context": "https://schema.org",
+				"@type": "BreadcrumbList",
 				itemListElement: [
 					{
 						"@type": "ListItem",
 						position: 1,
-						item: {
-							"@type": "ResidentialComplex",
-							name: "Stonebridge Community",
-							url: "https://heritagestonebridge.com/homes-for-sale-stonebridge-summerlin",
-						},
+						name: "Home",
+						item: "https://heritagestonebridge.com",
+					},
+					{
+						"@type": "ListItem",
+						position: 2,
+						name: "Homes for Sale in Stonebridge",
+						item: "https://heritagestonebridge.com/homes-for-sale-stonebridge-summerlin",
 					},
 				],
-			},
-		},
-		{
-			"@context": "https://schema.org",
-			"@type": "BreadcrumbList",
-			itemListElement: [
-				{
-					"@type": "ListItem",
-					position: 1,
-					name: "Home",
-					item: "https://heritagestonebridge.com",
-				},
-				{
-					"@type": "ListItem",
-					position: 2,
-					name: "Homes for Sale in Stonebridge",
-					item: "https://heritagestonebridge.com/homes-for-sale-stonebridge-summerlin",
-				},
-			],
-		},
-	],
-};
+			};
 
-export default component$(() => {
-	// Inject RealEstateAgent schema
-	useTask$(() => {
-		if (typeof document !== "undefined") {
+			// RealEstateAgent schema
 			const realEstateAgentSchema = {
 				"@context": "https://schema.org",
 				"@type": "RealEstateAgent",
@@ -171,10 +174,23 @@ export default component$(() => {
 				],
 			};
 
-			const script = document.createElement("script");
-			script.type = "application/ld+json";
-			script.textContent = JSON.stringify(realEstateAgentSchema);
-			document.head.appendChild(script);
+			// Inject CollectionPage schema
+			const script1 = document.createElement("script");
+			script1.type = "application/ld+json";
+			script1.textContent = JSON.stringify(collectionPageSchema);
+			document.head.appendChild(script1);
+
+			// Inject BreadcrumbList schema
+			const script2 = document.createElement("script");
+			script2.type = "application/ld+json";
+			script2.textContent = JSON.stringify(breadcrumbSchema);
+			document.head.appendChild(script2);
+
+			// Inject RealEstateAgent schema
+			const script3 = document.createElement("script");
+			script3.type = "application/ld+json";
+			script3.textContent = JSON.stringify(realEstateAgentSchema);
+			document.head.appendChild(script3);
 		}
 	});
 
