@@ -29,7 +29,7 @@ export default component$(() => {
 					"Las Vegas Real Estate Expert specializing in 55+ communities, luxury homes, and active adult living near Red Rock Canyon.",
 				url: "https://heritagestonebridge.com",
 				telephone: "702-222-1964",
-				email: "jan@heritagestonebridge.com",
+				email: "DrDuffySells@HeritageStonebridge.com",
 				image: "https://heritagestonebridge.com/images/dr-jan-duffy.jpg",
 				priceRange: "$$$$",
 				address: {

@@ -22,10 +22,10 @@ export const Footer = component$(() => {
 							<p class="flex items-center">
 								<span class="mr-2">✉️</span>
 								<a
-									href="mailto:jan@heritagestonebridge.com"
+									href="mailto:DrDuffySells@HeritageStonebridge.com"
 									class="hover:text-blue-400"
 								>
-									jan@heritagestonebridge.com
+									DrDuffySells@HeritageStonebridge.com
 								</a>
 							</p>
 							<p class="flex items-center">

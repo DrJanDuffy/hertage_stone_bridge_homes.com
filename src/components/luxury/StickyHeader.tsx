@@ -77,7 +77,7 @@ export const StickyHeader = component$(() => {
 								</a>
 
 								<a
-									href="mailto:janet@heritagestonebridge.com"
+									href="mailto:DrDuffySells@HeritageStonebridge.com"
 									class="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
 								>
 									<svg

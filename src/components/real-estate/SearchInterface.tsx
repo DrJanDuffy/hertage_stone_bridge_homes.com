@@ -72,7 +72,7 @@ export const SearchInterface = component$<SearchInterfaceProps>(
 								id: "agent-123",
 								name: "Sarah Johnson",
 								phone: "(702) 555-0123",
-								email: "sarah@heritage.com",
+								email: "DrDuffySells@HeritageStonebridge.com",
 							},
 							status: "for-sale",
 							features: ["Gated Community", "Pool", "Golf Course Access"],
