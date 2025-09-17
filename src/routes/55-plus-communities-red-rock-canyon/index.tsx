@@ -315,7 +315,7 @@ export default component$(() => {
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
-                  allowFullScreen
+                  allowfullscreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Heritage at Stonebridge Location Map"

@@ -87,13 +87,13 @@ export const OptimizedImage = component$<OptimizedImageProps>(
         {(isInView.value || priority) && (
           <picture>
             {/* WebP format for modern browsers */}
-            <source srcSet={generateWebPSrc(src)} type="image/webp" />
+            <source srcset={generateWebPSrc(src)} type="image/webp" />
 
             {/* Fallback for older browsers */}
             <img
               ref={imageRef}
               src={src}
-              srcSet={generateSrcSet(src)}
+              srcset={generateSrcSet(src)}
               alt={alt}
               width={width}
               height={height}

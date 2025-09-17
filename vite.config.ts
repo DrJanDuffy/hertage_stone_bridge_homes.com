@@ -7,8 +7,39 @@ export default defineConfig(() => {
   return {
     plugins: [
       qwikCity(),
-      qwikVite(),
+      qwikVite({
+        client: {
+          outDir: "dist/client",
+        },
+        ssr: {
+          outDir: "dist/server",
+        },
+      }),
       tsconfigPaths(),
     ],
+    build: {
+      rollupOptions: {
+        // CRITICAL: Prevent duplicate module resolution
+        external: [],
+        output: {
+          manualChunks: undefined,
+          // CRITICAL: Ensure unique module IDs
+          chunkFileNames: "[name]-[hash].js",
+          entryFileNames: "[name]-[hash].js",
+        },
+      },
+      // CRITICAL: Prevent module duplication
+      commonjsOptions: {
+        include: [/node_modules/],
+        transformMixedEsModules: true,
+      },
+    },
+    // CRITICAL: Resolve module conflicts
+    resolve: {
+      dedupe: ["@builder.io/qwik", "@builder.io/qwik-city"],
+      alias: {
+        "@": "/src",
+      },
+    },
   };
 });
