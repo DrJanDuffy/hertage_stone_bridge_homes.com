@@ -32,7 +32,7 @@ export const RealScoutHeroWidget = component$<RealScoutHeroWidgetProps>(
 
 			// Wait for RealScout script to load
 			const checkRealScout = () => {
-				if (typeof customElements !== "undefined" && customElements?.get("realscout-office-listings")) {
+				if (customElements?.get("realscout-office-listings")) {
 					isVisible.value = true;
 				} else {
 					setTimeout(checkRealScout, 100);
