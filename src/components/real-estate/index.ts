@@ -8,7 +8,7 @@ export type {
   ListingProps,
   MarketData,
   PropertySearchResult,
-  SearchFilters,
+  SearchFilters as SearchFiltersType,
 } from "../../types/real-estate";
 
 // Dynamic content types
@@ -40,9 +40,7 @@ export { RealScoutSimpleSearch } from "./RealScoutSimpleSearch";
 export { RealScoutStickyWidget } from "./RealScoutStickyWidget";
 export { RealScoutWidget } from "./RealScoutWidget";
 
-// Third-party widget integration
-export { SearchFilters as SearchFiltersComponent } from "./SearchFilters";
-
 // Search and filtering components
 export { SearchInterface } from "./SearchInterface";
+export { SearchFilters } from "./SearchFilters";
 export { SortOptions } from "./SortOptions";
