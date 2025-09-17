@@ -2,19 +2,19 @@
 
 // Type exports
 export type {
-	Address,
-	Agent,
-	ContactFormData,
-	ListingProps,
-	MarketData,
-	PropertySearchResult,
-	SearchFilters,
+  Address,
+  Agent,
+  ContactFormData,
+  ListingProps,
+  MarketData,
+  PropertySearchResult,
+  SearchFilters,
 } from "../../types/real-estate";
 
 // Dynamic content types
 export type {
-	RealScoutContentBlock,
-	RealScoutContentConfig,
+  RealScoutContentBlock,
+  RealScoutContentConfig,
 } from "../../types/real-estate-content";
 
 // Agent and contact components

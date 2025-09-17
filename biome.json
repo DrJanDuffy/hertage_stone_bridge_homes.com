@@ -1,59 +1,17 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.4.1/schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
+  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
-      "complexity": {
-        "all": true,
-        "noExcessiveCognitiveComplexity": {
-          "level": "warn",
-          "options": {
-            "maxAllowedComplexity": 15
-          }
-        },
-        "noVoid": "off"
-      },
-      "correctness": {
-        "all": true,
-        "noUnusedVariables": "error",
-        "useExhaustiveDependencies": "warn"
-      },
-      "style": {
-        "all": true,
-        "noNonNullAssertion": "warn",
-        "useConst": "error",
-        "useTemplate": "error"
-      },
-      "suspicious": {
-        "all": true,
-        "noExplicitAny": "warn",
-        "noArrayIndexKey": "warn"
-      },
-      "performance": {
-        "all": true
-      },
-      "security": {
-        "all": true
-      }
+      "recommended": true
     }
   },
   "formatter": {
     "enabled": true,
-    "formatWithErrors": false,
     "indentStyle": "space",
     "indentWidth": 2,
     "lineWidth": 100,
-    "lineEnding": "lf",
-    "ignore": [
-      "dist/**",
-      "node_modules/**",
-      "coverage/**",
-      "lighthouse-report.html"
-    ]
+    "lineEnding": "lf"
   },
   "javascript": {
     "formatter": {
@@ -64,32 +22,10 @@
       "arrowParentheses": "always",
       "bracketSpacing": true,
       "bracketSameLine": false,
-      "quoteStyle": "double",
-      "attributePosition": "auto"
+      "quoteStyle": "double"
     }
   },
   "files": {
-    "ignoreUnknown": false,
-    "ignore": [
-      "dist/**",
-      "node_modules/**",
-      "coverage/**",
-      "lighthouse-report.html",
-      "tmp/**",
-      "*.min.js",
-      "*.min.css"
-    ]
-  },
-  "overrides": [
-    {
-      "include": ["*.config.*", "*.config.*"],
-      "linter": {
-        "rules": {
-          "style": {
-            "noNonNullAssertion": "off"
-          }
-        }
-      }
-    }
-  ]
+    "ignoreUnknown": false
+  }
 }
