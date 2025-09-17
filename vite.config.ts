@@ -12,7 +12,7 @@ export default defineConfig(() => {
           outDir: "dist/client",
         },
         ssr: {
-          outDir: "dist",
+          outDir: ".vercel/output/functions/_qwik-city.func",
         },
       }),
       tsconfigPaths(),
