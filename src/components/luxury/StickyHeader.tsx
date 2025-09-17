@@ -96,12 +96,14 @@ export const StickyHeader = component$(() => {
 									<span class="hidden sm:inline">Email</span>
 								</a>
 
-								<button
-									type="button"
-									class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all text-sm font-medium shadow-lg hover:shadow-xl transform hover:scale-105"
+								<a
+									href="http://drjanduffy.realscout.com/onboarding"
+									target="_blank"
+									rel="noopener"
+									class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all text-sm font-medium shadow-lg hover:shadow-xl transform hover:scale-105 inline-block text-center"
 								>
 									Schedule Tour
-								</button>
+								</a>
 							</div>
 						</div>
 					</div>
