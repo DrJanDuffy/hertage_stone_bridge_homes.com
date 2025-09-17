@@ -223,75 +223,82 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-	title: "Las Vegas 55+ Communities Red Rock Canyon | Heritage at Stonebridge - Dr. Jan Duffy",
+	title:
+		"Las Vegas 55+ Communities Red Rock Canyon | Heritage at Stonebridge - Dr. Jan Duffy",
 	meta: [
 		{
 			name: "description",
-			content: "Discover luxury 55+ active adult communities near Red Rock Canyon in Summerlin, Las Vegas. Heritage at Stonebridge offers gated living, resort amenities & stunning mountain views. Dr. Jan Duffy, your 55+ specialist - Call 702-222-1964"
+			content:
+				"Discover luxury 55+ active adult communities near Red Rock Canyon in Summerlin, Las Vegas. Heritage at Stonebridge offers gated living, resort amenities & stunning mountain views. Dr. Jan Duffy, your 55+ specialist - Call 702-222-1964",
 		},
 		{
-			name: "keywords", 
-			content: "Las Vegas 55+ communities, Red Rock Canyon homes, Summerlin active adult, Heritage Stonebridge, Dr Jan Duffy, 55+ realtor Las Vegas, active adult communities Nevada"
+			name: "keywords",
+			content:
+				"Las Vegas 55+ communities, Red Rock Canyon homes, Summerlin active adult, Heritage Stonebridge, Dr Jan Duffy, 55+ realtor Las Vegas, active adult communities Nevada",
 		},
 		// Open Graph for social sharing
 		{
 			property: "og:title",
-			content: "Las Vegas 55+ Communities Red Rock Canyon | Heritage at Stonebridge"
+			content:
+				"Las Vegas 55+ Communities Red Rock Canyon | Heritage at Stonebridge",
 		},
 		{
-			property: "og:description", 
-			content: "Discover luxury 55+ active adult communities near Red Rock Canyon. Heritage at Stonebridge offers gated living, resort amenities & mountain views in Summerlin."
+			property: "og:description",
+			content:
+				"Discover luxury 55+ active adult communities near Red Rock Canyon. Heritage at Stonebridge offers gated living, resort amenities & mountain views in Summerlin.",
 		},
 		{
 			property: "og:type",
-			content: "website"
+			content: "website",
 		},
 		{
 			property: "og:url",
-			content: "https://heritagestonebridge.com"
+			content: "https://heritagestonebridge.com",
 		},
 		// Local SEO
 		{
 			name: "geo.region",
-			content: "US-NV"
+			content: "US-NV",
 		},
 		{
-			name: "geo.placename", 
-			content: "Las Vegas, Nevada"
+			name: "geo.placename",
+			content: "Las Vegas, Nevada",
 		},
 		{
 			name: "geo.position",
-			content: "36.1699;-115.1398"
+			content: "36.1699;-115.1398",
 		},
 		{
 			name: "twitter:card",
-			content: "summary_large_image"
+			content: "summary_large_image",
 		},
 		{
 			name: "twitter:title",
-			content: "Las Vegas 55+ Communities Red Rock Canyon | Heritage at Stonebridge"
+			content:
+				"Las Vegas 55+ Communities Red Rock Canyon | Heritage at Stonebridge",
 		},
 		{
 			name: "twitter:description",
-			content: "Discover luxury 55+ active adult communities near Red Rock Canyon. Heritage at Stonebridge offers gated living, resort amenities & mountain views in Summerlin."
+			content:
+				"Discover luxury 55+ active adult communities near Red Rock Canyon. Heritage at Stonebridge offers gated living, resort amenities & mountain views in Summerlin.",
 		},
 		{
 			name: "robots",
-			content: "index, follow"
+			content: "index, follow",
 		},
 		{
 			name: "author",
-			content: "Dr. Jan Duffy"
+			content: "Dr. Jan Duffy",
 		},
 		{
 			name: "viewport",
-			content: "width=device-width, initial-scale=1.0"
-		}
+			content: "width=device-width, initial-scale=1.0",
+		},
 	],
 	links: [
 		{
 			rel: "canonical",
-			href: "https://heritagestonebridge.com"
-		}
-	]
+			href: "https://heritagestonebridge.com",
+		},
+	],
 };
