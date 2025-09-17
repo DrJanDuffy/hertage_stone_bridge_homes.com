@@ -9,6 +9,7 @@ import {
 	SocialProof,
 	StickyHeader,
 } from "~/components/luxury";
+import { RealScoutWidget } from "~/components/real-estate";
 
 export default component$(() => {
 	return (
@@ -131,6 +132,28 @@ export default component$(() => {
 						</h2>
 					</div>
 					<SocialProof />
+				</div>
+			</section>
+
+			{/* RealScout Property Listings */}
+			<section class="bg-gray-50 py-16">
+				<div class="max-w-7xl mx-auto px-4">
+					<div class="text-center mb-12">
+						<h2 class="text-3xl font-bold text-gray-900 mb-4">
+							Available Properties
+						</h2>
+						<p class="text-lg text-gray-600">
+							Browse our current listings in Heritage at Stonebridge
+						</p>
+					</div>
+					<RealScoutWidget
+						agentEncodedId="QWdlbnQtMjI1MDUw"
+						sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
+						listingStatus="For Sale"
+						propertyTypes="SFR,MF"
+						priceMin="500000"
+						priceMax="1000000"
+					/>
 				</div>
 			</section>
 
