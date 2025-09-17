@@ -12,7 +12,7 @@ export default defineConfig(() => {
           outDir: "dist/client",
         },
         ssr: {
-          outDir: "dist/server",
+          outDir: "dist",
         },
       }),
       tsconfigPaths(),
