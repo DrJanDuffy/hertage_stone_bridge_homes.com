@@ -6,7 +6,7 @@ export default component$(() => {
 		<>
 			{/* Schema Markup */}
 			<script type="application/ld+json">
-				{JSON.stringify({
+				{`{
 					"@context": "https://schema.org",
 					"@type": "ResidentialComplex",
 					"name": "Heritage at Stonebridge",
@@ -64,7 +64,7 @@ export default component$(() => {
 						"@type": "City",
 						"name": "Las Vegas, Nevada"
 					}
-				})}
+				}`}
 			</script>
 
 			{/* Hero Section */}
