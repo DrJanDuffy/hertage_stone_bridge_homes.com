@@ -1,8 +1,10 @@
 {
-  "name": "my-qwik-basic-starter",
-  "description": "App with Routing built-in (recommended)",
+  "name": "heritage-stonebridge-website",
+  "description": "Heritage at Stonebridge - Luxury 55+ Active Adult Community Website",
+  "version": "1.0.0",
   "engines": {
-    "node": ">=15.0.0"
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
   },
   "private": true,
   "scripts": {
@@ -11,20 +13,29 @@
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.server": "vite build -c adapters/vercel-edge/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
+    "build.analyze": "vite build --mode analyze",
     "deploy": "vercel deploy",
+    "deploy.prod": "vercel deploy --prod",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "lint": "biome check src",
+    "lint.fix": "biome check --write src",
     "format": "biome format --write src",
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
-    "qwik": "qwik"
+    "qwik": "qwik",
+    "test": "vitest",
+    "test.ui": "vitest --ui",
+    "test.coverage": "vitest --coverage",
+    "lighthouse": "lighthouse http://localhost:5173 --output html --output-path ./lighthouse-report.html",
+    "perf": "npm run build && npm run lighthouse",
+    "optimize": "npm run build.analyze && npm run perf"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.4",
     "@builder.io/qwik": "1.0.0",
     "@builder.io/qwik-city": "~1.0.0",
-    "@types/node": "^18.16.0",
+    "@types/node": "^20.0.0",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.23",
     "tailwindcss": "^3.3.1",
@@ -32,6 +43,37 @@
     "undici": "5.22.0",
     "vercel": "^28.19.0",
     "vite": "4.3.2",
-    "vite-tsconfig-paths": "4.2.0"
-  }
+    "vite-tsconfig-paths": "4.2.0",
+    "vitest": "^1.0.0",
+    "@vitest/ui": "^1.0.0",
+    "@vitest/coverage-v8": "^1.0.0",
+    "lighthouse": "^11.0.0",
+    "terser": "^5.24.0",
+    "rollup-plugin-visualizer": "^5.9.0"
+  },
+  "dependencies": {
+    "@builder.io/qwik": "1.0.0",
+    "@builder.io/qwik-city": "~1.0.0"
+  },
+  "keywords": [
+    "real-estate",
+    "55-plus-communities",
+    "active-adult",
+    "las-vegas",
+    "summerlin",
+    "heritage-stonebridge",
+    "luxury-homes",
+    "gated-community"
+  ],
+  "author": {
+    "name": "Dr. Jan Duffy",
+    "email": "DrDuffySells@HeritageStonebridge.com",
+    "url": "https://heritagestonebridge.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DrJanDuffy/hertage_stone_bridge_homes.com"
+  },
+  "homepage": "https://heritagestonebridge.com"
 }

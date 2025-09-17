@@ -1,25 +1,56 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "target": "ES2017",
-    "module": "ES2020",
-    "lib": ["es2020", "DOM", "WebWorker", "DOM.Iterable"],
+    "target": "ES2022",
+    "module": "ES2022",
+    "lib": ["es2022", "DOM", "WebWorker", "DOM.Iterable", "WebAssembly"],
     "jsx": "react-jsx",
     "jsxImportSource": "@builder.io/qwik",
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "incremental": true,
     "isolatedModules": true,
     "outDir": "tmp",
     "noEmit": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
     "types": ["node", "vite/client"],
     "paths": {
-      "~/*": ["./src/*"]
+      "~/*": ["./src/*"],
+      "@/*": ["./src/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/routes/*": ["./src/routes/*"],
+      "@/types/*": ["./src/types/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/config/*": ["./src/config/*"]
     }
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    "vite.config.ts",
+    "vercel.json"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "tmp",
+    "coverage",
+    "lighthouse-report.html"
+  ]
 }

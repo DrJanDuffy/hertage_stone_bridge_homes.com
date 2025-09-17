@@ -10,12 +10,18 @@ export default component$(() => {
 					<a href="tel:702-222-1964" title="Call Dr. Jan Duffy">
 						<div class="flex items-center space-x-3">
 							<div class="bg-green-500 rounded-full p-2">
-								<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+								<svg
+									class="w-6 h-6 text-white"
+									fill="currentColor"
+									viewBox="0 0 20 20"
+								>
 									<path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
 								</svg>
 							</div>
 							<div class="text-left">
-								<div class="text-lg font-bold text-blue-600">(702) 222-1964</div>
+								<div class="text-lg font-bold text-blue-600">
+									(702) 222-1964
+								</div>
 								<div class="text-xs text-gray-600">Dr. Jan Duffy</div>
 							</div>
 						</div>
@@ -26,32 +32,32 @@ export default component$(() => {
 				<nav class="flex items-center space-x-6">
 					<ul class="flex items-center space-x-6">
 						<li>
-							<a 
-								href="/" 
+							<a
+								href="/"
 								class="text-gray-700 hover:text-blue-600 font-medium transition-colors"
 							>
 								Home
 							</a>
 						</li>
 						<li>
-							<a 
-								href="/55-plus-communities" 
+							<a
+								href="/55-plus-communities"
 								class="text-gray-700 hover:text-blue-600 font-medium transition-colors"
 							>
 								55+ Communities
 							</a>
 						</li>
 						<li>
-							<a 
-								href="/homes-for-sale-stonebridge-summerlin" 
+							<a
+								href="/homes-for-sale-stonebridge-summerlin"
 								class="text-gray-700 hover:text-blue-600 font-medium transition-colors"
 							>
 								Stonebridge Homes
 							</a>
 						</li>
 						<li>
-							<a 
-								href="/real-estate" 
+							<a
+								href="/real-estate"
 								class="text-gray-700 hover:text-blue-600 font-medium transition-colors"
 							>
 								All Listings
