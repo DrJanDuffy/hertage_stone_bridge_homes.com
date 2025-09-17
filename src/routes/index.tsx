@@ -1,7 +1,145 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
+  // Inject JSON-LD structured data
+  useTask$(() => {
+    if (typeof document !== 'undefined') {
+      const schemaScript = document.createElement('script');
+      schemaScript.type = 'application/ld+json';
+      schemaScript.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "Dr. Jan Duffy",
+        "email": "DrDuffySells@HeritageStonebridge.com",
+        "telephone": "+1-702-222-1964",
+        "url": "https://heritagestonebridge.com",
+        "image": "https://heritagestonebridge.com/images/dr-jan-duffy.jpg",
+        "description": "Licensed Real Estate Professional specializing in 55+ communities and luxury homes in Las Vegas, Summerlin, and Red Rock Canyon areas.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Heritage at Stonebridge",
+          "addressLocality": "Las Vegas",
+          "addressRegion": "NV",
+          "postalCode": "89138",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "36.1699",
+          "longitude": "-115.1398"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Las Vegas",
+            "containedInPlace": {
+              "@type": "State",
+              "name": "Nevada"
+            }
+          },
+          {
+            "@type": "City", 
+            "name": "Summerlin",
+            "containedInPlace": {
+              "@type": "State",
+              "name": "Nevada"
+            }
+          }
+        ],
+        "knowsAbout": [
+          "55+ Communities",
+          "Active Adult Living",
+          "Luxury Homes",
+          "Gated Communities",
+          "Red Rock Canyon Real Estate",
+          "Summerlin Real Estate"
+        ],
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Real Estate Consultation",
+              "description": "Professional real estate services for 55+ communities"
+            }
+          }
+        ],
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Real Estate License",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Nevada Real Estate Division"
+          },
+          "identifier": "S.0197614"
+        }
+      });
+
+      const residentialComplexScript = document.createElement('script');
+      residentialComplexScript.type = 'application/ld+json';
+      residentialComplexScript.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ResidentialComplex",
+        "name": "Heritage at Stonebridge",
+        "description": "Luxury 55+ active adult community in Summerlin, Las Vegas featuring resort-style amenities and stunning mountain views.",
+        "url": "https://heritagestonebridge.com",
+        "image": "https://heritagestonebridge.com/images/heritage-stonebridge.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Heritage at Stonebridge",
+          "addressLocality": "Las Vegas",
+          "addressRegion": "NV",
+          "postalCode": "89138",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "36.1699",
+          "longitude": "-115.1398"
+        },
+        "amenityFeature": [
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Resort-Style Pool",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification", 
+            "name": "Golf Course Access",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "24/7 Security",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Gated Community",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Mountain Views",
+            "value": true
+          }
+        ],
+        "numberOfUnits": "500+",
+        "developer": {
+          "@type": "Organization",
+          "name": "Heritage at Stonebridge Development"
+        },
+        "propertyType": "55+ Active Adult Community",
+        "ageRestriction": "55+",
+        "hasMap": "https://www.google.com/maps/place/Heritage+at+Stonebridge"
+      });
+
+      document.head.appendChild(schemaScript);
+      document.head.appendChild(residentialComplexScript);
+    }
+  });
+
   return (
     <>
       {/* Hero Section */}
