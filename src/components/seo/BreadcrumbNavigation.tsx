@@ -16,31 +16,31 @@ export const BreadcrumbNavigation = component$<BreadcrumbNavigationProps>(
 			<nav aria-label="Breadcrumb" class="mb-6">
 				<ol
 					class="flex flex-wrap items-center space-x-2 text-sm text-gray-600"
-					itemscope
-					itemtype="https://schema.org/BreadcrumbList"
+					itemScope
+					itemType="https://schema.org/BreadcrumbList"
 				>
 					{items.map((item, index) => (
 						<li
 							key={item.position}
-							itemprop="itemListElement"
-							itemscope
-							itemtype="https://schema.org/ListItem"
+							itemProp="itemListElement"
+							itemScope
+							itemType="https://schema.org/ListItem"
 							class="flex items-center"
 						>
 							{item.url ? (
 								<a
 									href={item.url}
-									itemprop="item"
+									itemProp="item"
 									class="hover:text-blue-600 transition-colors"
 								>
-									<span itemprop="name">{item.name}</span>
+									<span itemProp="name">{item.name}</span>
 								</a>
 							) : (
-								<span itemprop="name" class="text-gray-900 font-medium">
+								<span itemProp="name" class="text-gray-900 font-medium">
 									{item.name}
 								</span>
 							)}
-							<meta itemprop="position" content={item.position.toString()} />
+							<meta itemProp="position" content={item.position.toString()} />
 							{index < items.length - 1 && (
 								<span class="mx-2 text-gray-400">/</span>
 							)}
@@ -49,5 +49,5 @@ export const BreadcrumbNavigation = component$<BreadcrumbNavigationProps>(
 				</ol>
 			</nav>
 		);
-	}
+	},
 );

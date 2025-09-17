@@ -81,15 +81,16 @@ export default component$(() => {
 					"Luxury Home Sales",
 					"Gated Communities",
 					"Active Adult Living",
-					"Las Vegas Retirement Communities"
+					"Las Vegas Retirement Communities",
 				],
 				makesOffer: {
 					"@type": "Offer",
 					itemOffered: {
 						"@type": "Accommodation",
 						name: "55+ Active Adult Homes",
-						description: "Single-story homes in gated community with resort-style amenities"
-					}
+						description:
+							"Single-story homes in gated community with resort-style amenities",
+					},
 				},
 				hasCredential: {
 					"@type": "EducationalOccupationalCredential",
@@ -97,9 +98,9 @@ export default component$(() => {
 					credentialCategory: "Real Estate License",
 					recognizedBy: {
 						"@type": "Organization",
-						name: "Nevada Real Estate Division"
-					}
-				}
+						name: "Nevada Real Estate Division",
+					},
+				},
 			};
 
 			// Add Heritage at Stonebridge Community Schema
@@ -107,7 +108,8 @@ export default component$(() => {
 				"@context": "https://schema.org",
 				"@type": "ResidentialComplex",
 				name: "Heritage at Stonebridge",
-				description: "Premier 55+ active adult community in Summerlin, Las Vegas with resort-style amenities",
+				description:
+					"Premier 55+ active adult community in Summerlin, Las Vegas with resort-style amenities",
 				url: "https://heritagestonebridge.com",
 				address: {
 					"@type": "PostalAddress",
@@ -126,38 +128,41 @@ export default component$(() => {
 					{
 						"@type": "AmenityFeature",
 						name: "Clubhouse",
-						description: "8,000 square foot clubhouse with fitness center and social areas"
+						description:
+							"8,000 square foot clubhouse with fitness center and social areas",
 					},
 					{
 						"@type": "AmenityFeature",
 						name: "Swimming Pool",
-						description: "Resort-style swimming pool with spa area"
+						description: "Resort-style swimming pool with spa area",
 					},
 					{
 						"@type": "AmenityFeature",
 						name: "Pickleball Courts",
-						description: "Multiple pickleball courts for active recreation"
+						description: "Multiple pickleball courts for active recreation",
 					},
 					{
 						"@type": "AmenityFeature",
 						name: "Fitness Center",
-						description: "State-of-the-art fitness center with cardio and strength training"
+						description:
+							"State-of-the-art fitness center with cardio and strength training",
 					},
 					{
 						"@type": "AmenityFeature",
 						name: "Walking Trails",
-						description: "Scenic walking and biking trails throughout the community"
-					}
+						description:
+							"Scenic walking and biking trails throughout the community",
+					},
 				],
 				numberOfUnits: 421,
 				priceRange: "$489,000 - $800,000+",
 				developer: {
 					"@type": "Organization",
-					name: "Lennar Homes"
+					name: "Lennar Homes",
 				},
 				propertyType: "55+ Active Adult Community",
 				ageRestriction: "55+",
-				hasMap: "https://maps.google.com/?q=36.1699,-115.1398"
+				hasMap: "https://maps.google.com/?q=36.1699,-115.1398",
 			};
 
 			// Inject RealEstateAgent schema
@@ -178,7 +183,7 @@ export default component$(() => {
 		<>
 			{/* AI Crawler Detection */}
 			<AICrawlerDetection />
-			
+
 			{/* Sticky Header */}
 			<StickyHeader />
 
@@ -402,15 +407,18 @@ export const head: DocumentHead = {
 		// Enhanced Meta Tags for AI & Search Engine Understanding
 		{
 			name: "robots",
-			content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+			content:
+				"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
 		},
 		{
 			name: "googlebot",
-			content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+			content:
+				"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
 		},
 		{
 			name: "bingbot",
-			content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+			content:
+				"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
 		},
 		// Canonical URL
 		{

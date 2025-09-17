@@ -1,4 +1,4 @@
-import { component$, useVisibleTask$, useSignal } from "@builder.io/qwik";
+import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
@@ -9,7 +9,10 @@ export default component$(() => {
 
 	useVisibleTask$(() => {
 		// Auto-test sitemap accessibility
-		const testSitemap = async (url: string, statusSignal: any) => {
+		const testSitemap = async (
+			url: string,
+			statusSignal: { value: string },
+		) => {
 			try {
 				const response = await fetch(url);
 				if (response.ok) {
@@ -23,10 +26,10 @@ export default component$(() => {
 		};
 
 		// Test all sitemap files
-		testSitemap('/sitemap.xml', sitemapStatus);
-		testSitemap('/robots.txt', robotsStatus);
-		testSitemap('/sitemap-pages.xml', pagesStatus);
-		testSitemap('/sitemap-images.xml', imagesStatus);
+		testSitemap("/sitemap.xml", sitemapStatus);
+		testSitemap("/robots.txt", robotsStatus);
+		testSitemap("/sitemap-pages.xml", pagesStatus);
+		testSitemap("/sitemap-images.xml", imagesStatus);
 	});
 
 	return (
@@ -36,7 +39,7 @@ export default component$(() => {
 					<h1 class="text-3xl font-bold text-gray-900 mb-8">
 						Sitemap Validation & Testing
 					</h1>
-					
+
 					<div class="space-y-6">
 						{/* Sitemap Links */}
 						<div>
@@ -45,32 +48,36 @@ export default component$(() => {
 							</h2>
 							<div class="space-y-3">
 								<div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-									<a 
-										href="/sitemap.xml" 
+									<a
+										href="/sitemap.xml"
 										class="text-blue-600 hover:text-blue-800 font-medium"
 										target="_blank"
 										rel="noopener"
 									>
 										Main Sitemap (sitemap.xml)
 									</a>
-									<span class="text-sm text-gray-600">{sitemapStatus.value}</span>
+									<span class="text-sm text-gray-600">
+										{sitemapStatus.value}
+									</span>
 								</div>
-								
+
 								<div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-									<a 
-										href="/robots.txt" 
+									<a
+										href="/robots.txt"
 										class="text-blue-600 hover:text-blue-800 font-medium"
 										target="_blank"
 										rel="noopener"
 									>
 										Robots.txt
 									</a>
-									<span class="text-sm text-gray-600">{robotsStatus.value}</span>
+									<span class="text-sm text-gray-600">
+										{robotsStatus.value}
+									</span>
 								</div>
-								
+
 								<div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-									<a 
-										href="/sitemap-pages.xml" 
+									<a
+										href="/sitemap-pages.xml"
 										class="text-blue-600 hover:text-blue-800 font-medium"
 										target="_blank"
 										rel="noopener"
@@ -79,17 +86,19 @@ export default component$(() => {
 									</a>
 									<span class="text-sm text-gray-600">{pagesStatus.value}</span>
 								</div>
-								
+
 								<div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-									<a 
-										href="/sitemap-images.xml" 
+									<a
+										href="/sitemap-images.xml"
 										class="text-blue-600 hover:text-blue-800 font-medium"
 										target="_blank"
 										rel="noopener"
 									>
 										Images Sitemap (sitemap-images.xml)
 									</a>
-									<span class="text-sm text-gray-600">{imagesStatus.value}</span>
+									<span class="text-sm text-gray-600">
+										{imagesStatus.value}
+									</span>
 								</div>
 							</div>
 						</div>
@@ -101,7 +110,9 @@ export default component$(() => {
 							</h2>
 							<div class="grid md:grid-cols-2 gap-4">
 								<div class="p-4 bg-green-50 rounded-lg">
-									<h3 class="font-semibold text-green-800 mb-2">✅ Completed</h3>
+									<h3 class="font-semibold text-green-800 mb-2">
+										✅ Completed
+									</h3>
 									<ul class="text-sm text-green-700 space-y-1">
 										<li>• Enhanced robots.txt with AI crawler support</li>
 										<li>• Multi-sitemap structure (index, pages, images)</li>
@@ -111,9 +122,11 @@ export default component$(() => {
 										<li>• Breadcrumb navigation component</li>
 									</ul>
 								</div>
-								
+
 								<div class="p-4 bg-blue-50 rounded-lg">
-									<h3 class="font-semibold text-blue-800 mb-2">📋 Next Steps</h3>
+									<h3 class="font-semibold text-blue-800 mb-2">
+										📋 Next Steps
+									</h3>
 									<ul class="text-sm text-blue-700 space-y-1">
 										<li>• Submit sitemap to Google Search Console</li>
 										<li>• Submit sitemap to Bing Webmaster Tools</li>
@@ -131,17 +144,35 @@ export default component$(() => {
 								Technical Implementation Details
 							</h2>
 							<div class="bg-gray-50 p-4 rounded-lg">
-								<h3 class="font-semibold text-gray-800 mb-2">Sitemap Structure:</h3>
+								<h3 class="font-semibold text-gray-800 mb-2">
+									Sitemap Structure:
+								</h3>
 								<ul class="text-sm text-gray-700 space-y-1 ml-4">
-									<li>• <strong>sitemap.xml:</strong> Main sitemap index referencing all sub-sitemaps</li>
-									<li>• <strong>sitemap-pages.xml:</strong> All website pages with priorities and change frequencies</li>
-									<li>• <strong>sitemap-images.xml:</strong> Image optimization with titles and captions</li>
-									<li>• <strong>sitemap-properties.xml:</strong> Placeholder for dynamic property listings</li>
+									<li>
+										• <strong>sitemap.xml:</strong> Main sitemap index
+										referencing all sub-sitemaps
+									</li>
+									<li>
+										• <strong>sitemap-pages.xml:</strong> All website pages with
+										priorities and change frequencies
+									</li>
+									<li>
+										• <strong>sitemap-images.xml:</strong> Image optimization
+										with titles and captions
+									</li>
+									<li>
+										• <strong>sitemap-properties.xml:</strong> Placeholder for
+										dynamic property listings
+									</li>
 								</ul>
-								
-								<h3 class="font-semibold text-gray-800 mb-2 mt-4">AI Crawler Support:</h3>
+
+								<h3 class="font-semibold text-gray-800 mb-2 mt-4">
+									AI Crawler Support:
+								</h3>
 								<ul class="text-sm text-gray-700 space-y-1 ml-4">
-									<li>• ChatGPT-User, OpenAI-SearchBot, ClaudeBot, PerplexityBot</li>
+									<li>
+										• ChatGPT-User, OpenAI-SearchBot, ClaudeBot, PerplexityBot
+									</li>
 									<li>• Enhanced meta tags for AI understanding</li>
 									<li>• Structured content summary for AI crawlers</li>
 									<li>• AI-friendly JSON-LD schema markup</li>
@@ -158,18 +189,80 @@ export default component$(() => {
 								<div class="p-4 border rounded-lg">
 									<h3 class="font-semibold text-gray-800 mb-2">Google Tools</h3>
 									<ul class="text-sm text-gray-700 space-y-1">
-										<li>• <a href="https://search.google.com/search-console" class="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener">Google Search Console</a></li>
-										<li>• <a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap" class="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener">Sitemap Guidelines</a></li>
-										<li>• <a href="https://search.google.com/test/rich-results" class="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener">Rich Results Test</a></li>
+										<li>
+											•{" "}
+											<a
+												href="https://search.google.com/search-console"
+												class="text-blue-600 hover:text-blue-800"
+												target="_blank"
+												rel="noopener"
+											>
+												Google Search Console
+											</a>
+										</li>
+										<li>
+											•{" "}
+											<a
+												href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap"
+												class="text-blue-600 hover:text-blue-800"
+												target="_blank"
+												rel="noopener"
+											>
+												Sitemap Guidelines
+											</a>
+										</li>
+										<li>
+											•{" "}
+											<a
+												href="https://search.google.com/test/rich-results"
+												class="text-blue-600 hover:text-blue-800"
+												target="_blank"
+												rel="noopener"
+											>
+												Rich Results Test
+											</a>
+										</li>
 									</ul>
 								</div>
-								
+
 								<div class="p-4 border rounded-lg">
-									<h3 class="font-semibold text-gray-800 mb-2">Validation Tools</h3>
+									<h3 class="font-semibold text-gray-800 mb-2">
+										Validation Tools
+									</h3>
 									<ul class="text-sm text-gray-700 space-y-1">
-										<li>• <a href="https://www.xml-sitemaps.com/validate-xml-sitemap.html" class="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener">XML Sitemap Validator</a></li>
-										<li>• <a href="https://validator.w3.org/" class="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener">W3C Markup Validator</a></li>
-										<li>• <a href="https://www.bing.com/webmasters" class="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener">Bing Webmaster Tools</a></li>
+										<li>
+											•{" "}
+											<a
+												href="https://www.xml-sitemaps.com/validate-xml-sitemap.html"
+												class="text-blue-600 hover:text-blue-800"
+												target="_blank"
+												rel="noopener"
+											>
+												XML Sitemap Validator
+											</a>
+										</li>
+										<li>
+											•{" "}
+											<a
+												href="https://validator.w3.org/"
+												class="text-blue-600 hover:text-blue-800"
+												target="_blank"
+												rel="noopener"
+											>
+												W3C Markup Validator
+											</a>
+										</li>
+										<li>
+											•{" "}
+											<a
+												href="https://www.bing.com/webmasters"
+												class="text-blue-600 hover:text-blue-800"
+												target="_blank"
+												rel="noopener"
+											>
+												Bing Webmaster Tools
+											</a>
+										</li>
 									</ul>
 								</div>
 							</div>
@@ -186,7 +279,8 @@ export const head: DocumentHead = {
 	meta: [
 		{
 			name: "description",
-			content: "Test and validate sitemap files for Heritage at Stonebridge website. Check sitemap accessibility and SEO implementation status.",
+			content:
+				"Test and validate sitemap files for Heritage at Stonebridge website. Check sitemap accessibility and SEO implementation status.",
 		},
 		{
 			name: "robots",
