@@ -9,7 +9,12 @@ import {
 	SocialProof,
 	StickyHeader,
 } from "~/components/luxury";
-import { RealScoutWidget } from "~/components/real-estate";
+import {
+	RealScoutAmenitiesWidget,
+	RealScoutHeroWidget,
+	RealScoutPremiumWidget,
+	RealScoutStickyWidget,
+} from "~/components/real-estate";
 
 export default component$(() => {
 	return (
@@ -19,6 +24,18 @@ export default component$(() => {
 
 			{/* Floating Contact Widget */}
 			<FloatingContactWidget />
+
+			{/* Sticky Side Panel Widget - Appears after 15 seconds */}
+			<RealScoutStickyWidget
+				agentEncodedId="QWdlbnQtMjI1MDUw"
+				sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
+				listingStatus="For Sale"
+				propertyTypes="SFR,MF"
+				priceMin="600000"
+				priceMax="900000"
+				title="Exclusive Listings"
+				subtitle="Schedule Private Tour"
+			/>
 
 			{/* Hero Image Carousel */}
 			<section class="relative">
@@ -49,6 +66,18 @@ export default component$(() => {
 					<HeroImageCarousel />
 				</div>
 			</section>
+
+			{/* RealScout Widget #1: Featured New Construction Homes - Below Hero */}
+			<RealScoutHeroWidget
+				agentEncodedId="QWdlbnQtMjI1MDUw"
+				sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
+				listingStatus="For Sale"
+				propertyTypes="SFR,MF"
+				priceMin="500000"
+				priceMax="800000"
+				title="Featured New Construction Homes"
+				subtitle="See What's Available Now"
+			/>
 
 			{/* Simple Content Sections */}
 			<section class="bg-gray-50 py-16">
@@ -123,6 +152,18 @@ export default component$(() => {
 				</div>
 			</section>
 
+			{/* RealScout Widget #2: Luxury Resale Opportunities - After Amenities */}
+			<RealScoutAmenitiesWidget
+				agentEncodedId="QWdlbnQtMjI1MDUw"
+				sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
+				listingStatus="For Sale"
+				propertyTypes="SFR,MF"
+				priceMin="650000"
+				priceMax="1000000"
+				title="Luxury Resale Opportunities"
+				subtitle="Browse Exclusive Listings"
+			/>
+
 			{/* Social Proof */}
 			<section class="py-16">
 				<div class="max-w-7xl mx-auto px-4">
@@ -135,27 +176,17 @@ export default component$(() => {
 				</div>
 			</section>
 
-			{/* RealScout Property Listings */}
-			<section class="bg-gray-50 py-16">
-				<div class="max-w-7xl mx-auto px-4">
-					<div class="text-center mb-12">
-						<h2 class="text-3xl font-bold text-gray-900 mb-4">
-							Available Properties
-						</h2>
-						<p class="text-lg text-gray-600">
-							Browse our current listings in Heritage at Stonebridge
-						</p>
-					</div>
-					<RealScoutWidget
-						agentEncodedId="QWdlbnQtMjI1MDUw"
-						sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
-						listingStatus="For Sale"
-						propertyTypes="SFR,MF"
-						priceMin="500000"
-						priceMax="1000000"
-					/>
-				</div>
-			</section>
+			{/* RealScout Widget #3: Premium Estate Homes - Before Final CTA */}
+			<RealScoutPremiumWidget
+				agentEncodedId="QWdlbnQtMjI1MDUw"
+				sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
+				listingStatus="For Sale"
+				propertyTypes="SFR,MF"
+				priceMin="700000"
+				priceMax="1200000"
+				title="Premium Estate Homes"
+				subtitle="Exclusive Luxury Properties"
+			/>
 
 			{/* Call to Action */}
 			<section class="bg-gradient-to-br from-blue-600 to-blue-800 py-16">

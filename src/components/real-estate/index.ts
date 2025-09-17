@@ -30,10 +30,14 @@ export { PropertyImage } from "./PropertyImage";
 export { PropertyPrice } from "./PropertyPrice";
 // RealScout Widget Arsenal - Complete Lead Generation Suite
 export { RealScoutAdvancedSearch } from "./RealScoutAdvancedSearch";
+export { RealScoutAmenitiesWidget } from "./RealScoutAmenitiesWidget";
+export { RealScoutHeroWidget } from "./RealScoutHeroWidget";
 export { RealScoutHomeValue } from "./RealScoutHomeValue";
 export { RealScoutOfficeListings } from "./RealScoutOfficeListings";
 export { RealScoutOfficeListingsWidget } from "./RealScoutOfficeListingsWidget";
+export { RealScoutPremiumWidget } from "./RealScoutPremiumWidget";
 export { RealScoutSimpleSearch } from "./RealScoutSimpleSearch";
+export { RealScoutStickyWidget } from "./RealScoutStickyWidget";
 export { RealScoutWidget } from "./RealScoutWidget";
 
 // Third-party widget integration
