@@ -1,9 +1,28 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import styles from "./header.module.css";
 
 export default component$(() => {
+  const isSticky = useSignal(false);
+
+  useVisibleTask$(() => {
+    if (typeof window === "undefined") return;
+
+    const handleScroll = () => {
+      isSticky.value = window.scrollY > 100;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
   return (
-    <header class={styles.header}>
+    <header 
+      class={`${styles.header} ${
+        isSticky.value 
+          ? "fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200" 
+          : "relative bg-white"
+      } transition-all duration-300`}
+    >
       <div class={["container", styles.wrapper]}>
         {/* Phone Number as Logo Replacement */}
         <div class={styles.logo}>
