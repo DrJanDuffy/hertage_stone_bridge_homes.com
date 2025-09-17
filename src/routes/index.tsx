@@ -13,7 +13,7 @@ import {
   RealScoutAmenitiesWidget,
   RealScoutHeroWidget,
   RealScoutPremiumWidget,
-  RealScoutStickyWidget,
+  // RealScoutStickyWidget,
 } from "~/components/real-estate";
 
 export default component$(() => {
@@ -184,7 +184,7 @@ export default component$(() => {
       <FloatingContactWidget />
 
       {/* Sticky Side Panel Widget - Appears after 15 seconds */}
-      <RealScoutStickyWidget
+      {/* <RealScoutStickyWidget
         agentEncodedId="QWdlbnQtMjI1MDUw"
         sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
         listingStatus="For Sale"
@@ -193,7 +193,7 @@ export default component$(() => {
         priceMax="900000"
         title="Exclusive Listings"
         subtitle="Schedule Private Tour"
-      />
+      /> */}
 
       {/* Hero Image Carousel */}
       <section class="relative">
