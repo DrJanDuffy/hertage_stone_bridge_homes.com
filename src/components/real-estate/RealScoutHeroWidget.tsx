@@ -39,7 +39,7 @@ export const RealScoutHeroWidget = component$<RealScoutHeroWidgetProps>(
 				}
 			};
 
-			// Start checking after a short delay
+			// Start checking after a short delay - improved detection
 			setTimeout(checkRealScout, 1000);
 
 			// Intersection Observer for scroll animation
