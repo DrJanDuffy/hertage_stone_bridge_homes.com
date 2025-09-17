@@ -1,4 +1,4 @@
-import { component$, useSignal, useVisibleTask$, noSSR } from "@builder.io/qwik";
+import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 
 interface HeroImage {
 	src: string;
@@ -40,12 +40,15 @@ const luxuryImages: HeroImage[] = [
 	},
 ];
 
-export const HeroImageCarousel = noSSR(() => component$(() => {
+export const HeroImageCarousel = component$(() => {
+	const isClient = useSignal(false);
 	const currentIndex = useSignal(0);
 	const isTransitioning = useSignal(false);
 
 	useVisibleTask$(() => {
 		if (typeof window === "undefined") return;
+		
+		isClient.value = true;
 
 		// Auto-advance carousel every 5 seconds
 		const interval = setInterval(() => {
@@ -92,6 +95,18 @@ export const HeroImageCarousel = noSSR(() => component$(() => {
 			}, 300);
 		}
 	};
+
+	// Only render on client side to avoid SSR issues with setTimeout in functions
+	if (!isClient.value) {
+		return (
+			<div class="relative h-96 md:h-[500px] lg:h-[600px] overflow-hidden rounded-xl shadow-2xl bg-gray-200 flex items-center justify-center">
+				<div class="text-center text-gray-600">
+					<div class="text-xl font-semibold mb-2">Loading Luxury Images...</div>
+					<div class="text-sm">Heritage at Stonebridge</div>
+				</div>
+			</div>
+		);
+	}
 
 	return (
 		<div class="relative h-96 md:h-[500px] lg:h-[600px] overflow-hidden rounded-xl shadow-2xl">
@@ -203,4 +218,4 @@ export const HeroImageCarousel = noSSR(() => component$(() => {
 			</div>
 		</div>
 	);
-}));
+});
