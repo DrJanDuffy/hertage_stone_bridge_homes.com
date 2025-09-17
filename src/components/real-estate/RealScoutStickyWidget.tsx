@@ -42,6 +42,10 @@ export const RealScoutStickyWidget = component$<RealScoutStickyWidgetProps>(
         } else {
           setTimeout(checkRealScout, 100);
         }
+        
+        return () => {
+          // Cleanup function
+        };
       };
 
       // Start checking after a short delay

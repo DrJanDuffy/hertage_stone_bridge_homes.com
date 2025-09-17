@@ -40,6 +40,10 @@ export const PropertyImage = component$<PropertyImageProps>(
         // Load immediately for priority images
         img.src = src;
       }
+      
+      return () => {
+        // Cleanup function for all code paths
+      };
     });
 
     const handleLoad = () => {

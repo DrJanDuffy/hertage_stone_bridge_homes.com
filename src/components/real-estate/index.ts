@@ -42,5 +42,5 @@ export { RealScoutWidget } from "./RealScoutWidget";
 
 // Search and filtering components
 export { SearchInterface } from "./SearchInterface";
-export { SearchFilters } from "./SearchFilters";
+export { SearchFilters as SearchFiltersComponent } from "./SearchFilters";
 export { SortOptions } from "./SortOptions";

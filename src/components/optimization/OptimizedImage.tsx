@@ -43,6 +43,10 @@ export const OptimizedImage = component$<OptimizedImageProps>(
         // Load immediately if priority
         isInView.value = true;
       }
+      
+      return () => {
+        // Cleanup function for all code paths
+      };
     });
 
     // Generate optimized image URLs for different devices

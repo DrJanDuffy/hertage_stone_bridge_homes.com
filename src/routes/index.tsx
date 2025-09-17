@@ -222,12 +222,12 @@ export default component$(() => {
               </button>
             </div>
           </div>
-          <HeroImageCarousel />
+          {/* <HeroImageCarousel /> */}
         </div>
       </section>
 
       {/* RealScout Widget #1: Featured New Construction Homes - Below Hero */}
-      <RealScoutHeroWidget
+      {/* <RealScoutHeroWidget
         agentEncodedId="QWdlbnQtMjI1MDUw"
         sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
         listingStatus="For Sale"
@@ -236,7 +236,7 @@ export default component$(() => {
         priceMax="800000"
         title="Featured New Construction Homes"
         subtitle="See What's Available Now"
-      />
+      /> */}
 
       {/* Simple Content Sections */}
       <section class="bg-gray-50 py-16">
@@ -271,7 +271,7 @@ export default component$(() => {
               Discover our latest luxury homes in Heritage at Stonebridge
             </p>
           </div>
-          <LuxuryHomeCards />
+          {/* <LuxuryHomeCards /> */}
         </div>
       </section>
 
@@ -282,7 +282,7 @@ export default component$(() => {
             <h2 class="text-3xl font-bold text-gray-900 mb-4">Calculate Your Monthly Payment</h2>
             <p class="text-lg text-gray-600">Get an instant estimate for your dream home</p>
           </div>
-          <PriceCalculator />
+          {/* <PriceCalculator /> */}
         </div>
       </section>
 
@@ -293,12 +293,12 @@ export default component$(() => {
             <h2 class="text-3xl font-bold text-gray-900 mb-4">Resort-Style Amenities</h2>
             <p class="text-lg text-gray-600">Experience luxury living with world-class amenities</p>
           </div>
-          <AnimatedAmenities />
+          {/* <AnimatedAmenities /> */}
         </div>
       </section>
 
       {/* RealScout Widget #2: Luxury Resale Opportunities - After Amenities */}
-      <RealScoutAmenitiesWidget
+      {/* <RealScoutAmenitiesWidget
         agentEncodedId="QWdlbnQtMjI1MDUw"
         sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
         listingStatus="For Sale"
@@ -307,7 +307,7 @@ export default component$(() => {
         priceMax="1000000"
         title="Luxury Resale Opportunities"
         subtitle="Browse Exclusive Listings"
-      />
+      /> */}
 
       {/* Social Proof */}
       <section class="py-16">
@@ -315,12 +315,12 @@ export default component$(() => {
           <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-gray-900 mb-4">What Our Residents Say</h2>
           </div>
-          <SocialProof />
+          {/* <SocialProof /> */}
         </div>
       </section>
 
       {/* RealScout Widget #3: Premium Estate Homes - Before Final CTA */}
-      <RealScoutPremiumWidget
+      {/* <RealScoutPremiumWidget
         agentEncodedId="QWdlbnQtMjI1MDUw"
         sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
         listingStatus="For Sale"
@@ -329,7 +329,7 @@ export default component$(() => {
         priceMax="1200000"
         title="Premium Estate Homes"
         subtitle="Exclusive Luxury Properties"
-      />
+      /> */}
 
       {/* Call to Action */}
       <section class="bg-gradient-to-br from-blue-600 to-blue-800 py-16">

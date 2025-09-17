@@ -27,7 +27,7 @@ export const PerformanceMonitor = component$(() => {
       const fidObserver = new PerformanceObserver((list) => {
         const entries = list.getEntries();
         entries.forEach((entry) => {
-          console.log("FID:", entry.processingStart - entry.startTime);
+          console.log("FID:", (entry as any).processingStart - entry.startTime);
           // In production, send to analytics service
           // analytics.track('core_web_vital', { metric: 'FID', value: entry.processingStart - entry.startTime });
         });

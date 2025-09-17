@@ -1,16 +1,16 @@
 import { component$, useSignal, useTask$ } from "@builder.io/qwik";
-import type { PropertySearchResult, SearchFilters } from "../../types/real-estate";
+import type { PropertySearchResult, SearchFilters as SearchFiltersType } from "../../types/real-estate";
 import { PropertyGrid } from "./PropertyGrid";
 import { SearchFilters as SearchFiltersComponent } from "./SearchFilters";
 import { SortOptions } from "./SortOptions";
 
 export interface SearchInterfaceProps {
-  initialFilters?: Partial<SearchFilters>;
-  onSearch?: (filters: SearchFilters) => void;
+  initialFilters?: Partial<SearchFiltersType>;
+  onSearch?: (filters: SearchFiltersType) => void;
 }
 
 export const SearchInterface = component$<SearchInterfaceProps>(({ initialFilters, onSearch }) => {
-  const filters = useSignal<SearchFilters>({
+  const filters = useSignal<SearchFiltersType>({
     priceMin: initialFilters?.priceMin || 0,
     priceMax: initialFilters?.priceMax || 2000000,
     beds: initialFilters?.beds || 0,
@@ -154,7 +154,7 @@ export const SearchInterface = component$<SearchInterfaceProps>(({ initialFilter
         <div class="lg:col-span-1">
           <SearchFiltersComponent
             filters={filters}
-            onFiltersChange$={(newFilters: SearchFilters) => {
+            onFiltersChange$={(newFilters: SearchFiltersType) => {
               filters.value = newFilters;
             }}
           />

@@ -1,8 +1,8 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { SearchInterface } from "~/components/real-estate";
-import { DynamicRealScoutGrid } from "~/components/real-estate/DynamicRealScoutGrid";
-import { realEstateContentConfig } from "~/config/real-estate-content";
+// import { SearchInterface } from "~/components/real-estate";
+// import { DynamicRealScoutGrid } from "~/components/real-estate/DynamicRealScoutGrid";
+// import { realEstateContentConfig } from "~/config/real-estate-content";
 
 export default component$(() => {
   return (
@@ -20,7 +20,7 @@ export default component$(() => {
 
       {/* Dynamic RealScout Content Blocks */}
       <main>
-        <DynamicRealScoutGrid config={realEstateContentConfig} />
+        {/* <DynamicRealScoutGrid config={realEstateContentConfig} /> */}
 
         {/* Custom Search Interface */}
         <div class="max-w-7xl mx-auto px-4 py-12">
@@ -31,7 +31,10 @@ export default component$(() => {
                 Our custom-built search interface with Qwik optimization and real-time filtering
               </p>
             </div>
-            <SearchInterface />
+            {/* <SearchInterface /> */}
+            <div class="text-center py-8">
+              <p class="text-gray-500">Search interface temporarily disabled for debugging</p>
+            </div>
           </div>
         </div>
 
