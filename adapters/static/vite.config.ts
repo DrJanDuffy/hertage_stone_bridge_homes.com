@@ -1,17 +1,20 @@
-import { defineConfig } from 'vite';
+import { staticAdapter } from '@builder.io/qwik-city/adapters/static/vite';
+import { extendConfig } from '@builder.io/qwik-city/vite';
+import baseConfig from '../../vite.config';
 
-export default defineConfig({
-  build: {
-    ssr: true,
-    rollupOptions: {
-      input: ['src/entry.static.tsx'],
-      output: {
-        format: 'es',
-        entryFileNames: 'index.js',
+export default extendConfig(baseConfig, () => {
+  return {
+    build: {
+      ssr: true,
+      rollupOptions: {
+        input: ['src/entry.static.tsx', '@qwik-city-plan'],
       },
+      outDir: 'dist',
     },
-    outDir: '.vercel/output/functions/_qwik-city.func',
-    target: 'esnext',
-    minify: false,
-  },
+    plugins: [
+      staticAdapter({
+        origin: 'https://heritagestonebridge.com',
+      }),
+    ],
+  };
 });
