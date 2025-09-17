@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import {
 	AnimatedAmenities,
@@ -17,6 +17,66 @@ import {
 } from "~/components/real-estate";
 
 export default component$(() => {
+	// Inject Local Business Schema for SEO
+	useTask$(() => {
+		if (typeof document !== 'undefined') {
+			const localBusinessSchema = {
+				"@context": "https://schema.org",
+				"@type": "RealEstateAgent",
+				"name": "Dr. Jan Duffy - Las Vegas Real Estate Expert",
+				"description": "Las Vegas Real Estate Expert specializing in 55+ communities, luxury homes, and active adult living near Red Rock Canyon.",
+				"url": "https://heritagestonebridge.com",
+				"telephone": "702-222-1964",
+				"email": "jan@heritagestonebridge.com",
+				"image": "https://heritagestonebridge.com/images/dr-jan-duffy.jpg",
+				"priceRange": "$$$$",
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "Las Vegas",
+					"addressRegion": "NV",
+					"postalCode": "89134",
+					"addressCountry": "US"
+				},
+				"geo": {
+					"@type": "GeoCoordinates",
+					"latitude": "36.1699",
+					"longitude": "-115.1398"
+				},
+				"areaServed": [
+					{
+						"@type": "City",
+						"name": "Las Vegas, Nevada"
+					},
+					{
+						"@type": "City", 
+						"name": "Summerlin, Nevada"
+					},
+					{
+						"@type": "Place",
+						"name": "Red Rock Canyon Area"
+					}
+				],
+				"serviceType": [
+					"55+ Community Sales",
+					"Active Adult Communities",
+					"Luxury Home Sales",
+					"Real Estate Consultation"
+				],
+				"openingHours": "Mo-Su 08:00-20:00",
+				"sameAs": [
+					"https://www.facebook.com/DrJanDuffyRealEstate",
+					"https://www.linkedin.com/in/drjanduffy",
+					"https://www.instagram.com/drjanduffylasvegas"
+				]
+			};
+
+			const script = document.createElement('script');
+			script.type = 'application/ld+json';
+			script.textContent = JSON.stringify(localBusinessSchema);
+			document.head.appendChild(script);
+		}
+	});
+
 	return (
 		<>
 			{/* Sticky Header */}
