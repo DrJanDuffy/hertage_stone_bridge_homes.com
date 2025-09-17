@@ -1,6 +1,5 @@
 import { component$, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { Footer } from "~/components/footer";
 
 export default component$(() => {
 	// Inject 55+ Communities Schema for SEO
@@ -484,7 +483,6 @@ export default component$(() => {
 			</section>
 
 			{/* Footer */}
-			<Footer />
 		</>
 	);
 });

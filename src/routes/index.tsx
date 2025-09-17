@@ -1,6 +1,5 @@
 import { component$, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { Footer } from "~/components/footer";
 import {
 	AnimatedAmenities,
 	FloatingContactWidget,
@@ -384,8 +383,6 @@ export default component$(() => {
 				</div>
 			</section>
 
-			{/* Footer */}
-			<Footer />
 		</>
 	);
 });
