@@ -1,14 +1,14 @@
 import { component$, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import {
-  AnimatedAmenities,
-  FloatingContactWidget,
-  HeroImageCarousel,
-  LuxuryHomeCards,
-  PriceCalculator,
-  SocialProof,
-  // StickyHeader,
-} from "~/components/luxury";
+// import {
+//   AnimatedAmenities,
+//   FloatingContactWidget,
+//   HeroImageCarousel,
+//   LuxuryHomeCards,
+//   PriceCalculator,
+//   SocialProof,
+//   // StickyHeader,
+// } from "~/components/luxury";
 import {
   RealScoutAmenitiesWidget,
   RealScoutHeroWidget,
@@ -181,7 +181,7 @@ export default component$(() => {
       {/* <StickyHeader /> */}
 
       {/* Floating Contact Widget */}
-      <FloatingContactWidget />
+      {/* <FloatingContactWidget /> */}
 
       {/* Sticky Side Panel Widget - Appears after 15 seconds */}
       {/* <RealScoutStickyWidget
