@@ -15,6 +15,7 @@ import {
 	RealScoutPremiumWidget,
 	RealScoutStickyWidget,
 } from "~/components/real-estate";
+import { Footer } from "~/components/footer";
 
 export default component$(() => {
 	// Inject Local Business Schema for SEO
@@ -279,6 +280,9 @@ export default component$(() => {
 					</div>
 				</div>
 			</section>
+
+			{/* Footer */}
+			<Footer />
 		</>
 	);
 });
