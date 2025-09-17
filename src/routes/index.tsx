@@ -15,7 +15,6 @@ import {
 	RealScoutPremiumWidget,
 	RealScoutStickyWidget,
 } from "~/components/real-estate";
-import { AICrawlerDetection } from "~/components/seo";
 
 export default component$(() => {
 	// Inject Enhanced Local Business Schema for AI Understanding
@@ -181,7 +180,6 @@ export default component$(() => {
 	return (
 		<>
 			{/* AI Crawler Detection */}
-			<AICrawlerDetection />
 
 			{/* Sticky Header */}
 			<StickyHeader />
