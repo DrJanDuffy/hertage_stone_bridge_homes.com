@@ -11,7 +11,7 @@ export default extendConfig(baseConfig, () => {
         external: ['node:fs', 'node:path', 'node:url', 'fs', 'path', 'url'],
         output: {
           format: 'es',
-          inlineDynamicImports: true,
+          manualChunks: undefined,
         },
       },
       outDir: '.vercel/output/functions/_qwik-city.func',

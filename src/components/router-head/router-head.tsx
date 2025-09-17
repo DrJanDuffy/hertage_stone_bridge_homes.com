@@ -42,11 +42,14 @@ export const RouterHead = component$(() => {
         <link key={l.key} {...l} />
       ))}
 
-      {head.styles.map((s) => (
-        // eslint-disable-next-line react/no-danger
-        // biome-ignore lint/security/noDangerouslySetInnerHtml: Required for dynamic styles
-        <style key={s.key} {...s.props} dangerouslySetInnerHTML={s.style} />
-      ))}
+      {head.styles.map((s) => {
+        const { dangerouslySetInnerHTML, ...otherProps } = s.props || {};
+        return (
+          // eslint-disable-next-line react/no-danger
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: Required for dynamic styles
+          <style key={s.key} {...otherProps} dangerouslySetInnerHTML={s.style} />
+        );
+      })}
     </>
   );
 });
