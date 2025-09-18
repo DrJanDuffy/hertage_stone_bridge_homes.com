@@ -23,11 +23,6 @@ export const onGet: RequestHandler = async (requestEvent) => {
         <lastmod>${currentDate}</lastmod>
     </sitemap>
     
-    <!-- Blog and content sitemap - AI-generated content -->
-    <sitemap>
-        <loc>https://heritagestonebridge.com/sitemap-blog.xml</loc>
-        <lastmod>${currentDate}</lastmod>
-    </sitemap>
 </sitemapindex>`;
 
   requestEvent.headers.set("Content-Type", "application/xml");
