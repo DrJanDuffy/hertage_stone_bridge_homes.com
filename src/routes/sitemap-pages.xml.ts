@@ -184,6 +184,56 @@ export const onGet: RequestHandler = async (requestEvent) => {
         <priority>0.8</priority>
     </url>
     
+    <!-- Strategic Competitor-Targeting Pages -->
+    <url>
+        <loc>https://heritagestonebridge.com/heritage-at-stonebridge-homes-for-sale/</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://heritagestonebridge.com/summerlin-55-plus-communities/</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://heritagestonebridge.com/henderson-active-adult-communities/</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://heritagestonebridge.com/sun-city-del-webb-real-estate/</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://heritagestonebridge.com/55-plus-condos-las-vegas/</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://heritagestonebridge.com/active-adult-lifestyle-communities/</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://heritagestonebridge.com/retirement-communities-las-vegas/</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
     <!-- AI-Powered Content Pages -->
     <url>
         <loc>https://heritagestonebridge.com/blog/</loc>
