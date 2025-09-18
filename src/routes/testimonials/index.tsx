@@ -4,11 +4,11 @@ import { generateAIContent } from "~/lib/ai-content-generator";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 
 export const head: DocumentHead = {
-  title: "Client Testimonials | Dr. Jan Duffy Real Estate Reviews - Las Vegas",
+  title: "Heritage at Stonebridge Reviews | Client Testimonials - Dr. Jan Duffy",
   meta: [
     {
       name: "description",
-      content: "Read authentic client testimonials and reviews for Dr. Jan Duffy, Las Vegas real estate expert. Success stories from satisfied clients in 55+ communities, luxury homes, and active adult living.",
+      content: "Read authentic Heritage at Stonebridge reviews and client testimonials for Dr. Jan Duffy. Real experiences from satisfied residents in Las Vegas 55+ communities and luxury homes.",
     },
     {
       name: "robots",

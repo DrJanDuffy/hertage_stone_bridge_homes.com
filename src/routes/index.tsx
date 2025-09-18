@@ -162,6 +162,13 @@ export default component$(() => {
               Experience resort-style amenities, stunning Red Rock Canyon views, and gated security in Las Vegas's premier active adult community. 
               Dr. Jan Duffy specializes in helping you find the perfect 55+ home in Heritage at Stonebridge and surrounding Summerlin areas.
             </p>
+            <div class="text-center mb-8">
+              <p class="text-base text-gray-500 max-w-3xl mx-auto">
+                <strong>Searching for:</strong> Heritage at Stonebridge reviews • Homes for sale in Heritage at Stonebridge • 
+                New Construction 55+ communities in Summerlin, NV • Stonebridge Summerlin • Stonebridge Las Vegas • 
+                Heritage Las Vegas NV • Heritage 55+ community • Lennar Summerlin
+              </p>
+            </div>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="http://drjanduffy.realscout.com/onboarding"

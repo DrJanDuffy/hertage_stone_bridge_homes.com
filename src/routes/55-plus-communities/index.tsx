@@ -119,6 +119,12 @@ export default component$(() => {
               Explore Las Vegas' most prestigious active adult communities, each offering unique
               amenities and lifestyle benefits for discerning 55+ homebuyers.
             </p>
+            <div class="mt-6 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+              <p class="text-lg text-blue-800 font-semibold">
+                🏗️ <strong>New Construction 55+ Communities in Summerlin, NV:</strong> 
+                Heritage at Stonebridge offers brand new homes with modern amenities, energy-efficient features, and Lennar's "Everything's Included" approach.
+              </p>
+            </div>
           </div>
 
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
