@@ -382,7 +382,7 @@ export default component$(() => {
             </p>
             <div class="text-center mb-8">
               <p class="text-base text-gray-500 max-w-3xl mx-auto">
-                <strong>Searching for:</strong> Heritage at Stonebridge reviews • Homes for sale in Heritage at Stonebridge • 
+                <strong>Popular Searches:</strong> Heritage at Stonebridge reviews • Homes for sale in Heritage at Stonebridge • 
                 New Construction 55+ communities in Summerlin, NV • Stonebridge Summerlin • Stonebridge Las Vegas • 
                 Heritage Las Vegas NV • Heritage 55+ community • Lennar Summerlin
               </p>
@@ -407,12 +407,12 @@ export default component$(() => {
         </div>
       </section>
 
-      {/* Simple Content Sections */}
+      {/* Community Amenities Section */}
       <section class="bg-gray-50 py-16">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Luxury Living Awaits</h2>
-            <p class="text-lg text-gray-600 mb-8">Experience the finest in 55+ active adult living</p>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Luxury Amenities & Lifestyle</h2>
+            <p class="text-lg text-gray-600 mb-8">Experience the finest in 55+ active adult living with resort-style amenities</p>
             <div class="flex flex-wrap justify-center gap-4 mb-8">
               <a href="/55-plus-communities/" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
                 Explore 55+ Communities
@@ -428,15 +428,43 @@ export default component$(() => {
           <div class="grid md:grid-cols-3 gap-8">
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
               <h3 class="text-xl font-bold mb-2">Resort-Style Pool</h3>
-              <p class="text-gray-600">Luxurious pool area with cabanas</p>
+              <p class="text-gray-600">Luxurious pool area with cabanas and spa features</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
               <h3 class="text-xl font-bold mb-2">Golf Course Access</h3>
-              <p class="text-gray-600">Premium golf courses nearby</p>
+              <p class="text-gray-600">Premium golf courses nearby with member privileges</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
               <h3 class="text-xl font-bold mb-2">24/7 Security</h3>
-              <p class="text-gray-600">Gated community with security</p>
+              <p class="text-gray-600">Gated community with professional security services</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Heritage Section */}
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Choose Heritage at Stonebridge?</h2>
+            <p class="text-lg text-gray-600 mb-8">Discover what makes our community the premier choice for 55+ living in Las Vegas</p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Prime Location</h3>
+              <p class="text-gray-600">Just 12 miles from Red Rock Canyon with easy access to Summerlin amenities</p>
+            </div>
+            <div class="text-center">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">New Construction</h3>
+              <p class="text-gray-600">Modern homes with luxury finishes and energy-efficient features</p>
+            </div>
+            <div class="text-center">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Active Lifestyle</h3>
+              <p class="text-gray-600">Fitness center, walking trails, and social activities for active adults</p>
+            </div>
+            <div class="text-center">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Expert Guidance</h3>
+              <p class="text-gray-600">Dr. Jan Duffy's expertise in 55+ communities and Las Vegas real estate</p>
             </div>
           </div>
         </div>

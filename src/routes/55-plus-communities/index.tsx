@@ -98,7 +98,7 @@ export default component$(() => {
                 Schedule Community Tour
               </a>
               <a
-                href="tel:+17022221964"
+                href="tel:+17027896561"
                 class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-800 transition-colors shadow-lg inline-block text-center"
               >
                 Call (702) 789-6561
@@ -176,7 +176,7 @@ export default component$(() => {
                 </ul>
                 <div class="text-lg font-bold text-green-600 mb-4">Various Price Points</div>
                 <a
-                  href="tel:+17022221964"
+                  href="tel:+17027896561"
                   class="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors inline-block text-center"
                 >
                   Call for Info
