@@ -158,6 +158,10 @@ export default component$(() => {
             <p class="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-8 font-medium">
               Luxury 55+ Active Adult Living in the Heart of Summerlin, Las Vegas
             </p>
+            <p class="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
+              Experience resort-style amenities, stunning Red Rock Canyon views, and gated security in Las Vegas's premier active adult community. 
+              Dr. Jan Duffy specializes in helping you find the perfect 55+ home in Heritage at Stonebridge and surrounding Summerlin areas.
+            </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="http://drjanduffy.realscout.com/onboarding"
@@ -183,7 +187,18 @@ export default component$(() => {
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-gray-900 mb-4">Luxury Living Awaits</h2>
-            <p class="text-lg text-gray-600">Experience the finest in 55+ active adult living</p>
+            <p class="text-lg text-gray-600 mb-8">Experience the finest in 55+ active adult living</p>
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+              <a href="/55-plus-communities/" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                Explore 55+ Communities
+              </a>
+              <a href="/summerlin-homes/" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors">
+                Summerlin Homes
+              </a>
+              <a href="/real-estate/" class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors">
+                Real Estate Tools
+              </a>
+            </div>
           </div>
           <div class="grid md:grid-cols-3 gap-8">
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
@@ -251,17 +266,12 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Las Vegas 55+ Communities Red Rock Canyon | Heritage at Stonebridge - Dr. Jan Duffy",
+  title: "Heritage at Stonebridge - Luxury 55+ Communities in Summerlin, Las Vegas | Dr. Jan Duffy",
   meta: [
     {
       name: "description",
       content:
         "Discover luxury 55+ active adult communities near Red Rock Canyon in Summerlin, Las Vegas. Heritage at Stonebridge offers gated living, resort amenities & stunning mountain views. Dr. Jan Duffy, your 55+ specialist - Call 702-222-1964",
-    },
-    {
-      name: "keywords",
-      content:
-        "Las Vegas 55+ communities, Red Rock Canyon homes, Summerlin active adult, Heritage Stonebridge, Dr Jan Duffy, 55+ realtor Las Vegas, active adult communities Nevada",
     },
     // Enhanced Meta Tags for AI & Search Engine Understanding
     {
@@ -353,10 +363,6 @@ export const head: DocumentHead = {
       name: "twitter:description",
       content:
         "Discover luxury 55+ active adult communities near Red Rock Canyon. Heritage at Stonebridge offers gated living, resort amenities & mountain views in Summerlin.",
-    },
-    {
-      name: "robots",
-      content: "index, follow",
     },
     {
       name: "author",
