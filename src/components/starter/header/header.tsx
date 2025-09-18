@@ -34,7 +34,7 @@ export default component$(() => {
                 </svg>
               </div>
               <div class="text-left">
-                <div class="text-lg font-bold text-blue-600">(702) 222-1964</div>
+                <div class="text-lg font-bold text-blue-600">(702) 789-6561</div>
                 <div class="text-xs text-gray-600">Dr. Jan Duffy</div>
               </div>
             </div>

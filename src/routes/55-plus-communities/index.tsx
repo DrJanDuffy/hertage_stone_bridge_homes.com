@@ -101,7 +101,7 @@ export default component$(() => {
                 href="tel:+17022221964"
                 class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-800 transition-colors shadow-lg inline-block text-center"
               >
-                Call (702) 222-1964
+                Call (702) 789-6561
               </a>
             </div>
           </div>
@@ -447,7 +447,7 @@ export default component$(() => {
               href="tel:+17022221964"
               class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-800 transition-colors shadow-lg inline-block text-center"
             >
-              Call (702) 222-1964
+              Call (702) 789-6561
             </a>
           </div>
 

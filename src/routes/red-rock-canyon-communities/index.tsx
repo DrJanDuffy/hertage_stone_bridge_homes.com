@@ -80,7 +80,7 @@ export default component$(() => {
               Schedule Mountain Tour
             </a>
             <a href="tel:702-789-6561" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-red-800 transition-colors shadow-lg inline-block text-center">
-              Call (702) 222-1964
+              Call (702) 789-6561
             </a>
           </div>
         </div>
@@ -316,7 +316,7 @@ export default component$(() => {
               Schedule Mountain Tour
             </a>
             <a href="tel:702-789-6561" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-red-800 transition-colors shadow-lg inline-block text-center">
-              Call (702) 222-1964
+              Call (702) 789-6561
             </a>
           </div>
         </div>
