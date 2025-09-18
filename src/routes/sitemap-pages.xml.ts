@@ -155,6 +155,42 @@ export const onGet: RequestHandler = async (requestEvent) => {
         <priority>0.6</priority>
     </url>
     
+    <!-- AI-Powered Content Pages -->
+    <url>
+        <loc>https://heritagestonebridge.com/blog/</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://heritagestonebridge.com/market-analysis/</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://heritagestonebridge.com/neighborhood-insights/</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://heritagestonebridge.com/luxury-living-guide/</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://heritagestonebridge.com/community-comparison/</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
     <!-- Legal Pages -->
     <url>
         <loc>https://heritagestonebridge.com/privacy-policy/</loc>

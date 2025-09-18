@@ -183,6 +183,31 @@ export const Footer = component$(() => {
             <h3 class="text-xl font-bold mb-4">Resources</h3>
             <ul class="space-y-2 text-gray-300 mb-6">
               <li>
+                <a href="/blog" class="hover:text-blue-400">
+                  AI-Powered Real Estate Blog
+                </a>
+              </li>
+              <li>
+                <a href="/market-analysis" class="hover:text-blue-400">
+                  AI Market Analysis
+                </a>
+              </li>
+              <li>
+                <a href="/neighborhood-insights" class="hover:text-blue-400">
+                  Neighborhood Insights
+                </a>
+              </li>
+              <li>
+                <a href="/luxury-living-guide" class="hover:text-blue-400">
+                  Luxury Living Guide
+                </a>
+              </li>
+              <li>
+                <a href="/community-comparison" class="hover:text-blue-400">
+                  Community Comparison
+                </a>
+              </li>
+              <li>
                 <a href="/market-reports" class="hover:text-blue-400">
                   Las Vegas Market Reports
                 </a>
@@ -265,7 +290,9 @@ export const Footer = component$(() => {
               Dr. Jan Duffy is a Las Vegas real estate expert specializing in 55+ communities,
               active adult living, luxury homes, and gated communities in Summerlin, Red Rock
               Canyon, Henderson, and Northwest Las Vegas. Serving clients in Del Webb communities,
-              Sun City, Siena, The Ridges, and all premier Nevada retirement communities.
+              Sun City, Siena, The Ridges, and all premier Nevada retirement communities. 
+              Features AI-powered market analysis, neighborhood insights, luxury living guides, 
+              and community comparisons for enhanced real estate intelligence.
             </p>
           </div>
         </div>
