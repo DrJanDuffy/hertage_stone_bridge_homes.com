@@ -4,7 +4,7 @@ export const Footer = component$(() => {
   return (
     <footer class="bg-gray-900 text-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
           <div>
             <h3 class="text-xl font-bold mb-4">Dr. Jan Duffy</h3>
@@ -177,6 +177,101 @@ export const Footer = component$(() => {
                   rel="related"
                 >
                   Mountain View Homes
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* 55+ Community Services */}
+          <div>
+            <h3 class="text-xl font-bold mb-4">55+ Community Services</h3>
+            <ul class="space-y-2 text-gray-300">
+              <li>
+                <a
+                  href="/affordable-55-plus-communities-las-vegas"
+                  class="hover:text-blue-400"
+                  data-content-type="service"
+                  data-topic="affordable-55-plus"
+                  rel="related"
+                >
+                  Affordable 55+ Communities
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/new-55-plus-communities-las-vegas"
+                  class="hover:text-blue-400"
+                  data-content-type="service"
+                  data-topic="new-55-plus"
+                  rel="related"
+                >
+                  New 55+ Communities
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/best-55-plus-communities-las-vegas"
+                  class="hover:text-blue-400"
+                  data-content-type="service"
+                  data-topic="best-55-plus"
+                  rel="related"
+                >
+                  Best 55+ Communities
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/luxury-retirement-communities-las-vegas"
+                  class="hover:text-blue-400"
+                  data-content-type="service"
+                  data-topic="luxury-retirement"
+                  rel="related"
+                >
+                  Luxury Retirement Communities
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/55-plus-communities-las-vegas-for-sale"
+                  class="hover:text-blue-400"
+                  data-content-type="service"
+                  data-topic="55-plus-for-sale"
+                  rel="related"
+                >
+                  55+ Communities for Sale
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/55-and-over-communities-las-vegas-for-rent"
+                  class="hover:text-blue-400"
+                  data-content-type="service"
+                  data-topic="55-plus-for-rent"
+                  rel="related"
+                >
+                  55+ Communities for Rent
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/55-plus-communities-las-vegas"
+                  class="hover:text-blue-400"
+                  data-content-type="service"
+                  data-topic="55-plus-general"
+                  rel="related"
+                >
+                  55+ Communities Las Vegas
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/55-and-over-communities-summerlin-las-vegas"
+                  class="hover:text-blue-400"
+                  data-content-type="service"
+                  data-topic="55-plus-summerlin"
+                  rel="related"
+                >
+                  55+ Communities Summerlin
                 </a>
               </li>
             </ul>
