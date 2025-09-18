@@ -59,10 +59,12 @@ Disallow: /*.pdf$
 # Crawl delay for polite crawling
 Crawl-delay: 1
 
-# Sitemap locations
+# Sitemap locations - Optimized for Google Search Console
 Sitemap: https://heritagestonebridge.com/sitemap.xml
 Sitemap: https://heritagestonebridge.com/sitemap-pages.xml
+Sitemap: https://heritagestonebridge.com/sitemap-properties.xml
 Sitemap: https://heritagestonebridge.com/sitemap-images.xml
+Sitemap: https://heritagestonebridge.com/sitemap-blog.xml
 
 # Host directive
 Host: https://heritagestonebridge.com`;
