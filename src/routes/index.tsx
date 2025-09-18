@@ -378,6 +378,7 @@ export default component$(() => {
             </p>
             <p class="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
               Experience resort-style amenities, stunning Red Rock Canyon views, and gated security in Las Vegas's premier active adult community. 
+              Heritage at Stonebridge offers three distinct home collections from Lennar, featuring modern single-story designs with prices starting in the high $400,000s. 
               Dr. Jan Duffy specializes in helping you find the perfect 55+ home in Heritage at Stonebridge and surrounding Summerlin areas.
             </p>
             <div class="text-center mb-8">
@@ -427,16 +428,16 @@ export default component$(() => {
           </div>
           <div class="grid md:grid-cols-3 gap-8">
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold mb-2">Resort-Style Pool</h3>
-              <p class="text-gray-600">Luxurious pool area with cabanas and spa features</p>
+              <h3 class="text-xl font-bold mb-2">8,000 Sq Ft Clubhouse</h3>
+              <p class="text-gray-600">State-of-the-art facility with fitness center, multi-purpose rooms, and social spaces</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold mb-2">Golf Course Access</h3>
-              <p class="text-gray-600">Premium golf courses nearby with member privileges</p>
+              <h3 class="text-xl font-bold mb-2">Resort-Style Pool & Spa</h3>
+              <p class="text-gray-600">Outdoor pool, heated lap pool, and spa for relaxation and water aerobics</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 class="text-xl font-bold mb-2">24/7 Security</h3>
-              <p class="text-gray-600">Gated community with professional security services</p>
+              <h3 class="text-xl font-bold mb-2">Pickleball & Bocce Courts</h3>
+              <p class="text-gray-600">Multiple courts for friendly games and organized tournaments</p>
             </div>
           </div>
         </div>
@@ -451,20 +452,20 @@ export default component$(() => {
           </div>
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Prime Location</h3>
-              <p class="text-gray-600">Just 12 miles from Red Rock Canyon with easy access to Summerlin amenities</p>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Three Home Collections</h3>
+              <p class="text-gray-600">Cromwell (1,232-1,422 sq ft), Stirling (1,747-2,236 sq ft), and Evander (2,515-2,873 sq ft)</p>
             </div>
             <div class="text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">New Construction</h3>
-              <p class="text-gray-600">Modern homes with luxury finishes and energy-efficient features</p>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Lennar Everything's Included</h3>
+              <p class="text-gray-600">Popular features and upgrades included at no extra cost</p>
             </div>
             <div class="text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Active Lifestyle</h3>
-              <p class="text-gray-600">Fitness center, walking trails, and social activities for active adults</p>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Red Rock Canyon Views</h3>
+              <p class="text-gray-600">Stunning mountain backdrop with easy access to outdoor recreation</p>
             </div>
             <div class="text-center">
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Expert Guidance</h3>
-              <p class="text-gray-600">Dr. Jan Duffy's expertise in 55+ communities and Las Vegas real estate</p>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Current Pricing</h3>
+              <p class="text-gray-600">Homes available from high $400,000s to over $1,000,000</p>
             </div>
           </div>
         </div>
