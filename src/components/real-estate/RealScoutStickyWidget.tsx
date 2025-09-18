@@ -26,10 +26,10 @@ export const RealScoutStickyWidget = component$<RealScoutStickyWidgetProps>(
     const isExpanded = useSignal(false);
 
     useVisibleTask$(() => {
-      // Show sticky panel after 15 seconds
+      // Show sticky panel after 5 seconds (reduced from 15 seconds for better visibility)
       const timer = setTimeout(() => {
         isVisible.value = true;
-      }, 15000);
+      }, 5000);
 
       return () => clearTimeout(timer);
     });
