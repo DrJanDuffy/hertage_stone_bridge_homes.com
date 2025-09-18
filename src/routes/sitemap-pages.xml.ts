@@ -127,6 +127,63 @@ export const onGet: RequestHandler = async (requestEvent) => {
         <priority>0.8</priority>
     </url>
     
+    <!-- 55+ Community Service Pages -->
+    <url>
+        <loc>https://heritagestonebridge.com/affordable-55-plus-communities-las-vegas/</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://heritagestonebridge.com/new-55-plus-communities-las-vegas/</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://heritagestonebridge.com/best-55-plus-communities-las-vegas/</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://heritagestonebridge.com/luxury-retirement-communities-las-vegas/</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://heritagestonebridge.com/55-plus-communities-las-vegas-for-sale/</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://heritagestonebridge.com/55-and-over-communities-las-vegas-for-rent/</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://heritagestonebridge.com/55-plus-communities-las-vegas/</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://heritagestonebridge.com/55-and-over-communities-summerlin-las-vegas/</loc>
+        <lastmod>${currentDate}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
     <!-- AI-Powered Content Pages -->
     <url>
         <loc>https://heritagestonebridge.com/blog/</loc>
