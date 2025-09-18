@@ -9,7 +9,7 @@ export default extendConfig(baseConfig, () => {
       rollupOptions: {
         input: ['src/entry.static.tsx', '@qwik-city-plan'],
       },
-      outDir: 'dist',
+      outDir: 'dist/client',
     },
     plugins: [
       staticAdapter({
