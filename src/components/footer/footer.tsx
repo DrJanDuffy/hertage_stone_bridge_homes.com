@@ -188,12 +188,12 @@ export const Footer = component$(() => {
             <ul class="space-y-2 text-gray-300 mb-6">
               <li>
                 <a href="/blog" class="hover:text-blue-400">
-                  AI-Powered Real Estate Blog
+                  Real Estate Blog
                 </a>
               </li>
               <li>
                 <a href="/market-analysis" class="hover:text-blue-400">
-                  AI Market Analysis
+                  Market Analysis
                 </a>
               </li>
               <li>
