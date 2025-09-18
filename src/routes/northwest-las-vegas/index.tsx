@@ -132,6 +132,85 @@ export default component$(() => {
         </div>
       </section>
 
+      {/* Northwest Las Vegas Lifestyle */}
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">The Northwest Las Vegas Lifestyle</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+              Northwest Las Vegas offers the perfect combination of new construction, modern amenities, and convenient access to everything Las Vegas has to offer.
+            </p>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-6">Why Choose Northwest Las Vegas?</h3>
+              <ul class="space-y-4 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-purple-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>New Construction:</strong> Modern homes with latest features, energy-efficient systems, and contemporary designs
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-purple-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Great Value:</strong> More home for your money compared to established areas like Summerlin
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-purple-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Growth Potential:</strong> Rapidly developing area with increasing property values and new amenities
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-purple-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Convenient Access:</strong> Easy access to Las Vegas Strip, downtown, and major highways
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-purple-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Family-Friendly:</strong> New schools, parks, and recreational facilities designed for modern living
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-lg">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Northwest Las Vegas Quick Facts</h3>
+              <div class="space-y-4">
+                <div class="flex justify-between">
+                  <span class="font-semibold">Population:</span>
+                  <span>200,000+ residents</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Growth Rate:</span>
+                  <span>Fastest growing area</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">New Communities:</span>
+                  <span>10+ master-planned</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Distance to Strip:</span>
+                  <span>15-25 minutes</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Schools:</span>
+                  <span>New & modern facilities</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Parks:</span>
+                  <span>50+ parks & trails</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Northwest Las Vegas Communities */}
       <section class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">

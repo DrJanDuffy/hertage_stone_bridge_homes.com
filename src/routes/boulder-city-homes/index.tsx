@@ -132,6 +132,85 @@ export default component$(() => {
         </div>
       </section>
 
+      {/* Boulder City Lifestyle */}
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">The Boulder City Lifestyle</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+              Boulder City offers a unique small-town atmosphere with historic charm, outdoor recreation, and convenient access to Las Vegas amenities.
+            </p>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-6">Why Choose Boulder City?</h3>
+              <ul class="space-y-4 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-teal-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Historic Charm:</strong> Founded in 1931 for Hoover Dam workers, rich history and unique character
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-teal-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Lake Mead Access:</strong> Direct access to Lake Mead National Recreation Area for water sports
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-teal-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Small Town Feel:</strong> Close-knit community with friendly neighbors and local events
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-teal-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>No Gaming:</strong> Unique in Nevada - no casinos, creating a family-friendly environment
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-teal-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Easy Access:</strong> Just 30 minutes from Las Vegas Strip and McCarran Airport
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-gradient-to-br from-teal-50 to-teal-100 p-8 rounded-lg">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Boulder City Quick Facts</h3>
+              <div class="space-y-4">
+                <div class="flex justify-between">
+                  <span class="font-semibold">Population:</span>
+                  <span>15,000+ residents</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Founded:</span>
+                  <span>1931</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Size:</span>
+                  <span>208 square miles</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Elevation:</span>
+                  <span>2,500 feet</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Distance to Vegas:</span>
+                  <span>30 minutes</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Special Feature:</span>
+                  <span>No gaming allowed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Boulder City Communities */}
       <section class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
