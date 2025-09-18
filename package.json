@@ -3,7 +3,7 @@
   "description": "Heritage at Stonebridge - Luxury 55+ Active Adult Community Website",
   "version": "1.0.0",
   "engines": {
-    "node": "18.x",
+    "node": "22.x",
     "pnpm": ">=8.0.0"
   },
   "private": true,

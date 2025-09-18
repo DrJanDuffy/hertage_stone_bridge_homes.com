@@ -1,5 +1,7 @@
 import { component$, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
+import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
 
 export const head: DocumentHead = {
   title: "Homes for Sale in Stonebridge, Summerlin, Las Vegas NV | Dr. Jan Duffy",
@@ -581,6 +583,33 @@ export default component$(() => {
           </div>
         </div>
       </section>
+
+      {/* Stonebridge Listings Widget */}
+      <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Current Stonebridge Listings</h2>
+            <p class="text-lg text-gray-600">Explore available homes in Heritage at Stonebridge community</p>
+          </div>
+          <RealScoutOfficeListingsWidget 
+            agentEncodedId="drjanduffy"
+            sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
+            listingStatus="For Sale"
+            propertyTypes="SFR"
+            priceMin={600000}
+            priceMax={900000}
+          />
+        </div>
+      </section>
+
+      {/* RealScout Sticky Widget */}
+      <RealScoutStickyWidget 
+        agentEncodedId="drjanduffy"
+        title="Stonebridge Homes"
+        subtitle="Call 702-222-1964"
+        priceMin="600000"
+        priceMax="900000"
+      />
     </>
   );
 });

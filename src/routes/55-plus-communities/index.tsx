@@ -1,5 +1,7 @@
 import { component$, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
+import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
 
 export default component$(() => {
   // Inject 55+ Communities Schema for SEO
@@ -451,6 +453,33 @@ export default component$(() => {
           </div>
         </div>
       </section>
+
+      {/* 55+ Communities Listings Widget */}
+      <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Current 55+ Community Listings</h2>
+            <p class="text-lg text-gray-600">Explore available properties in Las Vegas's premier active adult communities</p>
+          </div>
+          <RealScoutOfficeListingsWidget 
+            agentEncodedId="drjanduffy"
+            sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
+            listingStatus="For Sale"
+            propertyTypes="SFR"
+            priceMin={400000}
+            priceMax={800000}
+          />
+        </div>
+      </section>
+
+      {/* RealScout Sticky Widget */}
+      <RealScoutStickyWidget 
+        agentEncodedId="drjanduffy"
+        title="55+ Community Homes"
+        subtitle="Call 702-222-1964"
+        priceMin="400000"
+        priceMax="800000"
+      />
 
       {/* Footer */}
     </>

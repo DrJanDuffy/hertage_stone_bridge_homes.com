@@ -1,5 +1,7 @@
 import { component$, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
+import { RealScoutHeroWidget } from "~/components/real-estate/RealScoutHeroWidget";
 
 export default component$(() => {
   // Inject JSON-LD structured data
@@ -222,6 +224,24 @@ export default component$(() => {
           </div>
         </div>
       </section>
+
+      {/* RealScout Hero Widget */}
+      <RealScoutHeroWidget 
+        agentEncodedId="drjanduffy"
+        title="Exclusive Heritage at Stonebridge Listings"
+        subtitle="Schedule Your Private Tour Today"
+        priceMin="600000"
+        priceMax="900000"
+      />
+
+      {/* RealScout Sticky Widget */}
+      <RealScoutStickyWidget 
+        agentEncodedId="drjanduffy"
+        title="Featured Listings"
+        subtitle="Call 702-222-1964"
+        priceMin="600000"
+        priceMax="900000"
+      />
     </>
   );
 });
