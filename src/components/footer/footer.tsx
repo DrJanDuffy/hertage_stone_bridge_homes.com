@@ -15,8 +15,8 @@ export const Footer = component$(() => {
             <div class="space-y-2">
               <p class="flex items-center">
                 <span class="mr-2">📞</span>
-                <a href="tel:702-222-1964" class="hover:text-blue-400">
-                  702-222-1964
+                <a href="tel:702-789-6561" class="hover:text-blue-400">
+                  (702) 789-6561
                 </a>
               </p>
               <p class="flex items-center">
@@ -27,7 +27,11 @@ export const Footer = component$(() => {
               </p>
               <p class="flex items-center">
                 <span class="mr-2">📍</span>
-                Las Vegas, Nevada
+                Crossbridge Dr, Las Vegas, NV 89138
+              </p>
+              <p class="flex items-center">
+                <span class="mr-2">🕒</span>
+                Mon-Fri: 9AM-6PM | Sat: 10AM-4PM | Sun: By Appointment
               </p>
             </div>
           </div>

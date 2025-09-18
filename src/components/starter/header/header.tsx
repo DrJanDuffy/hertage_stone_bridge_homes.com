@@ -26,7 +26,7 @@ export default component$(() => {
       <div class={["container", styles.wrapper]}>
         {/* Phone Number as Logo Replacement */}
         <div class={styles.logo}>
-          <a href="tel:702-222-1964" title="Call Dr. Jan Duffy">
+          <a href="tel:702-789-6561" title="Call Dr. Jan Duffy">
             <div class="flex items-center space-x-3">
               <div class="bg-green-500 rounded-full p-2">
                 <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -87,7 +87,7 @@ export default component$(() => {
 
           {/* Secondary CTA - Phone */}
           <a
-            href="tel:702-222-1964"
+            href="tel:702-789-6561"
             class="flex items-center space-x-2 bg-green-600 text-white px-4 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
           >
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">

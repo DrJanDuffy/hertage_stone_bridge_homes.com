@@ -77,7 +77,7 @@ export default component$(() => {
             <a href="http://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener" class="bg-white text-purple-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-100 transition-colors shadow-lg inline-block text-center">
               Schedule Consultation
             </a>
-            <a href="tel:702-222-1964" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-purple-800 transition-colors shadow-lg inline-block text-center">
+            <a href="tel:702-789-6561" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-purple-800 transition-colors shadow-lg inline-block text-center">
               Call (702) 222-1964
             </a>
           </div>
@@ -324,7 +324,7 @@ export default component$(() => {
       <RealScoutStickyWidget
         agentEncodedId="QWdlbnQtMjI1MDUw"
         title="Las Vegas Listings"
-        subtitle="Call 702-222-1964"
+        subtitle="Call 702-789-6561"
         priceMin="300000"
         priceMax="3000000"
       />

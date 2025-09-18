@@ -8,7 +8,7 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "description",
-      content: "Discover luxury Summerlin homes for sale with Dr. Jan Duffy. Premier master-planned community featuring golf courses, resort amenities, and 55+ active adult communities. Call 702-222-1964.",
+      content: "Discover luxury Summerlin homes for sale with Dr. Jan Duffy. Premier master-planned community featuring golf courses, resort amenities, and 55+ active adult communities. Call 702-789-6561.",
     },
     {
       name: "robots",
@@ -79,7 +79,7 @@ export default component$(() => {
             <a href="http://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener" class="bg-white text-green-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-100 transition-colors shadow-lg inline-block text-center">
               Schedule Summerlin Tour
             </a>
-            <a href="tel:702-222-1964" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-green-800 transition-colors shadow-lg inline-block text-center">
+            <a href="tel:702-789-6561" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-green-800 transition-colors shadow-lg inline-block text-center">
               Call (702) 222-1964
             </a>
           </div>
@@ -321,7 +321,7 @@ export default component$(() => {
             <a href="http://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener" class="bg-white text-green-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-100 transition-colors shadow-lg inline-block text-center">
               Schedule Summerlin Tour
             </a>
-            <a href="tel:702-222-1964" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-green-800 transition-colors shadow-lg inline-block text-center">
+            <a href="tel:702-789-6561" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-green-800 transition-colors shadow-lg inline-block text-center">
               Call (702) 222-1964
             </a>
           </div>
@@ -332,7 +332,7 @@ export default component$(() => {
       <RealScoutStickyWidget
         agentEncodedId="QWdlbnQtMjI1MDUw"
         title="Summerlin Listings"
-        subtitle="Call 702-222-1964"
+        subtitle="Call 702-789-6561"
         priceMin="400000"
         priceMax="3000000"
       />

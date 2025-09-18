@@ -41,7 +41,7 @@ export const AICrawlerDetection = component$(() => {
           "Fitness center",
           "Walking trails",
         ],
-        contact: "702-222-1964",
+        contact: "702-789-6561",
         agent: "Dr. Jan Duffy",
         email: "DrDuffySells@HeritageStonebridge.com",
         license: "Nevada Real Estate License #S.0197614",
@@ -84,7 +84,7 @@ export const AICrawlerDetection = component$(() => {
         { name: "ai-community-type", content: "active-adult-gated-community" },
         { name: "ai-price-range", content: "$489,000 - $800,000+" },
         { name: "ai-agent", content: "Dr. Jan Duffy" },
-        { name: "ai-phone", content: "702-222-1964" },
+        { name: "ai-phone", content: "702-789-6561" },
         { name: "ai-email", content: "DrDuffySells@HeritageStonebridge.com" },
       ];
 

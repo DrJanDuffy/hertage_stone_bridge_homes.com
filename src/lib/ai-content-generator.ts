@@ -107,7 +107,7 @@ Return response as JSON with: title, content, metaDescription, keywords, structu
       metaDescription: `Expert guidance on ${request.topic} in ${request.location}. Dr. Jan Duffy provides personalized real estate services for 55+ communities and luxury homes.`,
       keywords: [`${request.topic}`, `${request.location}`, 'Dr Jan Duffy', 'Las Vegas real estate', '55+ communities'],
       structuredData: {},
-      callToAction: 'Contact Dr. Jan Duffy at 702-222-1964 for personalized real estate guidance.',
+      callToAction: 'Contact Dr. Jan Duffy at 702-789-6561 for personalized real estate guidance.',
       relatedTopics: ['Las Vegas Real Estate', '55+ Communities', 'Luxury Homes']
     };
   }

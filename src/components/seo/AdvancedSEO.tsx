@@ -12,7 +12,7 @@ export const AdvancedSEO = component$(() => {
             "@id": "https://heritagestonebridge.com/#agent",
             name: "Dr. Jan Duffy",
             email: "DrDuffySells@HeritageStonebridge.com",
-            telephone: "702-222-1964",
+            telephone: "702-789-6561",
             url: "https://heritagestonebridge.com",
             image: "https://heritagestonebridge.com/images/dr-jan-duffy.jpg",
             address: {
@@ -152,7 +152,7 @@ export const AdvancedSEO = component$(() => {
         { name: "ai-community-type", content: "active-adult-gated-community" },
         { name: "ai-price-range", content: "$489,000 - $800,000+" },
         { name: "ai-agent", content: "Dr. Jan Duffy" },
-        { name: "ai-phone", content: "702-222-1964" },
+        { name: "ai-phone", content: "702-789-6561" },
         { name: "ai-email", content: "DrDuffySells@HeritageStonebridge.com" },
 
         // Advanced search engine directives

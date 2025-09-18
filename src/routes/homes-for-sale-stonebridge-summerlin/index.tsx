@@ -123,7 +123,7 @@ export default component$(() => {
         description:
           "Las Vegas Real Estate Expert specializing in Stonebridge, Summerlin homes for sale. Licensed Nevada Real Estate Professional.",
         url: "https://heritagestonebridge.com/homes-for-sale-stonebridge-summerlin",
-        telephone: "702-222-1964",
+        telephone: "702-789-6561",
         email: "DrDuffySells@HeritageStonebridge.com",
         address: {
           "@type": "PostalAddress",
@@ -208,7 +208,7 @@ export default component$(() => {
               View Available Homes
             </a>
             <a
-              href="tel:702-222-1964"
+              href="tel:702-789-6561"
               class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition-all transform hover:scale-105 inline-block text-center"
             >
               Call Dr. Jan Duffy
@@ -561,7 +561,7 @@ export default component$(() => {
               Schedule Private Tour
             </a>
             <a
-              href="tel:702-222-1964"
+              href="tel:702-789-6561"
               class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all transform hover:scale-105 inline-block text-center"
             >
               Call Dr. Jan Duffy
@@ -601,7 +601,7 @@ export default component$(() => {
       <RealScoutStickyWidget
         agentEncodedId="QWdlbnQtMjI1MDUw"
         title="Stonebridge Homes"
-        subtitle="Call 702-222-1964"
+        subtitle="Call 702-789-6561"
         priceMin="600000"
         priceMax="900000"
       />

@@ -120,7 +120,7 @@ export default component$(() => {
       <RealScoutStickyWidget
         agentEncodedId="QWdlbnQtMjI1MDUw"
         title="Featured Properties"
-        subtitle="Call 702-222-1964"
+        subtitle="Call 702-789-6561"
         priceMin="500000"
         priceMax="1000000"
       />

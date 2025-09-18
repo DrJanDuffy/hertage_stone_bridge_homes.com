@@ -8,7 +8,7 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "description",
-      content: "Discover Northwest Las Vegas real estate with Dr. Jan Duffy. Growing area with new construction, modern amenities, and convenient access to the Strip. Call 702-222-1964.",
+      content: "Discover Northwest Las Vegas real estate with Dr. Jan Duffy. Growing area with new construction, modern amenities, and convenient access to the Strip. Call 702-789-6561.",
     },
     {
       name: "robots",
@@ -79,7 +79,7 @@ export default component$(() => {
             <a href="http://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener" class="bg-white text-purple-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-100 transition-colors shadow-lg inline-block text-center">
               Schedule Northwest Tour
             </a>
-            <a href="tel:702-222-1964" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-purple-800 transition-colors shadow-lg inline-block text-center">
+            <a href="tel:702-789-6561" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-purple-800 transition-colors shadow-lg inline-block text-center">
               Call (702) 222-1964
             </a>
           </div>
@@ -315,7 +315,7 @@ export default component$(() => {
             <a href="http://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener" class="bg-white text-purple-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-100 transition-colors shadow-lg inline-block text-center">
               Schedule Northwest Tour
             </a>
-            <a href="tel:702-222-1964" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-purple-800 transition-colors shadow-lg inline-block text-center">
+            <a href="tel:702-789-6561" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-purple-800 transition-colors shadow-lg inline-block text-center">
               Call (702) 222-1964
             </a>
           </div>
@@ -326,7 +326,7 @@ export default component$(() => {
       <RealScoutStickyWidget
         agentEncodedId="QWdlbnQtMjI1MDUw"
         title="Northwest Las Vegas Listings"
-        subtitle="Call 702-222-1964"
+        subtitle="Call 702-789-6561"
         priceMin="250000"
         priceMax="1500000"
       />

@@ -482,7 +482,7 @@ export default component$(() => {
       <RealScoutStickyWidget
         agentEncodedId="QWdlbnQtMjI1MDUw"
         title="55+ Community Homes"
-        subtitle="Call 702-222-1964"
+        subtitle="Call 702-789-6561"
         priceMin="400000"
         priceMax="800000"
       />

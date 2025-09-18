@@ -8,7 +8,7 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "description",
-      content: "Discover luxury homes near Red Rock Canyon with Dr. Jan Duffy. Stunning mountain views, outdoor recreation, and premier communities in Las Vegas's most scenic area. Call 702-222-1964.",
+      content: "Discover luxury homes near Red Rock Canyon with Dr. Jan Duffy. Stunning mountain views, outdoor recreation, and premier communities in Las Vegas's most scenic area. Call 702-789-6561.",
     },
     {
       name: "robots",
@@ -79,7 +79,7 @@ export default component$(() => {
             <a href="http://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener" class="bg-white text-red-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-red-100 transition-colors shadow-lg inline-block text-center">
               Schedule Mountain Tour
             </a>
-            <a href="tel:702-222-1964" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-red-800 transition-colors shadow-lg inline-block text-center">
+            <a href="tel:702-789-6561" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-red-800 transition-colors shadow-lg inline-block text-center">
               Call (702) 222-1964
             </a>
           </div>
@@ -315,7 +315,7 @@ export default component$(() => {
             <a href="http://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener" class="bg-white text-red-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-red-100 transition-colors shadow-lg inline-block text-center">
               Schedule Mountain Tour
             </a>
-            <a href="tel:702-222-1964" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-red-800 transition-colors shadow-lg inline-block text-center">
+            <a href="tel:702-789-6561" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-red-800 transition-colors shadow-lg inline-block text-center">
               Call (702) 222-1964
             </a>
           </div>
@@ -326,7 +326,7 @@ export default component$(() => {
       <RealScoutStickyWidget
         agentEncodedId="QWdlbnQtMjI1MDUw"
         title="Red Rock Canyon Listings"
-        subtitle="Call 702-222-1964"
+        subtitle="Call 702-789-6561"
         priceMin="500000"
         priceMax="5000000"
       />

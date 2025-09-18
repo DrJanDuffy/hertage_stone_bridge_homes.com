@@ -14,13 +14,13 @@ export default component$(() => {
         "@type": "RealEstateAgent",
         "name": "Dr. Jan Duffy",
         "email": "DrDuffySells@HeritageStonebridge.com",
-        "telephone": "+1-702-222-1964",
+        "telephone": "+1-702-789-6561",
         "url": "https://heritagestonebridge.com",
         "image": "https://heritagestonebridge.com/images/dr-jan-duffy.jpg",
         "description": "Licensed Real Estate Professional specializing in 55+ communities and luxury homes in Las Vegas, Summerlin, and Red Rock Canyon areas.",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Heritage at Stonebridge",
+          "streetAddress": "Crossbridge Dr",
           "addressLocality": "Las Vegas",
           "addressRegion": "NV",
           "postalCode": "89138",
@@ -89,7 +89,7 @@ export default component$(() => {
         "image": "https://heritagestonebridge.com/images/heritage-stonebridge.jpg",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Heritage at Stonebridge",
+          "streetAddress": "Crossbridge Dr",
           "addressLocality": "Las Vegas",
           "addressRegion": "NV",
           "postalCode": "89138",
@@ -264,7 +264,7 @@ export default component$(() => {
               <RealScoutStickyWidget
                 agentEncodedId="QWdlbnQtMjI1MDUw"
                 title="Featured Listings"
-                subtitle="Call 702-222-1964"
+                subtitle="Call (702) 789-6561"
                 priceMin="600000"
                 priceMax="900000"
               />
@@ -278,7 +278,7 @@ export const head: DocumentHead = {
     {
       name: "description",
       content:
-        "Discover luxury 55+ active adult communities near Red Rock Canyon in Summerlin, Las Vegas. Heritage at Stonebridge offers gated living, resort amenities & stunning mountain views. Dr. Jan Duffy, your 55+ specialist - Call 702-222-1964",
+        "Discover luxury 55+ active adult communities near Red Rock Canyon in Summerlin, Las Vegas. Heritage at Stonebridge offers gated living, resort amenities & stunning mountain views. Dr. Jan Duffy, your 55+ specialist - Call (702) 789-6561",
     },
     // Enhanced Meta Tags for AI & Search Engine Understanding
     {

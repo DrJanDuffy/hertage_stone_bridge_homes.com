@@ -169,10 +169,10 @@ Format as JSON with sections: premium_amenities, gated_features, lifestyle_activ
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:702-222-1964"
+              href="tel:702-789-6561"
               class="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
             >
-              Call 702-222-1964
+              Call 702-789-6561
             </a>
             <a
               href="mailto:DrDuffySells@HeritageStonebridge.com"
@@ -210,7 +210,7 @@ Format as JSON with sections: premium_amenities, gated_features, lifestyle_activ
           "mainEntity": {
             "@type": "RealEstateAgent",
             "name": "Dr. Jan Duffy",
-            "telephone": "702-222-1964",
+            "telephone": "702-789-6561",
             "email": "DrDuffySells@HeritageStonebridge.com",
             "address": {
               "@type": "PostalAddress",
@@ -233,7 +233,7 @@ Format as JSON with sections: premium_amenities, gated_features, lifestyle_activ
       <RealScoutStickyWidget
         agentEncodedId="QWdlbnQtMjI1MDUw"
         title="Luxury Living Guide"
-        subtitle="Call 702-222-1964"
+        subtitle="Call 702-789-6561"
         priceMin="600000"
         priceMax="3000000"
       />

@@ -170,10 +170,10 @@ Format as JSON with sections: mountain_home_definition, view_types, scenic_benef
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:702-222-1964"
+              href="tel:702-789-6561"
               class="bg-slate-600 hover:bg-slate-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
             >
-              Call 702-222-1964
+              Call 702-789-6561
             </a>
             <a
               href="mailto:DrDuffySells@HeritageStonebridge.com"
@@ -211,7 +211,7 @@ Format as JSON with sections: mountain_home_definition, view_types, scenic_benef
           "mainEntity": {
             "@type": "RealEstateAgent",
             "name": "Dr. Jan Duffy",
-            "telephone": "702-222-1964",
+            "telephone": "702-789-6561",
             "email": "DrDuffySells@HeritageStonebridge.com",
             "address": {
               "@type": "PostalAddress",
@@ -252,7 +252,7 @@ Format as JSON with sections: mountain_home_definition, view_types, scenic_benef
       <RealScoutStickyWidget
         agentEncodedId="QWdlbnQtMjI1MDUw"
         title="Mountain View Homes"
-        subtitle="Call 702-222-1964"
+        subtitle="Call 702-789-6561"
         priceMin="500000"
         priceMax="2500000"
       />
