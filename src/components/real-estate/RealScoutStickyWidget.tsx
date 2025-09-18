@@ -22,39 +22,17 @@ export const RealScoutStickyWidget = component$<RealScoutStickyWidgetProps>(
     title = "Exclusive Listings",
     subtitle = "Schedule Private Tour",
   }) => {
-    const isClient = useSignal(false);
     const isVisible = useSignal(false);
     const isExpanded = useSignal(false);
 
     useVisibleTask$(() => {
-      if (typeof window === "undefined") return;
+      // Show sticky panel after 15 seconds
+      const timer = setTimeout(() => {
+        isVisible.value = true;
+      }, 15000);
 
-      isClient.value = true;
-
-      // Wait for RealScout script to load
-      const checkRealScout = () => {
-        if (customElements?.get("realscout-office-listings")) {
-          // Show sticky panel after 15 seconds
-          const timer = setTimeout(() => {
-            isVisible.value = true;
-          }, 15000);
-          return () => clearTimeout(timer);
-        } else {
-          setTimeout(checkRealScout, 100);
-        }
-        
-        return () => {
-          // Cleanup function
-        };
-      };
-
-      // Start checking after a short delay
-      setTimeout(checkRealScout, 1000);
+      return () => clearTimeout(timer);
     });
-
-    if (!isClient.value) {
-      return null;
-    }
 
     return (
       <div
