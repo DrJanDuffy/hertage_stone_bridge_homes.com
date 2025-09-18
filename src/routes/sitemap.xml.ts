@@ -23,6 +23,17 @@ export const onGet: RequestHandler = async (requestEvent) => {
         <lastmod>${currentDate}</lastmod>
     </sitemap>
     
+    <!-- RSS Feeds -->
+    <sitemap>
+        <loc>https://heritagestonebridge.com/feed.xml</loc>
+        <lastmod>${currentDate}</lastmod>
+    </sitemap>
+    
+    <sitemap>
+        <loc>https://heritagestonebridge.com/feed-simplifying-market.xml</loc>
+        <lastmod>${currentDate}</lastmod>
+    </sitemap>
+    
 </sitemapindex>`;
 
   requestEvent.headers.set("Content-Type", "application/xml");
