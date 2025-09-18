@@ -7,17 +7,36 @@ export default component$(() => {
   // Inject JSON-LD structured data
   useTask$(() => {
     if (typeof document !== 'undefined') {
-      const schemaScript = document.createElement('script');
-      schemaScript.type = 'application/ld+json';
-      schemaScript.textContent = JSON.stringify({
+      // Primary Organization Schema - September 2025 Google "Perspective" Compliant
+      const organizationSchema = document.createElement('script');
+      organizationSchema.type = 'application/ld+json';
+      organizationSchema.textContent = JSON.stringify({
         "@context": "https://schema.org",
         "@type": "RealEstateAgent",
-        "name": "Dr. Jan Duffy",
-        "email": "DrDuffySells@HeritageStonebridge.com",
-        "telephone": "+1-702-789-6561",
+        "@id": "https://heritagestonebridge.com/#organization",
+        "name": "Heritage at Stonebridge | Homes by Dr. Jan Duffy",
+        "alternateName": [
+          "Heritage at Stonebridge", 
+          "Dr. Jan Duffy Real Estate", 
+          "Homes by Dr. Jan Duffy",
+          "Stonebridge Real Estate"
+        ],
+        "description": "Heritage at Stonebridge specializes in luxury homes and new construction in Las Vegas, Summerlin, Henderson, and Red Rock Canyon. Expert guidance from Dr. Jan Duffy with 500+ successful transactions.",
         "url": "https://heritagestonebridge.com",
-        "image": "https://heritagestonebridge.com/images/dr-jan-duffy.jpg",
-        "description": "Licensed Real Estate Professional specializing in 55+ communities and luxury homes in Las Vegas, Summerlin, and Red Rock Canyon areas.",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://heritagestonebridge.com/images/heritage-stonebridge-logo.jpg",
+          "width": 600,
+          "height": 300
+        },
+        "image": {
+          "@type": "ImageObject", 
+          "url": "https://heritagestonebridge.com/images/dr-jan-duffy-headshot.jpg",
+          "width": 400,
+          "height": 400
+        },
+        "telephone": "+1-702-789-6561",
+        "email": "DrDuffySells@HeritageStonebridge.com",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Crossbridge Dr",
@@ -28,9 +47,29 @@ export default component$(() => {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": "36.1699",
-          "longitude": "-115.1398"
+          "latitude": "36.1716",
+          "longitude": "-115.3384"
         },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "10:00",
+            "closes": "16:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Sunday",
+            "opens": "By Appointment",
+            "closes": "By Appointment"
+          }
+        ],
         "areaServed": [
           {
             "@type": "City",
@@ -42,40 +81,215 @@ export default component$(() => {
           },
           {
             "@type": "City", 
-            "name": "Summerlin",
+            "name": "Henderson",
+            "containedInPlace": {
+              "@type": "State",
+              "name": "Nevada"
+            }
+          },
+          {
+            "@type": "City",
+            "name": "Summerlin", 
+            "containedInPlace": {
+              "@type": "State",
+              "name": "Nevada"
+            }
+          },
+          {
+            "@type": "Place",
+            "name": "Red Rock Canyon",
             "containedInPlace": {
               "@type": "State",
               "name": "Nevada"
             }
           }
         ],
+        "serviceType": [
+          "Luxury Home Sales",
+          "New Construction Homes", 
+          "Investment Properties",
+          "Heritage Community Specialist",
+          "Stonebridge Expert",
+          "Red Rock Canyon Properties",
+          "55+ Community Specialist",
+          "Active Adult Living"
+        ],
         "knowsAbout": [
+          "Stonebridge Community",
+          "Heritage Homes",
+          "Red Rock Canyon Real Estate",
+          "Summerlin Properties",
+          "Las Vegas Luxury Market",
+          "Nevada Real Estate Law",
           "55+ Communities",
           "Active Adult Living",
-          "Luxury Homes",
           "Gated Communities",
-          "Red Rock Canyon Real Estate",
-          "Summerlin Real Estate"
-        ],
-        "makesOffer": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Real Estate Consultation",
-              "description": "Professional real estate services for 55+ communities"
-            }
-          }
+          "Investment Analysis"
         ],
         "hasCredential": {
           "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "Real Estate License",
+          "credentialCategory": "Professional License",
           "recognizedBy": {
             "@type": "Organization",
             "name": "Nevada Real Estate Division"
           },
           "identifier": "S.0197614"
+        },
+        "sameAs": [
+          "https://www.facebook.com/DrJanDuffyRealEstate",
+          "https://www.linkedin.com/in/drjanduffy",
+          "https://www.instagram.com/drjanduffylasvegas"
+        ],
+        "makesOffer": {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Real Estate Services",
+            "description": "Comprehensive real estate services including buying, selling, and investment consultation"
+          },
+          "areaServed": {
+            "@type": "State",
+            "name": "Nevada"
+          }
         }
+      });
+
+      // Person Schema for Dr. Jan Duffy - Advanced Expertise Signals
+      const personSchema = document.createElement('script');
+      personSchema.type = 'application/ld+json';
+      personSchema.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://heritagestonebridge.com/about#person",
+        "name": "Dr. Jan Duffy",
+        "honorificPrefix": "Dr.",
+        "givenName": "Jan",
+        "familyName": "Duffy",
+        "jobTitle": "Real Estate Agent",
+        "description": "Licensed Nevada real estate professional with doctorate degree and 500+ successful transactions. Expert in Las Vegas luxury market, investment properties, and first-time homebuyer programs.",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://heritagestonebridge.com/images/dr-jan-duffy-professional.jpg",
+          "width": 400,
+          "height": 400
+        },
+        "telephone": "+1-702-789-6561",
+        "email": "DrDuffySells@HeritageStonebridge.com",
+        "url": "https://heritagestonebridge.com/about",
+        "worksFor": {
+          "@type": "RealEstateAgent",
+          "@id": "https://heritagestonebridge.com/#organization"
+        },
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Real Estate Agent",
+          "occupationLocation": {
+            "@type": "State",
+            "name": "Nevada"
+          },
+          "skills": [
+            "Real Estate Sales",
+            "Market Analysis", 
+            "Investment Consulting",
+            "Luxury Home Marketing",
+            "Client Relations",
+            "55+ Community Specialist",
+            "Active Adult Living Expert"
+          ]
+        },
+        "knowsAbout": [
+          "Las Vegas Real Estate",
+          "Nevada Property Law",
+          "Investment Analysis",
+          "Market Trends",
+          "Luxury Properties",
+          "Stonebridge Community",
+          "Red Rock Canyon Properties"
+        ],
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "Doctorate Degree",
+            "educationalLevel": "Doctoral"
+          },
+          {
+            "@type": "EducationalOccupationalCredential", 
+            "credentialCategory": "Real Estate License",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "Nevada Real Estate Division"
+            },
+            "identifier": "S.0197614"
+          }
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Las Vegas",
+          "addressRegion": "NV", 
+          "addressCountry": "US"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/drjanduffy",
+          "https://www.facebook.com/DrJanDuffyRealEstate"
+        ]
+      });
+
+      // FAQ Schema for Homepage
+      const faqSchema = document.createElement('script');
+      faqSchema.type = 'application/ld+json';
+      faqSchema.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What makes Heritage at Stonebridge special?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Heritage at Stonebridge is a premier 55+ active adult community in Summerlin, Las Vegas, featuring luxury homes, resort-style amenities, and stunning mountain views of Red Rock Canyon. The gated community offers resort-style amenities including clubhouse, swimming pools, fitness center, pickleball courts, and walking trails."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What types of homes are available in Heritage at Stonebridge?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Heritage at Stonebridge offers three distinct home collections: Cromwell (1,232-1,456 sq ft), Stirling (1,456-2,100 sq ft), and Evander (2,100-2,873 sq ft). All homes feature single-story living with luxury finishes and resort-style amenities."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How close is Heritage at Stonebridge to Red Rock Canyon?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Heritage at Stonebridge is located just 12 miles from Red Rock Canyon National Conservation Area, making it easy to enjoy hiking, rock climbing, and scenic drives in this natural wonder."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the HOA fee for Heritage at Stonebridge homes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The HOA fee for Heritage at Stonebridge homes is approximately $410 per month, which includes maintenance of common areas, security, and access to all community amenities."
+            }
+          }
+        ]
+      });
+
+      // Breadcrumb Schema
+      const breadcrumbSchema = document.createElement('script');
+      breadcrumbSchema.type = 'application/ld+json';
+      breadcrumbSchema.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://heritagestonebridge.com"
+          }
+        ]
       });
 
       const residentialComplexScript = document.createElement('script');
@@ -137,7 +351,11 @@ export default component$(() => {
         "hasMap": "https://www.google.com/maps/place/Heritage+at+Stonebridge"
       });
 
-      document.head.appendChild(schemaScript);
+      // Inject all schemas
+      document.head.appendChild(organizationSchema);
+      document.head.appendChild(personSchema);
+      document.head.appendChild(faqSchema);
+      document.head.appendChild(breadcrumbSchema);
       document.head.appendChild(residentialComplexScript);
     }
   });
