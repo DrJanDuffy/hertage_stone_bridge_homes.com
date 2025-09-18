@@ -132,6 +132,85 @@ export default component$(() => {
         </div>
       </section>
 
+      {/* Red Rock Canyon Lifestyle */}
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">The Red Rock Canyon Lifestyle</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+              Living near Red Rock Canyon offers the ultimate combination of natural beauty, outdoor adventure, and luxury amenities in Las Vegas's most scenic area.
+            </p>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-6">Why Choose Red Rock Canyon Area?</h3>
+              <ul class="space-y-4 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-red-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Natural Beauty:</strong> Stunning red rock formations and mountain views create a unique desert landscape
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Outdoor Recreation:</strong> Hiking, rock climbing, mountain biking, and scenic drives right outside your door
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Luxury Communities:</strong> Premier neighborhoods with custom homes and resort-style amenities
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Privacy & Exclusivity:</strong> Gated communities with large lots and stunning views
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Convenient Access:</strong> Minutes to Summerlin amenities while maintaining natural serenity
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-lg">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Red Rock Canyon Quick Facts</h3>
+              <div class="space-y-4">
+                <div class="flex justify-between">
+                  <span class="font-semibold">Size:</span>
+                  <span>195,819 acres</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Established:</span>
+                  <span>1990</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Trails:</span>
+                  <span>30+ hiking trails</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Elevation:</span>
+                  <span>3,000-8,000 ft</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Distance from Vegas:</span>
+                  <span>12-20 miles</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Annual Visitors:</span>
+                  <span>3+ million</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Red Rock Canyon Communities */}
       <section class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">

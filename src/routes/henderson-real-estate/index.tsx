@@ -132,6 +132,85 @@ export default component$(() => {
         </div>
       </section>
 
+      {/* Henderson Lifestyle */}
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">The Henderson Lifestyle</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+              Henderson offers the perfect blend of suburban charm, excellent schools, and convenient access to Las Vegas amenities, making it ideal for families and active adults.
+            </p>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-6">Why Choose Henderson?</h3>
+              <ul class="space-y-4 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-blue-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Family-Friendly:</strong> Top-rated schools and safe neighborhoods perfect for families
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Outdoor Recreation:</strong> Lake Mead, Sloan Canyon, and numerous parks and trails
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Economic Growth:</strong> Strong job market with major employers and business parks
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Cultural Attractions:</strong> Henderson Events Plaza, museums, and performing arts
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Convenient Location:</strong> 20 minutes to Las Vegas Strip and McCarran Airport
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-lg">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Henderson Quick Facts</h3>
+              <div class="space-y-4">
+                <div class="flex justify-between">
+                  <span class="font-semibold">Population:</span>
+                  <span>320,000+ residents</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Founded:</span>
+                  <span>1953</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Size:</span>
+                  <span>108 square miles</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Schools:</span>
+                  <span>40+ public schools</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Parks:</span>
+                  <span>60+ parks and trails</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Distance to Strip:</span>
+                  <span>20 minutes</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Henderson Communities */}
       <section class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">

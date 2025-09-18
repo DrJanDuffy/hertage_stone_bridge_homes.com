@@ -349,8 +349,35 @@ export default component$(() => {
         </div>
       </section>
 
-      {/* 55+ Communities Focus */}
+      {/* Market Overview */}
       <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Las Vegas Real Estate Market Overview</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+              The Las Vegas real estate market continues to show strong growth with increasing property values, low inventory, and high demand across all price ranges and neighborhoods.
+            </p>
+          </div>
+          
+          <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Market Growth</h3>
+              <p class="text-gray-600">Las Vegas property values have shown consistent growth, driven by population increases and economic diversification.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Investment Opportunities</h3>
+              <p class="text-gray-600">Strong rental market, no state income tax, and growing tourism industry create excellent investment potential.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Diverse Options</h3>
+              <p class="text-gray-600">From luxury estates to 55+ communities, Las Vegas offers properties for every lifestyle and budget.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 55+ Communities Focus */}
+      <section class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
           <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-gray-900 mb-4">55+ Communities in Las Vegas</h2>

@@ -132,6 +132,85 @@ export default component$(() => {
         </div>
       </section>
 
+      {/* Summerlin Lifestyle */}
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">The Summerlin Lifestyle</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+              Living in Summerlin means enjoying the perfect balance of luxury amenities, natural beauty, and convenient access to everything Las Vegas has to offer.
+            </p>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-6">Why Choose Summerlin?</h3>
+              <ul class="space-y-4 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Master-Planned Community:</strong> Thoughtfully designed with parks, trails, and community centers
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Championship Golf:</strong> Multiple golf courses including TPC Las Vegas and Red Rock Country Club
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Top-Rated Schools:</strong> Excellent public and private schools serving families
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Red Rock Canyon Access:</strong> Minutes from hiking, rock climbing, and scenic drives
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-3 mt-1">✓</span>
+                  <div>
+                    <strong>Downtown Summerlin:</strong> Premier shopping, dining, and entertainment destination
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-lg">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Summerlin Quick Facts</h3>
+              <div class="space-y-4">
+                <div class="flex justify-between">
+                  <span class="font-semibold">Population:</span>
+                  <span>100,000+ residents</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Founded:</span>
+                  <span>1990</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Size:</span>
+                  <span>22,500 acres</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Golf Courses:</span>
+                  <span>8+ championship courses</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Parks:</span>
+                  <span>150+ parks and trails</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-semibold">Distance to Strip:</span>
+                  <span>15-20 minutes</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Summerlin Communities */}
       <section class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
