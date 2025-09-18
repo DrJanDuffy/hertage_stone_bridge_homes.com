@@ -1,5 +1,7 @@
 import { component$, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
+import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
 
 export default component$(() => {
   // Inject structured data as JSON-LD script
@@ -1095,6 +1097,33 @@ export default component$(() => {
           </div>
         </div>
       </section>
+
+      {/* Red Rock Canyon 55+ Communities Listings Widget */}
+      <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Current Red Rock Canyon 55+ Community Listings</h2>
+            <p class="text-lg text-gray-600">Explore available properties in Las Vegas's premier Red Rock Canyon active adult communities</p>
+          </div>
+          <RealScoutOfficeListingsWidget
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
+            listingStatus="For Sale"
+            propertyTypes="SFR"
+            priceMin={500000}
+            priceMax={1200000}
+          />
+        </div>
+      </section>
+
+      {/* RealScout Sticky Widget */}
+      <RealScoutStickyWidget
+        agentEncodedId="QWdlbnQtMjI1MDUw"
+        title="Red Rock Canyon 55+ Communities"
+        subtitle="Call 702-222-1964"
+        priceMin="500000"
+        priceMax="1200000"
+      />
     </>
   );
 });

@@ -1,6 +1,8 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { generateAIContent } from "~/lib/ai-content-generator";
+import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
+import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
 
 export const head: DocumentHead = {
   title: "Mountain View Homes Las Vegas | Scenic Luxury Living - Dr. Jan Duffy",
@@ -230,6 +232,33 @@ Format as JSON with sections: mountain_home_definition, view_types, scenic_benef
             ]
           }
         })}
+      />
+
+      {/* Mountain View Homes Listings Widget */}
+      <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Current Mountain View Home Listings</h2>
+            <p class="text-lg text-gray-600">Explore available properties with stunning mountain views in Las Vegas</p>
+          </div>
+          <RealScoutOfficeListingsWidget
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
+            listingStatus="For Sale"
+            propertyTypes="SFR"
+            priceMin={500000}
+            priceMax={2500000}
+          />
+        </div>
+      </section>
+
+      {/* RealScout Sticky Widget */}
+      <RealScoutStickyWidget
+        agentEncodedId="QWdlbnQtMjI1MDUw"
+        title="Mountain View Homes"
+        subtitle="Call 702-222-1964"
+        priceMin="500000"
+        priceMax="2500000"
       />
     </>
   );

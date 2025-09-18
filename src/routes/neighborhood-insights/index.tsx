@@ -1,6 +1,7 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { generateAIContent } from "~/lib/ai-content-generator";
+import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 
 export const head: DocumentHead = {
   title: "Las Vegas Neighborhood Insights | AI-Powered Market Analysis - Dr. Jan Duffy",
@@ -205,6 +206,15 @@ Format as JSON with sections: market_overview, neighborhood_analysis, price_tren
             ]
           }
         })}
+      />
+
+      {/* RealScout Sticky Widget */}
+      <RealScoutStickyWidget
+        agentEncodedId="QWdlbnQtMjI1MDUw"
+        title="Neighborhood Insights"
+        subtitle="Call 702-222-1964"
+        priceMin="300000"
+        priceMax="2000000"
       />
     </>
   );

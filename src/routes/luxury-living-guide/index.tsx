@@ -1,6 +1,7 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { generateAIContent } from "~/lib/ai-content-generator";
+import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 
 export const head: DocumentHead = {
   title: "Luxury Living Guide Las Vegas | Premium 55+ Communities - Dr. Jan Duffy",
@@ -230,6 +231,15 @@ Format as JSON with sections: premium_amenities, gated_features, lifestyle_activ
             ]
           }
         })}
+      />
+
+      {/* RealScout Sticky Widget */}
+      <RealScoutStickyWidget
+        agentEncodedId="QWdlbnQtMjI1MDUw"
+        title="Luxury Living Guide"
+        subtitle="Call 702-222-1964"
+        priceMin="600000"
+        priceMax="3000000"
       />
     </>
   );

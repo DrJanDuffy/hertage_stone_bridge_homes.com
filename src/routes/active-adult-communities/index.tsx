@@ -1,6 +1,8 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { generateAIContent } from "~/lib/ai-content-generator";
+import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
+import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
 
 export const head: DocumentHead = {
   title: "Active Adult Communities Las Vegas | 55+ Living Guide - Dr. Jan Duffy",
@@ -218,6 +220,33 @@ Format as JSON with sections: community_overview, lifestyle_amenities, social_ac
             ]
           }
         })}
+      />
+
+      {/* Active Adult Communities Listings Widget */}
+      <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Current Active Adult Community Listings</h2>
+            <p class="text-lg text-gray-600">Explore available properties in Las Vegas's premier active adult communities</p>
+          </div>
+          <RealScoutOfficeListingsWidget
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
+            listingStatus="For Sale"
+            propertyTypes="SFR"
+            priceMin={400000}
+            priceMax={800000}
+          />
+        </div>
+      </section>
+
+      {/* RealScout Sticky Widget */}
+      <RealScoutStickyWidget
+        agentEncodedId="QWdlbnQtMjI1MDUw"
+        title="Active Adult Communities"
+        subtitle="Call 702-222-1964"
+        priceMin="400000"
+        priceMax="800000"
       />
     </>
   );

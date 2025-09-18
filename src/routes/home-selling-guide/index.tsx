@@ -1,6 +1,7 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { generateAIContent } from "~/lib/ai-content-generator";
+import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 
 export const head: DocumentHead = {
   title: "Home Selling Guide Las Vegas | Expert Tips - Dr. Jan Duffy",
@@ -230,6 +231,15 @@ Format as JSON with sections: pre_listing_prep, pricing_strategies, home_staging
             ]
           }
         })}
+      />
+
+      {/* RealScout Sticky Widget */}
+      <RealScoutStickyWidget
+        agentEncodedId="QWdlbnQtMjI1MDUw"
+        title="Home Selling Guide"
+        subtitle="Call 702-222-1964"
+        priceMin="300000"
+        priceMax="2000000"
       />
     </>
   );

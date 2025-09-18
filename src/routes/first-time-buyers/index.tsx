@@ -1,6 +1,7 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { generateAIContent } from "~/lib/ai-content-generator";
+import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 
 export const head: DocumentHead = {
   title: "First Time Buyers Guide Las Vegas | Home Buying Tips - Dr. Jan Duffy",
@@ -230,6 +231,15 @@ Format as JSON with sections: pre_approval_process, down_payment_assistance, buy
             ]
           }
         })}
+      />
+
+      {/* RealScout Sticky Widget */}
+      <RealScoutStickyWidget
+        agentEncodedId="QWdlbnQtMjI1MDUw"
+        title="First Time Buyers"
+        subtitle="Call 702-222-1964"
+        priceMin="200000"
+        priceMax="800000"
       />
     </>
   );

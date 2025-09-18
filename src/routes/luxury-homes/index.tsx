@@ -1,6 +1,8 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { generateAIContent } from "~/lib/ai-content-generator";
+import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
+import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
 
 export const head: DocumentHead = {
   title: "Luxury Homes Las Vegas | Premium Real Estate - Dr. Jan Duffy",
@@ -230,6 +232,33 @@ Format as JSON with sections: luxury_definition, premium_amenities, high_end_fin
             ]
           }
         })}
+      />
+
+      {/* Luxury Homes Listings Widget */}
+      <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Current Luxury Home Listings</h2>
+            <p class="text-lg text-gray-600">Explore available luxury properties in Las Vegas's most exclusive communities</p>
+          </div>
+          <RealScoutOfficeListingsWidget
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
+            listingStatus="For Sale"
+            propertyTypes="SFR"
+            priceMin={800000}
+            priceMax={5000000}
+          />
+        </div>
+      </section>
+
+      {/* RealScout Sticky Widget */}
+      <RealScoutStickyWidget
+        agentEncodedId="QWdlbnQtMjI1MDUw"
+        title="Luxury Homes"
+        subtitle="Call 702-222-1964"
+        priceMin="800000"
+        priceMax="5000000"
       />
     </>
   );

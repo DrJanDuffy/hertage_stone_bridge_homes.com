@@ -1,6 +1,7 @@
 import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { generateAIContent } from "~/lib/ai-content-generator";
+import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 
 export const head: DocumentHead = {
   title: "Las Vegas 55+ Community Comparison | Active Adult Living Guide - Dr. Jan Duffy",
@@ -213,6 +214,15 @@ Format as JSON with sections: heritage_stonebridge, del_webb_communities, sun_ci
             ]
           }
         })}
+      />
+
+      {/* RealScout Sticky Widget */}
+      <RealScoutStickyWidget
+        agentEncodedId="QWdlbnQtMjI1MDUw"
+        title="Community Comparison"
+        subtitle="Call 702-222-1964"
+        priceMin="400000"
+        priceMax="1500000"
       />
     </>
   );
