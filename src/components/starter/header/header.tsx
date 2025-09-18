@@ -24,19 +24,37 @@ export default component$(() => {
       } transition-all duration-300`}
     >
       <div class={["container", styles.wrapper]}>
-        {/* Phone Number as Logo Replacement */}
+        {/* Enhanced Brand + CTA Logo */}
         <div class={styles.logo}>
-          <a href="tel:702-789-6561" title="Call Dr. Jan Duffy">
+          <a href="/" title="Heritage at Stonebridge - Luxury 55+ Living">
             <div class="flex items-center space-x-3">
-              <div class="bg-green-500 rounded-full p-2">
-                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+              {/* Brand Icon */}
+              <div class="bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg p-2 shadow-lg">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                 </svg>
               </div>
               <div class="text-left">
-                <div class="text-lg font-bold text-blue-600">(702) 789-6561</div>
-                <div class="text-xs text-gray-600 font-medium">Free Consultation</div>
+                <div class="text-lg font-bold text-gray-900">Heritage at Stonebridge</div>
+                <div class="text-xs text-blue-600 font-semibold">Luxury 55+ Living</div>
               </div>
+            </div>
+          </a>
+        </div>
+
+        {/* Separate Prominent CTA */}
+        <div class="hidden md:block">
+          <a 
+            href="tel:702-789-6561" 
+            title="Call for Free Consultation"
+            class="flex items-center space-x-2 bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-lg font-semibold hover:from-green-600 hover:to-green-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+            </svg>
+            <div class="text-left">
+              <div class="text-sm font-bold">(702) 789-6561</div>
+              <div class="text-xs opacity-90">Free Consultation</div>
             </div>
           </a>
         </div>
@@ -83,17 +101,6 @@ export default component$(() => {
             class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
           >
             Schedule Tour
-          </a>
-
-          {/* Secondary CTA - Phone */}
-          <a
-            href="tel:702-789-6561"
-            class="flex items-center space-x-2 bg-green-600 text-white px-4 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
-          >
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-            </svg>
-            <span>Call Now</span>
           </a>
         </nav>
       </div>
