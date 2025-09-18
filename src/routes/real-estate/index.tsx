@@ -129,30 +129,88 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Real Estate Tools & Widgets | Heritage at Stonebridge",
+  title: "Las Vegas Real Estate Search Tools | Heritage at Stonebridge - Dr. Jan Duffy",
   meta: [
     {
       name: "description",
       content:
-        "Explore our comprehensive suite of RealScout widgets, property search tools, and home valuation services for Heritage at Stonebridge and Las Vegas areas.",
+        "Search Las Vegas real estate with advanced MLS tools, home valuations, and property listings. Dr. Jan Duffy's comprehensive RealScout platform for Heritage at Stonebridge and Summerlin areas.",
     },
     {
-      name: "keywords",
-      content:
-        "RealScout widgets, property search, home valuation, MLS integration, Las Vegas real estate, Heritage at Stonebridge, property tools",
+      name: "robots",
+      content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    },
+    {
+      name: "googlebot",
+      content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    },
+    {
+      name: "canonical",
+      content: "https://heritagestonebridge.com/real-estate/",
+    },
+    {
+      name: "author",
+      content: "Dr. Jan Duffy",
+    },
+    {
+      name: "geo.region",
+      content: "US-NV",
+    },
+    {
+      name: "geo.placename",
+      content: "Las Vegas, Nevada",
+    },
+    {
+      name: "geo.position",
+      content: "36.1699;-115.1398",
     },
     {
       property: "og:title",
-      content: "Real Estate Tools & Widgets | Heritage at Stonebridge",
+      content: "Las Vegas Real Estate Search Tools | Heritage at Stonebridge",
     },
     {
       property: "og:description",
       content:
-        "Explore our comprehensive suite of RealScout widgets, property search tools, and home valuation services for Heritage at Stonebridge and Las Vegas areas.",
+        "Search Las Vegas real estate with advanced MLS tools, home valuations, and property listings. Dr. Jan Duffy's comprehensive RealScout platform.",
     },
     {
-      name: "robots",
-      content: "index, follow",
+      property: "og:type",
+      content: "website",
+    },
+    {
+      property: "og:url",
+      content: "https://heritagestonebridge.com/real-estate/",
+    },
+    {
+      property: "og:site_name",
+      content: "Heritage at Stonebridge",
+    },
+    {
+      property: "og:locale",
+      content: "en_US",
+    },
+    {
+      name: "twitter:card",
+      content: "summary_large_image",
+    },
+    {
+      name: "twitter:site",
+      content: "@heritage_stonebridge",
+    },
+    {
+      name: "twitter:title",
+      content: "Las Vegas Real Estate Search Tools | Heritage at Stonebridge",
+    },
+    {
+      name: "twitter:description",
+      content:
+        "Search Las Vegas real estate with advanced MLS tools, home valuations, and property listings. Dr. Jan Duffy's comprehensive RealScout platform.",
+    },
+  ],
+  links: [
+    {
+      rel: "canonical",
+      href: "https://heritagestonebridge.com/real-estate/",
     },
   ],
 };

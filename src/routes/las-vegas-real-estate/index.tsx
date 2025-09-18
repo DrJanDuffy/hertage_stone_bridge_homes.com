@@ -11,10 +11,6 @@ export const head: DocumentHead = {
       content: "Expert Las Vegas real estate services by Dr. Jan Duffy. Specializing in 55+ communities, luxury homes, and active adult living in Summerlin, Henderson, and Northwest Las Vegas. Call 702-222-1964.",
     },
     {
-      name: "keywords",
-      content: "Las Vegas real estate, Las Vegas homes for sale, Las Vegas realtor, Dr Jan Duffy, Las Vegas 55+ communities, Las Vegas luxury homes, Las Vegas active adult communities",
-    },
-    {
       name: "robots",
       content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     },

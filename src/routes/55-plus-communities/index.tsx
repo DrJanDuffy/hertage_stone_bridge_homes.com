@@ -495,11 +495,6 @@ export const head: DocumentHead = {
         "Discover premier 55+ communities in Las Vegas, Summerlin, and Red Rock Canyon. Luxury active adult living with resort amenities, gated security, and mountain views. Dr. Jan Duffy, your 55+ specialist.",
     },
     {
-      name: "keywords",
-      content:
-        "55+ communities Las Vegas, active adult communities, Del Webb, Sun City, Heritage Stonebridge, retirement communities Nevada, gated communities Las Vegas",
-    },
-    {
       property: "og:title",
       content: "55+ Communities Las Vegas | Active Adult Living",
     },

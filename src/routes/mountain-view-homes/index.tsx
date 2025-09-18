@@ -12,10 +12,6 @@ export const head: DocumentHead = {
       content: "Discover stunning mountain view homes in Las Vegas with breathtaking vistas of Red Rock Canyon and Spring Mountains. Expert guidance for scenic properties in Summerlin, Henderson, and Northwest Las Vegas.",
     },
     {
-      name: "keywords",
-      content: "mountain view homes Las Vegas, scenic properties Summerlin, mountain vista homes Henderson, Red Rock Canyon views, luxury mountain homes Las Vegas",
-    },
-    {
       name: "robots",
       content: "index, follow",
     },

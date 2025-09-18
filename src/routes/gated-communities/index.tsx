@@ -12,10 +12,6 @@ export const head: DocumentHead = {
       content: "Explore premier gated communities in Las Vegas offering security, privacy, and luxury amenities. Expert guidance for exclusive neighborhoods in Summerlin, Henderson, and Red Rock Canyon.",
     },
     {
-      name: "keywords",
-      content: "gated communities Las Vegas, secure neighborhoods Summerlin, private communities Henderson, exclusive gated homes Red Rock Canyon, luxury gated living",
-    },
-    {
       name: "robots",
       content: "index, follow",
     },

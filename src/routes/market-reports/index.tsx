@@ -11,10 +11,6 @@ export const head: DocumentHead = {
       content: "Access comprehensive Las Vegas real estate market reports with current trends, pricing data, and market forecasts. Expert analysis for 55+ communities, luxury homes, and active adult living.",
     },
     {
-      name: "keywords",
-      content: "Las Vegas market reports, real estate market analysis, Las Vegas home prices, market trends Summerlin, Henderson market data, real estate statistics",
-    },
-    {
       name: "robots",
       content: "index, follow",
     },

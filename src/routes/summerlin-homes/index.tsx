@@ -11,10 +11,6 @@ export const head: DocumentHead = {
       content: "Discover luxury Summerlin homes for sale with Dr. Jan Duffy. Premier master-planned community featuring golf courses, resort amenities, and 55+ active adult communities. Call 702-222-1964.",
     },
     {
-      name: "keywords",
-      content: "Summerlin homes for sale, Summerlin real estate, Summerlin luxury homes, Summerlin 55+ communities, Dr Jan Duffy Summerlin, Summerlin golf course homes",
-    },
-    {
       name: "robots",
       content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     },

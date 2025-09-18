@@ -11,10 +11,6 @@ export const head: DocumentHead = {
       content: "Discover Northwest Las Vegas real estate with Dr. Jan Duffy. Growing area with new construction, modern amenities, and convenient access to the Strip. Call 702-222-1964.",
     },
     {
-      name: "keywords",
-      content: "Northwest Las Vegas real estate, Northwest Las Vegas homes, Dr Jan Duffy Northwest Las Vegas, Northwest Las Vegas 55+ communities, new construction Las Vegas",
-    },
-    {
       name: "robots",
       content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     },

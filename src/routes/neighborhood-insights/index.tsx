@@ -11,10 +11,6 @@ export const head: DocumentHead = {
       content: "Get AI-powered insights into Las Vegas neighborhoods, market trends, and community analysis. Expert real estate intelligence for Summerlin, Henderson, and Northwest Las Vegas.",
     },
     {
-      name: "keywords",
-      content: "Las Vegas neighborhoods, Summerlin market analysis, Henderson real estate trends, Northwest Las Vegas insights, AI real estate intelligence, neighborhood data",
-    },
-    {
       name: "robots",
       content: "index, follow",
     },

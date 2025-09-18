@@ -11,10 +11,6 @@ export const head: DocumentHead = {
       content: "Discover Boulder City homes for sale with Dr. Jan Duffy. Historic community near Lake Mead with small-town charm, outdoor recreation, and unique character. Call 702-222-1964.",
     },
     {
-      name: "keywords",
-      content: "Boulder City homes for sale, Boulder City real estate, Boulder City realtor, Dr Jan Duffy Boulder City, Lake Mead homes, historic Boulder City",
-    },
-    {
       name: "robots",
       content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     },

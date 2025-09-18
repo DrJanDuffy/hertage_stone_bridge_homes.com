@@ -10,10 +10,6 @@ export const head: DocumentHead = {
       content: "Expert Las Vegas real estate insights, market analysis, and community guides by Dr. Jan Duffy. Stay informed about 55+ communities, luxury homes, and active adult living trends.",
     },
     {
-      name: "keywords",
-      content: "Las Vegas real estate blog, Las Vegas market insights, Dr Jan Duffy blog, 55+ communities news, Las Vegas real estate trends, Summerlin real estate, Henderson real estate",
-    },
-    {
       name: "robots",
       content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     },

@@ -11,10 +11,6 @@ export const head: DocumentHead = {
       content: "Discover luxury living in Las Vegas 55+ communities. Expert guide to premium amenities, gated communities, and upscale active adult living in Summerlin and Henderson.",
     },
     {
-      name: "keywords",
-      content: "luxury 55+ communities Las Vegas, premium active adult living, gated communities Summerlin, luxury amenities Henderson, upscale retirement communities",
-    },
-    {
       name: "robots",
       content: "index, follow",
     },

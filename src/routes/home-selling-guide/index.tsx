@@ -11,10 +11,6 @@ export const head: DocumentHead = {
       content: "Complete home selling guide for Las Vegas real estate. Expert tips on pricing, staging, marketing, and closing. Maximize your home's value with Dr. Jan Duffy's proven strategies.",
     },
     {
-      name: "keywords",
-      content: "home selling guide Las Vegas, sell home Las Vegas, real estate selling tips, home staging Las Vegas, home pricing strategy, Las Vegas home sales",
-    },
-    {
       name: "robots",
       content: "index, follow",
     },

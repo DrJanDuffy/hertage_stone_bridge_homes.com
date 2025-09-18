@@ -12,10 +12,6 @@ export const head: DocumentHead = {
       content: "Discover luxury homes in Las Vegas featuring premium amenities, stunning designs, and exclusive locations. Expert guidance for high-end real estate in Summerlin, Henderson, and Red Rock Canyon.",
     },
     {
-      name: "keywords",
-      content: "luxury homes Las Vegas, premium real estate Summerlin, high-end homes Henderson, luxury properties Red Rock Canyon, exclusive homes Las Vegas",
-    },
-    {
       name: "robots",
       content: "index, follow",
     },

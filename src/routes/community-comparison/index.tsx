@@ -11,10 +11,6 @@ export const head: DocumentHead = {
       content: "Compare Las Vegas 55+ communities including Heritage at Stonebridge, Del Webb, Sun City, and Siena. Expert analysis of amenities, pricing, and lifestyle features.",
     },
     {
-      name: "keywords",
-      content: "Las Vegas 55+ communities comparison, Heritage at Stonebridge vs Del Webb, Sun City Las Vegas, Siena community, active adult living comparison",
-    },
-    {
       name: "robots",
       content: "index, follow",
     },

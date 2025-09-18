@@ -10,10 +10,6 @@ export const head: DocumentHead = {
       content: "Comprehensive Las Vegas real estate market analysis for 2025. Expert insights on 55+ communities, luxury homes, and investment opportunities by Dr. Jan Duffy.",
     },
     {
-      name: "keywords",
-      content: "Las Vegas real estate market analysis, Las Vegas market trends 2025, Dr Jan Duffy market analysis, Las Vegas real estate investment, 55+ communities market, Summerlin real estate market",
-    },
-    {
       name: "robots",
       content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     },

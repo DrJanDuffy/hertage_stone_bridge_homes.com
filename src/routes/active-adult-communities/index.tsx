@@ -12,10 +12,6 @@ export const head: DocumentHead = {
       content: "Discover premier active adult communities in Las Vegas. Expert guide to 55+ living with resort amenities, social activities, and luxury homes in Summerlin, Henderson, and Red Rock Canyon.",
     },
     {
-      name: "keywords",
-      content: "active adult communities Las Vegas, 55+ communities Summerlin, active adult living Henderson, retirement communities Red Rock Canyon, luxury 55+ homes",
-    },
-    {
       name: "robots",
       content: "index, follow",
     },

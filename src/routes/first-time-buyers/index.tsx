@@ -11,10 +11,6 @@ export const head: DocumentHead = {
       content: "Complete first-time home buyer guide for Las Vegas real estate. Expert advice on financing, down payments, inspections, and finding your perfect home with Dr. Jan Duffy.",
     },
     {
-      name: "keywords",
-      content: "first time home buyers Las Vegas, first time buyer guide, Las Vegas home buying tips, first time buyer programs, home buying process Las Vegas",
-    },
-    {
       name: "robots",
       content: "index, follow",
     },

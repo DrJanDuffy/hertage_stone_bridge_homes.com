@@ -11,10 +11,6 @@ export const head: DocumentHead = {
       content: "Discover luxury homes near Red Rock Canyon with Dr. Jan Duffy. Stunning mountain views, outdoor recreation, and premier communities in Las Vegas's most scenic area. Call 702-222-1964.",
     },
     {
-      name: "keywords",
-      content: "Red Rock Canyon homes, Red Rock Canyon real estate, mountain view homes Las Vegas, Red Rock Canyon communities, Dr Jan Duffy Red Rock, Las Vegas mountain homes",
-    },
-    {
       name: "robots",
       content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     },

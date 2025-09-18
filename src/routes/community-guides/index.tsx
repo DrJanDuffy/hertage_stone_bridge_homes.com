@@ -11,10 +11,6 @@ export const head: DocumentHead = {
       content: "Explore comprehensive community guides for Las Vegas neighborhoods including Summerlin, Henderson, Red Rock Canyon, and Northwest Las Vegas. Expert insights on amenities, lifestyle, and local attractions.",
     },
     {
-      name: "keywords",
-      content: "community guides Las Vegas, neighborhood guides Summerlin, Henderson community guide, Red Rock Canyon communities, Las Vegas neighborhood information",
-    },
-    {
       name: "robots",
       content: "index, follow",
     },

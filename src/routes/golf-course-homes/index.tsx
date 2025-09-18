@@ -12,10 +12,6 @@ export const head: DocumentHead = {
       content: "Discover luxury golf course homes in Las Vegas with stunning fairway views and resort amenities. Expert guidance for golf communities in Summerlin, Henderson, and Red Rock Canyon.",
     },
     {
-      name: "keywords",
-      content: "golf course homes Las Vegas, golf communities Summerlin, luxury golf homes Henderson, golf course properties Red Rock Canyon, golf living Las Vegas",
-    },
-    {
       name: "robots",
       content: "index, follow",
     },

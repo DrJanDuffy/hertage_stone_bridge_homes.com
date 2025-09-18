@@ -12,11 +12,6 @@ export const head: DocumentHead = {
         "Discover luxury homes for sale in Stonebridge, Summerlin, Las Vegas NV. Gated community with resort amenities, mountain views, and active adult living. Dr. Jan Duffy, your Stonebridge specialist.",
     },
     {
-      name: "keywords",
-      content:
-        "homes for sale Stonebridge Summerlin, Stonebridge Las Vegas homes, Summerlin real estate, gated community Las Vegas, luxury homes Summerlin, Dr Jan Duffy Stonebridge",
-    },
-    {
       property: "og:title",
       content: "Homes for Sale in Stonebridge, Summerlin, Las Vegas NV | Dr. Jan Duffy",
     },

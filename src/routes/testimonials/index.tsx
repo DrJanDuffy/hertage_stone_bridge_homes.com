@@ -11,10 +11,6 @@ export const head: DocumentHead = {
       content: "Read authentic client testimonials and reviews for Dr. Jan Duffy, Las Vegas real estate expert. Success stories from satisfied clients in 55+ communities, luxury homes, and active adult living.",
     },
     {
-      name: "keywords",
-      content: "Dr Jan Duffy testimonials, Las Vegas real estate reviews, client testimonials Las Vegas, real estate agent reviews, satisfied clients Las Vegas",
-    },
-    {
       name: "robots",
       content: "index, follow",
     },

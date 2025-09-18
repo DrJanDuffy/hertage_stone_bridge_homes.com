@@ -1137,11 +1137,6 @@ export const head: DocumentHead = {
         "Discover luxury 55+ communities near Red Rock Canyon in Las Vegas. Active adult living with golf, amenities, and stunning desert views. Dr. Jan Duffy, your 55+ specialist.",
     },
     {
-      name: "keywords",
-      content:
-        "55+ communities Las Vegas, Red Rock Canyon, active adult, Sun City, Del Webb, retirement communities",
-    },
-    {
       property: "og:title",
       content: "55+ Communities Red Rock Canyon Las Vegas | Active Adult Living",
     },

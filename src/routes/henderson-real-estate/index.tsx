@@ -11,10 +11,6 @@ export const head: DocumentHead = {
       content: "Discover Henderson real estate with Dr. Jan Duffy. Family-friendly community with excellent schools, parks, and diverse housing options. Call 702-222-1964.",
     },
     {
-      name: "keywords",
-      content: "Henderson real estate, Henderson homes for sale, Henderson realtor, Dr Jan Duffy Henderson, Henderson 55+ communities, Henderson luxury homes",
-    },
-    {
       name: "robots",
       content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     },
