@@ -191,6 +191,42 @@ export const onGet: RequestHandler = async (requestEvent) => {
         <priority>0.7</priority>
     </url>
     
+    <!-- Resource Pages -->
+    <url>
+        <loc>https://heritagestonebridge.com/market-reports/</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://heritagestonebridge.com/community-guides/</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://heritagestonebridge.com/home-selling-guide/</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://heritagestonebridge.com/first-time-buyers/</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://heritagestonebridge.com/testimonials/</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
     <!-- Legal Pages -->
     <url>
         <loc>https://heritagestonebridge.com/privacy-policy/</loc>
