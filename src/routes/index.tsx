@@ -226,22 +226,22 @@ export default component$(() => {
       </section>
 
       {/* RealScout Hero Widget */}
-      <RealScoutHeroWidget 
-        agentEncodedId="drjanduffy"
-        title="Exclusive Heritage at Stonebridge Listings"
-        subtitle="Schedule Your Private Tour Today"
-        priceMin="600000"
-        priceMax="900000"
-      />
+              <RealScoutHeroWidget
+                agentEncodedId="QWdlbnQtMjI1MDUw"
+                title="Exclusive Heritage at Stonebridge Listings"
+                subtitle="Schedule Your Private Tour Today"
+                priceMin="600000"
+                priceMax="900000"
+              />
 
-      {/* RealScout Sticky Widget */}
-      <RealScoutStickyWidget 
-        agentEncodedId="drjanduffy"
-        title="Featured Listings"
-        subtitle="Call 702-222-1964"
-        priceMin="600000"
-        priceMax="900000"
-      />
+              {/* RealScout Sticky Widget */}
+              <RealScoutStickyWidget
+                agentEncodedId="QWdlbnQtMjI1MDUw"
+                title="Featured Listings"
+                subtitle="Call 702-222-1964"
+                priceMin="600000"
+                priceMax="900000"
+              />
     </>
   );
 });

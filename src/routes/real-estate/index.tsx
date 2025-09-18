@@ -31,15 +31,15 @@ export default component$(() => {
             <div class="bg-white rounded-lg shadow-lg p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-4">Quick Property Search</h3>
               <RealScoutSimpleSearch 
-                agentEncodedId="drjanduffy"
+                agentEncodedId="QWdlbnQtMjI1MDUw"
               />
             </div>
 
             {/* Advanced Search Widget */}
             <div class="bg-white rounded-lg shadow-lg p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-4">Advanced Search</h3>
-              <RealScoutAdvancedSearch 
-                agentEncodedId="drjanduffy"
+              <RealScoutAdvancedSearch
+                agentEncodedId="QWdlbnQtMjI1MDUw"
               />
             </div>
           </div>
@@ -47,16 +47,16 @@ export default component$(() => {
           {/* Home Value Widget */}
           <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
             <h3 class="text-xl font-bold text-gray-900 mb-4">Get Your Home's Value</h3>
-            <RealScoutHomeValue 
-              agentEncodedId="drjanduffy"
+            <RealScoutHomeValue
+              agentEncodedId="QWdlbnQtMjI1MDUw"
             />
           </div>
 
           {/* Office Listings Widget */}
           <div class="bg-white rounded-lg shadow-lg p-6">
             <h3 class="text-xl font-bold text-gray-900 mb-4">Current Listings</h3>
-            <RealScoutOfficeListingsWidget 
-              agentEncodedId="drjanduffy"
+            <RealScoutOfficeListingsWidget
+              agentEncodedId="QWdlbnQtMjI1MDUw"
               sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
               listingStatus="For Sale"
               propertyTypes="SFR,MF"
@@ -117,8 +117,8 @@ export default component$(() => {
       </main>
 
       {/* RealScout Sticky Widget */}
-      <RealScoutStickyWidget 
-        agentEncodedId="drjanduffy"
+      <RealScoutStickyWidget
+        agentEncodedId="QWdlbnQtMjI1MDUw"
         title="Featured Properties"
         subtitle="Call 702-222-1964"
         priceMin="500000"

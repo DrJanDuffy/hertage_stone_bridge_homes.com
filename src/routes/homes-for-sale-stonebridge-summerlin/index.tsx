@@ -591,8 +591,8 @@ export default component$(() => {
             <h2 class="text-3xl font-bold text-gray-900 mb-4">Current Stonebridge Listings</h2>
             <p class="text-lg text-gray-600">Explore available homes in Heritage at Stonebridge community</p>
           </div>
-          <RealScoutOfficeListingsWidget 
-            agentEncodedId="drjanduffy"
+          <RealScoutOfficeListingsWidget
+            agentEncodedId="QWdlbnQtMjI1MDUw"
             sortOrder="STATUS_AND_SIGNIFICANT_CHANGE"
             listingStatus="For Sale"
             propertyTypes="SFR"
@@ -603,8 +603,8 @@ export default component$(() => {
       </section>
 
       {/* RealScout Sticky Widget */}
-      <RealScoutStickyWidget 
-        agentEncodedId="drjanduffy"
+      <RealScoutStickyWidget
+        agentEncodedId="QWdlbnQtMjI1MDUw"
         title="Stonebridge Homes"
         subtitle="Call 702-222-1964"
         priceMin="600000"
