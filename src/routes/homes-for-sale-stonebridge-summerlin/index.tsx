@@ -195,7 +195,7 @@ export default component$(() => {
             Homes for Sale in Stonebridge, Summerlin, Las Vegas NV
           </h1>
           <p class="text-xl md:text-2xl text-blue-100 mb-8 max-w-4xl mx-auto">
-            Discover luxury living in Stonebridge, Summerlin's premier gated community. Three distinct home collections from Lennar with prices starting in the high $400,000s. Resort-style amenities, mountain views, and active adult lifestyle await.
+            Discover luxury living in Stonebridge, Summerlin's premier gated community. Three distinct home collections from Lennar with prices starting from $464,990. Currently 15 homes available for sale with resort-style amenities, mountain views, and active adult lifestyle.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -304,7 +304,7 @@ export default component$(() => {
                   <li>• Gourmet kitchens with islands</li>
                   <li>• Private courtyards</li>
                 </ul>
-                <div class="text-2xl font-bold text-blue-600 mb-4">Starting from high $400,000s</div>
+                <div class="text-2xl font-bold text-blue-600 mb-4">Starting from $464,990</div>
                 <a
                   href="http://drjanduffy.realscout.com/onboarding"
                   target="_blank"
@@ -332,7 +332,7 @@ export default component$(() => {
                   <li>• Master suites with walk-in closets</li>
                   <li>• Covered patios</li>
                 </ul>
-                <div class="text-2xl font-bold text-green-600 mb-4">Starting from mid $600,000s</div>
+                <div class="text-2xl font-bold text-green-600 mb-4">Starting from $675,990</div>
                 <a
                   href="http://drjanduffy.realscout.com/onboarding"
                   target="_blank"
@@ -360,7 +360,7 @@ export default component$(() => {
                   <li>• Home offices/studies</li>
                   <li>• Expansive outdoor living</li>
                 </ul>
-                <div class="text-2xl font-bold text-purple-600 mb-4">Starting from high $800,000s</div>
+                <div class="text-2xl font-bold text-purple-600 mb-4">Starting from $861,990</div>
                 <a
                   href="http://drjanduffy.realscout.com/onboarding"
                   target="_blank"

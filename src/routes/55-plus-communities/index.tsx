@@ -122,7 +122,7 @@ export default component$(() => {
             <div class="mt-6 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
               <p class="text-lg text-blue-800 font-semibold">
                 🏗️ <strong>New Construction 55+ Communities in Summerlin, NV:</strong> 
-                Heritage at Stonebridge offers three distinct home collections from Lennar: Cromwell (1,232-1,422 sq ft), Stirling (1,747-2,236 sq ft), and Evander (2,515-2,873 sq ft) with prices starting in the high $400,000s.
+                Heritage at Stonebridge offers three distinct home collections from Lennar: Cromwell ($464,990-$512,990), Stirling ($675,990-$736,990), and Evander ($861,990-$910,990). Currently 15 homes available for sale.
               </p>
             </div>
           </div>
@@ -146,7 +146,7 @@ export default component$(() => {
                   <li>• Gated community with RV parking</li>
                   <li>• Walking trails & outdoor gathering areas</li>
                 </ul>
-                <div class="text-lg font-bold text-blue-600 mb-4">Starting from high $400,000s</div>
+                <div class="text-lg font-bold text-blue-600 mb-4">Starting from $464,990</div>
                 <a
                   href="http://drjanduffy.realscout.com/onboarding"
                   target="_blank"

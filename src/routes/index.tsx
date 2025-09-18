@@ -378,7 +378,7 @@ export default component$(() => {
             </p>
             <p class="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
               Experience resort-style amenities, stunning Red Rock Canyon views, and gated security in Las Vegas's premier active adult community. 
-              Heritage at Stonebridge offers three distinct home collections from Lennar, featuring modern single-story designs with prices starting in the high $400,000s. 
+              Heritage at Stonebridge offers three distinct home collections from Lennar, featuring modern single-story designs with prices starting from $464,990. Currently 15 homes available for sale. 
               Dr. Jan Duffy specializes in helping you find the perfect 55+ home in Heritage at Stonebridge and surrounding Summerlin areas.
             </p>
             <div class="text-center mb-8">
@@ -465,7 +465,7 @@ export default component$(() => {
             </div>
             <div class="text-center">
               <h3 class="text-xl font-bold text-gray-900 mb-3">Current Pricing</h3>
-              <p class="text-gray-600">Homes available from high $400,000s to over $1,000,000</p>
+              <p class="text-gray-600">Cromwell: $464,990-$512,990 | Stirling: $675,990-$736,990 | Evander: $861,990-$910,990</p>
             </div>
           </div>
         </div>
