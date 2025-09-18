@@ -1,4 +1,4 @@
-import { component$, useTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
@@ -66,62 +66,6 @@ export const head: DocumentHead = {
 };
 
 export default component$(() => {
-  useTask$(() => {
-    // Add structured data for Las Vegas real estate
-    const structuredData = {
-      "@context": "https://schema.org",
-      "@type": "RealEstateAgent",
-      "name": "Dr. Jan Duffy",
-      "description": "Las Vegas real estate expert specializing in 55+ communities and luxury homes",
-      "url": "https://heritagestonebridge.com/las-vegas-real-estate",
-      "telephone": "702-222-1964",
-      "email": "DrDuffySells@HeritageStonebridge.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Las Vegas",
-        "addressRegion": "NV",
-        "addressCountry": "US"
-      },
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Las Vegas",
-          "containedInPlace": {
-            "@type": "State",
-            "name": "Nevada"
-          }
-        },
-        {
-          "@type": "City", 
-          "name": "Summerlin",
-          "containedInPlace": {
-            "@type": "State",
-            "name": "Nevada"
-          }
-        },
-        {
-          "@type": "City",
-          "name": "Henderson", 
-          "containedInPlace": {
-            "@type": "State",
-            "name": "Nevada"
-          }
-        }
-      ],
-      "knowsAbout": [
-        "55+ Communities",
-        "Active Adult Living",
-        "Luxury Homes",
-        "Gated Communities",
-        "Las Vegas Real Estate"
-      ]
-    };
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(structuredData);
-    document.head.appendChild(script);
-  });
 
   return (
     <>

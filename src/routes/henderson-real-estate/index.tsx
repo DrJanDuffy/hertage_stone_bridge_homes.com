@@ -1,4 +1,4 @@
-import { component$, useTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
@@ -66,47 +66,6 @@ export const head: DocumentHead = {
 };
 
 export default component$(() => {
-  useTask$(() => {
-    // Add structured data for Henderson real estate
-    const structuredData = {
-      "@context": "https://schema.org",
-      "@type": "City",
-      "name": "Henderson",
-      "description": "Family-friendly city in Nevada with excellent schools, parks, and diverse housing options",
-      "url": "https://heritagestonebridge.com/henderson-real-estate",
-      "containedInPlace": {
-        "@type": "State",
-        "name": "Nevada"
-      },
-      "amenityFeature": [
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Schools",
-          "value": "Excellent public and private schools"
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Parks",
-          "value": "Numerous parks and recreational facilities"
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Shopping",
-          "value": "Galleria at Sunset, The District at Green Valley Ranch"
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Healthcare",
-          "value": "St. Rose Dominican Hospital, Henderson Hospital"
-        }
-      ]
-    };
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(structuredData);
-    document.head.appendChild(script);
-  });
 
   return (
     <>

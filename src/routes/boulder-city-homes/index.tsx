@@ -1,4 +1,4 @@
-import { component$, useTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
@@ -66,47 +66,6 @@ export const head: DocumentHead = {
 };
 
 export default component$(() => {
-  useTask$(() => {
-    // Add structured data for Boulder City real estate
-    const structuredData = {
-      "@context": "https://schema.org",
-      "@type": "City",
-      "name": "Boulder City",
-      "description": "Historic community near Lake Mead with small-town charm, outdoor recreation, and unique character",
-      "url": "https://heritagestonebridge.com/boulder-city-homes",
-      "containedInPlace": {
-        "@type": "State",
-        "name": "Nevada"
-      },
-      "amenityFeature": [
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Lake Mead",
-          "value": "Access to Lake Mead National Recreation Area"
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Historic District",
-          "value": "Historic downtown with unique shops and restaurants"
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Outdoor Recreation",
-          "value": "Hiking, boating, fishing, and water sports"
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Small Town Charm",
-          "value": "Close-knit community with friendly atmosphere"
-        }
-      ]
-    };
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(structuredData);
-    document.head.appendChild(script);
-  });
 
   return (
     <>

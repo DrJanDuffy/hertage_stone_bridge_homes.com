@@ -1,4 +1,4 @@
-import { component$, useTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
@@ -66,57 +66,6 @@ export const head: DocumentHead = {
 };
 
 export default component$(() => {
-  useTask$(() => {
-    // Add structured data for Red Rock Canyon communities
-    const structuredData = {
-      "@context": "https://schema.org",
-      "@type": "ResidentialComplex",
-      "name": "Red Rock Canyon Communities",
-      "description": "Luxury communities near Red Rock Canyon National Conservation Area featuring mountain views and outdoor recreation",
-      "url": "https://heritagestonebridge.com/red-rock-canyon-communities",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Las Vegas",
-        "addressRegion": "NV",
-        "addressCountry": "US"
-      },
-      "amenityFeature": [
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Mountain Views",
-          "value": "Stunning views of Red Rock Canyon and Spring Mountains"
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Outdoor Recreation",
-          "value": "Hiking, rock climbing, and nature trails"
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Golf Courses",
-          "value": "Championship golf courses with mountain backdrops"
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Luxury Amenities",
-          "value": "Resort-style pools, spas, and fitness centers"
-        }
-      ],
-      "containedInPlace": {
-        "@type": "City",
-        "name": "Las Vegas",
-        "containedInPlace": {
-          "@type": "State",
-          "name": "Nevada"
-        }
-      }
-    };
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(structuredData);
-    document.head.appendChild(script);
-  });
 
   return (
     <>

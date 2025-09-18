@@ -1,4 +1,4 @@
-import { component$, useTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
@@ -66,57 +66,6 @@ export const head: DocumentHead = {
 };
 
 export default component$(() => {
-  useTask$(() => {
-    // Add structured data for Northwest Las Vegas real estate
-    const structuredData = {
-      "@context": "https://schema.org",
-      "@type": "ResidentialComplex",
-      "name": "Northwest Las Vegas",
-      "description": "Growing area of Las Vegas with new construction, modern amenities, and convenient access to the Strip",
-      "url": "https://heritagestonebridge.com/northwest-las-vegas",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Las Vegas",
-        "addressRegion": "NV",
-        "addressCountry": "US"
-      },
-      "amenityFeature": [
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "New Construction",
-          "value": "Modern homes with latest features and designs"
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Convenient Access",
-          "value": "Easy access to Las Vegas Strip and downtown"
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Modern Amenities",
-          "value": "Contemporary community features and facilities"
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Growth Potential",
-          "value": "Rapidly developing area with increasing property values"
-        }
-      ],
-      "containedInPlace": {
-        "@type": "City",
-        "name": "Las Vegas",
-        "containedInPlace": {
-          "@type": "State",
-          "name": "Nevada"
-        }
-      }
-    };
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(structuredData);
-    document.head.appendChild(script);
-  });
 
   return (
     <>

@@ -1,4 +1,4 @@
-import { component$, useTask$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { RealScoutStickyWidget } from "~/components/real-estate/RealScoutStickyWidget";
 import { RealScoutOfficeListingsWidget } from "~/components/real-estate/RealScoutOfficeListingsWidget";
@@ -66,57 +66,6 @@ export const head: DocumentHead = {
 };
 
 export default component$(() => {
-  useTask$(() => {
-    // Add structured data for Summerlin real estate
-    const structuredData = {
-      "@context": "https://schema.org",
-      "@type": "ResidentialComplex",
-      "name": "Summerlin",
-      "description": "Premier master-planned community in Las Vegas featuring luxury homes, golf courses, and resort amenities",
-      "url": "https://heritagestonebridge.com/summerlin-homes",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Summerlin",
-        "addressRegion": "NV",
-        "addressCountry": "US"
-      },
-      "amenityFeature": [
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Golf Courses",
-          "value": "Multiple championship golf courses"
-        },
-        {
-          "@type": "LocationFeatureSpecification", 
-          "name": "Resort Amenities",
-          "value": "Pools, spas, fitness centers"
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Shopping",
-          "value": "Downtown Summerlin, Red Rock Resort"
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "55+ Communities",
-          "value": "Active adult living communities"
-        }
-      ],
-      "containedInPlace": {
-        "@type": "City",
-        "name": "Las Vegas",
-        "containedInPlace": {
-          "@type": "State",
-          "name": "Nevada"
-        }
-      }
-    };
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(structuredData);
-    document.head.appendChild(script);
-  });
 
   return (
     <>
